@@ -682,10 +682,11 @@
             • Coordinate with healers when tanking due to increased damage taken<br><br>
             
             <strong>Blood Fury (Orc Racial):</strong><br>
-            • +25% base melee damage (not Attack Power) for 15 seconds<br>
+            • +25% base melee Attack Power for 15 seconds<br>
+            • <strong>-50% healing received for 25 seconds</strong> (debuff outlasts buff by 10 seconds)<br>
             • 2-minute cooldown<br>
-            • Stacks multiplicatively with other damage bonuses<br>
-            • Powerful for both DPS warriors and orc tanks<br><br>
+            • Scales with Strength, not flat +AP from gear<br>
+            • Powerful but risky for tanks due to healing penalty<br><br>
             
             <strong>Berserking (Troll Racial):</strong><br>
             • +30% attack speed when below 40% health for 20 seconds<br>
@@ -696,12 +697,54 @@
             <strong>Recklessness:</strong><br>
             • +100% critical strike chance, +20% damage taken for 15 seconds<br>
             • 30-minute cooldown<br>
-            • Ultimate DPS cooldown, use with caution in raids<br>
+            • Ultimate DPS cooldown, use with extreme caution in raids<br>
             • Requires careful coordination with healers - announce usage in advance
         </div>
 
+        <h4>Tank Cooldown Usage Strategy</h4>
         <div class="tip">
-            <strong>Cooldown Stacking:</strong> Death Wish + Blood Fury/Berserking + Recklessness + consumables creates massive damage windows. Coordinate with raid buffs, boss vulnerability phases, and healers for maximum impact. Announce damage-taken increases to healers in advance, especially when stacking multiple cooldowns (Death Wish + Recklessness = 40% increased damage taken).
+            <strong>Pull Threat Strategy:</strong> Use Death Wish (and Blood Fury if Orc) on the pull with healer coordination to establish massive threat lead. This allows switching to shield + defensive gear later in the fight while maintaining threat advantage. Communicate with healers about increased damage/reduced healing before pulling.
+        </div>
+
+        <div class="warning">
+            <strong>Tank Cooldown Risks:</strong><br>
+            • <strong>Death Wish:</strong> +20% damage taken - ensure healers are ready<br>
+            • <strong>Blood Fury:</strong> -50% healing for 25 seconds - very dangerous for tanks<br>
+            • <strong>Recklessness:</strong> +20% damage taken + 100% crit threat - only use with extensive coordination<br>
+            • <strong>Never stack damage-taken increases</strong> without explicit healer agreement and cooldown coverage
+        </div>
+
+        <h4>DPS Cooldown Usage Strategy</h4>
+        <div class="stat-priority">
+            <strong>Execute Phase Timing (35% HP and below):</strong><br>
+            • Primary strategy: Save cooldowns for execute phase when boss damage is highest<br>
+            • Stack Death Wish + racial + consumables during execute for maximum impact<br>
+            • Use kill-timer WeakAura to predict execute phase timing<br><br>
+
+            <strong>Long Fight Strategy:</strong><br>
+            • If fight duration > 6 minutes: Use cooldowns early + again during execute<br>
+            • Death Wish: Use on pull, available again for execute phase<br>
+            • Blood Fury: Use early, available 2-3 times per fight<br>
+            • Recklessness: Once per fight - save for execute unless fight is >30 minutes<br><br>
+
+            <strong>Optimal Stacking Order:</strong><br>
+            1. Activate consumables (if not already active)<br>
+            2. Death Wish (3min CD)<br>
+            3. Blood Fury/Berserking (2min/3min CD)<br>
+            4. Recklessness (30min CD) - only if execute phase or pre-planned<br>
+            5. Coordinate with raid buffs and world buff timing
+        </div>
+
+        <div class="tip">
+            <strong>Kill-Timer WeakAura Importance:</strong> Essential tool for DPS warriors to predict execute phase timing. Helps decide whether to use cooldowns early or save for execute. Most effective DPS warriors track boss HP decay rate to optimize cooldown timing for maximum damage phases.
+        </div>
+
+        <div class="warning">
+            <strong>Cooldown Stacking Risks:</strong><br>
+            • <strong>Death Wish + Recklessness:</strong> +40% damage taken - extreme risk<br>
+            • <strong>Blood Fury:</strong> -50% healing received can be fatal during high damage phases<br>
+            • <strong>Always coordinate</strong> with healers before stacking multiple survival penalties<br>
+            • Consider fight-specific damage patterns (Vaelastrasz breath, C'Thun tentacles, etc.)
         </div>
 
         <h3 id="weapon-mechanics">Weapon Mechanics</h3>
