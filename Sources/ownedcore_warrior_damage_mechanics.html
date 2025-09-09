@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warrior damage mechanics - OwnedCore</title>
+    <style>
+        /* OwnedCore forum theme */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        .header {
+            background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+            border-bottom: 2px solid #555;
+            padding: 10px 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+            color: #00aaff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .tagline {
+            color: #aaa;
+            font-size: 11px;
+        }
+        .navbar {
+            background: #333;
+            border-bottom: 1px solid #555;
+            padding: 8px 0;
+        }
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .nav-links a:hover {
+            background: #444;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            color: #00aaff;
+            font-size: 14px;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            margin: 5px 0;
+        }
+        .sidebar a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .sidebar a:hover {
+            color: #00aaff;
+        }
+        .main-content {
+            flex: 1;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .thread-title {
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 5px 5px 0 0;
+            padding: 12px 15px;
+            margin: -20px -20px 20px -20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #00aaff;
+        }
+        .post-content {
+            background: #1e1e1e;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #00aaff;
+            font-size: 16px;
+            margin: 25px 0 15px 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #ffaa00;
+            font-size: 14px;
+            margin: 20px 0 10px 0;
+        }
+        ul {
+            margin: 10px 0 10px 20px;
+        }
+        li {
+            margin: 5px 0;
+            color: #ddd;
+        }
+        strong {
+            color: #fff;
+        }
+        .formula {
+            background: #333;
+            border: 1px solid #555;
+            border-left: 4px solid #00aaff;
+            padding: 12px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            border-radius: 3px;
+        }
+        .archive-notice {
+            background: #2a1a00;
+            border: 1px solid #664400;
+            color: #ffcc66;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo">OwnedCore</a>
+            <div class="tagline">World of Warcraft Exploits, Hacks, Bots and Guides</div>
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <div class="navbar-content">
+            <div class="nav-links">
+                <a href="#">Forums</a>
+                <a href="#">Trading Market</a>
+                <a href="#">New Posts</a>
+                <a href="#">Community</a>
+                <a href="#">CoreCoins</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h3>Forum Navigation</h3>
+            <ul>
+                <li><a href="#">World of Warcraft</a></li>
+                <li><a href="#">WoW Guides</a></li>
+                <li><a href="#">Class Guides</a></li>
+                <li><a href="#">Warrior Guides</a></li>
+            </ul>
+            
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Today's Posts</a></li>
+                <li><a href="#">Search Forums</a></li>
+                <li><a href="#">Member List</a></li>
+                <li><a href="#">Calendar</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="thread-title">
+                Warrior damage mechanics
+            </div>
+            
+            <div class="post-content">
+                <h2>Mechanics of an Attack</h2>
+                <p>The game generates a random number from 1-10 to determine attack outcome. Here's how the distribution typically works:</p>
+                <ul>
+                    <li><strong>1-2:</strong> Critical Hit</li>
+                    <li><strong>3-6:</strong> Regular Hit</li>
+                    <li><strong>7:</strong> Miss</li>
+                    <li><strong>8:</strong> Dodge</li>
+                    <li><strong>9:</strong> Parry</li>
+                    <li><strong>10:</strong> Block</li>
+                </ul>
+                
+                <h2>Miss Rates by Weapon Type</h2>
+                <ul>
+                    <li><strong>Dual Wielding:</strong> 24% standard miss rate</li>
+                    <li><strong>Two Handed:</strong> 5% standard miss rate</li>
+                    <li><strong>One Hand with Shield:</strong> 5% standard miss rate</li>
+                </ul>
+                
+                <h2>Critical Hit Mechanics</h2>
+                <ul>
+                    <li>Critical hits deal double damage</li>
+                    <li><strong>+1 Agility = +0.05%</strong> chance to land a Critical Hit</li>
+                    <li><strong>+1 Weapon Skill = +0.04%</strong> chance to land a Critical Hit</li>
+                </ul>
+                
+                <h2>Rage Generation (Level 60)</h2>
+                <div class="formula">
+                    <strong>Damage Done:</strong><br>
+                    Rage = Damage / (charLevel * 0.5)<br><br>
+                    <strong>Damage Received:</strong><br>
+                    Rage = Damage / (charLevel * 1.5)
+                </div>
+                
+                <h2>Attack Power to DPS Conversion</h2>
+                <ul>
+                    <li><strong>+1 Strength = +2 Attack Power</strong></li>
+                    <li><strong>Two-Handed/One-Hand:</strong> +14 Attack Power = +1 DPS</li>
+                    <li><strong>Dual Wielding:</strong> +8.62 Attack Power = +1 DPS</li>
+                </ul>
+                
+                <div class="archive-notice">
+                    <strong>📋 Archived Forum Post:</strong> This thread was originally posted on OwnedCore forums. 
+                    <a href="https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-guides/2206-warrior-damage-mechanics.html" target="_blank" style="color: #ffcc66;">View Original Thread</a> 
+                    | Archived: August 28, 2025
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

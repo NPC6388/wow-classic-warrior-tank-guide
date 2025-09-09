@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abilities & Rotation - Marrow's Compendium of Dragonslaying</title>
+    <style>
+        /* GitBook-style theme matching original */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        .gitbook-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 300px;
+            background: #fff;
+            border-right: 1px solid #e6e6e6;
+            padding: 0;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #e6e6e6;
+            background: #f7f7f7;
+        }
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            text-decoration: none;
+        }
+        .sidebar-nav {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 12px 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .sidebar-nav a:hover {
+            background: #f0f4f8;
+            color: #2e7bcf;
+        }
+        .sidebar-nav a.active {
+            background: #f0f4f8;
+            color: #2e7bcf;
+        }
+        .content {
+            flex: 1;
+            padding: 40px 60px;
+            background: #fff;
+            max-width: none;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+            color: #333;
+            margin: 0 0 20px 0;
+            border-bottom: 3px solid #2e7bcf;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #2e7bcf;
+            margin: 40px 0 20px 0;
+        }
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #555;
+            margin: 30px 0 15px 0;
+        }
+        .ability-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .ability-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2e7bcf;
+            margin: 0 0 10px 0;
+        }
+        .ability-stats {
+            background: #fff;
+            border-left: 4px solid #2e7bcf;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            padding: 2px 0;
+        }
+        .stat-label {
+            font-weight: 500;
+            color: #555;
+        }
+        .stat-value {
+            color: #2e7bcf;
+            font-weight: 600;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .formula-box {
+            background: #e8f4fd;
+            border: 1px solid #d1ecf1;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            font-weight: 600;
+        }
+        .priority-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #f4bf2a;
+        }
+        .download-links {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f4fd;
+            border-radius: 4px;
+        }
+        .download-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #2e7bcf;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .archive-note {
+            margin-top: 40px;
+            padding: 15px;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            color: #856404;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gitbook-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">Marrow's Compendium</h1>
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                    by Marrow, Heartseeker-US<br>
+                    Updated: July 9, 2020
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="marrows_compendium_index.html">Table of Contents</a></li>
+                <li><a href="marrows_compendium_intro.html">Introduction</a></li>
+                <li><a href="marrows_compendium_mechanics.html">Mechanics</a></li>
+                <li><a href="marrows_compendium_abilities.html" class="active">Abilities & Rotation</a></li>
+                <li><a href="marrows_compendium_cooldowns.html">Cooldowns</a></li>
+                <li><a href="marrows_compendium_parsing.html">Parsing</a></li>
+                <li><a href="marrows_compendium_references.html">References</a></li>
+            </ul>
+            
+            <div class="download-links">
+                <strong style="display: block; margin-bottom: 10px; color: #333;">Download:</strong>
+                <a href="#">📄 PDF</a>
+                <a href="#">📱 EPUB</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h1>Abilities & Rotation</h1>
+            
+            <h2>Core Fury Abilities</h2>
+            <p>Understanding each ability's mechanics, costs, and optimal usage is crucial for maximizing DPS output. Each ability serves specific purposes in your rotation and offers different scaling characteristics.</p>
+            
+            <div class="ability-card">
+                <div class="ability-name">Bloodthirst (BT)</div>
+                <div class="ability-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Rage Cost:</span>
+                        <span class="stat-value">30 rage</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Damage:</span>
+                        <span class="stat-value">45% of Attack Power</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Cooldown:</span>
+                        <span class="stat-value">6 seconds</span>
+                    </div>
+                </div>
+                <p><strong>Key Features:</strong> Scales linearly with Attack Power and provides weapon-independent damage. This makes it extremely valuable for high AP builds and ensures consistent damage regardless of weapon speed.</p>
+            </div>
+            
+            <div class="ability-card">
+                <div class="ability-name">Execute</div>
+                <div class="ability-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Rage Cost:</span>
+                        <span class="stat-value">Variable (15 base + additional)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Usability:</span>
+                        <span class="stat-value">≤20% enemy HP</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Base Damage:</span>
+                        <span class="stat-value">600</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Additional Damage:</span>
+                        <span class="stat-value">15 per extra rage</span>
+                    </div>
+                </div>
+                <p><strong>Key Features:</strong> No cooldown allows for rage dumping during execute phase. Extremely high damage potential when pooling rage, making it the primary ability during the final 20% of boss fights.</p>
+            </div>
+            
+            <div class="ability-card">
+                <div class="ability-name">Whirlwind (WW)</div>
+                <div class="ability-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Targets Hit:</span>
+                        <span class="stat-value">Up to 4 enemies</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Cooldown:</span>
+                        <span class="stat-value">10 seconds</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Damage Formula:</span>
+                        <span class="stat-value">Weapon swing + (AP × Weapon speed/14)</span>
+                    </div>
+                </div>
+                <p><strong>Key Features:</strong> Scales with number of targets hit, making it essential for multi-target encounters. Damage increases with slower weapons due to the Attack Power scaling component.</p>
+            </div>
+            
+            <div class="ability-card">
+                <div class="ability-name">Heroic Strike (HS)</div>
+                <div class="ability-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Rage Cost:</span>
+                        <span class="stat-value">15 + auto attack rage</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Attack Type:</span>
+                        <span class="stat-value">Yellow (special)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Glancing:</span>
+                        <span class="stat-value">Cannot glance</span>
+                    </div>
+                </div>
+                <p><strong>Key Features:</strong> Converts your next melee attack to a yellow attack that cannot glance. Does not generate rage, making it primarily a rage dump ability when other abilities are on cooldown.</p>
+            </div>
+            
+            <div class="ability-card">
+                <div class="ability-name">Slam</div>
+                <div class="ability-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Rage Cost:</span>
+                        <span class="stat-value">15 rage</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Cast Time:</span>
+                        <span class="stat-value">1.5s (reduced by talents)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Damage:</span>
+                        <span class="stat-value">Weapon + (AP × speed/14) + 87</span>
+                    </div>
+                </div>
+                <p><strong>Key Features:</strong> Cast time can be reduced by 0.1 seconds per talent point. Particularly effective with slower weapons due to Attack Power scaling. Requires careful timing to avoid clipping auto-attacks.</p>
+            </div>
+            
+            <div class="ability-card">
+                <div class="ability-name">Sunder Armor</div>
+                <div class="ability-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Armor Reduction:</span>
+                        <span class="stat-value">450 per stack</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Maximum Stacks:</span>
+                        <span class="stat-value">5 (2,250 total)</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Duration:</span>
+                        <span class="stat-value">30 seconds</span>
+                    </div>
+                </div>
+                <p><strong>Key Features:</strong> Essential debuff for maximizing physical damage. Priority varies based on raid composition and whether other warriors or rogues can apply it more efficiently.</p>
+            </div>
+            
+            <h2>Rage Generation Mechanics</h2>
+            <div class="formula-box">
+                Rage Generated = (Damage Dealt ÷ Conversion Value) × 15
+            </div>
+            <p>Understanding rage generation is fundamental to managing your rotation effectively. Damage dealt directly correlates to rage generated, with the conversion value varying based on your character level and the target's level.</p>
+            
+            <div class="priority-box">
+                <h3>Ability Priority & Optimization</h3>
+                <p><strong>General Priority System:</strong></p>
+                <ul>
+                    <li><strong>Execute Phase (≤20% HP):</strong> Execute > Bloodthirst > Whirlwind</li>
+                    <li><strong>Multi-Target:</strong> Whirlwind > Bloodthirst > Cleave/Sweeping Strikes</li>
+                    <li><strong>Single Target:</strong> Bloodthirst > Whirlwind > Slam (if talented)</li>
+                    <li><strong>Rage Dump:</strong> Heroic Strike when other abilities are on cooldown</li>
+                </ul>
+                <p><em>Priority should be adjusted based on Damage per Rage (DPR), Attack Power scaling, and encounter-specific requirements.</em></p>
+            </div>
+            
+            <div class="archive-note">
+                <strong>📚 Archived Source:</strong> This page was archived from 
+                <a href="https://bookdown.org/marrowwar/marrow_compendium/abilities.html" target="_blank">Marrow's Compendium of Dragonslaying - Abilities</a> 
+                on August 28, 2025. The original interactive features and live updates are not available in this archived version.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

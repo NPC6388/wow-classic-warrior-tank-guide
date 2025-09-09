@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack power | Vanilla WoW Archive | Fandom</title>
+    <style>
+        /* Fandom wiki theme styling */
+        body {
+            margin: 0;
+            font-family: Rubik, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #222;
+        }
+        .wiki-header {
+            background: #003366;
+            color: white;
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .fandom-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .fandom-brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00d6d6;
+            text-decoration: none;
+        }
+        .wiki-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+        .wiki-nav {
+            background: #eaecf0;
+            border-bottom: 1px solid #a2a9b1;
+            padding: 8px 0;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-content a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .nav-content a:hover {
+            background: #ddd;
+        }
+        .wiki-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #eaecf0;
+            padding-bottom: 5px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar li {
+            margin: 3px 0;
+        }
+        .sidebar a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 20px 25px;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: normal;
+            color: #222;
+            margin: 0 0 5px 0;
+            border-bottom: 3px solid #0645ad;
+            padding-bottom: 5px;
+        }
+        .page-subtitle {
+            font-size: 13px;
+            color: #72777d;
+            margin: 0 0 20px 0;
+        }
+        .breadcrumb {
+            font-size: 12px;
+            color: #72777d;
+            margin: 0 0 15px 0;
+        }
+        .breadcrumb a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            display: inline-block;
+            min-width: 250px;
+        }
+        .toc-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin: 3px 0;
+        }
+        .toc-list a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #222;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 3px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #222;
+            margin: 25px 0 10px 0;
+        }
+        .infobox {
+            width: 300px;
+            float: right;
+            margin: 0 0 15px 15px;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+        }
+        .infobox-header {
+            background: #0645ad;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .infobox-content {
+            padding: 15px;
+        }
+        .infobox table {
+            width: 100%;
+            font-size: 13px;
+        }
+        .infobox td {
+            padding: 3px 5px;
+            border-bottom: 1px solid #eaecf0;
+        }
+        .infobox td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+        .formula-box {
+            background: #f0f8ff;
+            border: 1px solid #b0d4f7;
+            border-left: 4px solid #0645ad;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .note-box {
+            background: #fef6e7;
+            border: 1px solid #fc3;
+            border-left: 4px solid #fc3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        p {
+            margin: 12px 0;
+        }
+        ul {
+            margin: 10px 0 10px 30px;
+        }
+        li {
+            margin: 3px 0;
+        }
+        .archive-notice {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-left: 4px solid #2196f3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 30px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-header">
+        <div class="header-content">
+            <div class="fandom-logo">
+                <a href="#" class="fandom-brand">FANDOM</a>
+                <a href="#" class="wiki-name">Vanilla WoW Archive</a>
+            </div>
+            <div>
+                <input type="search" placeholder="Search this wiki" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="wiki-nav">
+        <div class="nav-content">
+            <a href="#">Main Page</a>
+            <a href="#">Classes</a>
+            <a href="#">Mechanics</a>
+            <a href="#">Items</a>
+            <a href="#">Spells</a>
+            <a href="#">Recent Changes</a>
+        </div>
+    </div>
+    
+    <div class="wiki-container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#">Main page</a></li>
+                <li><a href="#">Random article</a></li>
+                <li><a href="#">Recent changes</a></li>
+            </ul>
+            
+            <h3>Game Mechanics</h3>
+            <ul>
+                <li><a href="#">Combat</a></li>
+                <li><a href="vanilla_wow_attack_power.html">Attack power</a></li>
+                <li><a href="#">Critical strike</a></li>
+                <li><a href="#">Hit rating</a></li>
+                <li><a href="wowpedia_weapon_skill.html">Weapon skill</a></li>
+            </ul>
+            
+            <h3>Classes</h3>
+            <ul>
+                <li><a href="#">Warrior</a></li>
+                <li><a href="#">Paladin</a></li>
+                <li><a href="#">Hunter</a></li>
+                <li><a href="#">Rogue</a></li>
+                <li><a href="#">Priest</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="breadcrumb">
+                <a href="#">Vanilla WoW Archive</a> > <a href="#">Game mechanics</a> > Attack power
+            </div>
+            
+            <h1 class="page-title">Attack power</h1>
+            <div class="page-subtitle">From Vanilla WoW Archive</div>
+            
+            <div class="infobox">
+                <div class="infobox-header">Attack Power</div>
+                <div class="infobox-content">
+                    <table>
+                        <tr><td>Type</td><td>Combat statistic</td></tr>
+                        <tr><td>Affects</td><td>Melee damage</td></tr>
+                        <tr><td>Formula</td><td>+1 DPS per 14 AP</td></tr>
+                        <tr><td>Sources</td><td>Strength, Agility, items</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="toc">
+                <div class="toc-title">Contents</div>
+                <ol class="toc-list">
+                    <li><a href="#overview">1 Overview</a></li>
+                    <li><a href="#mechanics">2 Core Mechanics</a></li>
+                    <li><a href="#scaling">3 Stat Scaling</a></li>
+                    <li><a href="#ranged">4 Ranged Attack Power</a></li>
+                    <li><a href="#dual-wield">5 Dual Wielding</a></li>
+                </ol>
+            </div>
+            
+            <h2 id="overview">Overview</h2>
+            <p><strong>Attack power</strong> is a derived combat statistic that directly increases the damage of melee attacks and many special abilities. It represents a character's physical prowess in combat and scales with various primary stats depending on class.</p>
+            
+            <h2 id="mechanics">Core Mechanics</h2>
+            <p>Attack power directly modifies a character's damage per second (DPS) output through a standardized conversion rate.</p>
+            
+            <div class="formula-box">
+                <strong>Base Formula:</strong><br>
+                DPS Increase = Attack Power ÷ 14<br><br>
+                <strong>Damage Calculation:</strong><br>
+                Total Damage = (Weapon DPS + AP/14) × Weapon Speed
+            </div>
+            
+            <div class="note-box">
+                <strong>Important:</strong> Every 14 points of attack power increases your damage per second by exactly 1 point, regardless of weapon type or class.
+            </div>
+            
+            <h2 id="scaling">Attack Power Scaling by Stat and Class</h2>
+            
+            <h3>Strength Conversions</h3>
+            <p>The conversion rate from Strength to Attack Power varies significantly by class:</p>
+            <ul>
+                <li><strong>Warriors, Paladins, Druids:</strong> 2 AP per 1 Strength</li>
+                <li><strong>Rogues, Shamans, Hunters:</strong> 1 AP per 1 Strength</li>
+                <li><strong>Priests, Mages, Warlocks:</strong> 1 AP per 1 Strength (rarely relevant)</li>
+            </ul>
+            
+            <h3>Agility Conversions</h3>
+            <p>Agility provides Attack Power for specific classes that rely on finesse over brute strength:</p>
+            <ul>
+                <li><strong>Rogues:</strong> 1 AP per 1 Agility</li>
+                <li><strong>Hunters:</strong> 1 AP per 1 Agility</li>
+                <li><strong>Shamans:</strong> 1 AP per 1 Agility</li>
+                <li><strong>Druids (Cat Form):</strong> 1 AP per 1 Agility</li>
+                <li><strong>Other classes:</strong> No melee AP from Agility</li>
+            </ul>
+            
+            <h2 id="ranged">Ranged Attack Power (RAP)</h2>
+            <p>Ranged Attack Power functions similarly to melee attack power but applies to ranged weapons and abilities:</p>
+            
+            <div class="formula-box">
+                <strong>RAP Conversion:</strong><br>
+                1 Agility = 1 Ranged Attack Power (all classes)
+            </div>
+            
+            <p><strong>Classes that benefit from RAP:</strong></p>
+            <ul>
+                <li><strong>Hunters:</strong> Primary ranged DPS class, RAP is crucial</li>
+                <li><strong>Rogues:</strong> Throwing weapons and some abilities</li>
+                <li><strong>Warriors:</strong> Thrown weapons and ranged pulling</li>
+            </ul>
+            
+            <h2 id="dual-wield">Dual Wielding Mechanics</h2>
+            <p>When dual wielding, the off-hand weapon suffers a damage penalty but still benefits from Attack Power:</p>
+            
+            <div class="formula-box">
+                <strong>Off-hand Damage Formula:</strong><br>
+                Off-hand Damage = [(Weapon DPS + AP/14) × Weapon Speed] × 0.5
+            </div>
+            
+            <p>This means that while off-hand weapons deal 50% damage, they receive the full benefit of Attack Power before the penalty is applied.</p>
+            
+            <h2>Special Ability Scaling</h2>
+            <p>Many class abilities incorporate Attack Power into their damage calculations:</p>
+            <ul>
+                <li><strong>Percentage scaling:</strong> Abilities like Bloodthirst add a percentage of AP to their damage</li>
+                <li><strong>Fixed scaling:</strong> Some abilities add a flat amount based on AP</li>
+                <li><strong>Weapon normalization:</strong> Instant attacks use normalized weapon speeds for AP calculations</li>
+            </ul>
+            
+            <div class="note-box">
+                <strong>Timing Note:</strong> Attack Power bonuses are calculated and applied before attack speed modifications from items, abilities, or talents.
+            </div>
+            
+            <div class="archive-notice">
+                <strong>📚 Archived Wiki Article:</strong> This article was archived from 
+                <a href="https://vanilla-wow-archive.fandom.com/wiki/Attack_power" target="_blank">Vanilla WoW Archive on Fandom</a> 
+                on August 28, 2025. The original wiki may contain additional information, recent edits, and community discussions.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

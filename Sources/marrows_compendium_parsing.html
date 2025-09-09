@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing - Marrow's Compendium of Dragonslaying</title>
+    <style>
+        /* GitBook-style theme matching original */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        .gitbook-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 300px;
+            background: #fff;
+            border-right: 1px solid #e6e6e6;
+            padding: 0;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #e6e6e6;
+            background: #f7f7f7;
+        }
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            text-decoration: none;
+        }
+        .sidebar-nav {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 12px 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .sidebar-nav a:hover {
+            background: #f0f4f8;
+            color: #2e7bcf;
+        }
+        .sidebar-nav a.active {
+            background: #f0f4f8;
+            color: #2e7bcf;
+        }
+        .content {
+            flex: 1;
+            padding: 40px 60px;
+            background: #fff;
+            max-width: none;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+            color: #333;
+            margin: 0 0 20px 0;
+            border-bottom: 3px solid #2e7bcf;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #2e7bcf;
+            margin: 40px 0 20px 0;
+        }
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #555;
+            margin: 30px 0 15px 0;
+        }
+        .parse-overview {
+            background: #e8f4fd;
+            border: 1px solid #d1ecf1;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #2e7bcf;
+        }
+        .factor-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .factor-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2e7bcf;
+            margin: 0 0 15px 0;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric-item {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            text-align: center;
+            border-left: 3px solid #2e7bcf;
+        }
+        .metric-name {
+            font-weight: 600;
+            color: #2e7bcf;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .metric-desc {
+            font-size: 12px;
+            color: #666;
+        }
+        .caveat-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #f4bf2a;
+        }
+        .relevance-box {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .download-links {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e8f4fd;
+            border-radius: 4px;
+        }
+        .download-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #2e7bcf;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .archive-note {
+            margin-top: 40px;
+            padding: 15px;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            color: #856404;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gitbook-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">Marrow's Compendium</h1>
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                    by Marrow, Heartseeker-US<br>
+                    Updated: July 9, 2020
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="marrows_compendium_index.html">Table of Contents</a></li>
+                <li><a href="marrows_compendium_intro.html">Introduction</a></li>
+                <li><a href="marrows_compendium_mechanics.html">Mechanics</a></li>
+                <li><a href="marrows_compendium_abilities.html">Abilities & Rotation</a></li>
+                <li><a href="marrows_compendium_cooldowns.html">Cooldowns</a></li>
+                <li><a href="marrows_compendium_parsing.html" class="active">Parsing</a></li>
+                <li><a href="marrows_compendium_references.html">References</a></li>
+            </ul>
+            
+            <div class="download-links">
+                <strong style="display: block; margin-bottom: 10px; color: #333;">Download:</strong>
+                <a href="#">📄 PDF</a>
+                <a href="#">📱 EPUB</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h1>Parsing & Performance Analysis</h1>
+            
+            <div class="parse-overview">
+                <h3>Understanding Parse Analysis</h3>
+                <p>Parsing involves comparing your individual performance against other uploaded combat logs on Warcraft Logs. This creates a percentile ranking system that helps identify areas for improvement and benchmark your performance against the broader player base.</p>
+                <ul>
+                    <li><strong>Historic Parses:</strong> Compare against all-time uploaded logs</li>
+                    <li><strong>Current Parses:</strong> Compare against logs from the latest raid lockout period</li>
+                </ul>
+            </div>
+            
+            <h2>Major Factors Affecting Parse Performance</h2>
+            
+            <div class="factor-card">
+                <div class="factor-title">1. World Buffs</div>
+                <p><strong>Impact Level: Critical</strong></p>
+                <ul>
+                    <li>Provide <strong>massive stat boosts</strong> that often exceed gear improvements</li>
+                    <li>Essential for achieving high percentile parses (95th+ percentile)</li>
+                    <li><strong>Key World Buffs:</strong>
+                        <ul>
+                            <li>Rallying Cry of the Dragonslayer (+140 AP)</li>
+                            <li>Spirit of Zandalar (+30 all stats)</li>
+                            <li>Songflower Serenade (+15 stats, +5% crit)</li>
+                            <li>Dire Maul Tribute buffs</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><em>World buffs can represent 20-30% of your total DPS potential, making them non-optional for serious parsing.</em></p>
+            </div>
+            
+            <div class="factor-card">
+                <div class="factor-title">2. Guild Performance & Kill Times</div>
+                <p><strong>Impact Level: High</strong></p>
+                <ul>
+                    <li><strong>Guild DPS</strong> significantly impacts your individual parse potential</li>
+                    <li><strong>Kill time optimization</strong> affects cooldown usage efficiency</li>
+                    <li><strong>Raid composition</strong> influences buff availability and debuff slots</li>
+                    <li><strong>Execution quality</strong> determines boss uptime and damage windows</li>
+                </ul>
+                <p><em>Your parse is heavily dependent on your team's ability to create optimal DPS windows.</em></p>
+            </div>
+            
+            <h2>Self-Evaluation Metrics</h2>
+            <p>Focus on these quantifiable metrics to identify improvement opportunities:</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <div class="metric-name">Bloodthirst CPM</div>
+                    <div class="metric-desc">Casts per minute - measures rotation efficiency</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-name">Boss Uptime</div>
+                    <div class="metric-desc">Percentage of fight spent in melee range</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-name">Cooldown Timing</div>
+                    <div class="metric-desc">Optimal usage of Death Wish/Recklessness</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-name">Mobility Usage</div>
+                    <div class="metric-desc">Effective use of Charge/Intercept</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-name">Rage Efficiency</div>
+                    <div class="metric-desc">Minimizing rage waste and downtime</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-name">Execute Phase</div>
+                    <div class="metric-desc">DPS during final 20% of boss health</div>
+                </div>
+            </div>
+            
+            <h2>Advanced Analysis Techniques</h2>
+            <ul>
+                <li><strong>Compare Similar Encounters:</strong> Analyze logs from fights with similar kill times and compositions</li>
+                <li><strong>Examine High Parsers:</strong> Study the rotations and timings of top performers</li>
+                <li><strong>Track Improvement:</strong> Monitor key metrics across multiple raids to identify trends</li>
+                <li><strong>Context Matters:</strong> Consider fight mechanics, role assignments, and raid strategy</li>
+            </ul>
+            
+            <div class="caveat-box">
+                <h3>Important Statistical Caveat</h3>
+                <p><strong>Warcraft Logs Selection Bias:</strong> Parse percentiles likely <em>underestimate</em> your actual performance because:</p>
+                <ul>
+                    <li>Not all guilds upload combat logs (selection bias toward more serious players)</li>
+                    <li>Casual players are underrepresented in the data</li>
+                    <li>The distribution is right-skewed toward higher performance</li>
+                </ul>
+                <p><em>A 70th percentile parse on Warcraft Logs likely represents much higher performance relative to the entire player base.</em></p>
+            </div>
+            
+            <div class="relevance-box">
+                <h3>When Parsing Matters</h3>
+                <p>Parse analysis is most valuable for:</p>
+                <ul>
+                    <li><strong>Competitive raiders</strong> seeking guild recruitment or role optimization</li>
+                    <li><strong>Hardcore players</strong> pursuing server-first achievements or speed runs</li>
+                    <li><strong>Self-improvement focused players</strong> who want to maximize their class potential</li>
+                    <li><strong>Theorycrafters</strong> testing rotation optimization and gear choices</li>
+                </ul>
+                <p><em>Remember: parsing is a tool for improvement, not an end goal. Focus on contributing to your team's success above personal parse rankings.</em></p>
+            </div>
+            
+            <div class="archive-note">
+                <strong>📚 Archived Source:</strong> This page was archived from 
+                <a href="https://bookdown.org/marrowwar/marrow_compendium/parsing.html" target="_blank">Marrow's Compendium of Dragonslaying - Parsing</a> 
+                on August 28, 2025. The original interactive features and live updates are not available in this archived version.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

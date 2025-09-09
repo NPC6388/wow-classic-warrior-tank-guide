@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defense - Wowpedia</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .wiki-header {
+            background: #004d99;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .wiki-title {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        .wiki-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .section h3 {
+            color: #0066cc;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .mechanics-box {
+            background: #e8f4fd;
+            border: 1px solid #b3d9ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .formula {
+            background: #f0f0f0;
+            border-left: 4px solid #004d99;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        .stat-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .stat-table th, .stat-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .stat-table th {
+            background-color: #004d99;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-header">
+        <h1 class="wiki-title">Defense</h1>
+        <p>Archived from Wowpedia - World of Warcraft Defense Mechanics</p>
+    </div>
+    
+    <div class="wiki-content">
+        <div class="section">
+            <h2>Overview</h2>
+            <p>Defense was an attribute in World of Warcraft that helped prevent physical damage by reducing the chance to be hit or critically hit, while increasing block, dodge, and parry chances.</p>
+            
+            <div class="mechanics-box">
+                <h3>Core Mechanics</h3>
+                <p>Each point of Defense provided the following benefits:</p>
+                <ul>
+                    <li><strong>+0.04% chance to be missed</strong></li>
+                    <li><strong>+0.04% chance to dodge</strong></li>
+                    <li><strong>+0.04% chance to parry</strong></li>
+                    <li><strong>+0.04% chance to block</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Critical Hit Immunity</h2>
+            <p>One of the most important aspects of the Defense stat for tanks was achieving critical hit immunity against raid bosses.</p>
+            
+            <div class="mechanics-box">
+                <h3>Level 80 Requirements</h3>
+                <p>At level 80, players needed:</p>
+                <ul>
+                    <li><strong>540 Defense skill total</strong> to become immune to critical hits from raid bosses</li>
+                    <li>This required <strong>140 additional Defense skill from gear</strong> (base 400 + 140 = 540)</li>
+                    <li>Alternatively, players could use <strong>Resilience</strong> to achieve the same effect</li>
+                </ul>
+            </div>
+
+            <div class="formula">
+                Defense Requirement = Base Defense (400) + 140 from gear = 540 Total Defense
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Historical Context</h2>
+            
+            <div class="warning">
+                <h3>Removal in Cataclysm</h3>
+                <p><strong>Defense was removed in Patch 4.0.1</strong> as part of Blizzard's effort to "simplify statistics" for the Cataclysm expansion.</p>
+            </div>
+
+            <h3>Replacement Mechanics</h3>
+            <p>After the removal of Defense, tanking classes became crit-immune through specific class abilities:</p>
+            
+            <table class="stat-table">
+                <tr>
+                    <th>Class</th>
+                    <th>Ability</th>
+                    <th>Effect</th>
+                </tr>
+                <tr>
+                    <td>Protection Warrior</td>
+                    <td>Defensive Stance</td>
+                    <td>Provides crit immunity</td>
+                </tr>
+                <tr>
+                    <td>Blood Death Knight</td>
+                    <td>Blood Presence</td>
+                    <td>Provides crit immunity</td>
+                </tr>
+                <tr>
+                    <td>Guardian Druid</td>
+                    <td>Bear Form</td>
+                    <td>Provides crit immunity</td>
+                </tr>
+                <tr>
+                    <td>Protection Paladin</td>
+                    <td>Righteous Fury</td>
+                    <td>Provides crit immunity</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Formulas and Calculations</h2>
+            <p>The Defense system used specific formulas to calculate avoidance chances:</p>
+            
+            <div class="formula">
+                Miss Chance = Base Miss + (Defense - Target_Level * 5) * 0.04%
+                <br>
+                Dodge Chance = Base Dodge + (Defense - Target_Level * 5) * 0.04%
+                <br>
+                Parry Chance = Base Parry + (Defense - Target_Level * 5) * 0.04%
+                <br>
+                Block Chance = Base Block + (Defense - Target_Level * 5) * 0.04%
+            </div>
+            
+            <p>These formulas provided detailed calculations for how Defense skill affected various avoidance mechanics throughout different expansions of World of Warcraft.</p>
+        </div>
+
+        <div class="section">
+            <h2>Legacy Impact</h2>
+            <p>Defense was a crucial stat that defined tanking gameplay for several expansions. Its removal marked a significant shift in how tanking mechanics were designed, moving toward more active mitigation systems rather than passive avoidance statistics.</p>
+        </div>
+    </div>
+</body>
+</html>

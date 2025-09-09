@@ -1,0 +1,42 @@
+https://bookdown.org/marrowwar/marrow_compendium/
+https://www.wowhead.com/classic/guide/threat-overview-classic-wow#threat-modifier-abilities-and-values-warrior
+https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-stat-priority-attributes-pve
+https://www.reddit.com/r/classicwow/comments/abt0kk/dual_wield_vs_2h_while_leveling_with_math/
+https://old.reddit.com/r/classicwow/comments/abquok/warrior_dual_wielding/ed2oog9/
+https://www.icy-veins.com/wow-classic/warrior-dps-pve-stat-priority
+https://vanilla-wow-archive.fandom.com/wiki/Attack_power
+https://wowpedia.fandom.com/wiki/Defense
+https://rankedboost.com/world-of-warcraft/classic-stats/
+https://guybrushgit.github.io/WarriorSim/classic.html
+https://legend-law-cc0.notion.site/Classic-Era-Warrior-Tanking-Guide-8e022e4a021b42eb8436a853a4fa7aa8
+https://www.reddit.com/r/classicwow/comments/inr1a6/explain_crit_cap_for_warrior_on_a_boss_please/
+https://www.wowhead.com/classic/guide/threat-overview-classic-wow#threat-generation-reduction-abilities-values
+https://github.com/magey/classic-warrior/wiki/Attack-table
+https://web.archive.org/web/20061109035416/http://evilempireguild.org/guides/crushing.php
+https://web.archive.org/web/20061109034808/http://evilempireguild.org/guides/block.php
+https://web.archive.org/web/20070105001918/http://evilempireguild.org/guides/crushblock.php
+https://web.archive.org/web/20070105001726/http://evilempireguild.org/guides/acstamina.php
+https://web.archive.org/web/20070103090457/http://evilempireguild.org/guides/defense.php
+https://web.archive.org/web/20070105001835/http://evilempireguild.org/guides/attacks.php
+https://web.archive.org/web/20070105001622/http://evilempireguild.org/guides/formulas.php
+https://web.archive.org/web/20070105001716/http://evilempireguild.org/guides/crittable.php
+https://web.archive.org/web/20070105001532/http://evilempireguild.org/guides/diminishing.php
+https://web.archive.org/web/20070105001816/http://evilempireguild.org/guides/glancing.php
+https://www.reddit.com/r/classicwow/comments/djdquy/melee_damage_and_you_a_comprehensive_overview_of/
+https://wowpedia.fandom.com/wiki/Attack_table
+https://vanilla-wow-archive.fandom.com/wiki/Attack_table
+https://wowpedia.fandom.com/wiki/Attack_table
+https://forums.askmrrobot.com/t/hit-rating-and-hit-caps-in-wow-classic/8614
+https://vanilla-wow-archive.fandom.com/wiki/Armor
+https://wowpedia.fandom.com/wiki/Damage_reduction
+https://us.forums.blizzard.com/en/wow/t/the-armor-cap/318067/2
+https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-consumables-raid-buffs-pve
+
+2h fury build:
+https://classicdb.ch/?talent=#LhhxzIbZVxzVMxkVo
+
+dw fury build:
+https://classicdb.ch/?talent=#LhhxzhbZVxzmgxoVo
+
+fury prot build:
+https://classicdb.ch/?talent=#LZVxzVxxoVoxwzox

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Overview - Classic WoW - Wowhead</title>
+    <style>
+        /* Wowhead theme styling */
+        body {
+            margin: 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            background: #000;
+            color: #f0f0f0;
+        }
+        .header {
+            background: linear-gradient(to bottom, #2d2d2d, #1a1a1a);
+            border-bottom: 2px solid #f4bf2a;
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            background: #f4bf2a;
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 15px;
+            margin-right: 20px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .nav-links a:hover {
+            background: #333;
+            color: #f4bf2a;
+        }
+        .breadcrumb {
+            background: #1a1a1a;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 11px;
+        }
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #f4bf2a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            color: #f4bf2a;
+            font-size: 12px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar li {
+            margin: 5px 0;
+        }
+        .sidebar a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 11px;
+        }
+        .sidebar a:hover {
+            color: #f4bf2a;
+        }
+        .main-content {
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 25px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4bf2a;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .guide-nav {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+        .guide-nav a {
+            color: #f4bf2a;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+        .guide-nav a:hover, .guide-nav a.active {
+            background: #f4bf2a;
+            color: #000;
+        }
+        h2 {
+            color: #f4bf2a;
+            font-size: 16px;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #ddd;
+            font-size: 14px;
+            margin: 25px 0 10px 0;
+        }
+        p {
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        ul {
+            margin: 12px 0 12px 20px;
+        }
+        li {
+            margin: 6px 0;
+        }
+        strong {
+            color: #f4bf2a;
+        }
+        .ability-table {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .ability-table th {
+            background: #f4bf2a;
+            color: #000;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .ability-table td {
+            padding: 8px;
+            border-bottom: 1px solid #333;
+            font-size: 11px;
+        }
+        .quote {
+            background: #2a2a2a;
+            border-left: 4px solid #f4bf2a;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .archive-notice {
+            background: #1a2b1a;
+            border: 1px solid #4a5f4a;
+            color: #90ee90;
+            padding: 15px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Wowhead</a>
+            <div class="nav-links">
+                <a href="#">Database</a>
+                <a href="#">Guides</a>
+                <a href="#">News</a>
+                <a href="#">Tools</a>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="#">Home</a> › <a href="#">Classic</a> › <a href="#">Guides</a> › Threat Overview
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h3>Classic Guides</h3>
+            <ul>
+                <li><a href="#">Threat Overview</a></li>
+                <li><a href="#">Dungeon Guides</a></li>
+                <li><a href="#">Raid Guides</a></li>
+                <li><a href="#">Class Guides</a></li>
+                <li><a href="#">PvP Guides</a></li>
+            </ul>
+            
+            <h3>Warrior Guides</h3>
+            <ul>
+                <li><a href="wowhead_threat_overview.html">Threat Overview</a></li>
+                <li><a href="wowhead_fury_warrior_guide.html">Fury DPS Guide</a></li>
+                <li><a href="#">Protection Guide</a></li>
+                <li><a href="#">Arms PvP Guide</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="page-title">Threat Overview - Classic WoW</h1>
+            
+            <div class="guide-nav">
+                <a href="#" class="active">Threat Basics</a>
+                <a href="#">Warrior Threat</a>
+                <a href="#">Other Classes</a>
+                <a href="#">Threat Modifiers</a>
+            </div>
+            
+            <h2>Threat Generation Basics</h2>
+            <p>Threat is the underlying mechanic that determines which player a mob will attack. Understanding threat generation is crucial for successful group and raid encounters.</p>
+            
+            <ul>
+                <li><strong>Damage generates threat at a 1:1 ratio</strong> - 100 damage = 100 threat</li>
+                <li><strong>Healing generates threat at a 1:0.25 ratio</strong> - 100 healing = 25 threat (no overhealing)</li>
+                <li><strong>Resource gains generate threat differently:</strong>
+                    <ul>
+                        <li>Mana: 1:0.5 ratio (100 mana = 50 threat)</li>
+                        <li>Rage: 5:1 ratio (50 rage = 250 threat, static unmodified)</li>
+                        <li>Energy: 5:1 ratio</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h2>Warrior Threat Mechanics</h2>
+            <p>Warriors have unique threat generation mechanics based on their stance:</p>
+            
+            <ul>
+                <li><strong>Defensive Stance:</strong> 130% base threat (149.5% with 5/5 Defiance talent)</li>
+                <li><strong>Battle/Berserker Stances:</strong> 80% base threat</li>
+            </ul>
+            
+            <h3>Warrior Threat-Generating Abilities</h3>
+            <div class="ability-table">
+                <table width="100%" cellspacing="0">
+                    <tr>
+                        <th>Ability</th>
+                        <th>Base Threat</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Sunder Armor (Rank 5)</strong></td>
+                        <td>260 threat</td>
+                        <td>Stacks up to 5 times, reduces armor</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shield Slam (Rank 4)</strong></td>
+                        <td>250 threat</td>
+                        <td>Requires shield, dispels magic effect</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Revenge (Rank 5)</strong></td>
+                        <td>315 threat</td>
+                        <td>Only usable after dodge/parry/block</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Heroic Strike (Rank 9)</strong></td>
+                        <td>175 threat</td>
+                        <td>Next melee attack, prevents dual-wield miss</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h2>Threat Reduction Modifiers</h2>
+            <p>Several abilities and effects can reduce threat generation:</p>
+            
+            <ul>
+                <li><strong>Blessing of Salvation (Paladin):</strong> Reduces all threat by 30%</li>
+                <li><strong>Tranquil Air Totem (Shaman):</strong> Reduces party threat by 20%</li>
+                <li><strong>Feint (Rogue):</strong> Reduces threat temporarily</li>
+                <li><strong>Fade (Priest):</strong> Reduces threat temporarily</li>
+            </ul>
+            
+            <div class="quote">
+                <strong>Key Principle:</strong> "Threat is a damage ceiling - the higher a tank's TPS is, the higher a party/raid's DPS can be."
+            </div>
+            
+            <h2>Threat Management Strategy</h2>
+            <ul>
+                <li>Tanks should focus on maximizing threat per second (TPS)</li>
+                <li>DPS players need to monitor their threat relative to the tank</li>
+                <li>Melee DPS need 110% of tank threat to pull aggro</li>
+                <li>Ranged DPS need 130% of tank threat to pull aggro</li>
+                <li>Use threat reduction abilities when approaching the threat ceiling</li>
+            </ul>
+            
+            <div class="archive-notice">
+                <strong>📖 Archived Wowhead Guide:</strong> This guide was archived from 
+                <a href="https://www.wowhead.com/classic/guide/threat-overview-classic-wow#threat-modifier-abilities-and-values-warrior" target="_blank" style="color: #90ee90;">Wowhead's Classic Threat Overview</a> 
+                on August 28, 2025. For the most current information, visit the live guide.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

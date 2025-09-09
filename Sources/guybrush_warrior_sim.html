@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarriorSim Classic - Guybrush's DPS Simulator</title>
+    <style>
+        /* Clean simulator interface theme */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a5568;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sim-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(45deg, #4299e1, #667eea);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .hero-title {
+            font-size: 42px;
+            font-weight: bold;
+            color: #2d3748;
+            margin: 0 0 15px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .hero-subtitle {
+            font-size: 18px;
+            color: #718096;
+            margin: 0 0 30px 0;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4299e1, #667eea);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: white;
+        }
+        .feature-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2d3748;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list li::before {
+            content: '✓';
+            color: #48bb78;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .sim-interface {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        .interface-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        .interface-demo {
+            background: #f7fafc;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: #718096;
+            font-style: italic;
+        }
+        .cta-section {
+            background: linear-gradient(45deg, #4299e1, #667eea);
+            color: white;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        .archive-notice {
+            background: rgba(255, 243, 205, 0.95);
+            backdrop-filter: blur(10px);
+            border: 2px solid #f6e05e;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+            color: #744210;
+        }
+        .archive-notice a {
+            color: #744210;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <div class="sim-icon">W</div>
+                WarriorSim Classic
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#interface">Interface</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-section">
+            <h1 class="hero-title">Guybrush's Warrior DPS Simulator</h1>
+            <p class="hero-subtitle">Comprehensive DPS simulation and optimization tool for World of Warcraft Classic warriors</p>
+            <div class="interface-demo">
+                Interactive simulation interface would be displayed here
+            </div>
+        </div>
+        
+        <div class="feature-grid" id="features">
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3 class="feature-title">Simulation Settings</h3>
+                <ul class="feature-list">
+                    <li>Configurable character level (1-60)</li>
+                    <li>Target level selection and scaling</li>
+                    <li>Full race selection (8 races available)</li>
+                    <li>Adjustable fight duration</li>
+                    <li>Initial rage configuration</li>
+                    <li>Target armor and resistance settings</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Comprehensive Stat Tracking</h3>
+                <ul class="feature-list">
+                    <li>Attack Power calculation</li>
+                    <li>Strength and Agility optimization</li>
+                    <li>Hit chance analysis</li>
+                    <li>Critical strike probability</li>
+                    <li>Weapon skill ratings</li>
+                    <li>Damage percentage modifiers</li>
+                    <li>Attack speed and haste effects</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚔️</div>
+                <h3 class="feature-title">Advanced Combat Mechanics</h3>
+                <ul class="feature-list">
+                    <li>Weapon type filtering and optimization</li>
+                    <li>Complete gear slot management</li>
+                    <li>Flexible talent point allocation</li>
+                    <li>Spell batching simulation</li>
+                    <li>Reaction time modeling</li>
+                    <li>Bleed damage calculations</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="sim-interface" id="interface">
+            <h2 class="interface-title">Simulator Interface</h2>
+            <div class="interface-demo">
+                <p><strong>Interactive DPS Simulation Tool</strong></p>
+                <p>The full simulator interface provides real-time DPS calculations, rotation optimization,<br>
+                and detailed performance metrics for Classic WoW warrior optimization.</p>
+            </div>
+        </div>
+        
+        <div class="cta-section" id="about">
+            <h2 class="cta-title">Classic WoW Warrior Optimization</h2>
+            <p>This simulator is specifically designed for World of Warcraft Classic, featuring accurate combat mechanics, detailed statistical analysis, and comprehensive warrior DPS optimization tools.</p>
+            <a href="#" class="cta-button">Launch Simulator</a>
+        </div>
+        
+        <div class="archive-notice">
+            <strong>💻 Archived Simulator Tool:</strong> This simulator interface was archived from 
+            <a href="https://guybrushgit.github.io/WarriorSim/classic.html" target="_blank">Guybrush's WarriorSim Classic</a> 
+            on August 28, 2025. Visit the original link to access the interactive simulation tools and real-time calculations.
+        </div>
+    </div>
+</body>
+</html>

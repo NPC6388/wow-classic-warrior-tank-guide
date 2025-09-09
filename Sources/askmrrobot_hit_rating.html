@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hit Rating and Hit Caps in WoW Classic - Ask Mr. Robot</title>
+    <style>
+        /* Ask Mr. Robot forum theme */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            background: #f8f9fa;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(to bottom, #4a90e2, #357abd);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 30px;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: white;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .topic-header {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .topic-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
+        .topic-meta {
+            color: #6c757d;
+            font-size: 13px;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .post-content {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            line-height: 1.6;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4a90e2;
+        }
+        h3 {
+            color: #34495e;
+            font-size: 18px;
+            margin: 25px 0 12px 0;
+        }
+        .formula-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-left: 4px solid #4a90e2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 13px;
+        }
+        .highlight-box {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 6px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 18px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        .archive-banner {
+            background: #17a2b8;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .archive-banner a {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Ask Mr. Robot</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Forums</a>
+                <a href="#">Guides</a>
+                <a href="#">Tools</a>
+                <a href="#">Community</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="archive-banner">
+            📋 Archived Forum Discussion - 
+            <a href="https://forums.askmrrobot.com/t/hit-rating-and-hit-caps-in-wow-classic/8614" target="_blank">View Original Thread</a>
+        </div>
+        
+        <div class="topic-header">
+            <h1 class="topic-title">Hit Rating and Hit Caps in WoW Classic</h1>
+            <div class="topic-meta">
+                Category: WoW Classic Discussion • Originally posted on Ask Mr. Robot Forums
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h2>Hit Rating Mechanics Against Level 63 Raid Bosses</h2>
+            <p>Understanding hit mechanics is crucial for DPS optimization in Classic WoW. Against level 63 raid bosses, the following avoidance chances apply:</p>
+            
+            <ul>
+                <li><strong>8% miss chance</strong> for special "yellow" attacks</li>
+                <li><strong>8% miss chance</strong> for melee auto attacks (non-dual wielding)</li>
+                <li><strong>26.4% miss chance</strong> for dual-wielding melee auto attacks</li>
+                <li><strong>6.5% dodge chance</strong></li>
+                <li><strong>14% parry chance</strong> (when attacking from front)</li>
+                <li><strong>5% block chance</strong> (when attacking from front)</li>
+                <li><strong>16% miss chance</strong> for spells</li>
+            </ul>
+            
+            <h2>Key Hit Rating Calculations</h2>
+            <ul>
+                <li>The first 1% hit is ignored if boss defense is more than 10 points above your weapon skill</li>
+                <li>Weapon skill directly impacts both miss and dodge chances</li>
+                <li>The commonly cited 9% "hit cap" is not a hard cap - it's the effective soft cap</li>
+            </ul>
+            
+            <h2>Weapon Skill Impact Formula</h2>
+            <div class="formula-block">
+                <strong>Miss Chance Calculation:</strong><br><br>
+                skillDifference = Target Defense - Your Weapon Skill<br><br>
+                if (skillDifference > 10) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;missChance = 5 + (skillDifference * 0.2)<br>
+                } else {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;missChance = 5 + (skillDifference * 0.1)<br>
+                }
+            </div>
+            
+            <h2>Practical Example</h2>
+            <div class="highlight-box">
+                <h3>Dual-Wield Fury Warrior Analysis</h3>
+                <p><strong>Setup:</strong> 305 weapon skill, 5% hit rating</p>
+                <ul>
+                    <li>Effective Miss Chance: 6% - 5% = <strong>1%</strong></li>
+                    <li>Dodge Chance: <strong>6.0%</strong></li>
+                    <li><strong>Total Attack Avoidance: 7.0%</strong></li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <strong>⚠️ Important Insight:</strong> Even at the theoretical "hit cap," you will not achieve 100% attack success due to dodge, parry, and block mechanics that exist independently of hit rating.
+            </div>
+            
+            <h2>Optimization Recommendations</h2>
+            <ul>
+                <li>Prioritize weapon skill to 305 before stacking hit rating</li>
+                <li>Understand that hit rating has diminishing returns after certain thresholds</li>
+                <li>Consider positioning (attacking from behind) to eliminate parry</li>
+                <li>Account for different caps between yellow and white attacks</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

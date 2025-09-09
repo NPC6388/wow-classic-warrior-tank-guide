@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Table - Wowpedia</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .wiki-header {
+            background: #004d99;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .wiki-title {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        .wiki-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #004d99;
+            border-bottom: 2px solid #004d99;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .section h3 {
+            color: #0066cc;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .mechanics-box {
+            background: #e8f4fd;
+            border: 1px solid #b3d9ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .formula {
+            background: #f0f0f0;
+            border-left: 4px solid #004d99;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .attack-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .attack-table th, .attack-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        .attack-table th {
+            background-color: #004d99;
+            color: white;
+        }
+        .priority-order {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .priority-order ol li {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+        .important-note {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-header">
+        <h1 class="wiki-title">Attack Table</h1>
+        <p>Archived from Wowpedia - World of Warcraft Attack Resolution System</p>
+    </div>
+    
+    <div class="wiki-content">
+        <div class="section">
+            <h2>Overview</h2>
+            <p>The Attack Table is a server-side mechanism that determines the outcome of melee and ranged attacks in World of Warcraft. It uses a single server-generated random number to resolve attack results in a specific order of precedence.</p>
+            
+            <div class="mechanics-box">
+                <h3>Key Characteristics</h3>
+                <ul>
+                    <li><strong>Single Random Roll:</strong> Uses one server-generated random number per attack</li>
+                    <li><strong>Descending Precedence:</strong> Results are resolved in a specific order</li>
+                    <li><strong>Mutually Exclusive:</strong> Only one result can occur per attack</li>
+                    <li><strong>Absolute Percentages:</strong> Chances are not relative to each other</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Attack Resolution Order</h2>
+            <div class="priority-order">
+                <h3>Melee/Ranged Attack Precedence (Descending Order):</h3>
+                <ol>
+                    <li>Miss</li>
+                    <li>Dodge</li>
+                    <li>Parry</li>
+                    <li>Glancing Blow</li>
+                    <li>Block</li>
+                    <li>Critical Strike</li>
+                    <li>Crushing Blow</li>
+                    <li>Ordinary Hit</li>
+                </ol>
+            </div>
+            
+            <div class="important-note">
+                <strong>Important:</strong> If the total chances of all outcomes above "Ordinary Hit" exceed 100%, ordinary hits become impossible.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Player Attack Rules</h2>
+            
+            <table class="attack-table">
+                <tr>
+                    <th>Attack Type</th>
+                    <th>Can Crit</th>
+                    <th>Can Crush</th>
+                    <th>PvE Crit Damage</th>
+                    <th>PvP Crit Damage</th>
+                </tr>
+                <tr>
+                    <td>White Damage (Auto-attacks)</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>200%</td>
+                    <td>150%</td>
+                </tr>
+                <tr>
+                    <td>Yellow Damage (Abilities)</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>200%</td>
+                    <td>150%</td>
+                </tr>
+                <tr>
+                    <td>Most PvE Abilities</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>2 Multistrike Rolls</td>
+                    <td>1 Multistrike Roll</td>
+                </tr>
+            </table>
+
+            <div class="mechanics-box">
+                <h3>Critical Strike Mechanics</h3>
+                <ul>
+                    <li><strong>Crit chance applies to all attacks</strong> (both hits and misses in the calculation)</li>
+                    <li><strong>Actual crit chance = listed crit chance × hit chance</strong></li>
+                    <li><strong>Level penalty:</strong> Crit chance reduces by 1% for each level above the attacker's level</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Attack Table Mathematics</h2>
+            <p>The attack table system uses specific mathematical principles:</p>
+            
+            <div class="formula">
+                Random Number (0-100) determines outcome:
+                <br><br>
+                0 ≤ roll &lt; Miss% = Miss
+                <br>
+                Miss% ≤ roll &lt; (Miss% + Dodge%) = Dodge  
+                <br>
+                (Miss% + Dodge%) ≤ roll &lt; (Miss% + Dodge% + Parry%) = Parry
+                <br>
+                ... and so on through the priority order
+            </div>
+
+            <div class="important-note">
+                <h3>100% Rule</h3>
+                <p>When avoidance chances total 100% or more:</p>
+                <ul>
+                    <li>Ordinary hits become impossible</li>
+                    <li>Only avoidance outcomes can occur</li>
+                    <li>This is crucial for tank survivability calculations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Combat Positioning Effects</h2>
+            
+            <table class="attack-table">
+                <tr>
+                    <th>Position</th>
+                    <th>Can Miss</th>
+                    <th>Can Dodge</th>
+                    <th>Can Parry</th>
+                    <th>Can Block</th>
+                </tr>
+                <tr>
+                    <td>From Front</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>From Behind</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Ranged Attack</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Yes (if close)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Special Considerations</h2>
+            
+            <div class="mechanics-box">
+                <h3>Attack Type Variations</h3>
+                <ul>
+                    <li><strong>White vs Yellow Damage:</strong> Different calculation methods may apply</li>
+                    <li><strong>Spell Attacks:</strong> Use different resolution systems entirely</li>
+                    <li><strong>Environmental Factors:</strong> Positioning affects available outcomes</li>
+                    <li><strong>Level Differences:</strong> Significantly impact hit/miss chances</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Practical Applications</h2>
+            <p>Understanding the Attack Table is crucial for:</p>
+            <ul>
+                <li><strong>Tank Survivability:</strong> Calculating total avoidance and mitigation</li>
+                <li><strong>DPS Optimization:</strong> Understanding hit requirements and crit mechanics</li>
+                <li><strong>Combat Positioning:</strong> Knowing when positioning affects outcomes</li>
+                <li><strong>Gear Planning:</strong> Balancing different avoidance statistics</li>
+            </ul>
+
+            <div class="important-note">
+                <p>The Attack Table system ensures complex and dynamic combat interactions by using a probabilistic approach to attack resolution, making each encounter both predictable in terms of average outcomes and unpredictable in terms of individual attack results.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

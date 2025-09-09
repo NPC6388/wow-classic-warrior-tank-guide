@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Mechanics - Marrow's Compendium</title>
+    <style>
+        /* GitBook-style theme matching original */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        .gitbook-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 300px;
+            background: #fff;
+            border-right: 1px solid #e6e6e6;
+            padding: 0;
+            box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #e6e6e6;
+            background: #f7f7f7;
+        }
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            text-decoration: none;
+        }
+        .sidebar-nav {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 12px 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            background: #f0f4f8;
+            color: #2e7bcf;
+        }
+        .content {
+            flex: 1;
+            padding: 40px 60px;
+            background: #fff;
+            max-width: none;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+            color: #333;
+            margin: 0 0 20px 0;
+            border-bottom: 3px solid #2e7bcf;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #2e7bcf;
+            margin: 40px 0 20px 0;
+        }
+        h3 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #555;
+            margin: 30px 0 15px 0;
+        }
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #2e7bcf;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .archive-note {
+            margin-top: 40px;
+            padding: 15px;
+            background: #e8f4fd;
+            border: 1px solid #90caf9;
+            border-radius: 4px;
+            color: #1565c0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gitbook-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">Marrow's Compendium</h1>
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                    by Marrow, Heartseeker-US<br>
+                    Updated: July 9, 2020
+                </div>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="marrows_compendium_index.html">Table of Contents</a></li>
+                <li><a href="marrows_compendium_intro.html">Introduction</a></li>
+                <li><a href="marrows_compendium_mechanics.html" class="active">Mechanics</a></li>
+                <li><a href="marrows_compendium_abilities.html">Abilities & Rotation</a></li>
+                <li><a href="marrows_compendium_cooldowns.html">Cooldowns</a></li>
+                <li><a href="marrows_compendium_parsing.html">Parsing</a></li>
+                <li><a href="marrows_compendium_references.html">References</a></li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <h1>Combat Mechanics</h1>
+            
+            <h2>Melee Attack Types</h2>
+            <p>World of Warcraft combat distinguishes between two primary attack types:</p>
+            <ul>
+                <li><strong>White (auto) attacks</strong> - Your character's automatic weapon swings</li>
+                <li><strong>Yellow (special) attacks</strong> - Abilities like Bloodthirst, Execute, and Heroic Strike</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>Key Difference:</strong> Yellow attacks cannot glance, making them more reliable for damage output against higher level targets.
+            </div>
+            
+            <h3>Possible Attack Outcomes</h3>
+            <p>When you attack a target, the following results are possible in order of priority:</p>
+            <p><strong>Miss → Dodge → Parry → Glancing Blow → Block → Critical Strike → Hit</strong></p>
+            
+            <h2>Miss Chance Mechanics</h2>
+            <ul>
+                <li>Base 8% miss chance against mobs 3 levels higher (level 63 bosses)</li>
+                <li>Miss probability depends on weapon skill and target level difference</li>
+                <li>Dual wielding increases miss probability significantly</li>
+                <li>Weapon skill of 305 reduces miss chance to 6% for special attacks</li>
+            </ul>
+            
+            <h2>Glancing Blow Mechanics</h2>
+            <div class="highlight">
+                <strong>Critical Information:</strong> Glancing blows are one of the most significant DPS losses for melee classes in Classic WoW.
+            </div>
+            
+            <ul>
+                <li>Occurs only against equal or higher level enemies</li>
+                <li><strong>40% chance</strong> to glance against level 63 enemies with 300 weapon skill</li>
+                <li>Glancing blows deal reduced damage (as low as 65% of maximum damage)</li>
+                <li>Cannot critically hit</li>
+                <li>Affects only white damage (auto attacks)</li>
+            </ul>
+            
+            <h2>Weapon Skill Impact</h2>
+            <p>Weapon skill is arguably the most important stat for melee DPS classes:</p>
+            
+            <h3>Benefits of Increased Weapon Skill</h3>
+            <ul>
+                <li><strong>Reduces miss chance</strong> - Each point above 300 = 0.04% less miss</li>
+                <li><strong>Reduces glancing blow damage penalty</strong> - Higher skill = less damage reduction</li>
+                <li><strong>Reduces target dodge chance</strong> - Marginal but measurable improvement</li>
+                <li><strong>Reduces target parry chance</strong> - Prevents parry-haste acceleration</li>
+            </ul>
+            
+            <h3>Optimal Weapon Skill Breakpoints</h3>
+            <ul>
+                <li><strong>305 weapon skill</strong> - Critical breakpoint for raid bosses</li>
+                <li><strong>308+ weapon skill</strong> - Diminishing returns, glancing damage cap reached</li>
+                <li><strong>Racial bonuses</strong> - Human/Orc/Troll racial weapon skills are extremely valuable</li>
+            </ul>
+            
+            <h2>Critical Strike Cap</h2>
+            <p>The critical strike cap is calculated by subtracting all avoidance mechanisms:</p>
+            <p><strong>Crit Cap = 100% - Miss% - Dodge% - Block% - Parry% - Glancing%</strong></p>
+            
+            <ul>
+                <li>Increases with better gear and world buffs</li>
+                <li>Varies significantly based on weapon skill and hit rating</li>
+                <li>Different for white attacks vs yellow attacks</li>
+            </ul>
+            
+            <h2>Flurry Mechanics</h2>
+            <div class="info-box">
+                <strong>Flurry Talent:</strong> 5-point talent increasing attack speed by 30% for 3 swings after a critical hit.
+            </div>
+            
+            <ul>
+                <li>Critical strike chance does not directly translate to 100% uptime</li>
+                <li>Multiple crits while Flurry is active do not stack or refresh duration</li>
+                <li>Diminishing returns on critical strike chance for flurry uptime</li>
+                <li>Extremely valuable for sustained DPS increase</li>
+            </ul>
+            
+            <div class="archive-note">
+                <strong>📚 Archived Source:</strong> This page was archived from 
+                <a href="https://bookdown.org/marrowwar/marrow_compendium/mechanics.html" target="_blank">Marrow's Compendium - Mechanics</a> 
+                on August 28, 2025.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

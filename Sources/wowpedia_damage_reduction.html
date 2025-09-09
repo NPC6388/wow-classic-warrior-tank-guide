@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damage reduction | Wowpedia | Fandom</title>
+    <style>
+        /* Fandom wiki theme styling */
+        body {
+            margin: 0;
+            font-family: Rubik, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #222;
+        }
+        .wiki-header {
+            background: #003366;
+            color: white;
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .fandom-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .fandom-brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00d6d6;
+            text-decoration: none;
+        }
+        .wiki-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+        .wiki-nav {
+            background: #eaecf0;
+            border-bottom: 1px solid #a2a9b1;
+            padding: 8px 0;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-content a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .nav-content a:hover {
+            background: #ddd;
+        }
+        .wiki-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #eaecf0;
+            padding-bottom: 5px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar li {
+            margin: 3px 0;
+        }
+        .sidebar a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 20px 25px;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: normal;
+            color: #222;
+            margin: 0 0 5px 0;
+            border-bottom: 3px solid #0645ad;
+            padding-bottom: 5px;
+        }
+        .page-subtitle {
+            font-size: 13px;
+            color: #72777d;
+            margin: 0 0 20px 0;
+        }
+        .breadcrumb {
+            font-size: 12px;
+            color: #72777d;
+            margin: 0 0 15px 0;
+        }
+        .breadcrumb a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            display: inline-block;
+            min-width: 250px;
+        }
+        .toc-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin: 3px 0;
+        }
+        .toc-list a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #222;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 3px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #222;
+            margin: 25px 0 10px 0;
+        }
+        .infobox {
+            width: 300px;
+            float: right;
+            margin: 0 0 15px 15px;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+        }
+        .infobox-header {
+            background: #0645ad;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .infobox-content {
+            padding: 15px;
+        }
+        .infobox table {
+            width: 100%;
+            font-size: 13px;
+        }
+        .infobox td {
+            padding: 3px 5px;
+            border-bottom: 1px solid #eaecf0;
+        }
+        .infobox td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+        .formula-box {
+            background: #f0f8ff;
+            border: 1px solid #b0d4f7;
+            border-left: 4px solid #0645ad;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .note-box {
+            background: #fef6e7;
+            border: 1px solid #fc3;
+            border-left: 4px solid #fc3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #ffebee;
+            border: 1px solid #f44336;
+            border-left: 4px solid #f44336;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .damage-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .damage-table th, .damage-table td {
+            border: 1px solid #a2a9b1;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        .damage-table th {
+            background: #eaecf0;
+            font-weight: bold;
+        }
+        .damage-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        p {
+            margin: 12px 0;
+        }
+        ul {
+            margin: 10px 0 10px 30px;
+        }
+        li {
+            margin: 3px 0;
+        }
+        .archive-notice {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-left: 4px solid #2196f3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 30px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-header">
+        <div class="header-content">
+            <div class="fandom-logo">
+                <a href="#" class="fandom-brand">FANDOM</a>
+                <a href="#" class="wiki-name">Wowpedia</a>
+            </div>
+            <div>
+                <input type="search" placeholder="Search this wiki" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="wiki-nav">
+        <div class="nav-content">
+            <a href="#">Main Page</a>
+            <a href="#">Classes</a>
+            <a href="#">Mechanics</a>
+            <a href="#">Items</a>
+            <a href="#">Spells</a>
+            <a href="#">Recent Changes</a>
+        </div>
+    </div>
+    
+    <div class="wiki-container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#">Main page</a></li>
+                <li><a href="#">Random article</a></li>
+                <li><a href="#">Recent changes</a></li>
+            </ul>
+            
+            <h3>Game Mechanics</h3>
+            <ul>
+                <li><a href="#">Combat</a></li>
+                <li><a href="vanilla_wow_armor.html">Armor</a></li>
+                <li><a href="wowpedia_damage_reduction.html">Damage reduction</a></li>
+                <li><a href="wowpedia_defense.html">Defense</a></li>
+                <li><a href="#">Resistance</a></li>
+            </ul>
+            
+            <h3>Defensive Stats</h3>
+            <ul>
+                <li><a href="#">Block rating</a></li>
+                <li><a href="#">Dodge rating</a></li>
+                <li><a href="#">Parry rating</a></li>
+                <li><a href="#">Resilience</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="breadcrumb">
+                <a href="#">Wowpedia</a> > <a href="#">Game mechanics</a> > Damage reduction
+            </div>
+            
+            <h1 class="page-title">Damage reduction</h1>
+            <div class="page-subtitle">From Wowpedia, the World of Warcraft wiki</div>
+            
+            <div class="infobox">
+                <div class="infobox-header">Damage Reduction</div>
+                <div class="infobox-content">
+                    <table>
+                        <tr><td>Type</td><td>Defensive mechanic</td></tr>
+                        <tr><td>Source</td><td>Armor, resistances</td></tr>
+                        <tr><td>Maximum</td><td>75% from armor</td></tr>
+                        <tr><td>Applies to</td><td>Physical damage</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="toc">
+                <div class="toc-title">Contents</div>
+                <ol class="toc-list">
+                    <li><a href="#overview">1 Overview</a></li>
+                    <li><a href="#armor-mechanics">2 Armor-Based Damage Reduction</a></li>
+                    <li><a href="#formulas">3 Damage Reduction Formulas</a></li>
+                    <li><a href="#specific-levels">4 Level-Specific Calculations</a></li>
+                    <li><a href="#base-armor">5 Base Armor Calculation</a></li>
+                    <li><a href="#effectiveness">6 Armor Effectiveness Analysis</a></li>
+                    <li><a href="#resistances">7 Resistance-Based Reduction</a></li>
+                </ol>
+            </div>
+            
+            <h2 id="overview">Overview</h2>
+            <p><strong>Damage reduction</strong> is a defensive mechanic that reduces the amount of damage taken from attacks. The most common form is armor-based damage reduction, which specifically mitigates physical damage through mathematical formulas that scale with both the defender's armor value and the attacker's level.</p>
+            
+            <p>Understanding damage reduction mechanics is crucial for tanking, survivability optimization, and making informed gear choices in both PvE and PvP content.</p>
+            
+            <h2 id="armor-mechanics">Armor-Based Damage Reduction</h2>
+            <p>Armor reduces physical damage by a percentage determined by the relationship between the defender's total armor value and the attacking enemy's level. This system ensures that armor remains relevant across different level ranges while maintaining balance.</p>
+            
+            <div class="note-box">
+                <strong>Key Points:</strong>
+                <ul>
+                    <li>Armor only affects physical damage sources</li>
+                    <li>Maximum damage reduction from armor is capped at 75%</li>
+                    <li>Higher-level attackers require more armor for equivalent protection</li>
+                    <li>Damage reduction percentage follows diminishing returns</li>
+                </ul>
+            </div>
+            
+            <h2 id="formulas">Damage Reduction Formulas</h2>
+            <p>The damage reduction calculation varies based on the enemy's level, with different formulas applying to different level ranges:</p>
+            
+            <h3>Enemies Level 1-59</h3>
+            <div class="formula-box">
+                <strong>Formula:</strong><br>
+                %Reduction = (Armor / ([85 × Enemy_Level] + Armor + 400)) × 100<br><br>
+                <strong>Simplified:</strong><br>
+                %Reduction = Armor / (Armor + 85 × Enemy_Level + 400)
+            </div>
+            
+            <h3>Enemies Level 60 and Above</h3>
+            <div class="formula-box">
+                <strong>Formula:</strong><br>
+                %Reduction = (Armor / ([467.5 × Enemy_Level] + Armor - 22167.5)) × 100<br><br>
+                <strong>Breakdown:</strong><br>
+                Denominator = 467.5 × Enemy_Level + Armor - 22167.5
+            </div>
+            
+            <h2 id="specific-levels">Level-Specific Calculations</h2>
+            <p>For commonly encountered enemy levels, the formulas can be simplified:</p>
+            
+            <h3>Level 80 Enemies</h3>
+            <div class="formula-box">
+                <strong>Level 80 Formula:</strong><br>
+                %Reduction = (Armor / (Armor + 15232.5)) × 100
+            </div>
+            
+            <h3>Level 83 Boss Encounters</h3>
+            <div class="formula-box">
+                <strong>Level 83 Formula:</strong><br>
+                %Reduction = (Armor / (Armor + 16635)) × 100
+            </div>
+            
+            <table class="damage-table">
+                <thead>
+                    <tr>
+                        <th>Enemy Level</th>
+                        <th>Formula Constant</th>
+                        <th>Armor for 50% DR</th>
+                        <th>Armor for 75% DR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>60</td>
+                        <td>5,500</td>
+                        <td>5,500</td>
+                        <td>16,500</td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td>10,557</td>
+                        <td>10,557</td>
+                        <td>31,672</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>15,232.5</td>
+                        <td>15,232</td>
+                        <td>45,697</td>
+                    </tr>
+                    <tr>
+                        <td>83</td>
+                        <td>16,635</td>
+                        <td>16,635</td>
+                        <td>49,905</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 id="base-armor">Base Armor Calculation</h2>
+            <p>A character's total armor value comes from multiple sources that combine additively:</p>
+            
+            <div class="formula-box">
+                <strong>Total Armor Formula:</strong><br>
+                Base Armor = (2 × Agility) + Equipment Armor + Magical Armor Bonuses<br><br>
+                <strong>Components:</strong><br>
+                • Agility contribution: 2 armor per point of agility<br>
+                • Equipment: Sum of all worn armor pieces<br>
+                • Magic bonuses: Spells, enchantments, consumables
+            </div>
+            
+            <div class="warning-box">
+                <strong>Important:</strong> Some talents that claim to affect "armor" may not include all armor sources in their calculations. Always verify the actual damage reduction when testing builds.
+            </div>
+            
+            <h2 id="effectiveness">Armor Effectiveness Analysis</h2>
+            <p>While armor follows diminishing returns for percentage damage reduction, its effectiveness in terms of actual survivability remains linear:</p>
+            
+            <h3>Effective Health Multiplier</h3>
+            <div class="formula-box">
+                <strong>Effective Health:</strong><br>
+                EH = Base Health / (1 - Damage Reduction)<br><br>
+                <strong>Examples:</strong><br>
+                • 25% DR: EH = Base HP / 0.75 = 1.33× Base HP<br>
+                • 50% DR: EH = Base HP / 0.50 = 2.00× Base HP<br>
+                • 75% DR: EH = Base HP / 0.25 = 4.00× Base HP
+            </div>
+            
+            <h3>Armor Efficiency Insight</h3>
+            <p>A crucial understanding about armor scaling:</p>
+            <blockquote>
+                <em>"An X% increase in armor means an X% increase in armor's contribution to damage taken."</em>
+            </blockquote>
+            
+            <p>This means that doubling your armor will always provide the same <strong>absolute</strong> increase in survivability, regardless of your current armor level. The diminishing returns only apply to the <strong>percentage</strong> of damage reduction displayed.</p>
+            
+            <h3>Practical Armor Targets</h3>
+            <table class="damage-table">
+                <thead>
+                    <tr>
+                        <th>Content Type</th>
+                        <th>Enemy Level</th>
+                        <th>Recommended Armor</th>
+                        <th>Damage Reduction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heroic Dungeons</td>
+                        <td>82</td>
+                        <td>25,000</td>
+                        <td>~60%</td>
+                    </tr>
+                    <tr>
+                        <td>Raid Bosses</td>
+                        <td>83</td>
+                        <td>33,000</td>
+                        <td>~66%</td>
+                    </tr>
+                    <tr>
+                        <td>Hard Mode Raids</td>
+                        <td>83</td>
+                        <td>40,000+</td>
+                        <td>~70%+</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 id="resistances">Resistance-Based Damage Reduction</h2>
+            <p>In addition to armor, resistances provide damage reduction against specific schools of magic damage:</p>
+            
+            <ul>
+                <li><strong>Fire Resistance:</strong> Reduces fire damage</li>
+                <li><strong>Nature Resistance:</strong> Reduces nature damage</li>
+                <li><strong>Frost Resistance:</strong> Reduces frost damage</li>
+                <li><strong>Shadow Resistance:</strong> Reduces shadow damage</li>
+                <li><strong>Arcane Resistance:</strong> Reduces arcane damage</li>
+            </ul>
+            
+            <div class="note-box">
+                <strong>Resistance Mechanics:</strong> Unlike armor, resistances use different formulas and can provide both damage reduction and complete resistance (avoiding damage entirely). Resistance calculations are more complex and involve probability-based mitigation.
+            </div>
+            
+            <h3>Resistance vs Armor</h3>
+            <p>Key differences between resistance and armor-based damage reduction:</p>
+            <ul>
+                <li>Resistances are school-specific, armor affects all physical damage</li>
+                <li>Resistances can cause complete avoidance, armor always allows some damage</li>
+                <li>Resistance gear often requires sacrificing other stats</li>
+                <li>Armor benefits from agility scaling, resistances do not</li>
+            </ul>
+            
+            <div class="archive-notice">
+                <strong>Archived Wiki Article:</strong> This article was archived from 
+                <a href="https://wowpedia.fandom.com/wiki/Damage_reduction" target="_blank">Wowpedia on Fandom</a> 
+                on August 29, 2025. The original wiki may contain additional information, recent edits, and community discussions.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

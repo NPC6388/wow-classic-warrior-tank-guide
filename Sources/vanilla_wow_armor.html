@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armor | Vanilla WoW Archive | Fandom</title>
+    <style>
+        /* Fandom wiki theme styling */
+        body {
+            margin: 0;
+            font-family: Rubik, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #222;
+        }
+        .wiki-header {
+            background: #003366;
+            color: white;
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .fandom-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .fandom-brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00d6d6;
+            text-decoration: none;
+        }
+        .wiki-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+        .wiki-nav {
+            background: #eaecf0;
+            border-bottom: 1px solid #a2a9b1;
+            padding: 8px 0;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-content a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .nav-content a:hover {
+            background: #ddd;
+        }
+        .wiki-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #eaecf0;
+            padding-bottom: 5px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar li {
+            margin: 3px 0;
+        }
+        .sidebar a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 20px 25px;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: normal;
+            color: #222;
+            margin: 0 0 5px 0;
+            border-bottom: 3px solid #0645ad;
+            padding-bottom: 5px;
+        }
+        .page-subtitle {
+            font-size: 13px;
+            color: #72777d;
+            margin: 0 0 20px 0;
+        }
+        .breadcrumb {
+            font-size: 12px;
+            color: #72777d;
+            margin: 0 0 15px 0;
+        }
+        .breadcrumb a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            display: inline-block;
+            min-width: 250px;
+        }
+        .toc-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin: 3px 0;
+        }
+        .toc-list a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #222;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 3px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #222;
+            margin: 25px 0 10px 0;
+        }
+        .infobox {
+            width: 300px;
+            float: right;
+            margin: 0 0 15px 15px;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+        }
+        .infobox-header {
+            background: #0645ad;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .infobox-content {
+            padding: 15px;
+        }
+        .infobox table {
+            width: 100%;
+            font-size: 13px;
+        }
+        .infobox td {
+            padding: 3px 5px;
+            border-bottom: 1px solid #eaecf0;
+        }
+        .infobox td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+        .formula-box {
+            background: #f0f8ff;
+            border: 1px solid #b0d4f7;
+            border-left: 4px solid #0645ad;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .note-box {
+            background: #fef6e7;
+            border: 1px solid #fc3;
+            border-left: 4px solid #fc3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .armor-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        .armor-table th, .armor-table td {
+            border: 1px solid #a2a9b1;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .armor-table th {
+            background: #eaecf0;
+            font-weight: bold;
+        }
+        .armor-table tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        p {
+            margin: 12px 0;
+        }
+        ul {
+            margin: 10px 0 10px 30px;
+        }
+        li {
+            margin: 3px 0;
+        }
+        .archive-notice {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-left: 4px solid #2196f3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 30px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-header">
+        <div class="header-content">
+            <div class="fandom-logo">
+                <a href="#" class="fandom-brand">FANDOM</a>
+                <a href="#" class="wiki-name">Vanilla WoW Archive</a>
+            </div>
+            <div>
+                <input type="search" placeholder="Search this wiki" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="wiki-nav">
+        <div class="nav-content">
+            <a href="#">Main Page</a>
+            <a href="#">Classes</a>
+            <a href="#">Mechanics</a>
+            <a href="#">Items</a>
+            <a href="#">Spells</a>
+            <a href="#">Recent Changes</a>
+        </div>
+    </div>
+    
+    <div class="wiki-container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#">Main page</a></li>
+                <li><a href="#">Random article</a></li>
+                <li><a href="#">Recent changes</a></li>
+            </ul>
+            
+            <h3>Game Mechanics</h3>
+            <ul>
+                <li><a href="#">Combat</a></li>
+                <li><a href="vanilla_wow_attack_power.html">Attack power</a></li>
+                <li><a href="vanilla_wow_armor.html">Armor</a></li>
+                <li><a href="wowpedia_damage_reduction.html">Damage reduction</a></li>
+                <li><a href="wowpedia_defense.html">Defense</a></li>
+            </ul>
+            
+            <h3>Equipment</h3>
+            <ul>
+                <li><a href="#">Weapons</a></li>
+                <li><a href="#">Armor types</a></li>
+                <li><a href="#">Enchantments</a></li>
+                <li><a href="#">Gems</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="breadcrumb">
+                <a href="#">Vanilla WoW Archive</a> > <a href="#">Game mechanics</a> > Armor
+            </div>
+            
+            <h1 class="page-title">Armor</h1>
+            <div class="page-subtitle">From Vanilla WoW Archive</div>
+            
+            <div class="infobox">
+                <div class="infobox-header">Armor</div>
+                <div class="infobox-content">
+                    <table>
+                        <tr><td>Type</td><td>Defensive statistic</td></tr>
+                        <tr><td>Affects</td><td>Physical damage reduction</td></tr>
+                        <tr><td>Maximum</td><td>75% damage reduction</td></tr>
+                        <tr><td>Sources</td><td>Equipment, spells, abilities</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="toc">
+                <div class="toc-title">Contents</div>
+                <ol class="toc-list">
+                    <li><a href="#overview">1 Overview</a></li>
+                    <li><a href="#armor-types">2 Armor Types</a></li>
+                    <li><a href="#damage-reduction">3 Damage Reduction Mechanics</a></li>
+                    <li><a href="#formulas">4 Damage Reduction Formulas</a></li>
+                    <li><a href="#armor-caps">5 Armor Caps by Level</a></li>
+                    <li><a href="#effectiveness">6 Armor Effectiveness</a></li>
+                </ol>
+            </div>
+            
+            <h2 id="overview">Overview</h2>
+            <p><strong>Armor</strong> is a defensive statistic that mitigates physical damage by reducing the amount of damage taken from melee attacks, ranged attacks, and other physical sources. It is one of the most important defensive mechanics in World of Warcraft Classic.</p>
+            
+            <p>Armor is provided by equipment worn across nine equipment slots and contributes to the overall Armor attribute, which translates directly into physical damage reduction through mathematical formulas that depend on the attacker's level.</p>
+            
+            <h2 id="armor-types">Armor Types</h2>
+            <p>There are four main types of armor in World of Warcraft Classic, each with different restrictions based on class:</p>
+            
+            <table class="armor-table">
+                <thead>
+                    <tr>
+                        <th>Armor Type</th>
+                        <th>Classes</th>
+                        <th>Level Requirement</th>
+                        <th>Armor Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cloth</strong></td>
+                        <td>Priest, Mage, Warlock</td>
+                        <td>All levels</td>
+                        <td>Lowest</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leather</strong></td>
+                        <td>Rogue, Druid, Hunter, Shaman</td>
+                        <td>All levels</td>
+                        <td>Low-Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mail</strong></td>
+                        <td>Warrior, Paladin, Hunter (40+), Shaman (40+)</td>
+                        <td>Level 40 for some classes</td>
+                        <td>Medium-High</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plate</strong></td>
+                        <td>Warrior, Paladin (40+)</td>
+                        <td>Level 40 for Paladins</td>
+                        <td>Highest</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 id="damage-reduction">Damage Reduction Mechanics</h2>
+            <p>Armor provides percentage-based damage reduction against physical attacks. The effectiveness of armor follows a diminishing returns curve, meaning that each additional point of armor provides progressively less percentage-based damage reduction.</p>
+            
+            <div class="note-box">
+                <strong>Important:</strong> While the percentage reduction diminishes, the absolute increase in survivability (effective health) remains consistent per point of armor.
+            </div>
+            
+            <p>Key characteristics of armor mechanics:</p>
+            <ul>
+                <li>Armor only affects physical damage (melee, ranged, some abilities)</li>
+                <li>Magic damage bypasses armor entirely</li>
+                <li>Maximum damage reduction is capped at 75%</li>
+                <li>Higher level attackers require more armor for the same damage reduction percentage</li>
+            </ul>
+            
+            <h2 id="formulas">Damage Reduction Formulas</h2>
+            <p>The damage reduction provided by armor varies based on the level of the attacking enemy. There are two primary formulas used:</p>
+            
+            <h3>For Attacker Levels 1-59</h3>
+            <div class="formula-box">
+                <strong>Damage Reduction Formula:</strong><br>
+                DR% = Armor / (Armor + 400 + 85 × AttackerLevel)
+            </div>
+            
+            <h3>For Attacker Levels 60+</h3>
+            <div class="formula-box">
+                <strong>Damage Reduction Formula:</strong><br>
+                DR% = Armor / (Armor + 400 + 85 × (AttackerLevel + 4.5 × (AttackerLevel - 59)))
+            </div>
+            
+            <p>These formulas demonstrate that higher level enemies require exponentially more armor to achieve the same damage reduction percentage, making armor less effective against raid bosses and high-level content.</p>
+            
+            <h2 id="armor-caps">Armor Caps by Level</h2>
+            <p>The amount of armor required to reach the 75% damage reduction cap varies significantly based on the attacker's level:</p>
+            
+            <table class="armor-table">
+                <thead>
+                    <tr>
+                        <th>Attacker Level</th>
+                        <th>Armor Required for 75% DR</th>
+                        <th>Typical Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>60</td>
+                        <td>~16,000</td>
+                        <td>Level 60 players/mobs</td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td>31,672</td>
+                        <td>Burning Crusade content</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>45,697</td>
+                        <td>Wrath of the Lich King</td>
+                    </tr>
+                    <tr>
+                        <td>83</td>
+                        <td>49,905</td>
+                        <td>High-level raid bosses</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 id="effectiveness">Armor Effectiveness and Diminishing Returns</h2>
+            <p>While armor follows diminishing returns for damage reduction percentage, it's crucial to understand that the <strong>effective health increase</strong> remains linear:</p>
+            
+            <div class="formula-box">
+                <strong>Effective Health Formula:</strong><br>
+                Effective HP = Base HP / (1 - DR%)<br><br>
+                <strong>Example:</strong><br>
+                At 50% DR: Effective HP = Base HP / 0.5 = 2× Base HP<br>
+                At 75% DR: Effective HP = Base HP / 0.25 = 4× Base HP
+            </div>
+            
+            <p>This means that while going from 0% to 50% damage reduction doubles your effective health, going from 50% to 75% damage reduction doubles it again, making high armor values extremely valuable for tanking.</p>
+            
+            <div class="note-box">
+                <strong>Practical Application:</strong> Every additional 5,000 armor provides the same absolute increase in survivability, even though the percentage increase becomes smaller.
+            </div>
+            
+            <h3>Armor vs. Health Trade-offs</h3>
+            <p>When choosing between armor and health bonuses, consider:</p>
+            <ul>
+                <li>Armor only protects against physical damage</li>
+                <li>Health protects against all damage types</li>
+                <li>At high armor values, additional armor becomes extremely efficient</li>
+                <li>The optimal balance depends on the type of damage you expect to take</li>
+            </ul>
+            
+            <div class="archive-notice">
+                <strong>Archived Wiki Article:</strong> This article was archived from 
+                <a href="https://vanilla-wow-archive.fandom.com/wiki/Armor" target="_blank">Vanilla WoW Archive on Fandom</a> 
+                on August 29, 2025. The original wiki may contain additional information, recent edits, and community discussions.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

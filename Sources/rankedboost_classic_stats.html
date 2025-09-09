@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic WoW Stat Conversion Guide | RankedBoost</title>
+    <style>
+        /* RankedBoost gaming site theme */
+        body {
+            margin: 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00ff88;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+        }
+        .nav-menu a:hover {
+            background: #00ff88;
+            color: #1e3c72;
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .page-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .page-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin: 0;
+        }
+        h2 {
+            font-size: 28px;
+            color: #2a5298;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #00ff88;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 100%;
+        }
+        h3 {
+            font-size: 20px;
+            color: #1e3c72;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+        .stat-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e0e6ed;
+        }
+        .stat-category {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #00ff88;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .conversion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .conversion-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #00ff88;
+            transition: transform 0.3s ease;
+        }
+        .conversion-card:hover {
+            transform: translateY(-5px);
+        }
+        .conversion-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2a5298;
+            margin: 0 0 15px 0;
+        }
+        .conversion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .conversion-list li {
+            background: #f8f9fa;
+            margin: 8px 0;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+            font-weight: 500;
+        }
+        .highlight-number {
+            color: #00ff88;
+            font-weight: bold;
+        }
+        .class-specific {
+            color: #764ba2;
+            font-weight: 600;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #00ff88 0%, #00d4aa 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .archive-notice {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab95b 100%);
+            border: 2px solid #e17055;
+            color: #2d3436;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .archive-notice a {
+            color: #2d3436;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo">RankedBoost</a>
+            <div class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#">WoW Guides</a>
+                <a href="#">Classic Guides</a>
+                <a href="#">Tools</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Classic WoW Stat Conversion Mechanics</h1>
+            <p class="page-subtitle">Complete guide to stat conversions and scaling in World of Warcraft Classic</p>
+        </div>
+        
+        <div class="stat-section">
+            <h2>💪 Strength Conversions</h2>
+            
+            <div class="conversion-grid">
+                <div class="conversion-card">
+                    <div class="conversion-title">Melee Attack Power</div>
+                    <ul class="conversion-list">
+                        <li><span class="class-specific">Warrior/Paladin/Shaman/Druid:</span> <span class="highlight-number">2 AP</span> per 1 Strength</li>
+                        <li><span class="class-specific">Other classes:</span> <span class="highlight-number">1 AP</span> per 1 Strength</li>
+                    </ul>
+                </div>
+                
+                <div class="conversion-card">
+                    <div class="conversion-title">Block Value</div>
+                    <ul class="conversion-list">
+                        <li><span class="highlight-number">1 Block Damage</span> per <span class="highlight-number">20</span> Strength points</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-section">
+            <h2>⚡ Agility Conversions</h2>
+            
+            <div class="conversion-grid">
+                <div class="conversion-card">
+                    <div class="conversion-title">Armor Rating</div>
+                    <ul class="conversion-list">
+                        <li><span class="highlight-number">2 Armor</span> per 1 Agility <span class="class-specific">(all classes)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="conversion-card">
+                    <div class="conversion-title">Critical Strike Chance</div>
+                    <ul class="conversion-list">
+                        <li><span class="class-specific">Hunter:</span> 1% per <span class="highlight-number">53</span> Agility</li>
+                        <li><span class="class-specific">Rogue:</span> 1% per <span class="highlight-number">29</span> Agility</li>
+                        <li><span class="class-specific">Paladin/Shaman/Warrior/Druid:</span> 1% per <span class="highlight-number">20</span> Agility</li>
+                    </ul>
+                </div>
+                
+                <div class="conversion-card">
+                    <div class="conversion-title">Dodge Chance</div>
+                    <ul class="conversion-list">
+                        <li><span class="class-specific">Rogue:</span> 1% per <span class="highlight-number">14.5</span> Agility</li>
+                        <li><span class="class-specific">Hunter:</span> 1% per <span class="highlight-number">26</span> Agility</li>
+                    </ul>
+                </div>
+                
+                <div class="conversion-card">
+                    <div class="conversion-title">Attack Power</div>
+                    <ul class="conversion-list">
+                        <li><span class="class-specific">Rogue/Druid/Hunter:</span> <span class="highlight-number">1 Melee AP</span> per 1 Agility</li>
+                        <li><span class="class-specific">Rogue/Warrior:</span> <span class="highlight-number">1 Ranged AP</span> per 1 Agility</li>
+                        <li><span class="class-specific">Hunter:</span> <span class="highlight-number">2 Ranged AP</span> per 1 Agility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-section">
+            <h2>🧠 Intellect Conversions</h2>
+            
+            <div class="conversion-grid">
+                <div class="conversion-card">
+                    <div class="conversion-title">Mana Pool</div>
+                    <ul class="conversion-list">
+                        <li><span class="highlight-number">15 Mana</span> per 1 Intellect <span class="class-specific">(all classes)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="conversion-card">
+                    <div class="conversion-title">Spell Critical Strike</div>
+                    <ul class="conversion-list">
+                        <li>Varies by class: <span class="highlight-number">54-60.6</span> Intellect per 1% crit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stat-section">
+            <h2>❤️ Stamina Conversions</h2>
+            
+            <div class="conversion-card">
+                <div class="conversion-title">Health Points</div>
+                <ul class="conversion-list">
+                    <li><span class="highlight-number">10 Health</span> per 1 Stamina <span class="class-specific">(all classes)</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="stat-section">
+            <h2>✨ Spirit Conversions</h2>
+            
+            <div class="conversion-card">
+                <div class="conversion-title">Mana Regeneration</div>
+                <ul class="conversion-list">
+                    <li>Varies by class: <span class="highlight-number">12.5-17</span> Spirit per 5 MP5</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3 style="color: white; margin-top: 0;">Master Your Character Stats!</h3>
+            <p>Understanding these conversion rates is crucial for optimizing your character's performance in Classic WoW. Use this information to make informed decisions about gear upgrades and stat priorities.</p>
+        </div>
+        
+        <div class="archive-notice">
+            <strong>📊 Archived Gaming Guide:</strong> This stat conversion guide was archived from 
+            <a href="https://rankedboost.com/world-of-warcraft/classic-stats/" target="_blank">RankedBoost's Classic WoW Stats Guide</a> 
+            on August 28, 2025. For the latest gaming guides and updates, visit the original source.
+        </div>
+    </div>
+</body>
+</html>

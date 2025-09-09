@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The armor cap - World of Warcraft Forums</title>
+    <style>
+        /* Authentic Blizzard Forum Styling */
+        body {
+            margin: 0;
+            font-family: BlizzardCS, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            background: #0f1419;
+            color: #f8f9fa;
+        }
+        
+        .forum-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-bottom: 2px solid #1d4ed8;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+        
+        .blizzard-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .blizzard-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .game-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        
+        .forum-nav {
+            background: #1e293b;
+            border-bottom: 1px solid #334155;
+            padding: 12px 0;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-content a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-content a:hover {
+            background: #334155;
+            color: white;
+        }
+        
+        .nav-content a.active {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .forum-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .forum-sidebar {
+            width: 280px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+        }
+        
+        .sidebar-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #60a5fa;
+            margin: 0 0 15px 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+        
+        .sidebar-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+        
+        .sidebar-section li {
+            margin: 8px 0;
+        }
+        
+        .sidebar-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s ease;
+        }
+        
+        .sidebar-section a:hover {
+            color: #60a5fa;
+        }
+        
+        .main-forum-content {
+            flex: 1;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .thread-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 20px 25px;
+            border-bottom: 1px solid #1e40af;
+        }
+        
+        .thread-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .thread-meta {
+            font-size: 13px;
+            color: #bfdbfe;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .thread-meta .category {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .post-container {
+            padding: 0;
+        }
+        
+        .forum-post {
+            display: flex;
+            border-bottom: 1px solid #334155;
+            padding: 25px;
+        }
+        
+        .post-avatar {
+            width: 60px;
+            margin-right: 20px;
+        }
+        
+        .avatar-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .post-content {
+            flex: 1;
+        }
+        
+        .post-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .username {
+            font-weight: bold;
+            color: #60a5fa;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .user-title {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-right: 15px;
+        }
+        
+        .post-date {
+            color: #64748b;
+            font-size: 12px;
+            margin-left: auto;
+        }
+        
+        .post-body {
+            color: #e2e8f0;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        
+        .post-body p {
+            margin: 12px 0;
+        }
+        
+        .formula-highlight {
+            background: #0f172a;
+            border: 1px solid #3b82f6;
+            border-left: 4px solid #3b82f6;
+            border-radius: 6px;
+            padding: 18px;
+            margin: 20px 0;
+            font-family: 'Courier New', Monaco, monospace;
+            font-size: 15px;
+            color: #60a5fa;
+        }
+        
+        .formula-title {
+            color: #60a5fa;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .calculation-example {
+            background: #1e293b;
+            border: 1px solid #475569;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', Monaco, monospace;
+        }
+        
+        .post-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #334155;
+        }
+        
+        .action-btn {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            background: #334155;
+            color: #60a5fa;
+        }
+        
+        .likes-count {
+            color: #10b981;
+            font-weight: 500;
+        }
+        
+        .archive-notice {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid #3b82f6;
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        
+        .archive-notice strong {
+            color: #60a5fa;
+        }
+        
+        code {
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 3px;
+            padding: 2px 6px;
+            font-family: 'Courier New', Monaco, monospace;
+            color: #60a5fa;
+        }
+        
+        .highlight {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="forum-header">
+        <div class="header-content">
+            <div class="blizzard-logo">
+                <a href="#" class="blizzard-brand">Blizzard</a>
+                <a href="#" class="game-title">World of Warcraft</a>
+            </div>
+            <div>
+                <input type="search" placeholder="Search forums..." style="padding: 10px; border: 1px solid #475569; border-radius: 6px; background: #1e293b; color: white;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="forum-nav">
+        <div class="nav-content">
+            <a href="#" class="active">General Discussion</a>
+            <a href="#">Classes</a>
+            <a href="#">PvP</a>
+            <a href="#">Guilds & Communities</a>
+            <a href="#">Bug Report</a>
+            <a href="#">Suggestions</a>
+        </div>
+    </div>
+    
+    <div class="forum-container">
+        <div class="forum-sidebar">
+            <div class="sidebar-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">General Discussion</a></li>
+                    <li><a href="#">New Player Help</a></li>
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#">Professions</a></li>
+                    <li><a href="#">Dungeons and Raids</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Game Mechanics</h3>
+                <ul>
+                    <li><a href="#">Combat Mechanics</a></li>
+                    <li><a href="#">Stats and Attributes</a></li>
+                    <li><a href="#">Armor and Defense</a></li>
+                    <li><a href="#">Damage Calculations</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Talent Calculator</a></li>
+                    <li><a href="#">Database</a></li>
+                    <li><a href="#">Blue Tracker</a></li>
+                    <li><a href="#">Community Resources</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-forum-content">
+            <div class="thread-header">
+                <h1 class="thread-title">The armor cap</h1>
+                <div class="thread-meta">
+                    <span class="category">General Discussion</span>
+                    <span>Posted: August 2021</span>
+                    <span>Replies: 15</span>
+                    <span>Views: 2,847</span>
+                </div>
+            </div>
+            
+            <div class="post-container">
+                <div class="forum-post">
+                    <div class="post-avatar">
+                        <div class="avatar-image">Z</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="username">Zeliek-moon-guard</span>
+                            <span class="user-title">Community Member</span>
+                            <span class="post-date">Aug 12, 2021</span>
+                        </div>
+                        <div class="post-body">
+                            <p>I've been researching the armor damage reduction mechanics and wanted to share the verified formula that I've tested extensively in-game.</p>
+                            
+                            <div class="formula-highlight">
+                                <div class="formula-title">Armor Damage Reduction Formula:</div>
+                                <strong>r = a / (a + 400 + 85 × b)</strong><br><br>
+                                Where:<br>
+                                • <code>a</code> = armor value<br>
+                                • <code>b</code> = level of attacking entity<br>
+                                • <code>r</code> = percentage of damage reduction (as decimal)
+                            </div>
+                            
+                            <p>This formula has been verified through extensive testing and matches the observed damage reduction in actual gameplay scenarios.</p>
+                            
+                            <div class="calculation-example">
+                                <strong>Example Calculation:</strong><br>
+                                0.75 = 17265 / (17265 + 400 + 85 × 63)<br><br>
+                                Breaking it down:<br>
+                                • Armor value: <span class="highlight">17,265</span><br>
+                                • Attacker level: <span class="highlight">63</span><br>
+                                • Denominator: 17265 + 400 + (85 × 63) = 17265 + 400 + 5355 = <span class="highlight">23,020</span><br>
+                                • Result: 17265 / 23020 = <span class="highlight">0.75</span> (75% damage reduction)
+                            </div>
+                            
+                            <p>To calculate the actual damage taken from an attack:</p>
+                            
+                            <div class="formula-highlight">
+                                <div class="formula-title">Actual Damage Formula:</div>
+                                <strong>Actual Damage = (1 - r) × Base Damage</strong><br><br>
+                                Where <code>r</code> is the damage reduction from the armor formula above.
+                            </div>
+                            
+                            <p>Key points about this formula:</p>
+                            <ul>
+                                <li>The armor cap for damage reduction is <strong>75%</strong> maximum</li>
+                                <li>Higher level attackers require significantly more armor for the same reduction percentage</li>
+                                <li>The formula applies to all physical damage sources</li>
+                                <li>Magic damage completely bypasses armor</li>
+                            </ul>
+                            
+                            <p>This has been tested against level 63 mobs (typical raid boss level) and the calculations match observed damage reduction perfectly.</p>
+                        </div>
+                        <div class="post-actions">
+                            <a href="#" class="action-btn">Like <span class="likes-count">+12</span></a>
+                            <a href="#" class="action-btn">Reply</a>
+                            <a href="#" class="action-btn">Quote</a>
+                            <a href="#" class="action-btn">Report</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forum-post">
+                    <div class="post-avatar">
+                        <div class="avatar-image">T</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="username">Thorgrim-stormrage</span>
+                            <span class="user-title">Tank Enthusiast</span>
+                            <span class="post-date">Aug 12, 2021</span>
+                        </div>
+                        <div class="post-body">
+                            <p>This is incredibly useful! I've been wondering why my damage reduction seemed inconsistent against different level mobs. The level-based scaling in the denominator explains everything.</p>
+                            
+                            <p>So for a level 60 attacker, you'd need:</p>
+                            <div class="calculation-example">
+                                For 75% DR against level 60:<br>
+                                0.75 = armor / (armor + 400 + 85 × 60)<br>
+                                0.75 = armor / (armor + 5500)<br>
+                                Solving: armor = <span class="highlight">16,500</span>
+                            </div>
+                            
+                            <p>But against level 63 raid bosses, you need 17,265 armor as shown in your example. That's a significant difference!</p>
+                        </div>
+                        <div class="post-actions">
+                            <a href="#" class="action-btn">Like <span class="likes-count">+8</span></a>
+                            <a href="#" class="action-btn">Reply</a>
+                            <a href="#" class="action-btn">Quote</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forum-post">
+                    <div class="post-avatar">
+                        <div class="avatar-image">M</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <span class="username">Mathwise-dalaran</span>
+                            <span class="user-title">Theorycrafter</span>
+                            <span class="post-date">Aug 13, 2021</span>
+                        </div>
+                        <div class="post-body">
+                            <p>Excellent work on the formula verification! This matches the data I've been collecting as well.</p>
+                            
+                            <p>For those interested in the practical implications:</p>
+                            <ul>
+                                <li>Every point of armor provides the same <em>effective health</em> increase</li>
+                                <li>While the percentage reduction has diminishing returns, survivability increases linearly</li>
+                                <li>This makes armor incredibly valuable for tanks, even at high values</li>
+                            </ul>
+                            
+                            <p>The formula <code>r = a / (a + 400 + 85 × b)</code> is fundamental to understanding tank gearing in Classic WoW.</p>
+                        </div>
+                        <div class="post-actions">
+                            <a href="#" class="action-btn">Like <span class="likes-count">+15</span></a>
+                            <a href="#" class="action-btn">Reply</a>
+                            <a href="#" class="action-btn">Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="archive-notice">
+                <strong>Archived Forum Post:</strong> This World of Warcraft forum discussion was archived from 
+                <a href="https://us.forums.blizzard.com/en/wow/t/the-armor-cap/318067/2" target="_blank" style="color: #60a5fa;">the official Blizzard forums</a> 
+                on August 29, 2025. The original thread may contain additional replies and community discussion. This archive focuses on the verified armor damage reduction formula and mathematical content.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

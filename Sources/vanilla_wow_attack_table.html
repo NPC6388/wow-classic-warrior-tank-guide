@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Table - Vanilla WoW Archive</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .wiki-header {
+            background: #8B4513;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .wiki-title {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        .vintage-badge {
+            background: #DAA520;
+            color: #2F4F4F;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .wiki-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            color: #8B4513;
+            border-bottom: 2px solid #8B4513;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .section h3 {
+            color: #A0522D;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .vanilla-mechanics {
+            background: #FFF8DC;
+            border: 2px solid #DAA520;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .formula {
+            background: #F5F5DC;
+            border-left: 4px solid #8B4513;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .attack-hierarchy {
+            background: #E6E6FA;
+            border: 1px solid #9370DB;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .attack-hierarchy ol li {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #4B0082;
+        }
+        .vanilla-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .vanilla-table th, .vanilla-table td {
+            border: 1px solid #DAA520;
+            padding: 12px;
+            text-align: center;
+        }
+        .vanilla-table th {
+            background-color: #8B4513;
+            color: white;
+        }
+        .vanilla-table tr:nth-child(even) {
+            background-color: #FFF8DC;
+        }
+        .important-vanilla {
+            background: #FFE4B5;
+            border: 2px solid #DEB887;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-header">
+        <h1 class="wiki-title">Attack Table</h1>
+        <p>Vanilla World of Warcraft - Classic Era Combat Mechanics</p>
+        <div class="vintage-badge">VANILLA WoW ARCHIVE</div>
+    </div>
+    
+    <div class="wiki-content">
+        <div class="section">
+            <h2>Vanilla WoW Attack Table Overview</h2>
+            <p>The Attack Table is the server-side mechanism that determines the outcome of melee and ranged attacks in Vanilla World of Warcraft. This system uses a single random number roll to resolve attack results through a strict hierarchy of precedence.</p>
+            
+            <div class="vanilla-mechanics">
+                <h3>Core Vanilla Mechanics</h3>
+                <ul>
+                    <li><strong>Single Random Roll:</strong> Server generates one random number (0-100) per attack</li>
+                    <li><strong>Absolute Percentages:</strong> All chances are absolute, not relative</li>
+                    <li><strong>Mutually Exclusive Results:</strong> Only one outcome possible per attack</li>
+                    <li><strong>Strict Hierarchy:</strong> Results resolved in descending order of precedence</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Vanilla Attack Resolution Hierarchy</h2>
+            <div class="attack-hierarchy">
+                <h3>Attack Results (Descending Order of Precedence):</h3>
+                <ol>
+                    <li>Miss</li>
+                    <li>Dodge</li>
+                    <li>Parry</li>
+                    <li>Glancing Blow (players/pets vs mobs only)</li>
+                    <li>Block</li>
+                    <li>Critical Hit</li>
+                    <li>Crushing Blow (mobs vs players/pets only)</li>
+                    <li>Ordinary Hit</li>
+                </ol>
+            </div>
+            
+            <div class="important-vanilla">
+                <strong>Vanilla Rule:</strong> If the total chances of all results above "Ordinary Hit" equal or exceed 100%, ordinary hits become impossible. This is crucial for tank survivability calculations in Classic WoW.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Vanilla-Specific Mechanics</h2>
+            
+            <table class="vanilla-table">
+                <tr>
+                    <th>Attack Result</th>
+                    <th>Players vs Mobs</th>
+                    <th>Mobs vs Players</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Miss</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Affected by hit rating/weapon skill</td>
+                </tr>
+                <tr>
+                    <td>Dodge</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Cannot occur from behind</td>
+                </tr>
+                <tr>
+                    <td>Parry</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Cannot occur from behind</td>
+                </tr>
+                <tr>
+                    <td>Glancing Blow</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>Reduces damage significantly</td>
+                </tr>
+                <tr>
+                    <td>Block</td>
+                    <td>Yes (with shield)</td>
+                    <td>Yes (with shield)</td>
+                    <td>Reduces damage, cannot occur from behind</td>
+                </tr>
+                <tr>
+                    <td>Critical Hit</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>2x damage</td>
+                </tr>
+                <tr>
+                    <td>Crushing Blow</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td>1.5x damage, major threat to tanks</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Vanilla Combat Positioning</h2>
+            
+            <div class="vanilla-mechanics">
+                <h3>Positional Attack Mechanics</h3>
+                <ul>
+                    <li><strong>Attacks from Behind:</strong> Remove parry and block chances entirely</li>
+                    <li><strong>Ranged Attacks:</strong> Cannot be dodged or parried</li>
+                    <li><strong>Special Attacks:</strong> May use different resolution methods (yellow damage)</li>
+                </ul>
+            </div>
+
+            <div class="formula">
+                Example Attack Table Calculation:
+                <br><br>
+                Random Roll: 0-100
+                <br>
+                0-5: Miss (5%)
+                <br>
+                6-15: Dodge (10%) 
+                <br>
+                16-25: Parry (10%)
+                <br>
+                26-35: Glancing (10%)
+                <br>
+                36-45: Block (10%)
+                <br>
+                46-50: Critical (5%)
+                <br>
+                51-60: Crushing (10%) [Mob attacking player]
+                <br>
+                61-100: Normal Hit (40%)
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Vanilla Tank Implications</h2>
+            
+            <div class="important-vanilla">
+                <h3>Critical Tank Concepts</h3>
+                <ul>
+                    <li><strong>Crushing Blows:</strong> Major threat - 50% extra damage from raid bosses</li>
+                    <li><strong>Glancing Blows:</strong> Reduce player damage significantly against higher-level mobs</li>
+                    <li><strong>Avoidance Cap:</strong> Achieving 100%+ avoidance eliminates normal hits</li>
+                    <li><strong>Defense Skill:</strong> Crucial for reducing crit chance and increasing avoidance</li>
+                </ul>
+            </div>
+
+            <table class="vanilla-table">
+                <tr>
+                    <th>Scenario</th>
+                    <th>Effect</th>
+                    <th>Tank Priority</th>
+                </tr>
+                <tr>
+                    <td>Boss 3+ levels higher</td>
+                    <td>Crushing blows possible</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td>Low defense skill</td>
+                    <td>Increased crit chance</td>
+                    <td>Critical</td>
+                </tr>
+                <tr>
+                    <td>100%+ avoidance</td>
+                    <td>No normal hits</td>
+                    <td>Optimal</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Practical Vanilla Applications</h2>
+            <p>Understanding the Vanilla Attack Table is essential for:</p>
+            
+            <div class="vanilla-mechanics">
+                <ul>
+                    <li><strong>Tank Gearing:</strong> Balancing defense, dodge, parry, and block</li>
+                    <li><strong>Threat Management:</strong> Understanding when abilities can be avoided</li>
+                    <li><strong>DPS Optimization:</strong> Managing hit cap and weapon skill</li>
+                    <li><strong>Raid Strategy:</strong> Positioning and cooldown timing</li>
+                </ul>
+            </div>
+
+            <div class="formula">
+                Vanilla Tank Formula:
+                <br>
+                Total Avoidance = Miss% + Dodge% + Parry% + Block%
+                <br>
+                Goal: Minimize crushing blows and critical hits
+                <br>
+                Defense Skill Target: 440+ for raid bosses
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Legacy Impact</h2>
+            <p>The Vanilla Attack Table system created some of the most complex and strategic tanking gameplay in WoW's history. The constant threat of crushing blows and the need to balance multiple avoidance statistics made tank gearing and positioning critically important.</p>
+            
+            <div class="important-vanilla">
+                <p><strong>Classic Era Note:</strong> This system remains unchanged in WoW Classic, making this information directly applicable to current Classic Era and Season of Discovery gameplay.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

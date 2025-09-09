@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapon skill | Wowpedia | Fandom</title>
+    <style>
+        /* Fandom wiki theme styling */
+        body {
+            margin: 0;
+            font-family: Rubik, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #222;
+        }
+        .wiki-header {
+            background: #003366;
+            color: white;
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .fandom-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .fandom-brand {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00d6d6;
+            text-decoration: none;
+        }
+        .wiki-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+        .wiki-nav {
+            background: #eaecf0;
+            border-bottom: 1px solid #a2a9b1;
+            padding: 8px 0;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-content a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .nav-content a:hover {
+            background: #ddd;
+        }
+        .wiki-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #eaecf0;
+            padding-bottom: 5px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar li {
+            margin: 3px 0;
+        }
+        .sidebar a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            background: white;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 20px 25px;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: normal;
+            color: #222;
+            margin: 0 0 5px 0;
+            border-bottom: 3px solid #0645ad;
+            padding-bottom: 5px;
+        }
+        .page-subtitle {
+            font-size: 13px;
+            color: #72777d;
+            margin: 0 0 20px 0;
+        }
+        .breadcrumb {
+            font-size: 12px;
+            color: #72777d;
+            margin: 0 0 15px 0;
+        }
+        .breadcrumb a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            display: inline-block;
+            min-width: 250px;
+        }
+        .toc-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin: 3px 0;
+        }
+        .toc-list a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .infobox {
+            width: 300px;
+            float: right;
+            margin: 0 0 15px 15px;
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+        }
+        .infobox-header {
+            background: #0645ad;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .infobox-content {
+            padding: 15px;
+        }
+        .infobox table {
+            width: 100%;
+            font-size: 13px;
+        }
+        .infobox td {
+            padding: 3px 5px;
+            border-bottom: 1px solid #eaecf0;
+            vertical-align: top;
+        }
+        .infobox td:first-child {
+            font-weight: bold;
+            width: 40%;
+        }
+        .racial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+            border: 1px solid #a2a9b1;
+        }
+        .racial-table th {
+            background: #eaecf0;
+            color: #222;
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid #a2a9b1;
+            font-weight: bold;
+        }
+        .racial-table td {
+            padding: 8px 12px;
+            border: 1px solid #a2a9b1;
+        }
+        .racial-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #222;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #a2a9b1;
+            padding-bottom: 3px;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #222;
+            margin: 25px 0 10px 0;
+        }
+        .formula-box {
+            background: #f0f8ff;
+            border: 1px solid #b0d4f7;
+            border-left: 4px solid #0645ad;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .warning-box {
+            background: #fef6e7;
+            border: 1px solid #fc3;
+            border-left: 4px solid #fc3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .mechanics-list {
+            background: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        p {
+            margin: 12px 0;
+        }
+        ul {
+            margin: 10px 0 10px 30px;
+        }
+        li {
+            margin: 3px 0;
+        }
+        .archive-notice {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-left: 4px solid #2196f3;
+            border-radius: 3px;
+            padding: 15px;
+            margin: 30px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wiki-header">
+        <div class="header-content">
+            <div class="fandom-logo">
+                <a href="#" class="fandom-brand">FANDOM</a>
+                <a href="#" class="wiki-name">Wowpedia</a>
+            </div>
+            <div>
+                <input type="search" placeholder="Search Wowpedia" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="wiki-nav">
+        <div class="nav-content">
+            <a href="#">Main Page</a>
+            <a href="#">Recent changes</a>
+            <a href="#">Random page</a>
+            <a href="#">Help</a>
+            <a href="#">Community portal</a>
+        </div>
+    </div>
+    
+    <div class="wiki-container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#">Main page</a></li>
+                <li><a href="#">Recent changes</a></li>
+                <li><a href="#">Random page</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            
+            <h3>Game mechanics</h3>
+            <ul>
+                <li><a href="#">Combat</a></li>
+                <li><a href="vanilla_wow_attack_power.html">Attack power</a></li>
+                <li><a href="wowpedia_weapon_skill.html">Weapon skill</a></li>
+                <li><a href="#">Critical strike</a></li>
+                <li><a href="#">Hit rating</a></li>
+            </ul>
+            
+            <h3>Weapons</h3>
+            <ul>
+                <li><a href="#">Weapon types</a></li>
+                <li><a href="#">Weapon damage</a></li>
+                <li><a href="#">Weapon speed</a></li>
+                <li><a href="#">Weapon stats</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="breadcrumb">
+                <a href="#">Wowpedia</a> > <a href="#">Game mechanics</a> > <a href="#">Combat</a> > Weapon skill
+            </div>
+            
+            <h1 class="page-title">Weapon skill</h1>
+            <div class="page-subtitle">From Wowpedia, the World of Warcraft wiki</div>
+            
+            <div class="infobox">
+                <div class="infobox-header">Weapon Skill</div>
+                <div class="infobox-content">
+                    <table>
+                        <tr><td>Type</td><td>Character skill</td></tr>
+                        <tr><td>Maximum</td><td>5 × character level</td></tr>
+                        <tr><td>Training</td><td>Weapon masters</td></tr>
+                        <tr><td>Usage</td><td>Combat calculations</td></tr>
+                        <tr><td>Related</td><td>Defense, Attack power</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="toc">
+                <div class="toc-title">Contents</div>
+                <ol class="toc-list">
+                    <li><a href="#overview">1 Overview</a></li>
+                    <li><a href="#mechanics">2 Combat mechanics</a></li>
+                    <li><a href="#glancing">3 Glancing blows</a></li>
+                    <li><a href="#racial">4 Racial bonuses</a></li>
+                    <li><a href="#changes">5 Upcoming changes</a></li>
+                </ol>
+            </div>
+            
+            <h2 id="overview">Overview</h2>
+            <p><strong>Weapon skill</strong> is a character skill that determines proficiency with specific weapon types. Higher weapon skill improves combat effectiveness through various mechanical benefits, including increased accuracy and critical strike chance against higher-level opponents.</p>
+            
+            <div class="formula-box">
+                <strong>Skill Calculation:</strong><br>
+                Maximum Weapon Skill = Character Level × 5<br><br>
+                <strong>Training Rate:</strong><br>
+                Influenced by Intellect and weapon attack speed
+            </div>
+            
+            <p><strong>Basic mechanics:</strong></p>
+            <ul>
+                <li>Each weapon type must be trained separately</li>
+                <li>Skill increases through successful combat usage</li>
+                <li>Faster weapons generate skill points more quickly</li>
+                <li>Higher Intellect increases skill gain rate</li>
+            </ul>
+            
+            <h2 id="mechanics">Combat Mechanics</h2>
+            <p>Weapon skill provides combat benefits when it exceeds an opponent's defense rating. Each point of weapon skill above the opponent's defense provides the following benefits:</p>
+            
+            <div class="mechanics-list">
+                <h3>Per Weapon Skill Point Above Defense:</h3>
+                <ul>
+                    <li><strong>Miss chance:</strong> -0.04% (increased accuracy)</li>
+                    <li><strong>Critical hit chance:</strong> +0.04% (improved crit rate)</li>
+                    <li><strong>Block chance:</strong> -0.04% (opponent blocks less)</li>
+                    <li><strong>Parry chance:</strong> -0.04% (opponent parries less)</li>
+                    <li><strong>Dodge chance:</strong> -0.04% (opponent dodges less)</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <strong>Important:</strong> These benefits are most significant when fighting higher-level enemies, particularly raid bosses (level 63) where weapon skill above 300 provides substantial advantages.
+            </div>
+            
+            <h2 id="glancing">Glancing Blow Mechanics</h2>
+            <p>Glancing blows are a special type of attack that occurs when fighting enemies with higher defense ratings:</p>
+            
+            <ul>
+                <li><strong>Occurrence:</strong> Against enemies with defense ≥ attacker's weapon skill</li>
+                <li><strong>Damage type:</strong> Only affects white (auto-attack) melee damage</li>
+                <li><strong>Critical hits:</strong> Glancing blows cannot critically strike</li>
+                <li><strong>Damage reduction:</strong> Proportional to the skill difference</li>
+                <li><strong>Frequency:</strong> Up to 40% of attacks against higher-level enemies</li>
+            </ul>
+            
+            <p>Higher weapon skill reduces both the frequency and severity of glancing blows, making it crucial for DPS optimization against raid bosses.</p>
+            
+            <h2 id="racial">Racial Weapon Skill Bonuses</h2>
+            <p>Several races receive innate bonuses to specific weapon skills, providing immediate combat advantages:</p>
+            
+            <table class="racial-table">
+                <tr>
+                    <th>Race</th>
+                    <th>Weapon Bonus</th>
+                    <th>Bonus Amount</th>
+                </tr>
+                <tr>
+                    <td><strong>Human</strong></td>
+                    <td>Swords, Maces (1H and 2H)</td>
+                    <td>+5 skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Dwarf</strong></td>
+                    <td>Guns</td>
+                    <td>+5 skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Orc</strong></td>
+                    <td>Axes (1H and 2H)</td>
+                    <td>+5 skill</td>
+                </tr>
+                <tr>
+                    <td><strong>Troll</strong></td>
+                    <td>Bows, Thrown Weapons</td>
+                    <td>+5 skill</td>
+                </tr>
+            </table>
+            
+            <p>These racial bonuses are particularly valuable at level 60, where the +5 skill bonus provides significant combat improvements against raid-level content.</p>
+            
+            <h2 id="changes">Upcoming Changes (Patch 2.0.1)</h2>
+            <p>The Burning Crusade expansion will introduce significant changes to weapon skill mechanics:</p>
+            
+            <div class="warning-box">
+                <strong>Major Changes:</strong>
+                <ul>
+                    <li>Weapon skill will <strong>no longer reduce</strong> glancing blow damage</li>
+                    <li>Critical strike rating will replace the direct crit bonus</li>
+                    <li>Each weapon skill point will provide <strong>0.1% critical strike rating</strong> against higher-level monsters</li>
+                    <li>Overall reduced importance of weapon skill in combat calculations</li>
+                </ul>
+            </div>
+            
+            <p>These changes will significantly reduce the importance of weapon skill for DPS optimization, making racial weapon bonuses less impactful in future content.</p>
+            
+            <div class="archive-notice">
+                <strong>📚 Archived Wiki Article:</strong> This article was archived from 
+                <a href="https://wowpedia.fandom.com/wiki/Weapon_skill?diff=prev&oldid=349241" target="_blank">Wowpedia on Fandom</a> 
+                on August 28, 2025. The original wiki may contain updated information, additional details, and community discussions.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

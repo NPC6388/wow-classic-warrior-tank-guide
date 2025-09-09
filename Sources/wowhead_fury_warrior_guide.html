@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fury Warrior DPS Guide - Classic WoW - Wowhead</title>
+    <style>
+        /* Wowhead theme styling */
+        body {
+            margin: 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            background: #000;
+            color: #f0f0f0;
+        }
+        .header {
+            background: linear-gradient(to bottom, #2d2d2d, #1a1a1a);
+            border-bottom: 2px solid #f4bf2a;
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            background: #f4bf2a;
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 15px;
+            margin-right: 20px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .nav-links a:hover {
+            background: #333;
+            color: #f4bf2a;
+        }
+        .breadcrumb {
+            background: #1a1a1a;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 11px;
+        }
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #f4bf2a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            color: #f4bf2a;
+            font-size: 12px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar li {
+            margin: 5px 0;
+        }
+        .sidebar a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 11px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            color: #f4bf2a;
+        }
+        .main-content {
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 25px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4bf2a;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .guide-nav {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+        .guide-nav a {
+            color: #f4bf2a;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+        .guide-nav a:hover, .guide-nav a.active {
+            background: #f4bf2a;
+            color: #000;
+        }
+        h2 {
+            color: #f4bf2a;
+            font-size: 16px;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #ddd;
+            font-size: 14px;
+            margin: 25px 0 10px 0;
+        }
+        .stat-priority {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .stat-priority ol {
+            font-size: 13px;
+            margin: 0;
+            padding-left: 20px;
+        }
+        .stat-priority li {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #333;
+        }
+        .stat-priority li:last-child {
+            border-bottom: none;
+        }
+        .mechanics-table {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .mechanics-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .mechanics-table th {
+            background: #f4bf2a;
+            color: #000;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 11px;
+            text-align: left;
+        }
+        .mechanics-table td {
+            padding: 8px;
+            border-bottom: 1px solid #333;
+            font-size: 11px;
+        }
+        .hit-caps {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .hit-caps ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .hit-caps li {
+            margin: 6px 0;
+        }
+        .important-note {
+            background: #3d2914;
+            border: 1px solid #f4bf2a;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #f4bf2a;
+        }
+        p {
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        ul {
+            margin: 12px 0 12px 20px;
+        }
+        li {
+            margin: 6px 0;
+        }
+        strong {
+            color: #f4bf2a;
+        }
+        .archive-notice {
+            background: #1a2b1a;
+            border: 1px solid #4a5f4a;
+            color: #90ee90;
+            padding: 15px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Wowhead</a>
+            <div class="nav-links">
+                <a href="#">Database</a>
+                <a href="#">Guides</a>
+                <a href="#">News</a>
+                <a href="#">Tools</a>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="#">Home</a> › <a href="#">Classic</a> › <a href="#">Guides</a> › <a href="#">Warrior</a> › Fury DPS Guide
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h3>Classic Guides</h3>
+            <ul>
+                <li><a href="wowhead_threat_overview.html">Threat Overview</a></li>
+                <li><a href="#">Dungeon Guides</a></li>
+                <li><a href="#">Raid Guides</a></li>
+                <li><a href="#">Class Guides</a></li>
+                <li><a href="#">PvP Guides</a></li>
+            </ul>
+            
+            <h3>Warrior Guides</h3>
+            <ul>
+                <li><a href="wowhead_threat_overview.html">Threat Overview</a></li>
+                <li><a href="wowhead_fury_warrior_guide.html" class="active">Fury DPS Guide</a></li>
+                <li><a href="#">Protection Guide</a></li>
+                <li><a href="#">Arms PvP Guide</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="page-title">Fury Warrior DPS Guide - Classic WoW</h1>
+            
+            <div class="guide-nav">
+                <a href="#" class="active">Stat Priority</a>
+                <a href="#">Talents</a>
+                <a href="#">Rotation</a>
+                <a href="#">Gear</a>
+                <a href="#">Consumables</a>
+            </div>
+            
+            <h2>DPS Stat Priority (PvE)</h2>
+            <p>The following stat priority assumes you have achieved <strong>300 weapon skill</strong> and are optimizing for raid DPS performance.</p>
+            
+            <div class="stat-priority">
+                <h3>Priority Order:</h3>
+                <ol>
+                    <li><strong>9% Hit Rating</strong> - Essential for consistent DPS output</li>
+                    <li><strong>Strength and Attack Power</strong> - Primary damage scaling stats</li>
+                    <li><strong>Agility and Crit Chance</strong> - Secondary damage amplification</li>
+                </ol>
+            </div>
+            
+            <div class="important-note">
+                <strong>Key Point:</strong> Hit rating takes absolute priority until you reach the 9% cap for special abilities. Missing attacks is a complete DPS loss that cannot be compensated by other stats.
+            </div>
+            
+            <h2>Stat Conversion Mechanics</h2>
+            
+            <div class="mechanics-table">
+                <table>
+                    <tr>
+                        <th>Stat</th>
+                        <th>Conversion Rate</th>
+                        <th>Effect</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Strength</strong></td>
+                        <td>1 STR = 2 AP</td>
+                        <td>Increases melee damage and blocking value</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agility</strong></td>
+                        <td>20 AGI = 1% Crit</td>
+                        <td>Increases crit chance, dodge, and armor</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stamina</strong></td>
+                        <td>1 STA = 10 HP</td>
+                        <td>Increases health pool for survivability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hit Rating</strong></td>
+                        <td>Varies by level</td>
+                        <td>Reduces miss chance against targets</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h2>Weapon Skill Benefits</h2>
+            <p>Weapon skill above 300 provides significant DPS improvements against raid bosses (level 63):</p>
+            <ul>
+                <li><strong>Reduces miss chance</strong> - Each point decreases miss chance by 0.04%</li>
+                <li><strong>Decreases glancing blow penalty</strong> - Reduces damage loss from glancing blows</li>
+                <li><strong>Increases critical hit chance</strong> - Each point adds 0.04% crit against higher level targets</li>
+                <li><strong>Improves white damage consistency</strong> - More reliable auto-attack damage</li>
+            </ul>
+            
+            <h2>Hit Rating Caps by Content</h2>
+            
+            <div class="hit-caps">
+                <h3>Required Hit Percentages:</h3>
+                <ul>
+                    <li><strong>PvP (same level):</strong> 5% Hit Rating</li>
+                    <li><strong>PvE Special Abilities (behind boss):</strong> 9% Hit Rating</li>
+                    <li><strong>PvE Auto Attacks (behind boss):</strong> 26.4% Hit Rating</li>
+                    <li><strong>Dual Wield Penalty:</strong> +24% additional miss chance</li>
+                </ul>
+                
+                <p><em>Note: The 26.4% auto-attack cap is generally not practical to reach, so focus on the 9% special ability cap.</em></p>
+            </div>
+            
+            <h2>Critical Strike Mechanics</h2>
+            <ul>
+                <li><strong>Damage Multiplier:</strong> Physical crits deal 200% damage (100% bonus)</li>
+                <li><strong>Attack Table Interaction:</strong> Crit chance is reduced by miss and dodge chances</li>
+                <li><strong>Positioning Impact:</strong> Standing behind targets eliminates dodge from the attack table</li>
+                <li><strong>Flurry Synergy:</strong> Critical hits trigger Flurry for increased attack speed</li>
+            </ul>
+            
+            <div class="important-note">
+                <strong>Crit Cap Consideration:</strong> Your effective crit cap varies based on your hit rating and positioning. Higher hit rating allows for more effective crit chance by reducing misses.
+            </div>
+            
+            <div class="archive-notice">
+                <strong>🔗 Archived Wowhead Guide:</strong> This guide was archived from 
+                <a href="https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-stat-priority-attributes-pve" target="_blank" style="color: #90ee90;">Wowhead's Fury Warrior DPS Guide</a> 
+                on August 28, 2025. For the most current information and community discussions, visit the live guide.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

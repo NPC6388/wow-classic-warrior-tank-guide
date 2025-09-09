@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warrior Consumables and Raid Buffs - Classic WoW - Wowhead</title>
+    <style>
+        /* Wowhead theme styling */
+        body {
+            margin: 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            background: #000;
+            color: #f0f0f0;
+        }
+        .header {
+            background: linear-gradient(to bottom, #2d2d2d, #1a1a1a);
+            border-bottom: 2px solid #f4bf2a;
+            padding: 0;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            background: #f4bf2a;
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 15px;
+            margin-right: 20px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .nav-links a:hover {
+            background: #333;
+            color: #f4bf2a;
+        }
+        .breadcrumb {
+            background: #1a1a1a;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 11px;
+        }
+        .breadcrumb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #f4bf2a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            color: #f4bf2a;
+            font-size: 12px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sidebar li {
+            margin: 5px 0;
+        }
+        .sidebar a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 11px;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            color: #f4bf2a;
+        }
+        .main-content {
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 25px;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4bf2a;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .guide-nav {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+        .guide-nav a {
+            color: #f4bf2a;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+        .guide-nav a:hover, .guide-nav a.active {
+            background: #f4bf2a;
+            color: #000;
+        }
+        h2 {
+            color: #f4bf2a;
+            font-size: 16px;
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #ddd;
+            font-size: 14px;
+            margin: 25px 0 10px 0;
+        }
+        .consumable-table {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .consumable-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .consumable-table th {
+            background: #f4bf2a;
+            color: #000;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: left;
+        }
+        .consumable-table td {
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            font-size: 11px;
+            vertical-align: top;
+        }
+        .consumable-table tr:last-child td {
+            border-bottom: none;
+        }
+        .consumable-list {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .consumable-list ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .consumable-list li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .world-buffs {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .world-buffs ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .world-buffs li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .important-note {
+            background: #3d2914;
+            border: 1px solid #f4bf2a;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #f4bf2a;
+        }
+        .priority-box {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .priority-box ol {
+            font-size: 13px;
+            margin: 0;
+            padding-left: 20px;
+        }
+        .priority-box li {
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #333;
+        }
+        .priority-box li:last-child {
+            border-bottom: none;
+        }
+        p {
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+        ul {
+            margin: 12px 0 12px 20px;
+        }
+        li {
+            margin: 6px 0;
+        }
+        strong {
+            color: #f4bf2a;
+        }
+        .archive-notice {
+            background: #1a2b1a;
+            border: 1px solid #4a5f4a;
+            color: #90ee90;
+            padding: 15px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-size: 11px;
+        }
+        .quality-epic {
+            color: #a335ee;
+            font-weight: bold;
+        }
+        .quality-rare {
+            color: #0070dd;
+            font-weight: bold;
+        }
+        .quality-uncommon {
+            color: #1eff00;
+            font-weight: bold;
+        }
+        .quality-common {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Wowhead</a>
+            <div class="nav-links">
+                <a href="#">Database</a>
+                <a href="#">Guides</a>
+                <a href="#">News</a>
+                <a href="#">Tools</a>
+                <a href="#">More</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="#">Home</a> › <a href="#">Classic</a> › <a href="#">Guides</a> › <a href="#">Warrior</a> › Consumables & Raid Buffs
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h3>Classic Guides</h3>
+            <ul>
+                <li><a href="wowhead_threat_overview.html">Threat Overview</a></li>
+                <li><a href="#">Dungeon Guides</a></li>
+                <li><a href="#">Raid Guides</a></li>
+                <li><a href="#">Class Guides</a></li>
+                <li><a href="#">PvP Guides</a></li>
+            </ul>
+            
+            <h3>Warrior Guides</h3>
+            <ul>
+                <li><a href="wowhead_threat_overview.html">Threat Overview</a></li>
+                <li><a href="wowhead_fury_warrior_guide.html">Fury DPS Guide</a></li>
+                <li><a href="wowhead_warrior_consumables.html" class="active">Consumables & Buffs</a></li>
+                <li><a href="#">Protection Guide</a></li>
+                <li><a href="#">Arms PvP Guide</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="page-title">Warrior Consumables and Raid Buffs - Classic WoW</h1>
+            
+            <div class="guide-nav">
+                <a href="#" class="active">Consumables</a>
+                <a href="#">World Buffs</a>
+                <a href="#">Flasks</a>
+                <a href="#">Food & Drink</a>
+                <a href="#">PvP Items</a>
+            </div>
+            
+            <p>This guide covers the essential consumables, elixirs, food buffs, and raid buffs that maximize warrior performance in both DPS and tanking roles. Proper consumable usage is crucial for competitive raid performance and PvP success.</p>
+            
+            <h2>Top Priority Consumables for Warriors</h2>
+            
+            <div class="priority-box">
+                <h3>Essential DPS Consumables:</h3>
+                <ol>
+                    <li><strong class="quality-uncommon">Elemental Sharpening Stone</strong> - Weapon enhancement (+2% crit chance)</li>
+                    <li><strong class="quality-uncommon">Dense Sharpening Stone</strong> - Weapon enhancement (+8 damage)</li>
+                    <li><strong class="quality-rare">Juju Power</strong> - Temporary buff (+30 Strength for 30 minutes)</li>
+                    <li><strong class="quality-rare">Juju Might</strong> - Temporary buff (+40 Attack Power for 10 minutes)</li>
+                    <li><strong class="quality-rare">Elixir of the Mongoose</strong> - Combat buff (+25 Agility, +3.25% Crit for 1 hour)</li>
+                    <li><strong class="quality-rare">Mighty Rage Potion</strong> - Instant rage generation (+60 Strength, immediate rage)</li>
+                </ol>
+            </div>
+            
+            <div class="important-note">
+                <strong>Consumable Stacking:</strong> Most consumables stack with each other but not with items of the same type. Plan your consumable usage to maximize benefits without waste.
+            </div>
+            
+            <h2>World Buffs</h2>
+            <p>World buffs provide some of the most powerful temporary bonuses available to warriors and are essential for competitive raid performance.</p>
+            
+            <div class="world-buffs">
+                <h3>Essential World Buffs:</h3>
+                <ul>
+                    <li><strong class="quality-epic">Rallying Cry of the Dragonslayer</strong> - +5% Critical Hit Chance, +140 Attack Power (2 hours)</li>
+                    <li><strong class="quality-epic">Spirit of Zandalar</strong> - +15% to all stats, +10% movement speed (2 hours)</li>
+                    <li><strong class="quality-epic">Dire Maul Tribute Buffs</strong> - Various stat bonuses (2 hours)
+                        <ul style="margin-top: 5px;">
+                            <li>Slip'kik's Savvy - +3% spell critical strike chance</li>
+                            <li>Fengus' Ferocity - +200 Attack Power</li>
+                            <li>Mol'dar's Moxie - +15% Stamina</li>
+                        </ul>
+                    </li>
+                    <li><strong class="quality-rare">Songflower Serenade</strong> - +5% Critical Hit Chance, +15 all stats (1 hour)</li>
+                    <li><strong class="quality-rare">Warchief's Blessing</strong> - +300 Health, +10 all stats (1 hour)</li>
+                </ul>
+            </div>
+            
+            <h2>Flask Usage</h2>
+            
+            <div class="consumable-table">
+                <table>
+                    <tr>
+                        <th>Flask</th>
+                        <th>Effect</th>
+                        <th>Duration</th>
+                        <th>Best Use</th>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-epic">Flask of the Titans</strong></td>
+                        <td>+1200 Health</td>
+                        <td>2 hours</td>
+                        <td>Tanking progression raids, survivability fights</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-epic">Flask of Supreme Power</strong></td>
+                        <td>+150 Spell Damage</td>
+                        <td>2 hours</td>
+                        <td>Not recommended for warriors</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-epic">Flask of Chromatic Resistance</strong></td>
+                        <td>+25 All Resistances</td>
+                        <td>2 hours</td>
+                        <td>Multi-school magic damage fights</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-epic">Flask of Distilled Wisdom</strong></td>
+                        <td>+2000 Mana</td>
+                        <td>2 hours</td>
+                        <td>Not applicable to warriors</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h2>Food and Alcohol Buffs</h2>
+            
+            <div class="consumable-list">
+                <h3>Best Food Options:</h3>
+                <ul>
+                    <li><strong class="quality-rare">Smoked Desert Dumplings</strong> - +20 Strength for 15 minutes</li>
+                    <li><strong class="quality-rare">Blessed Sunfruit</strong> - +20 Strength for 15 minutes</li>
+                    <li><strong class="quality-uncommon">Grilled Squid</strong> - +10 Agility for 15 minutes</li>
+                    <li><strong class="quality-uncommon">Tender Wolf Steak</strong> - +12 Stamina, +12 Spirit for 15 minutes</li>
+                    <li><strong class="quality-uncommon">Nightfin Soup</strong> - +8 MP5 for 15 minutes (limited warrior benefit)</li>
+                </ul>
+                
+                <h3>Alcohol Benefits:</h3>
+                <ul>
+                    <li><strong class="quality-uncommon">Rumsey Rum Black Label</strong> - +15 Stamina for 15 minutes</li>
+                    <li><strong class="quality-common">Gordok Green Grog</strong> - +10 Stamina for 15 minutes</li>
+                </ul>
+            </div>
+            
+            <h2>Defensive and Resistance Consumables</h2>
+            
+            <div class="consumable-table">
+                <table>
+                    <tr>
+                        <th>Consumable</th>
+                        <th>Effect</th>
+                        <th>Duration</th>
+                        <th>Primary Use</th>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-rare">Greater Fire Protection Potion</strong></td>
+                        <td>+1800 Fire resistance, immunity to fire damage</td>
+                        <td>1 minute</td>
+                        <td>Molten Core, Blackwing Lair fire encounters</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-rare">Greater Nature Protection Potion</strong></td>
+                        <td>+1800 Nature resistance, immunity to nature damage</td>
+                        <td>1 minute</td>
+                        <td>Maraudon, AQ40 nature encounters</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-rare">Greater Frost Protection Potion</strong></td>
+                        <td>+1800 Frost resistance, immunity to frost damage</td>
+                        <td>1 minute</td>
+                        <td>Naxxramas frost encounters</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-rare">Greater Shadow Protection Potion</strong></td>
+                        <td>+1800 Shadow resistance, immunity to shadow damage</td>
+                        <td>1 minute</td>
+                        <td>Scholomance, Naxxramas shadow encounters</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="quality-rare">Greater Arcane Protection Potion</strong></td>
+                        <td>+1800 Arcane resistance, immunity to arcane damage</td>
+                        <td>1 minute</td>
+                        <td>AQ40, Naxxramas arcane encounters</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h2>PvP Consumables</h2>
+            
+            <div class="consumable-list">
+                <h3>Essential PvP Items:</h3>
+                <ul>
+                    <li><strong class="quality-rare">Free Action Potion</strong> - Removes and prevents movement impairing effects for 30 seconds</li>
+                    <li><strong class="quality-rare">Living Action Potion</strong> - Removes existing stuns, fears, and immobilization effects</li>
+                    <li><strong class="quality-rare">Limited Invulnerability Potion</strong> - Physical damage immunity for 6 seconds</li>
+                    <li><strong class="quality-uncommon">Healing Potion (Major)</strong> - Restores 1050-1750 health instantly</li>
+                    <li><strong class="quality-uncommon">Rage Potion</strong> - Generates 20-40 rage instantly</li>
+                </ul>
+                
+                <h3>PvP Engineering Items:</h3>
+                <ul>
+                    <li><strong class="quality-uncommon">Thorium Grenade</strong> - AoE damage and stun</li>
+                    <li><strong class="quality-rare">Goblin Sapper Charge</strong> - High AoE engineering damage</li>
+                    <li><strong class="quality-uncommon">Dense Dynamite</strong> - Ranged AoE damage with stun chance</li>
+                </ul>
+            </div>
+            
+            <h2>Tanking-Specific Consumables</h2>
+            
+            <div class="consumable-list">
+                <h3>Threat and Survivability:</h3>
+                <ul>
+                    <li><strong class="quality-rare">Elixir of Fortitude</strong> - +120 Health for 1 hour</li>
+                    <li><strong class="quality-uncommon">Elixir of Superior Defense</strong> - +450 Armor for 1 hour</li>
+                    <li><strong class="quality-rare">Flask of the Titans</strong> - +1200 Health for 2 hours</li>
+                    <li><strong class="quality-uncommon">Winterfall Firewater</strong> - +35 Attack Power for 20 minutes</li>
+                    <li><strong class="quality-rare">Juju Flurry</strong> - +3% Attack Speed for 20 minutes</li>
+                </ul>
+            </div>
+            
+            <div class="important-note">
+                <strong>Tanking Priority:</strong> For main tanks, survivability consumables like Flask of the Titans and Greater Stamina elixirs take priority over pure DPS consumables. Threat generation is important, but staying alive is paramount.
+            </div>
+            
+            <h2>Consumable Usage Strategies</h2>
+            
+            <h3>Raid Preparation</h3>
+            <ul>
+                <li><strong>Pre-raid:</strong> Obtain world buffs, consume long-duration elixirs and food</li>
+                <li><strong>Buff coordination:</strong> Coordinate with guild for Dragonslayer and Zandalar timings</li>
+                <li><strong>Consumable priority:</strong> Use expensive consumables only on progression or parse attempts</li>
+                <li><strong>Resistance planning:</strong> Research encounter-specific resistance requirements</li>
+            </ul>
+            
+            <h3>PvP Optimization</h3>
+            <ul>
+                <li><strong>Preparation:</strong> Stock multiple Free Action and Living Action potions</li>
+                <li><strong>Engineering synergy:</strong> Combine grenades with charge abilities for burst damage</li>
+                <li><strong>Defensive timing:</strong> Use protection potions proactively against caster opponents</li>
+                <li><strong>Resource management:</strong> Balance consumable costs with PvP frequency</li>
+            </ul>
+            
+            <div class="archive-notice">
+                <strong>🔗 Archived Wowhead Guide:</strong> This guide was archived from 
+                <a href="https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-consumables-raid-buffs-pve" target="_blank" style="color: #90ee90;">Wowhead's Warrior Consumables Guide</a> 
+                on August 29, 2025. For the most current information and community discussions, visit the live guide.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
