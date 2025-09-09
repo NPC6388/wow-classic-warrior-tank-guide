@@ -307,7 +307,7 @@
             • 28% of attacks miss (9% base + 19% off-hand penalty)<br>
             • 6.5% of attacks get dodged<br>  
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing only 70% damage<br>
+            • 40% are glancing blows dealing 65% damage<br>
             • You need 9% hit rating to cap abilities (due to 1% hit suppression)<br>
             • <strong>Result:</strong> Most of your attacks don't do full damage!
         </div>
@@ -317,7 +317,7 @@
             • 19% of attacks miss (off-hand penalty only)*<br>
             • 6.5% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing only 70% damage<br>
+            • 40% are glancing blows dealing 65% damage<br>
             • All abilities hit consistently<br>
             • <span style="color: #28a745; font-size: 1.2em; font-weight: bold;">📈 +15-20% DAMAGE/THREAT</span><br>
             • <strong>*Note:</strong> Dual-wield miss penalty is removed while Heroic Strike/Cleave is queued
@@ -328,7 +328,7 @@
             • 25% of attacks miss (6% base + 19% off-hand penalty)<br>
             • 6.0% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing 85% damage<br>
+            • 30% are glancing blows dealing ~75% damage<br>
             • You only need 6% hit rating to cap abilities (no suppression)<br>
             • <span style="color: #fd7e14; font-size: 1.3em; font-weight: bold;">🚀 +25-30% DAMAGE/THREAT</span>
         </div>
@@ -338,7 +338,7 @@
             • 19% of attacks miss (off-hand penalty only)*<br>
             • 6.0% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing 85% damage<br>
+            • 30% are glancing blows dealing ~75% damage<br>
             • All abilities hit consistently<br>
             • <span style="color: #dc3545; font-size: 1.4em; font-weight: bold;">💥 +35-40% DAMAGE/THREAT</span><br>
             • <strong>*Note:</strong> Dual-wield miss penalty is removed while Heroic Strike/Cleave is queued
@@ -733,7 +733,7 @@
             <tr>
                 <td>Weapon Skill</td>
                 <td>+1 skill = 0.04% less miss/dodge/parry<br>301-305: ~0.8% hit value per point<br>306-308: diminishing returns (~0.4% hit value)</td>
-                <td><strong>305:</strong> Removes hit suppression, glancing damage 70%→85%<br><strong>~25-30% DPS increase</strong> from 300 to 305 skill<br><strong>308:</strong> Glancing damage cap at 95%, <strong>~5-8% DPS increase</strong> from 305 to 308<br>Each point 301-305 extremely valuable</td>
+                <td><strong>305:</strong> Removes hit suppression, reduces glancing chance 40%→30%, damage 65%→~75%<br><strong>~25-30% DPS increase</strong> from 300 to 305 skill<br><strong>308:</strong> Further reduces glancing chance to ~24%, damage to ~80%<br>Each point 301-305 extremely valuable</td>
                 <td>Critical (Threat + Survivability)</td>
             </tr>
             <tr>
@@ -881,8 +881,8 @@
         <div class="warning">
             <strong>Crit Cap Reality:</strong><br>
             • <strong>Baseline (300 skill, 0% hit):</strong> ~26.4% effective crit cap (40% glancing + 28% dual-wield miss* + 5.6% dodge)<br>
-            • <strong>With 6% hit + 305 skill:</strong> ~32.4% effective crit cap (40% glancing + 19% dual-wield miss* + 5.0% dodge)<br>
-            • <strong>With world buffs (+10% crit):</strong> ~42.4% total effective crit (32.4% cap + 10% from buffs)<br>
+            • <strong>With 6% hit + 305 skill:</strong> ~37.4% effective crit cap (30% glancing + 19% dual-wield miss* + 5.0% dodge)<br>
+            • <strong>With world buffs (+10% crit):</strong> ~47.4% total effective crit (37.4% cap + 10% from buffs)<br>
             • <strong>*Note:</strong> Dual-wield miss penalty removed when Heroic Strike/Cleave queued<br>
             • <strong>Yellow abilities:</strong> No practical crit cap since they cannot glancing blow<br>
             • <strong>World Buffs Impact:</strong> +10% crit from buffs stacks on top of attack table limitations, making crit stacking extremely valuable in raids<br>
@@ -1451,7 +1451,8 @@
             <div class="footnote" id="footnote-3">
                 <span class="footnote-number">3.</span>
                 Offensive attack table, miss chances, and glancing blow mechanics:
-                <a href="https://bookdown.org/marrowwar/marrow_compendium/mechanics.html" target="_blank">Marrow's Compendium - Combat Mechanics</a>
+                <a href="https://github.com/magey/classic-warrior/wiki/Attack-table" target="_blank">Magey's Classic Warrior - Attack Table</a>
+                | <a href="https://bookdown.org/marrowwar/marrow_compendium/mechanics.html" target="_blank">Marrow's Compendium - Combat Mechanics</a>
                 | <a href="Sources/marrows_compendium_mechanics.html">Archived Version</a>
                 | <a href="https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-guides/2206-warrior-damage-mechanics.html" target="_blank">OwnedCore - Warrior Damage Mechanics</a>
             </div>
@@ -1569,6 +1570,7 @@
             
             <h4>Simulators & Tools</h4>
             <ul>
+                <li><a href="https://github.com/magey/classic-warrior/wiki/Attack-table" target="_blank">Magey's Classic Warrior - Attack Table (Authoritative)</a></li>
                 <li><a href="https://wowsims.github.io/classic/tank_warrior/" target="_blank">WoWSims Classic Tank Warrior Simulator</a></li>
                 <li><a href="https://wowsims.github.io/classic/warrior/" target="_blank">WoWSims Classic Warrior DPS Simulator</a></li>
                 <li><a href="https://guybrushgit.github.io/WarriorSim/classic.html" target="_blank">Guybrush Warrior Simulator</a></li>
