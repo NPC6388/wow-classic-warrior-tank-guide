@@ -33,8 +33,13 @@
             margin-top: 30px;
         }
         h3 {
-            color: #4682B4;
-            margin-top: 25px;
+            color: #ffffff;
+            background: #2d3748;
+            margin-top: 20px;
+            padding: 8px 12px;
+            border-left: 4px solid #4682B4;
+            border-radius: 4px;
+            font-weight: bold;
         }
         .stat-priority {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -56,12 +61,15 @@
             background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
         }
         .formula {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-left: 4px solid #007bff;
+            background: #1a202c;
+            border: 1px solid #4a5568;
+            border-left: 4px solid #63b3ed;
             padding: 15px;
             margin: 10px 0;
             font-family: 'Courier New', monospace;
+            color: #f7fafc;
+            border-radius: 6px;
+            line-height: 1.4;
         }
         .combat-table {
             border-collapse: collapse;
@@ -219,7 +227,7 @@
                 </li>
                 <li><a href="#rotations">Combat Rotations</a></li>
                 <li><a href="#builds">Warrior Builds</a></li>
-                <li><a href="#consumables">Raid Consumables</a></li>
+                <li><a href="#consumables">Consumables</a></li>
                 <li><a href="#gear-optimization">Gear Optimization</a></li>
                 <li><a href="#simulators">Available Simulators</a></li>
             </ul>
@@ -307,7 +315,7 @@
             • 28% of attacks miss (9% base + 19% off-hand penalty)<br>
             • 6.5% of attacks get dodged<br>  
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing only 70% damage<br>
+            • 40% are glancing blows dealing 65% damage<br>
             • You need 9% hit rating to cap abilities (due to 1% hit suppression)<br>
             • <strong>Result:</strong> Most of your attacks don't do full damage!
         </div>
@@ -317,7 +325,7 @@
             • 19% of attacks miss (off-hand penalty only)*<br>
             • 6.5% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing only 70% damage<br>
+            • 40% are glancing blows dealing 65% damage<br>
             • All abilities hit consistently<br>
             • <span style="color: #28a745; font-size: 1.2em; font-weight: bold;">📈 +15-20% DAMAGE/THREAT</span><br>
             • <strong>*Note:</strong> Dual-wield miss penalty is removed while Heroic Strike/Cleave is queued
@@ -328,7 +336,7 @@
             • 25% of attacks miss (6% base + 19% off-hand penalty)<br>
             • 6.0% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing 85% damage<br>
+            • 30% are glancing blows dealing ~75% damage<br>
             • You only need 6% hit rating to cap abilities (no suppression)<br>
             • <span style="color: #fd7e14; font-size: 1.3em; font-weight: bold;">🚀 +25-30% DAMAGE/THREAT</span>
         </div>
@@ -338,7 +346,7 @@
             • 19% of attacks miss (off-hand penalty only)*<br>
             • 6.0% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing 85% damage<br>
+            • 30% are glancing blows dealing ~75% damage<br>
             • All abilities hit consistently<br>
             • <span style="color: #dc3545; font-size: 1.4em; font-weight: bold;">💥 +35-40% DAMAGE/THREAT</span><br>
             • <strong>*Note:</strong> Dual-wield miss penalty is removed while Heroic Strike/Cleave is queued
@@ -350,6 +358,22 @@
             • <strong>Attack from behind</strong> - Eliminates 14% parry and reduces dodge<br>
             • <strong>Hit rating priority</strong> - Get to required cap based on weapon skill<br>
             • <strong>Queue Heroic Strike/Cleave</strong> - Removes dual-wield miss penalty when active
+        </div>
+
+        <h3 id="weapon-mechanics">Weapon Mechanics</h3>
+
+        <div class="formula">
+            <strong>Weapon Skill Benefits (Critical Thresholds):</strong><a href="#footnote-4" class="footnote-ref">4</a><br>
+            • <strong>305 Weapon Skill:</strong> Removes 1% hit suppression vs level 63, miss drops to 6%<br>
+            • <strong>305+ Benefits:</strong> Glancing damage improves (85% at 305, 95% at 308)<br>
+            • <strong>Reduces Boss Parry:</strong> Each point above 300 reduces parry by 0.04%<br>
+            • <strong>Reduces Parry-Haste:</strong> Less boss parries = less 40% swing timer acceleration<br>
+            • <strong>Why 305 is Critical:</strong> Single most important breakpoint for raid bosses<br>
+            • <strong>308+ Weapon Skill:</strong> Diminishing returns, glancing damage cap reached
+        </div>
+
+        <div class="tip">
+            <strong>Tanking Weapon Priority:</strong> Your weapon is by far the largest contributor to threat building. Focus on DPS and attack speed for high threat and quick rage generation. Faster weapons are generally better for steadier rage and threat generation, plus more frequent Heroic Strike spam opportunities.
         </div>
 
         <details>
@@ -413,6 +437,7 @@
                 </div>
             </div>
         </details>
+
 
         <h4>Boss Attacks You - Defensive Table<a href="#footnote-2" class="footnote-ref">2</a></h4>
         <p>When the boss attacks you, these results are checked in priority order:</p>
@@ -484,15 +509,24 @@
             <strong>Shield Wall:</strong><br>
             • Reduces all damage taken by 75% for 10 seconds<br>
             • 30-minute cooldown (reduced to 20min with talent)<br>
+            • <strong>SHARES COOLDOWN with Recklessness and Retaliation</strong> - cannot use any two in same 30-minute window<br>
             • Ultimate emergency cooldown for surviving burst damage<br>
             • Can save the raid when used at critical moments<br>
-            • Announce usage to healers - they can focus on other targets during effect<br><br>
+            • Announce usage to healers for coordination during high damage phases<br><br>
             
             <strong>Last Stand:</strong><br>
             • Increases health by 30% for 20 seconds<br>
             • 10-minute cooldown (8min with talent)<br>
             • Provides temporary HP buffer for dangerous phases<br>
-            • Health returns to original percentage when expires
+            • Health returns to original percentage when expires<br><br>
+            
+            <strong>Retaliation:</strong><br>
+            • Counterattacks melee attacks against you for 15 seconds (unlimited counters)<br>
+            • 30-minute cooldown<br>
+            • <strong>SHARES COOLDOWN with Shield Wall and Recklessness</strong><br>
+            • Each counterattack generates threat and deals weapon damage<br>
+            • Most effective against multiple melee attackers<br>
+            • Limited raid use due to shared cooldown with crucial defensive abilities
         </div>
 
         <div class="tip">
@@ -613,10 +647,10 @@
 
         <div class="warning">
             <strong>Tank vs DPS Positioning:</strong><br>
-            • <strong>DPS Warriors:</strong> Attack from behind to avoid parry/block (26.4% crit+hit space, 42%+ with world buffs)<br>
-            • <strong>Tank Warriors:</strong> Must attack from front for positioning (25.5% crit+hit space, 42%+ with world buffs)<br>
+            • <strong>DPS Warriors:</strong> Attack from behind to avoid parry/block (26.4% crit+hit space, 40%+ with world buffs)<br>
+            • <strong>Tank Warriors:</strong> Must attack from front for positioning (25.5% crit+hit space, 40%+ with world buffs)<br>
             • <strong>Parry-Haste:</strong> Boss parries accelerate next attack by 40% - major damage spike risk<br>
-            • <strong>Result:</strong> Tanks have significantly worse offensive combat table than DPS
+            • <strong>Result:</strong> Only ~1% difference in offensive potential, but parry-haste creates significant danger for tanks
         </div>
 
         <details>
@@ -658,7 +692,7 @@
             • <strong>25% Crit Rate:</strong> ~68% Flurry uptime (~18% DPS increase)<br>
             • <strong>30% Crit Rate:</strong> ~76% Flurry uptime (~21% DPS increase)<br>
             • <strong>35% Crit Rate:</strong> ~82% Flurry uptime (~24% DPS increase)<br>
-            • <strong>42%+ Crit (w/ World Buffs):</strong> ~88% Flurry uptime (~26-30% DPS increase)<br><br>
+            • <strong>40%+ Crit (w/ World Buffs):</strong> ~87% Flurry uptime (~26-30% DPS increase)<br><br>
             
             <strong>Key Interactions:</strong><br>
             • <strong>Main Hand vs Off-Hand:</strong> Both weapons benefit from Flurry speed<br>
@@ -668,7 +702,7 @@
         </div>
 
         <div class="tip">
-            <strong>Flurry Optimization:</strong> Maintaining high Flurry uptime is crucial for warrior DPS and threat generation. Each Flurry charge provides 30% attack speed increase. At optimal crit levels (30-35%), expect ~76-82% Flurry uptime providing <strong>~21-24% DPS increase</strong> (up to 30% with world buffs at 42% crit), making critical strike rating extremely valuable for fury builds and tank threat builds.
+            <strong>Flurry Optimization:</strong> Maintaining high Flurry uptime is crucial for warrior DPS and threat generation. Each Flurry charge provides 30% attack speed increase. At optimal crit levels (30-35%), expect ~76-82% Flurry uptime providing <strong>~21-24% DPS increase</strong> (up to 30% with world buffs at 40% crit), making critical strike rating extremely valuable for fury builds and tank threat builds.
         </div>
 
         <h3>DPS & Threat Cooldowns</h3>
@@ -677,48 +711,103 @@
             <strong>Death Wish:</strong><br>
             • +20% damage dealt, +20% damage taken for 30 seconds<br>
             • 3-minute cooldown<br>
-            • Primary DPS cooldown for both DPS and threat builds<br>
+            • <strong>~18-20% DPS increase</strong> (direct damage multiplier)<br>
+            • Primary DPS cooldown for both DPS and tanks<br>
             • Essential for burst phases and threat establishment<br>
             • Coordinate with healers when tanking due to increased damage taken<br><br>
             
             <strong>Blood Fury (Orc Racial):</strong><br>
-            • +25% base melee damage (not Attack Power) for 15 seconds<br>
+            • +25% base melee Attack Power for 15 seconds<br>
+            • <strong>-50% healing received for 25 seconds</strong> (debuff outlasts buff by 10 seconds)<br>
             • 2-minute cooldown<br>
-            • Stacks multiplicatively with other damage bonuses<br>
-            • Powerful for both DPS warriors and orc tanks<br><br>
+            • <strong>~8-12% DPS increase</strong> (varies by gear/buffs)<br>
+            • Scales with Strength, not flat +AP from gear<br>
+            • Never used by tanks - 50% healing reduction is too dangerous<br><br>
             
             <strong>Berserking (Troll Racial):</strong><br>
-            • +30% attack speed when below 40% health for 20 seconds<br>
+            • +10-30% attack speed based on missing health for 10 seconds<br>
             • 3-minute cooldown<br>
-            • Situational but powerful when health is low<br>
-            • More useful for DPS than tanks due to health requirement<br><br>
+            • <strong>~9-10% DPS increase</strong> (full HP pull usage)<br>
+            • <strong>~25-30% DPS increase</strong> (maximum at very low health)<br>
+            • Excellent for tanks - safe pull usage or emergency low-health threat<br>
+            • No defensive penalty unlike other damage cooldowns<br><br>
             
             <strong>Recklessness:</strong><br>
             • +100% critical strike chance, +20% damage taken for 15 seconds<br>
             • 30-minute cooldown<br>
-            • Ultimate DPS cooldown, use with caution in raids<br>
+            • <strong>~40-60% DPS increase</strong> (100% crit + Flurry synergy)<br>
+            • Ultimate DPS cooldown, use with extreme caution in raids<br>
             • Requires careful coordination with healers - announce usage in advance
         </div>
 
+        <h4>Tank Cooldown Usage Strategy</h4>
         <div class="tip">
-            <strong>Cooldown Stacking:</strong> Death Wish + Blood Fury/Berserking + Recklessness + consumables creates massive damage windows. Coordinate with raid buffs, boss vulnerability phases, and healers for maximum impact. Announce damage-taken increases to healers in advance, especially when stacking multiple cooldowns (Death Wish + Recklessness = 40% increased damage taken).
+            <strong>Tank Philosophy:</strong> Use cooldowns to establish massive threat LEADS at the beginning of fights or phases, not for sustained DPS. Goal is to build enough threat to tank comfortably for the rest of the encounter.<br><br>
+            
+            <strong>Primary Usage:</strong><br>
+            • <strong>On Pull:</strong> Death Wish (and Berserking if Troll) to build initial threat lead<br>
+            • <strong>Phase Transitions:</strong> Use cooldowns when new adds spawn or threat resets<br>
+            • <strong>Emergency Threat:</strong> When losing aggro and need immediate threat burst<br>
+            • <strong>Recklessness:</strong> Extremely situational - desperate threat situations or farm content only<br>
+            • <strong>CRITICAL:</strong> Recklessness shares 30-minute cooldown with Shield Wall and Retaliation - blocks defensive cooldowns entirely<br><br>
+            
+            <strong>Strategy:</strong> Build massive threat lead early → switch to shield → maintain lead through defensive tanking. Communicate with healers about damage taken increases (Death Wish +20%, Recklessness +20%) before using. Never use Recklessness if you might need Shield Wall or Retaliation in the next 30 minutes.
         </div>
 
-        <h3 id="weapon-mechanics">Weapon Mechanics</h3>
+        <div class="warning">
+            <strong>Tank Cooldown Reality Check:</strong><br>
+            • <strong>Death Wish:</strong> Common usage - manageable +20% damage taken with healer coordination<br>
+            • <strong>Blood Fury:</strong> Almost never used by tanks - 50% healing reduction is too dangerous<br>
+            • <strong>Recklessness:</strong> Extremely situational - only for desperate threat situations or farm content, shares CD with Shield Wall and Retaliation<br>
+            • <strong>Berserking:</strong> Very useful for tanks - powerful threat when health drops, no defensive penalty
+        </div>
 
-        <div class="formula">
-            <strong>Weapon Skill Benefits (Critical Thresholds):</strong><a href="#footnote-4" class="footnote-ref">4</a><br>
-            • <strong>305 Weapon Skill:</strong> Removes 1% hit suppression vs level 63, miss drops to 6%<br>
-            • <strong>305+ Benefits:</strong> Glancing damage improves (85% at 305, 95% at 308)<br>
-            • <strong>Reduces Boss Parry:</strong> Each point above 300 reduces parry by 0.04%<br>
-            • <strong>Reduces Parry-Haste:</strong> Less boss parries = less 40% swing timer acceleration<br>
-            • <strong>Why 305 is Critical:</strong> Single most important breakpoint for raid bosses<br>
-            • <strong>308+ Weapon Skill:</strong> Diminishing returns, glancing damage cap reached
+        <h4>DPS Cooldown Usage Strategy</h4>
+        <div class="stat-priority">
+            <strong>DPS Philosophy:</strong> Use cooldowns for maximum DAMAGE during high-value phases, not threat establishment. Goal is to maximize overall encounter DPS and damage meters.<br><br>
+            
+            <strong><a href="https://wago.io/MhTYK9fAn/1" target="_blank">Time To Kill WeakAura</a> Strategy:</strong><br>
+            • Track boss HP decay rate to predict when execute phase begins<br>
+            • Decide whether to save cooldowns or use early based on TTK predictions<br>
+            • Optimize cooldown timing to align with execute phase for maximum impact<br>
+            • <strong>Raid Comp Adjustment:</strong> More warriors in raid = shorter execute phase (higher execute DPS) - subtract time based on comp history from TTK timer<br><br>
+
+            <strong>Execute Phase Timing (20% HP and below):</strong><br>
+            • Primary strategy: Save cooldowns for execute phase when boss damage is highest<br>
+            • Stack Death Wish + racial + consumables during execute for maximum impact<br>
+            • Use TTK predictions to time cooldowns optimally for execute phase<br><br>
+
+            <strong>Long Fight Strategy:</strong><br>
+            • If fight duration > 3.5 minutes: Use cooldowns early + again during execute (eg. C'Thun)<br><br>
+
+            <strong>Recklessness Raid Strategy:</strong><br>
+            • <strong>Boss Priority:</strong> Choose which bosses deserve Recklessness most (30min CD = limited uses per raid)<br>
+            • <strong>Priority Bosses:</strong> Final bosses, DPS races, or execute-heavy fights typically best choices<br><br>
+
+            <strong>Example Optimal Stacking Order:</strong><br>
+            <em>Ordered by duration (longest to shortest) to maximize overlap:</em><br>
+            1. Trinket(s) - Diamond Flask (60sec duration)<br>
+            2. Death Wish (30sec duration)<br>
+            3. Blood Fury (25sec duration)<br>
+            4. Mighty Rage Potion (20sec duration)<br>
+            5. Recklessness (15sec duration) - if chosen for this boss encounter<br>
+            6. Berserking (10sec duration)
         </div>
 
         <div class="tip">
-            <strong>Tanking Weapon Priority:</strong> Your weapon is by far the largest contributor to threat building. Focus on DPS and attack speed for high threat and quick rage generation. Faster weapons are generally better for steadier rage and threat generation, plus more frequent Heroic Strike spam opportunities.
+            <strong><a href="https://wago.io/MhTYK9fAn/1" target="_blank">Time To Kill WeakAura</a> Importance:</strong> Essential tool for DPS warriors to predict execute phase timing and optimize cooldown usage. TTK tracks boss HP decay rate in real-time, helping decide whether to save cooldowns or use early. Most effective DPS warriors rely on TTK predictions to maximize damage output during optimal phases.<br><br>
+            <strong>Note:</strong> TTK provides estimates based on current damage rates, but actual timing may vary depending on raid composition performance being faster or slower than the estimates predict.
         </div>
+
+        <div class="warning">
+            <strong>Cooldown Stacking Risks:</strong><br>
+            • <strong>Shared Cooldown Limitation:</strong> Recklessness, Shield Wall, and Retaliation share the same 30-minute cooldown timer<br>
+            • <strong>Death Wish + Recklessness:</strong> +40% damage taken - extreme risk<br>
+            • <strong>Blood Fury:</strong> -50% healing received can be fatal during high damage phases<br>
+            • <strong>Always coordinate</strong> with healers before stacking multiple survival penalties<br>
+            • Consider fight-specific damage patterns (Vaelastrasz breath, C'Thun tentacles, etc.)
+        </div>
+
 
         <h2 id="stat-priorities">Stat Priorities</h2>
 
@@ -733,13 +822,13 @@
             <tr>
                 <td>Weapon Skill</td>
                 <td>+1 skill = 0.04% less miss/dodge/parry<br>301-305: ~0.8% hit value per point<br>306-308: diminishing returns (~0.4% hit value)</td>
-                <td><strong>305:</strong> Removes hit suppression, glancing damage 70%→85%<br><strong>~25-30% DPS increase</strong> from 300 to 305 skill<br><strong>308:</strong> Glancing damage cap at 95%, <strong>~5-8% DPS increase</strong> from 305 to 308<br>Each point 301-305 extremely valuable</td>
+                <td><strong>305:</strong> Removes hit suppression, reduces glancing chance 40%→30%, damage 65%→~75%<br><strong>~25-30% DPS increase</strong> from 300 to 305 skill<br><strong>308:</strong> Further reduces glancing chance to ~24%, damage to ~80%<br>Each point 301-305 extremely valuable</td>
                 <td>Critical (Threat + Survivability)</td>
             </tr>
             <tr>
                 <td>Hit Chance</td>
                 <td>Hit % from gear (no rating conversion in Classic)</td>
-                <td><strong>9% ability hit cap (6% at 305 skill)</strong><br><strong>9% hit + 0 skill:</strong> ~15-20% DPS increase<br><strong>6% hit + 305 skill:</strong> ~35-40% DPS increase<br>*32.4% = max white hit+crit space vs level 63 (42%+ with world buffs)</td>
+                <td><strong>9% ability hit cap (6% at 305 skill)</strong><br><strong>9% hit + 0 skill:</strong> ~15-20% DPS increase<br><strong>6% hit + 305 skill:</strong> ~35-40% DPS increase<br>*26.4% = max white hit+crit space vs level 63 (40%+ achievable with world buffs)</td>
                 <td>Critical (Second priority)</td>
             </tr>
             <tr>
@@ -769,7 +858,7 @@
             <tr>
                 <td>Critical Strike</td>
                 <td>20 Agility = 1% Crit Chance</td>
-                <td><strong>~26-42% effective cap</strong> for white attacks vs level 63<br>(varies by hit/weapon skill/world buffs)<br><strong>Flurry Uptime:</strong> Uses F_up = 1 - (1 - c)^4 formula (diminishing returns)<br><strong>With World Buffs:</strong> ~42% total crit achievable, <strong>~26-30% DPS increase</strong></td>
+                <td><strong>~26-40% effective cap</strong> for white attacks vs level 63<br>(varies by hit/weapon skill/world buffs)<br><strong>Flurry Uptime:</strong> Uses F_up = 1 - (1 - c)^4 formula (diminishing returns)<br><strong>With World Buffs:</strong> ~40% total crit achievable, <strong>~26-30% DPS increase</strong></td>
                 <td>High (Threat + Flurry)</td>
             </tr>
             <tr>
@@ -852,7 +941,7 @@
                     • <strong>Direct Damage:</strong> 100% → 200% on crit hits<br>
                     • <strong>Flurry Uptime:</strong> F_up = 1 - (1 - c)^4 formula with diminishing returns<br>
                     • <strong>Scaling Math:</strong> 30% crit = 76% Flurry uptime = ~21% DPS increase<br>
-                    • <strong>World Buff Scaling:</strong> 42% crit = 88% Flurry uptime = ~26-30% DPS increase<br>
+                    • <strong>World Buff Scaling:</strong> 40% crit = 87% Flurry uptime = ~26-30% DPS increase<br>
                     • <strong>Attack Table Dependent:</strong> Only effective after hit/weapon skill optimize crit space<br><br>
                     
                     <strong>4th Priority - Attack Power:</strong><br>
@@ -881,8 +970,8 @@
         <div class="warning">
             <strong>Crit Cap Reality:</strong><br>
             • <strong>Baseline (300 skill, 0% hit):</strong> ~26.4% effective crit cap (40% glancing + 28% dual-wield miss* + 5.6% dodge)<br>
-            • <strong>With 6% hit + 305 skill:</strong> ~32.4% effective crit cap (40% glancing + 19% dual-wield miss* + 5.0% dodge)<br>
-            • <strong>With world buffs (+10% crit):</strong> ~42.4% total effective crit (32.4% cap + 10% from buffs)<br>
+            • <strong>With 6% hit + 305 skill:</strong> Better attack table but world buffs typically used instead<br>
+            • <strong>With world buffs (+10% crit):</strong> ~40%+ total achievable crit (baseline + world buffs + gear optimization)<br>
             • <strong>*Note:</strong> Dual-wield miss penalty removed when Heroic Strike/Cleave queued<br>
             • <strong>Yellow abilities:</strong> No practical crit cap since they cannot glancing blow<br>
             • <strong>World Buffs Impact:</strong> +10% crit from buffs stacks on top of attack table limitations, making crit stacking extremely valuable in raids<br>
@@ -972,7 +1061,7 @@
             <strong>World Buff Reality:</strong> Fully world-buffed warriors can achieve 50-70% higher DPS than unbuffed. This fundamentally changes stat priorities - crit becomes much more valuable when you have +10% base crit from buffs.
         </div>
 
-        <h2 id="consumables">Raid Consumables</h2>
+        <h2 id="consumables">Consumables</h2>
 
         <h3>DPS Warrior Consumables<a href="#footnote-13" class="footnote-ref">13</a></h3>
         <div class="stat-priority threat-build">
@@ -1085,7 +1174,7 @@
 
         <h3>Fury DPS Rotation</h3>
         <div class="stat-priority threat-build">
-            <h4>Opening Priority (First 6 GCDs)</h4>
+            <h4>Opening Priority (First Several GCDs)</h4>
             <ol>
                 <li><strong>Sunder Armor</strong> - Essential raid debuff, highest priority<a href="#sunder-priority" class="footnote-ref">*</a></li>
                 <li><strong>Bloodthirst</strong> - High damage, cannot glance, cannot be parried (attacking from behind)</li>
@@ -1095,13 +1184,20 @@
             </ol>
             
             <h4>Priority System (Rage Dependent)</h4>
+            <strong>Normal Phase (>20% HP):</strong>
             <ol>
                 <li><strong>Sunder Armor</strong> - Until 5 stacks applied</li>
                 <li><strong>Bloodthirst</strong> - On cooldown (6 seconds)</li>
                 <li><strong>Whirlwind</strong> - On cooldown (10 seconds)</li>
-                <li><strong>Execute</strong> - When target <20% health, queue HS during execute phase if rage allows</li>
-                <li><strong>Heroic Strike (queued)</strong> - Single target, priority during execute phase, otherwise only when it won't delay BT/WW</li>
+                <li><strong>Heroic Strike (queued)</strong> - Single target, only when it won't delay BT/WW</li>
                 <li><strong>Cleave (queued)</strong> - Replace HS when 2+ mobs, higher damage per rage</li>
+            </ol>
+            
+            <strong>Execute Phase (<20% HP):</strong>
+            <ol>
+                <li><strong>Execute</strong> - Spam</li>
+                <li><strong>Heroic Strike (queued)</strong> - As rage allows without delaying Execute</li>
+                <li><strong>Bloodthirst</strong> - On cooldown if you have >2,000 Attack Power</li>
             </ol>
         </div>
 
@@ -1109,7 +1205,7 @@
             <strong>Why DPS Warriors Sunder First:</strong><br>
             • <strong>Tank Focus:</strong> Allows tank to start with highest threat abilities (BT/HS) instead of sunder stacks<br>
             • <strong>Threat Safety:</strong> DPS warriors delayed 1 second to ensure tank establishes initial aggro control<br>
-            • <strong>Raid Benefit:</strong> -20% armor = ~25% more physical DPS for entire raid<br>
+            • <strong>Raid Benefit:</strong> -20% armor = ~25% more physical DPS for entire raid, near instant 5 stacks<br>
             • <strong>Cannot Glance:</strong> Sunder is a "yellow" ability that bypasses off-hand penalty*<br>
             • <strong>Priority Target:</strong> Gets sunder stacks on target before personal DPS rotation<br>
             • <strong>*Note:</strong> Can still be parried/dodged by boss
@@ -1134,9 +1230,11 @@
                 <li><strong>Tank gear</strong> - Switch to tanking gear while keeping Diamond Flask equipped</li>
                 <li><strong>Bloodrage</strong> - Generate initial rage</li>
                 <li><strong>Death Wish</strong> - +20% damage/threat, +20% damage taken</li>
+                <li><strong>Berserker Rage</strong> - Generate extra rage when taking damage and become immune to fear, charm, and incapacitate effects</li>
                 <li><strong>Recklessness</strong> - +100% crit chance, +20% damage taken</li>
                 <li><strong>Defensive Stance</strong> - Switch to defensive for +130% threat modifier</li>
                 <li><strong>Mighty Rage Potion</strong> - 45-75 rage + 60 Strength for 20sec</li>
+                <li><strong>Heroic Strike</strong> - Queue before Bloodthirst for guaranteed crit on next white hit</li>
                 <li><strong>Bloodthirst</strong> - First GCD with massive crit chance and enhanced healing</li>
             </ol>
             
@@ -1191,8 +1289,8 @@
 
         <h3>Threat Set Priority</h3>
         <ul>
-            <li>Weapon skill (Edgemaster's Handguards, racial bonuses) - foundation for everything else</li>
-            <li>Hit rating to cap (essential for rage generation)</li>
+            <li>Weapon skill (from items or racial bonuses) - foundation for everything else</li>
+            <li>Hit rating to cap (6% with 305 weapon skill or 9% with 300 skill)</li>
             <li>Fast, high-DPS weapons for consistent rage and TPS</li>
             <li>Critical strike gear for Flurry uptime and threat spikes</li>
             <li>Agility for additional crit and dodge</li>
@@ -1202,18 +1300,37 @@
         <h3>Mitigation Set Priority</h3>
         <ul>
             <li>Defense skill for crit immunity (440 defense goal) - survival foundation</li>
-            <li>Stamina for health buffer - increases effective HP</li>
-            <li>Hit rating to cap (essential for rage generation)</li>
+            <li>Stamina for health buffer</li>
+            <li>Hit rating to cap (6% with 305 weapon skill or 9% with 300 skill)</li>
             <li>Shield with high armor value</li>
             <li>Armor</li>
-            <li>Weapon skill for reducing parry-haste</li>
+            <li>Weapon skill for reducing parry-haste (mitigation stats take priority over weapon skill)</li>
             <li>Agility for dodge</li>
         </ul>
 
-        <h3>Flask Set (Diamond Flask Optimization)</h3>
+        <h3>Balanced Set Priority</h3>
         <ul>
-            <li>+Healing items equipped in all possible slots to maximize healing received</li>
-            <li>Used exclusively out of combat to boost Diamond Flask effectiveness</li>
+            <li><strong>Best for:</strong> All-around tanking, off-tank role, progression content, learning encounters</li>
+            <li>Hit rating to cap (6% with 305 weapon skill or 9% with 300 skill)</li>
+            <li>Weapon skill (from items or racial bonuses) - top priority after hit for reducing glancing blows</li>
+            <li>Defense skill balanced between threat and mitigation sets (330-380 defense)</li>
+            <li>HP balanced between threat and mitigation sets</li>
+            <li>Shield depending on raid</li>
+            <li>Gear selection balanced between threat and mitigation pieces</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>Balanced Set Philosophy:</strong> Compromise between threat and mitigation sets for tanks who need versatility. Each stat target falls between the threat set's aggressive approach and the mitigation set's defensive approach, sacrificing peak specialization for well-rounded performance across all encounter types.
+        </div>
+        
+        <div class="warning">
+            <strong>Set Selection Considerations:</strong> All gear sets should be carefully chosen to account for current raid composition, gearing status, player skill level, and expected fight duration. What works for one raid team may not be optimal for another.
+        </div>
+
+        <h3>Flask Set Optimization (For Tanks)</h3>
+        <ul>
+            <li>+Healing items in all possible slots to maximize Diamond Flask effect</li>
+            <li>Used exclusively out of combat</li>
             <li>Pre-pull sequence: Power Infusion (+20% spell damage/healing) → Equip Flask Set → Activate Diamond Flask → Switch to tank gear</li>
             <li>Diamond Flask must remain equipped to maintain the HoT effect</li>
             <li>Diamond Flask heals for flat amount (9 HP/5sec base + 100% of +healing gear)</li>
@@ -1225,19 +1342,19 @@
             <summary><strong>Click for Flask Set Example and Threat Analysis</strong></summary>
             <div style="margin-top: 15px;">
                 <div class="formula">
-                    <strong>Flask Set Analysis: BiS +1,301 Healing Flask Set → 8k HP Tank Set</strong><br><br>
+                    <strong>Flask Set Analysis: BiS +1,301 Healing Flask Set → Tank Set</strong><br><br>
                     
                     <strong>Setup:</strong><br>
-                    • BiS Flask Set: +1,301 healing power, ~4k HP<br>
-                    • Tank Set: Standard tanking gear, ~8k HP<br>
+                    • BiS Flask Set: +1,301 healing power<br>
+                    • Tank Set: Chosen for the specific fight<br>
                     • Diamond Flask: 9 HP/5sec base, scales 100% with +healing at activation<br><br>
                     
-                    <strong>Flask Set Activation (Low HP Pool):</strong><br>
+                    <strong>Flask Set Activation:</strong><br>
                     • 1,310 HP every 5 seconds for 60 seconds (9 + 1,301)<br>
                     • With Power Infusion: 1,572 HP/5sec for 60 seconds<br>
                     • Snapshots the enhanced healing bonus<br><br>
                     
-                    <strong>Tank Set Performance (High HP Pool):</strong><br>
+                    <strong>Tank Set Performance:</strong><br>
                     • Same 1,572 HP/5sec healing from snapshotted effect<br>
                     • Total healing: ~18,864 HP over 60 seconds<br>
                     • Applied to warrior in full tanking gear<br><br>
@@ -1256,6 +1373,24 @@
                 </div>
             </div>
         </details>
+
+        <h3>Off-Tank (OT) Considerations</h3>
+        
+        <div class="stat-priority threat-build">
+            <strong>Off-Tank Role Priorities:</strong><br>
+            • <strong>Threat Generation:</strong> Must generate high TPS while staying below MT threat<br>
+            • <strong>Positioning Flexibility:</strong> Often required to pick up adds or swap with MT<br>
+            • <strong>Survival Readiness:</strong> May need to instantly become MT if main tank dies<br>
+            • <strong>DPS Contribution:</strong> Expected to deal significant damage when not actively tanking or expecting to for this fight (default stance: Berserker)<br><br>
+            
+            <strong>Gear Strategy for OTs:</strong><br>
+            • <strong>Hybrid Approach:</strong> Balance between threat and survival stats<br>
+            • <strong>Shield Usage:</strong> Often equip shield when tanking adds/non-priority targets - more time taking damage and more time to build threat than skull/X targets<br>
+            • <strong>Fast Weapons:</strong> Prioritize rage generation for instant threat when needed<br>
+            • <strong>Hit Cap Priority:</strong> Essential for reliable threat pickup on adds<br>
+            • <strong>Defense for Crit Immunity:</strong> 440+ defense goal or Shield Block active prevents crits if needed<br>
+            • <strong>Stamina Buffer:</strong> Enough HP to survive initial burst when taking over
+        </div>
 
         <h3>Weapon Skill Options</h3>
         
@@ -1318,80 +1453,341 @@
             <strong>Weapon Hand Placement:</strong> For dual wield setups, weapon skill bonuses affect both hands equally. However, prioritize your <strong>highest DPS weapon in main hand</strong> since it deals full damage and is used for all instant abilities. For tanking, consider <strong>faster main hand weapons</strong> for better rage generation and more frequent Heroic Strike opportunities. For sword and shield configurations, the weapon skill weapon goes in your <strong>main hand</strong> with the shield in the off-hand.
         </div>
 
-        <h3>Encounter-Specific Requirements</h3>
-        
-        <div class="stat-priority survival-build">
-            <strong>Fire Resistance Fights:</strong><br>
-            • <strong>Molten Core:</strong> 200+ Fire Resistance for Ragnaros, Baron Geddon<br>
-            • <strong>BWL:</strong> 150+ Fire Resistance for Vaelastrasz, Flamegor<br>
-            • Prioritize Fire Resistance > other stats for these encounters<br><br>
-            
-            <strong>Nature Resistance Fights:</strong><br>
-            • <strong>AQ40:</strong> 200+ Nature Resistance for Princess Huhuran<br>
-            • <strong>Maraudon:</strong> Nature Resistance helpful for Princess Theradras<br>
-            • Use Nature Protection potions as supplement<br><br>
-            
-            <strong>Frost Resistance Fights:</strong><br>
-            • <strong>Naxxramas:</strong> 200+ Frost Resistance for Sapphiron<br>
-            • Frost Protection Wards and potions essential<br><br>
-            
-            <strong>High Stamina Requirements:</strong><br>
-            • <strong>Patchwerk (Naxx):</strong> 8,000+ HP minimum for hateful strikes<br>
-            • <strong>Four Horsemen:</strong> Maximum stamina for mark stacking<br>
-            • <strong>Twin Emperors:</strong> High HP for teleport mechanic<br><br>
-            
-            <strong>Maximum Defense Priority:</strong><br>
-            • <strong>Noth (Naxx):</strong> 440+ defense goal critical for skeleton adds<br>
-            • <strong>Gothik:</strong> High defense for undead waves<br>
-            • Any fight with high crit damage requires defense cap<br><br>
-        </div>
+        <h2 id="macros">Essential Tanking Macros</h2>
 
-        <h3>Off-Tank (OT) Considerations</h3>
-        
-        <div class="stat-priority threat-build">
-            <strong>Off-Tank Role Priorities:</strong><br>
-            • <strong>Threat Generation:</strong> Must generate high TPS while staying below MT threat<br>
-            • <strong>Positioning Flexibility:</strong> Often required to pick up adds or swap with MT<br>
-            • <strong>Survival Readiness:</strong> May need to instantly become MT if main tank dies<br>
-            • <strong>DPS Contribution:</strong> Expected to deal significant damage when not actively tanking (default stance: Berserker)<br><br>
+        <div class="stat-priority survival-build">
+            <h3>General Macros</h3>
             
-            <strong>Gear Strategy for OTs:</strong><br>
-            • <strong>Hybrid Approach:</strong> Balance between threat and survival stats<br>
-            • <strong>Shield and/or Mitigation Gear:</strong> Often use shield and/or more defensive gear when tanking adds/non-priority targets - more time taking damage and more time to build threat than skull/X targets<br>
-            • <strong>Fast Weapons:</strong> Prioritize rage generation for instant threat when needed<br>
-            • <strong>Hit Cap Priority:</strong> Essential for reliable threat pickup on adds<br>
-            • <strong>Defense for Crit Immunity:</strong> 440+ defense goal or Shield Block active prevents crits<br>
-            • <strong>Stamina Buffer:</strong> Enough HP to survive initial burst when taking over<br><br>
+            <div class="formula">
+                <strong>Generic Macro Format:</strong><br>
+                #showtooltip &lt;name of ability&gt;<br>
+                /cast &lt;name of stance&gt;<br>
+                /cast &lt;name of ability&gt;<br>
+                /startattack
+            </div>
             
-            <strong>OT-Specific Encounters:</strong><br>
-            • <strong>Razorgore (BWL):</strong> Add control while MT tanks boss<br>
-            • <strong>Twin Emperors (AQ40):</strong> Tank swapping mechanic every 60 seconds<br>
-            • <strong>Four Horsemen (Naxx):</strong> Multiple tanks required for mark rotation<br>
-            • <strong>Thaddius (Naxx):</strong> Two tanks needed for Feugen and Stalagg<br><br>
+            <div class="formula">
+                <strong>Heroic Strike (bind to mousewheel down):</strong><br>
+                #showtooltip heroic strike<br>
+                /startattack<br>
+                /cast !Heroic Strike
+            </div>
+
+            <h3>Tanking Macros</h3>
             
-            <strong>Stance and Ability Usage:</strong><br>
-            • <strong>Battle Stance:</strong> Default stance for DPS while not actively tanking<br>
-            • <strong>Quick Stance Dancing:</strong> Switch to Defensive Stance when picking up mobs<br>
-            • <strong>Taunt Timing:</strong> Coordinate with MT for smooth threat transitions<br>
-            • <strong>Challenging Shout:</strong> AoE taunt for multiple add situations<br><br>
+            <div class="formula">
+                <strong>Taunt with Mouseover and Announcements:</strong><br>
+                #showtooltip Taunt<br>
+                /startattack [harm,nodead]<br>
+                /cast Defensive Stance<br>
+                /cast [@mouseover,harm,nodead][] Taunt<br>
+                /ra Taunted %T<br>
+                /p Taunted %T
+            </div>
             
-            <strong>Communication Requirements:</strong><br>
-            • <strong>Threat Meters:</strong> Monitor MT threat to stay in appropriate range<br>
-            • <strong>Voice Communication:</strong> Essential for tank swaps and emergency situations<br>
-            • <strong>Positioning Calls:</strong> Coordinate positioning for cleaves and AoE<br>
-            • <strong>Cooldown Coordination:</strong> Share information about defensive cooldowns
+            <div class="formula">
+                <strong>LIP + Challenging Shout (needs 2 GCDs):</strong><br>
+                #showtooltip Challenging Shout<br>
+                /stopcasting<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /equipslot 17 &lt;shield name&gt;<br>
+                /startattack<br>
+                /p AOE TAUNT<br>
+                /RAID AOE TAUNT<br>
+                /use Limited Invulnerability Potion<br>
+                /cast Challenging Shout
+            </div>
+            
+            <div class="formula">
+                <strong>Flask Set PRE-PULL (requires ItemRack):</strong><br>
+                <em>Slot 14 is the bottom trinket slot. Make one for each fight-specific set.</em><br>
+                #showtooltip diamond flask<br>
+                /itemrack equip &lt;name of flask set&gt;<br>
+                /click pause 0.5<br>
+                /use 14<br>
+                /click pause 0.5<br>
+                /itemrack equip &lt;Name of tanking set&gt;
+            </div>
+            
+            <div class="formula">
+                <strong>Remove Power Word: Shield (add to any macro):</strong><br>
+                /cancelaura power word: shield
+            </div>
+            
+            <div class="formula">
+                <strong>Execute While Tanking (bind to mousewheel up):</strong><br>
+                <em>For fights like Vael where you need to execute while tanking</em><br>
+                #showtooltip Execute<br>
+                /startattack<br>
+                /stopcasting<br>
+                /cast Battle Stance<br>
+                /cast Execute<br>
+                /cast Heroic Strike
+            </div>
+            
+            <div class="formula">
+                <strong>Mocking Blow:</strong><br>
+                #showtooltip mocking blow<br>
+                /startattack<br>
+                /cast battle stance<br>
+                /cast mocking blow
+            </div>
+            
+            <div class="formula">
+                <strong>Equip Shield + Stoneshield + Shield Block (needs 2 GCDs):</strong><br>
+                #showtooltip Shield block<br>
+                /startattack<br>
+                /stopcasting [noworn:Shields]<br>
+                /equipslot 17 &lt;name of shield&gt;<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /cast Defensive Stance<br>
+                /use Greater Stoneshield Potion<br>
+                /cast shield block
+            </div>
+            
+            <div class="formula">
+                <strong>Shield Wall:</strong><br>
+                #showtooltip Shield Wall<br>
+                /startattack [combat,harm,nodead]<br>
+                /stopcasting [noworn:Shields]<br>
+                /equipslot 17 &lt;name of shield&gt;<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /cast defensive stance<br>
+                /cast Shield Wall<br>
+                /ra Shield Wall activated
+            </div>
+            
+            <div class="formula">
+                <strong>Last Stand:</strong><br>
+                #showtooltip last stand<br>
+                /startattack [combat,harm,nodead]<br>
+                /stopcasting [noworn:Shields]<br>
+                /equipslot 17 &lt;name of shield&gt;<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /cast defensive stance<br>
+                /cast last stand<br>
+                /ra Last Stand activated
+            </div>
+
+            <h3>DPS Macros</h3>
+            
+            <div class="formula">
+                <strong>DPS Charge (start in B-stance):</strong><br>
+                #showtooltip charge<br>
+                /startattack<br>
+                /cast Charge<br>
+                /cast berserker stance<br>
+                /cast berserker rage<br>
+                /cast bloodrage
+            </div>
+            
+            <div class="formula">
+                <strong>Execute and Queue Heroic Strike:</strong><br>
+                <em>If you have rage for HS on top</em><br>
+                #showtooltip Execute<br>
+                /startattack<br>
+                /stopcasting<br>
+                /cast Berserker Stance<br>
+                /cast Execute<br>
+                /cast Heroic Strike
+            </div>
+            
+            <div class="formula">
+                <strong>Whirlwind:</strong><br>
+                #showtooltip Whirlwind<br>
+                /stopcasting<br>
+                /cast Berserker Stance<br>
+                /cast Whirlwind<br>
+                /startattack
+            </div>
+
+            <h3>Miscellaneous Macros</h3>
+            
+            <div class="formula">
+                <strong>Add Bloodrage (add to any macro):</strong><br>
+                /cast bloodrage
+            </div>
+            
+            <div class="formula">
+                <strong>Disarm:</strong><br>
+                #showtooltip Disarm<br>
+                /startattack<br>
+                /cast Defensive Stance<br>
+                /cast Disarm
+            </div>
+            
+            <div class="formula">
+                <strong>Recklessness:</strong><br>
+                #showtooltip Recklessness<br>
+                /cast Berserker Stance<br>
+                /cast Recklessness
+            </div>
+            
+            <div class="formula">
+                <strong>Apply Sharpening Stone (OH-only for Horde):</strong><br>
+                <em>Right-click for OH, Left-click for MH</em><br>
+                #showtooltip Elemental Sharpening Stone<br>
+                /use [button:1] Elemental Sharpening Stone; Elemental Sharpening Stone<br>
+                /use [button:1] 16; 17<br>
+                /click StaticPopup1Button1
+            </div>
+            
+            <div class="formula">
+                <strong>Viscidus Dagger Equip (spam this):</strong><br>
+                /castsequence reset=2 Coldrage Dagger<br>
+                /equipslot 17 Coldrage Dagger
+            </div>
+            
+            <div class="formula">
+                <strong>Universal Ranged Attack:</strong><br>
+                <em>Uses whatever ranged weapon you have equipped</em><br>
+                #showtooltip<br>
+                /cast [worn:Bows] Shoot Bow; [worn:Crossbows] Shoot Crossbow; [worn:Guns] Shoot Gun; [worn:Thrown] Throw
+            </div>
+
+            <h3>Additional Utility</h3>
+            
+            <div class="formula">
+                <strong>Remove Power Word: Shield (add to any macro):</strong><br>
+                /cancelaura power word: shield
+            </div>
+            
+            <div class="formula">
+                <strong>Add Bloodrage (add to any macro):</strong><br>
+                /cast bloodrage
+            </div>
         </div>
 
         <div class="tip">
-            <strong>OT Success Key:</strong> The best off-tanks are those who can instantly transition between high DPS output and reliable tanking without missing a beat. Practice stance dancing and threat management extensively.
+            <strong>Macro Best Practices:</strong> Test all macros extensively before raids. Some gear swapping macros may fail if bags are full or items are not available. Consider using addon solutions like ItemRack or similar for more reliable gear swapping, especially for complex set changes.
         </div>
 
         <div class="warning">
-            <strong>Advanced Technique:</strong> Many modern tanks use specialized threat plate gear and even dual-wielding setups for maximum TPS, switching to mitigation gear and/or shield only when necessary. This is dependent on raid comp and gear, as well as the fight duration and any additional fight-specific mechanics.
+            <strong>Classic Limitations:</strong> Many modern WoW macro features are not available in Classic. Conditional statements, advanced targeting options, and some macro commands have limited functionality compared to retail WoW. Always test macros in a safe environment first.
         </div>
 
+        <h2 id="weakauras">Essential WeakAuras for Warriors</h2>
+
+        <div class="stat-priority survival-build">
+            <h3>Recommended WeakAuras Collection</h3>
+            
+            <div class="tip">
+                <strong>Core WeakAuras Links:</strong><br><br>
+                
+                <strong>General Warrior Tools:</strong><br>
+                • <a href="https://wago.io/XeHixW2kx" target="_blank">!ZulgAuras! Dynamic Attack Power Helper</a><br>
+                • <a href="https://wago.io/GGP94rvmo" target="_blank">BLIZZARD - SAPP</a><br>
+                • <a href="https://wago.io/BMyo1S-y8" target="_blank">Bloodthirst or Execute</a><br>
+                • <a href="https://wago.io/BRpr9pj6O" target="_blank">Deathwish Hivemind</a><br>
+                • <a href="https://wago.io/ZgXtNBqS7" target="_blank">Heroic Strike - Cleave Queued</a><br>
+                • <a href="https://wago.io/FCkOuNMRK" target="_blank">In Range - Melee</a><br>
+                • <a href="https://wago.io/MhTYK9fAn" target="_blank">IDIOT WARRIOR WEAK AURA + Time To Kill</a><br><br>
+                
+                <strong>Tanking Specific:</strong><br>
+                • <a href="https://wago.io/6HHBMDHTD" target="_blank">nanShield Classic Era</a><br>
+                • <a href="https://wago.io/Xi4ozwPny" target="_blank">Shield Equipped Alert</a><br>
+                • <a href="https://wago.io/Z_Nd-Iz4z" target="_blank">Sunder Applications with Announcements and Time</a><br><br>
+                
+                <strong>Raid Encounter Specific:</strong><br>
+                • <a href="https://wago.io/amLxHdF6g" target="_blank">Four Horsemen Markcounter & Move Reminder</a><br>
+                • <a href="https://wago.io/iYc3jvRdj" target="_blank">C'thun/Cthun Stomach Sync</a><br>
+                • <a href="https://wago.io/S5TDxzIq2" target="_blank">Kel'Thuzad Frostbolt Interrupts</a><br>
+                • <a href="https://wago.io/Mc84ZvSjj" target="_blank">Loatheb Spore Tracker</a><br>
+                • <a href="https://wago.io/G8BvfAwNY" target="_blank">Sapphiron Icebolt Counter</a><br>
+                • <a href="https://wago.io/nf9jVLczR" target="_blank">Thaddius Polarity Shift</a><br>
+                • <a href="https://wago.io/ebaylbBUl" target="_blank">Tems' Blackwing Lair WA Pack</a><br><br>
+                
+                <strong>Utility & Alerts:</strong><br>
+                • <a href="https://wago.io/OKYq6KX-7" target="_blank">Raid Consumes</a><br>
+                • <a href="https://wago.io/xwkIgvbp7" target="_blank">Shadow Fissure/Void Zone Warner</a><br>
+                • <a href="https://wago.io/RWkVnIw1S" target="_blank">Windfury Missing!</a>
+            </div>
+        </div>
+
+
         <div class="warning">
-            <strong>Final Note:</strong> This guide represents current meta and theorycrafting understanding as of 2025. Always validate optimization results against established simulators and real-world testing.
+            <strong>Performance Note:</strong> Too many WeakAuras can impact performance in raids. Start with essential tracking auras and disable any that provide redundant information. Use WeakAuras groups to organize by role (tank/DPS) and enable/disable sets as needed.
+        </div>
+
+        <h2 id="addons">Essential Addons for Warriors</h2>
+        <p><em>Recommended by Tankenheimer</em></p>
+
+        <div class="stat-priority survival-build">
+            <h3>General Addons</h3>
+            
+            <div class="tip">
+                <strong>ThreatClassic2:</strong><br>
+                Threat meter for tracking aggro on all targets.<br>
+                <em>Essential for threat management and tank coordination.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Details!</strong><br>
+                Damage meter that tracks everything - DPS, healing, threat, and more.<br>
+                <em>Comprehensive combat analysis and performance tracking.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>ExtendedCharacterStats:</strong><br>
+                Provides detailed character statistics and information.<br>
+                <em>More detailed info about your character's stats and capabilities.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>ItemRack:</strong><br>
+                Item set management for quick gear swaps.<br>
+                <em>Required for flask set macros and encounter-specific gear changes.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>MiniMapButtonButton:</strong><br>
+                Organizes minimap buttons into a manageable frame.<br>
+                <em>Cleans up minimap clutter from multiple addons.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>WeakAuras:</strong><br>
+                Customizable ability and cooldown tracking.<br>
+                <em>Use the WeakAuras collection above for warrior-specific setups.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>SpellCoda:</strong><br>
+                Enhanced tooltip information for spells and abilities.<br>
+                <em>Provides more detailed spell information in tooltips.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Swatter:</strong><br>
+                Captures addon errors in a manageable frame.<br>
+                <em>Helps troubleshoot addon issues without game interruptions.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Talented:</strong><br>
+                Create and manage talent spec templates in-game.<br>
+                <em>Plan different talent builds for various encounters or roles.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>WeaponSwingTimer:</strong><br>
+                Shows weapon swing timers for optimal ability usage.<br>
+                <em>Helpful for kiting and timing abilities for maximum DPS.</em>
+            </div>
+
+            <h3>Dungeons & Raids</h3>
+            
+            <div class="tip">
+                <strong>DBM (Deadly Boss Mods):</strong><br>
+                Boss encounter alerts and timers for 5-mans and raids.<br>
+                <em>Essential warnings and useful information for all boss encounters.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Threat Plates:</strong><br>
+                Shows your threat level on nameplates for every mob.<br>
+                <em>Visual threat indication on enemy nameplates - crucial for multi-target situations.</em>
+            </div>
         </div>
 
         <h2 id="simulators">Available Simulators & Tools<a href="#footnote-7" class="footnote-ref">7</a></h2>
@@ -1423,7 +1819,7 @@
             </div>
 
             <div class="simulator-card">
-                <h4>Fight Club Google Sheet</h4>
+                <h4>Fight Club Best in Slot Gear List Progression</h4>
                 <p><strong>URL:</strong> https://docs.google.com/spreadsheets/d/1YXJpasqqodeq9B4jeUZDP9khFQf5QocyMby6moydJWk</p>
                 <p><strong>Features:</strong> Comprehensive warrior DPS calculations and gear comparison tool</p>
                 <p><strong>Specialties:</strong> Stat weights, BiS list generation, detailed damage breakdowns, consumable optimization</p>
@@ -1451,7 +1847,8 @@
             <div class="footnote" id="footnote-3">
                 <span class="footnote-number">3.</span>
                 Offensive attack table, miss chances, and glancing blow mechanics:
-                <a href="https://bookdown.org/marrowwar/marrow_compendium/mechanics.html" target="_blank">Marrow's Compendium - Combat Mechanics</a>
+                <a href="https://github.com/magey/classic-warrior/wiki/Attack-table" target="_blank">Magey's Classic Warrior - Attack Table</a>
+                | <a href="https://bookdown.org/marrowwar/marrow_compendium/mechanics.html" target="_blank">Marrow's Compendium - Combat Mechanics</a>
                 | <a href="Sources/marrows_compendium_mechanics.html">Archived Version</a>
                 | <a href="https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-guides/2206-warrior-damage-mechanics.html" target="_blank">OwnedCore - Warrior Damage Mechanics</a>
             </div>
@@ -1564,11 +1961,13 @@
         <h2>Sources and References</h2>
         
         <div class="toc">
-            <h3>Complete Research Sources (49 Total)</h3>
+            <h3>Complete Research Sources (50 Total)</h3>
             <p><em>All sources archived locally in Sources/ folder for reference</em></p>
             
             <h4>Simulators & Tools</h4>
             <ul>
+                <li><a href="https://github.com/magey/classic-warrior/wiki/Attack-table" target="_blank">Magey's Classic Warrior - Attack Table (Authoritative)</a></li>
+                <li><a href="https://wago.io/MhTYK9fAn/1" target="_blank">Time To Kill WeakAura - DPS Cooldown Optimization</a></li>
                 <li><a href="https://wowsims.github.io/classic/tank_warrior/" target="_blank">WoWSims Classic Tank Warrior Simulator</a></li>
                 <li><a href="https://wowsims.github.io/classic/warrior/" target="_blank">WoWSims Classic Warrior DPS Simulator</a></li>
                 <li><a href="https://guybrushgit.github.io/WarriorSim/classic.html" target="_blank">Guybrush Warrior Simulator</a></li>
@@ -1676,6 +2075,10 @@
                 }
             </style>
         </footer>
+
+        <div class="tip">
+            <strong>📋 Upcoming Release:</strong> A comprehensive raid tanking guide "Tankenheimer's Classic WoW Raid Tanking Guide" covering all boss encounters, strategies, and encounter-specific requirements will be released separately. This main guide focuses on gear optimization fundamentals that apply across all content.
+        </div>
     </div>
 </body>
 </html>
