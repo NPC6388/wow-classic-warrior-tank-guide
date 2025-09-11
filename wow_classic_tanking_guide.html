@@ -33,8 +33,13 @@
             margin-top: 30px;
         }
         h3 {
-            color: #4682B4;
-            margin-top: 25px;
+            color: #ffffff;
+            background: #2d3748;
+            margin-top: 20px;
+            padding: 8px 12px;
+            border-left: 4px solid #4682B4;
+            border-radius: 4px;
+            font-weight: bold;
         }
         .stat-priority {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -56,14 +61,15 @@
             background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
         }
         .formula {
-            background: #2d3748;
+            background: #1a202c;
             border: 1px solid #4a5568;
             border-left: 4px solid #63b3ed;
             padding: 15px;
             margin: 10px 0;
             font-family: 'Courier New', monospace;
-            color: #e2e8f0;
+            color: #f7fafc;
             border-radius: 6px;
+            line-height: 1.4;
         }
         .combat-table {
             border-collapse: collapse;
@@ -1450,172 +1456,210 @@
         <h2 id="macros">Essential Tanking Macros</h2>
 
         <div class="stat-priority survival-build">
-            <h3>Stance Dancing Macros</h3>
+            <h3>General Macros</h3>
             
-            <h4>Basic Stance + Ability Combos</h4>
             <div class="formula">
-                <strong>Defensive Stance + Shield Block:</strong><br>
-                #showtooltip Shield Block<br>
+                <strong>Generic Macro Format:</strong><br>
+                #showtooltip &lt;name of ability&gt;<br>
+                /cast &lt;name of stance&gt;<br>
+                /cast &lt;name of ability&gt;<br>
+                /startattack
+            </div>
+            
+            <div class="formula">
+                <strong>Heroic Strike (bind to mousewheel down):</strong><br>
+                #showtooltip heroic strike<br>
+                /startattack<br>
+                /cast !Heroic Strike
+            </div>
+
+            <h3>Tanking Macros</h3>
+            
+            <div class="formula">
+                <strong>Taunt with Mouseover and Announcements:</strong><br>
+                #showtooltip Taunt<br>
+                /startattack [harm,nodead]<br>
+                /cast Defensive Stance<br>
+                /cast [@mouseover,harm,nodead][] Taunt<br>
+                /ra Taunted %T<br>
+                /p Taunted %T
+            </div>
+            
+            <div class="formula">
+                <strong>LIP + Challenging Shout (needs 2 GCDs):</strong><br>
+                #showtooltip Challenging Shout<br>
+                /stopcasting<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /equipslot 17 &lt;shield name&gt;<br>
+                /startattack<br>
+                /p AOE TAUNT<br>
+                /RAID AOE TAUNT<br>
+                /use Limited Invulnerability Potion<br>
+                /cast Challenging Shout
+            </div>
+            
+            <div class="formula">
+                <strong>Flask Set PRE-PULL (requires ItemRack):</strong><br>
+                <em>Slot 14 is the bottom trinket slot. Make one for each fight-specific set.</em><br>
+                #showtooltip diamond flask<br>
+                /itemrack equip &lt;name of flask set&gt;<br>
+                /click pause 0.5<br>
+                /use 14<br>
+                /click pause 0.5<br>
+                /itemrack equip &lt;Name of tanking set&gt;
+            </div>
+            
+            <div class="formula">
+                <strong>Remove Power Word: Shield (add to any macro):</strong><br>
+                /cancelaura power word: shield
+            </div>
+            
+            <div class="formula">
+                <strong>Execute While Tanking (bind to mousewheel up):</strong><br>
+                <em>For fights like Vael where you need to execute while tanking</em><br>
+                #showtooltip Execute<br>
+                /startattack<br>
+                /stopcasting<br>
+                /cast Battle Stance<br>
+                /cast Execute<br>
+                /cast Heroic Strike
+            </div>
+            
+            <div class="formula">
+                <strong>Mocking Blow:</strong><br>
+                #showtooltip mocking blow<br>
+                /startattack<br>
+                /cast battle stance<br>
+                /cast mocking blow
+            </div>
+            
+            <div class="formula">
+                <strong>Equip Shield + Stoneshield + Shield Block (needs 2 GCDs):</strong><br>
+                #showtooltip Shield block<br>
+                /startattack<br>
+                /stopcasting [noworn:Shields]<br>
+                /equipslot 17 &lt;name of shield&gt;<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /cast Defensive Stance<br>
+                /use Greater Stoneshield Potion<br>
+                /cast shield block
+            </div>
+            
+            <div class="formula">
+                <strong>Shield Wall:</strong><br>
+                #showtooltip Shield Wall<br>
+                /startattack [combat,harm,nodead]<br>
+                /stopcasting [noworn:Shields]<br>
+                /equipslot 17 &lt;name of shield&gt;<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /cast defensive stance<br>
+                /cast Shield Wall<br>
+                /ra Shield Wall activated
+            </div>
+            
+            <div class="formula">
+                <strong>Last Stand:</strong><br>
+                #showtooltip last stand<br>
+                /startattack [combat,harm,nodead]<br>
+                /stopcasting [noworn:Shields]<br>
+                /equipslot 17 &lt;name of shield&gt;<br>
+                /equipslot 16 &lt;MH weapon name&gt;<br>
+                /cast defensive stance<br>
+                /cast last stand<br>
+                /ra Last Stand activated
+            </div>
+
+            <h3>DPS Macros</h3>
+            
+            <div class="formula">
+                <strong>DPS Charge (start in B-stance):</strong><br>
+                #showtooltip charge<br>
+                /startattack<br>
+                /cast Charge<br>
+                /cast berserker stance<br>
+                /cast berserker rage<br>
+                /cast bloodrage
+            </div>
+            
+            <div class="formula">
+                <strong>Execute and Queue Heroic Strike:</strong><br>
+                <em>If you have rage for HS on top</em><br>
+                #showtooltip Execute<br>
+                /startattack<br>
+                /stopcasting<br>
+                /cast Berserker Stance<br>
+                /cast Execute<br>
+                /cast Heroic Strike
+            </div>
+            
+            <div class="formula">
+                <strong>Whirlwind:</strong><br>
+                #showtooltip Whirlwind<br>
+                /stopcasting<br>
+                /cast Berserker Stance<br>
+                /cast Whirlwind<br>
+                /startattack
+            </div>
+
+            <h3>Miscellaneous Macros</h3>
+            
+            <div class="formula">
+                <strong>Add Bloodrage (add to any macro):</strong><br>
+                /cast bloodrage
+            </div>
+            
+            <div class="formula">
+                <strong>Disarm:</strong><br>
+                #showtooltip Disarm<br>
                 /startattack<br>
                 /cast Defensive Stance<br>
-                /cast Shield Block
+                /cast Disarm
             </div>
             
             <div class="formula">
-                <strong>Battle Stance + Charge:</strong><br>
-                #showtooltip Charge<br>
-                /startattack<br>
-                /cast Battle Stance<br>
-                /cast Charge
-            </div>
-            
-            <div class="formula">
-                <strong>Berserker Stance + Intercept:</strong><br>
-                #showtooltip Intercept<br>
-                /startattack<br>
+                <strong>Recklessness:</strong><br>
+                #showtooltip Recklessness<br>
                 /cast Berserker Stance<br>
-                /cast Intercept
-            </div>
-
-            <h4>Advanced Stance Dancing</h4>
-            <div class="formula">
-                <strong>Stance + Taunt + Back to Defensive:</strong><br>
-                #showtooltip Taunt<br>
-                /startattack<br>
-                /cast Battle Stance<br>
-                /cast Taunt<br>
-                /cast Defensive Stance
-            </div>
-
-            <h3>Gear Swapping Macros</h3>
-            
-            <h4>Weapon + Shield Swaps</h4>
-            <div class="formula">
-                <strong>Threat to Mitigation Swap:</strong><br>
-                #showtooltip Defensive Stance<br>
-                /startattack<br>
-                /equipslot 16 [Weapon Name]<br>
-                /equipslot 17 [Shield Name]<br>
-                /cast Defensive Stance
+                /cast Recklessness
             </div>
             
             <div class="formula">
-                <strong>Dual Wield to Shield:</strong><br>
-                #showtooltip Shield Block<br>
-                /startattack<br>
-                /equipslot 16 [Main Hand Weapon]<br>
-                /equipslot 17 [Shield Name]<br>
-                /cast Shield Block
+                <strong>Apply Sharpening Stone (OH-only for Horde):</strong><br>
+                <em>Right-click for OH, Left-click for MH</em><br>
+                #showtooltip Elemental Sharpening Stone<br>
+                /use [button:1] Elemental Sharpening Stone; Elemental Sharpening Stone<br>
+                /use [button:1] 16; 17<br>
+                /click StaticPopup1Button1
             </div>
-
-            <h4>Flask Set Macro</h4>
+            
             <div class="formula">
-                <strong>Flask Set Gear Swap:</strong><br>
+                <strong>Viscidus Dagger Equip (spam this):</strong><br>
+                /castsequence reset=2 Coldrage Dagger<br>
+                /equipslot 17 Coldrage Dagger
+            </div>
+            
+            <div class="formula">
+                <strong>Universal Ranged Attack:</strong><br>
+                <em>Uses whatever ranged weapon you have equipped</em><br>
                 #showtooltip<br>
-                /startattack<br>
-                /equipslot 1 [+Healing Helm]<br>
-                /equipslot 5 [+Healing Chest]<br>
-                /equipslot 9 [+Healing Wrist]<br>
-                /equipslot 10 [+Healing Gloves]<br>
-                /equipslot 6 [+Healing Belt]<br>
-                /equipslot 7 [+Healing Legs]<br>
-                /equipslot 8 [+Healing Boots]<br>
-                /use Diamond Flask<br>
-                <em>Note: Use before pull, then swap back to tank gear</em>
+                /cast [worn:Bows] Shoot Bow; [worn:Crossbows] Shoot Crossbow; [worn:Guns] Shoot Gun; [worn:Thrown] Throw
             </div>
 
-            <h3>Threat Management Macros</h3>
+            <h3>Additional Utility</h3>
             
             <div class="formula">
-                <strong>Mouseover Taunt:</strong><br>
-                #showtooltip Taunt<br>
-                /startattack<br>
-                /cast [@mouseover,harm] Taunt; Taunt<br>
-                <em>Taunts mouseover target, or current target if no mouseover</em>
+                <strong>Remove Power Word: Shield (add to any macro):</strong><br>
+                /cancelaura power word: shield
             </div>
             
             <div class="formula">
-                <strong>Focus Taunt:</strong><br>
-                #showtooltip Taunt<br>
-                /startattack<br>
-                /cast [@focus,harm] Taunt; Taunt<br>
-                <em>Useful for tank swaps - set focus on other tank's target</em>
-            </div>
-            
-            <div class="formula">
-                <strong>Challenging Shout + Demoralizing Shout:</strong><br>
-                #showtooltip Challenging Shout<br>
-                /startattack<br>
-                /cast Challenging Shout<br>
-                /cast Demoralizing Shout<br>
-                <em>AoE taunt followed by damage reduction debuff</em>
-            </div>
-
-            <h3>Emergency Macros</h3>
-            
-            <div class="formula">
-                <strong>Emergency Survival:</strong><br>
-                #showtooltip Shield Wall<br>
-                /startattack<br>
-                /cast Shield Wall<br>
-                /use Major Healing Potion<br>
-                /cast Last Stand<br>
-                <em>Combines all major defensive cooldowns</em>
-            </div>
-            
-            <div class="formula">
-                <strong>Shield Slam + Revenge Queue:</strong><br>
-                #showtooltip Shield Slam<br>
-                /startattack<br>
-                /cast Shield Slam<br>
-                /cast Revenge<br>
-                <em>Queues high-threat abilities in sequence</em>
-            </div>
-
-            <h3>Communication Macros</h3>
-            
-            <div class="formula">
-                <strong>Taunt Announcement:</strong><br>
-                #showtooltip Taunt<br>
-                /startattack<br>
-                /cast Taunt<br>
-                /ra Taunting %t - Taking over!<br>
-                <em>Announces taunt to raid for coordination</em>
-            </div>
-            
-            <div class="formula">
-                <strong>Shield Wall Call:</strong><br>
-                #showtooltip Shield Wall<br>
-                /startattack<br>
-                /cast Shield Wall<br>
-                /ra Shield Wall activated - Heavy damage incoming!<br>
-                <em>Alerts healers to upcoming damage spike</em>
-            </div>
-
-            <h3>Utility Macros</h3>
-            
-            <div class="formula">
-                <strong>Stopwatch for Cooldowns:</strong><br>
-                #showtooltip Shield Wall<br>
-                /startattack<br>
-                /cast Shield Wall<br>
-                /stopwatch play<br>
-                <em>Tracks cooldown timing manually</em>
-            </div>
-            
-            <div class="formula">
-                <strong>Target Nearest Enemy:</strong><br>
-                #showtooltip Taunt<br>
-                /startattack<br>
-                /cleartarget<br>
-                /targetenemy<br>
-                /cast Taunt<br>
-                <em>Quickly picks up loose mobs</em>
+                <strong>Add Bloodrage (add to any macro):</strong><br>
+                /cast bloodrage
             </div>
         </div>
 
         <div class="tip">
-            <strong>Macro Best Practices:</strong> Test all macros extensively before raids. Some gear swapping macros may fail if bags are full or items are not available. Consider using addon solutions like ItemRack or GearQuicker for more reliable gear swapping, especially for complex set changes.
+            <strong>Macro Best Practices:</strong> Test all macros extensively before raids. Some gear swapping macros may fail if bags are full or items are not available. Consider using addon solutions like ItemRack or similar for more reliable gear swapping, especially for complex set changes.
         </div>
 
         <div class="warning">
@@ -1625,139 +1669,125 @@
         <h2 id="weakauras">Essential WeakAuras for Warriors</h2>
 
         <div class="stat-priority survival-build">
-            <h3>Core Tanking WeakAuras</h3>
+            <h3>Recommended WeakAuras Collection</h3>
             
             <div class="tip">
-                <strong>Defense Skill Monitor:</strong><br>
-                Tracks your current defense skill and alerts when below 440 (crit immunity threshold).<br>
-                <em>Essential for gear swapping and maintaining crit immunity.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Shield Block Timer:</strong><br>
-                Displays Shield Block duration and charges remaining with prominent visual indicators.<br>
-                <em>Critical for maintaining active mitigation uptime.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Taunt Cooldown Tracker:</strong><br>
-                Shows Taunt cooldown with large, visible timer. Includes audio alerts when available.<br>
-                <em>Prevents taunt resistance issues and improves emergency response.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Stance Monitor:</strong><br>
-                Large, clear display of current stance with color-coded backgrounds.<br>
-                <em>Prevents stance-related ability failures during critical moments.</em>
-            </div>
-
-            <h3>Threat Management WeakAuras</h3>
-            
-            <div class="tip">
-                <strong>Threat Meter Integration:</strong><br>
-                Displays threat percentage on current target with color-coded warnings.<br>
-                <em>Integrates with threat meter addons for real-time threat awareness.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Target's Target Display:</strong><br>
-                Shows who your target is attacking, with threat status indicators.<br>
-                <em>Essential for understanding when you need to taunt or pick up adds.</em>
-            </div>
-
-            <h3>DPS & Cooldown WeakAuras</h3>
-            
-            <div class="tip">
-                <strong><a href="https://wago.io/MhTYK9fAn/1" target="_blank">Time To Kill (TTK) WeakAura</a>:</strong><br>
-                Predicts execute phase timing based on boss HP decay rate.<br>
-                <em>Critical for DPS warriors to optimize cooldown usage timing.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Major Cooldown Tracker:</strong><br>
-                Displays Death Wish, Blood Fury, Berserking, and Recklessness cooldowns.<br>
-                <em>Prevents cooldown overlaps and optimizes usage timing.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Flurry Stack Monitor:</strong><br>
-                Tracks Flurry buff stacks and duration with visual and audio cues.<br>
-                <em>Helps maintain optimal attack speed uptime for TPS.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Rage Bar Enhancement:</strong><br>
-                Improved rage display with breakpoints (25, 50, 75) and ability cost indicators.<br>
-                <em>Better rage management leads to improved ability usage.</em>
-            </div>
-
-            <h3>Survival & Emergency WeakAuras</h3>
-            
-            <div class="tip">
-                <strong>Health Percentage Warnings:</strong><br>
-                Color-coded health bar with warnings at 50%, 35%, and 20% HP thresholds.<br>
-                <em>Provides clear visual cues for emergency cooldown usage.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Emergency Cooldown Tracker:</strong><br>
-                Tracks Shield Wall, Last Stand, and consumable cooldowns.<br>
-                <em>Ensures survival cooldowns are available when needed.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Debuff Monitor:</strong><br>
-                Prominent display of important debuffs (Mortal Strike, curses, diseases).<br>
-                <em>Critical for recognizing when tank swaps or dispels are needed.</em>
-            </div>
-
-            <h3>Encounter-Specific WeakAuras</h3>
-            
-            <div class="tip">
-                <strong>Resistance Gear Reminders:</strong><br>
-                Alerts when entering zones/raids that require resistance gear.<br>
-                <em>Prevents forgetting resistance sets for specific encounters.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Tank Swap Timers:</strong><br>
-                Customizable timers for encounters requiring tank swaps (Twin Emperors, Four Horsemen).<br>
-                <em>Provides precise timing for coordinated tank swaps.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Encounter Phase Tracking:</strong><br>
-                Tracks boss phases and displays relevant information for each phase.<br>
-                <em>Helps with phase-specific positioning and ability usage.</em>
-            </div>
-
-            <h3>Utility WeakAuras</h3>
-            
-            <div class="tip">
-                <strong>Consumable Timers:</strong><br>
-                Tracks elixir, food, and weapon enhancement durations.<br>
-                <em>Ensures buffs remain active throughout encounters.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>Weapon Skill Display:</strong><br>
-                Shows current weapon skill for equipped weapons.<br>
-                <em>Important for maintaining weapon skill bonuses when gear swapping.</em>
-            </div>
-            
-            <div class="tip">
-                <strong>World Buff Tracker:</strong><br>
-                Monitors world buffs (Rallying Cry, Songflower, etc.) with time remaining.<br>
-                <em>Maximizes world buff utilization and alerts for refresh timing.</em>
+                <strong>Core WeakAuras Links:</strong><br><br>
+                
+                <strong>General Warrior Tools:</strong><br>
+                • <a href="https://wago.io/XeHixW2kx" target="_blank">!ZulgAuras! Dynamic Attack Power Helper</a><br>
+                • <a href="https://wago.io/GGP94rvmo" target="_blank">BLIZZARD - SAPP</a><br>
+                • <a href="https://wago.io/BMyo1S-y8" target="_blank">Bloodthirst or Execute</a><br>
+                • <a href="https://wago.io/BRpr9pj6O" target="_blank">Deathwish Hivemind</a><br>
+                • <a href="https://wago.io/ZgXtNBqS7" target="_blank">Heroic Strike - Cleave Queued</a><br>
+                • <a href="https://wago.io/FCkOuNMRK" target="_blank">In Range - Melee</a><br>
+                • <a href="https://wago.io/MhTYK9fAn" target="_blank">IDIOT WARRIOR WEAK AURA + Time To Kill</a><br><br>
+                
+                <strong>Tanking Specific:</strong><br>
+                • <a href="https://wago.io/6HHBMDHTD" target="_blank">nanShield Classic Era</a><br>
+                • <a href="https://wago.io/Xi4ozwPny" target="_blank">Shield Equipped Alert</a><br>
+                • <a href="https://wago.io/Z_Nd-Iz4z" target="_blank">Sunder Applications with Announcements and Time</a><br><br>
+                
+                <strong>Raid Encounter Specific:</strong><br>
+                • <a href="https://wago.io/amLxHdF6g" target="_blank">Four Horsemen Markcounter & Move Reminder</a><br>
+                • <a href="https://wago.io/iYc3jvRdj" target="_blank">C'thun/Cthun Stomach Sync</a><br>
+                • <a href="https://wago.io/S5TDxzIq2" target="_blank">Kel'Thuzad Frostbolt Interrupts</a><br>
+                • <a href="https://wago.io/Mc84ZvSjj" target="_blank">Loatheb Spore Tracker</a><br>
+                • <a href="https://wago.io/G8BvfAwNY" target="_blank">Sapphiron Icebolt Counter</a><br>
+                • <a href="https://wago.io/nf9jVLczR" target="_blank">Thaddius Polarity Shift</a><br>
+                • <a href="https://wago.io/ebaylbBUl" target="_blank">Tems' Blackwing Lair WA Pack</a><br><br>
+                
+                <strong>Utility & Alerts:</strong><br>
+                • <a href="https://wago.io/OKYq6KX-7" target="_blank">Raid Consumes</a><br>
+                • <a href="https://wago.io/xwkIgvbp7" target="_blank">Shadow Fissure/Void Zone Warner</a><br>
+                • <a href="https://wago.io/RWkVnIw1S" target="_blank">Windfury Missing!</a>
             </div>
         </div>
 
-        <div class="tip">
-            <strong>WeakAuras Setup Priority:</strong> Start with stance monitor and Shield Block timer as these are fundamental to warrior tanking. Add threat and cooldown trackers next, then customize encounter-specific auras based on your current raid progression. Test all auras in safe environments before raids.
-        </div>
 
         <div class="warning">
-            <strong>Performance Consideration:</strong> Too many active WeakAuras can impact game performance, especially in 40-person raids. Prioritize essential tracking auras and disable cosmetic or redundant displays. Consider using WeakAuras groups to organize and enable/disable sets based on your current role (tank vs DPS).
+            <strong>Performance Note:</strong> Too many WeakAuras can impact performance in raids. Start with essential tracking auras and disable any that provide redundant information. Use WeakAuras groups to organize by role (tank/DPS) and enable/disable sets as needed.
+        </div>
+
+        <h2 id="addons">Essential Addons for Warriors</h2>
+        <p><em>Recommended by Tankenheimer</em></p>
+
+        <div class="stat-priority survival-build">
+            <h3>General Addons</h3>
+            
+            <div class="tip">
+                <strong>ThreatClassic2:</strong><br>
+                Threat meter for tracking aggro on all targets.<br>
+                <em>Essential for threat management and tank coordination.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Details!</strong><br>
+                Damage meter that tracks everything - DPS, healing, threat, and more.<br>
+                <em>Comprehensive combat analysis and performance tracking.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>ExtendedCharacterStats:</strong><br>
+                Provides detailed character statistics and information.<br>
+                <em>More detailed info about your character's stats and capabilities.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>ItemRack:</strong><br>
+                Item set management for quick gear swaps.<br>
+                <em>Required for flask set macros and encounter-specific gear changes.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>MiniMapButtonButton:</strong><br>
+                Organizes minimap buttons into a manageable frame.<br>
+                <em>Cleans up minimap clutter from multiple addons.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>WeakAuras:</strong><br>
+                Customizable ability and cooldown tracking.<br>
+                <em>Use the WeakAuras collection above for warrior-specific setups.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>SpellCoda:</strong><br>
+                Enhanced tooltip information for spells and abilities.<br>
+                <em>Provides more detailed spell information in tooltips.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Swatter:</strong><br>
+                Captures addon errors in a manageable frame.<br>
+                <em>Helps troubleshoot addon issues without game interruptions.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Talented:</strong><br>
+                Create and manage talent spec templates in-game.<br>
+                <em>Plan different talent builds for various encounters or roles.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>WeaponSwingTimer:</strong><br>
+                Shows weapon swing timers for optimal ability usage.<br>
+                <em>Helpful for kiting and timing abilities for maximum DPS.</em>
+            </div>
+
+            <h3>Dungeons & Raids</h3>
+            
+            <div class="tip">
+                <strong>DBM (Deadly Boss Mods):</strong><br>
+                Boss encounter alerts and timers for 5-mans and raids.<br>
+                <em>Essential warnings and useful information for all boss encounters.</em>
+            </div>
+            
+            <div class="tip">
+                <strong>Threat Plates:</strong><br>
+                Shows your threat level on nameplates for every mob.<br>
+                <em>Visual threat indication on enemy nameplates - crucial for multi-target situations.</em>
+            </div>
         </div>
 
         <h2 id="simulators">Available Simulators & Tools<a href="#footnote-7" class="footnote-ref">7</a></h2>

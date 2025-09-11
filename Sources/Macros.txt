@@ -1,0 +1,164 @@
+Tankenheimer macros
+
+General:
+
+Generic macro format
+#showtooltip <name of ability> 
+/cast <name of stance>
+/cast <name of ability>
+/startattack
+
+
+I bind this to mousewheel down
+#showtooltip heroic strike
+/startattack
+/cast !Heroic Strike
+
+
+Tanking:
+
+Taunt
+#showtooltip Taunt
+/startattack [harm,nodead]
+/cast Defensive Stance
+/cast [@mouseover,harm,nodead][] Taunt
+/ra Taunted %T
+/p Taunted %T
+
+LIP + Shout (needs 2 GCDs)
+#showtooltip Challenging Shout
+/stopcasting
+/equipslot 16 <MH weapon name>
+/equipslot 17 <shield name>
+/startattack
+/p AOE TAUNT
+/RAID AOE TAUNT
+/use Limited Invulnerability Potion
+/cast Challenging Shout
+
+Flask set PRE-PULL (requires ItemRack or similar)(slot 14 is the bottom trinket slot)(I have one of these for each of my fight-specific sets)
+#showtooltip diamond flask
+/itemrack equip <name of flask set>
+/click pause 0.5
+/use 14
+/click pause 0.5
+/itemrack equip <Name of tanking set>
+
+Remove bubble (add to any macro)
+/cancelaura power word: shield
+
+If you need to execute while tanking (eg. Vael) (I bind this to mousewheel up)
+#showtooltip Execute
+/startattack
+/stopcasting
+/cast Battle Stance
+/cast Execute
+/cast Heroic Strike
+
+Mocking Blow
+#showtooltip mocking blow
+/startattack
+/cast battle stance
+/cast mocking blow
+
+Equip shield, eat Stoneshield, cast Shield Block (needs 2 GCDs)
+#showtooltip Shield block
+/startattack
+/stopcasting [noworn:Shields]
+/equipslot 17 <name of shield>
+/equipslot 16 <MH weapon name>
+/cast Defensive Stance
+/use Greater Stoneshield Potion
+/cast shield block
+
+Shield Wall
+#showtooltip Shield Wall
+/startattack [combat,harm,nodead]
+/stopcasting [noworn:Shields]
+/equipslot 17 <name of shield>
+/equipslot 16 <MH weapon name>
+/cast defensive stance
+/cast Shield Wall
+/ra Shield Wall activated
+
+Last Stand
+#showtooltip last stand
+/startattack [combat,harm,nodead]
+/stopcasting [noworn:Shields]
+/equipslot 17 <name of shield>
+/equipslot 16 <MH weapon name>
+/cast defensive stance
+/cast last stand
+/ra Last Stand activated
+
+DW to Shield swap toggle
+/equipslot 16 <MH weapon name>
+/equipslot 17 <OH weapon name>
+/stopcasting
+/equipslot 16 <MH weapon name>
+/equipslot 17 <shield name>
+
+Nef p3 adds (spam it)
+#showtooltip Challenging Shout
+/p AOE TAUNT
+/RAID AOE TAUNT
+ /use Limited Invulnerability Potion
+ /cast Challenging Shout
+ /use Goblin Sapper Charge
+
+
+DPS:
+
+DPS Charge (start in B-stance)
+#showtooltip charge
+/startattack
+/cast Charge
+/cast berserker stance
+/cast berserker rage
+/cast bloodrage
+
+Execute and queue HS (if you have rage for HS on top)
+#showtooltip Execute
+/startattack
+/stopcasting
+/cast Berserker Stance
+/cast Execute
+/cast Heroic Strike
+
+
+#showtooltip Whirlwind
+/stopcasting
+/cast Berserker Stance
+/cast Whirlwind
+/startattack
+
+
+
+Misc:
+
+Add this to any macro you like
+/cast bloodrage
+
+Disarm
+#showtooltip Disarm
+/startattack
+/cast Defensive Stance
+/cast Disarm
+
+#showtooltip Recklessness
+/cast Berserker Stance
+/cast Recklessness
+
+Apply stone to OH with Rightclick, MH with Leftclick (OH-only for Horde)
+#showtooltip Elemental Sharpening Stone
+/use [button:1] Elemental Sharpening Stone; Elemental Sharpening Stone
+/use [button:1] 16; 17
+/click StaticPopup1Button1
+
+Spam this to equip both daggers for Viscidus
+/castsequence reset=2 Coldrage Dagger 
+/equipslot 17 Coldrage Dagger
+
+One button to use whatever ranged you have equipped (you still have to equip the right ammo)
+#showtooltip
+/cast [worn:Bows] Shoot Bow; [worn:Crossbows] Shoot Crossbow; [worn:Guns] Shoot Gun; [worn:Thrown] Throw

@@ -1,0 +1,19 @@
+Addons
+
+Tankenheimer recommended addons:
+
+General:
+threatclassic2 (threatmeter)
+Details (dmgmeter/track everything)
+ExtendedCharacterStats (more info on your toon)
+ItemRack (item sets)
+MiniMapButtonButton (pulls your minimap buttons into a frame)
+WeakAuras (CDs for abilities)
+SpellCoda (more tooltip info on spells)
+Swatter (grabs addon errors into frame)
+Talented (make spec templates in-game)
+WeaponSwingTimer (shows your swingtimer, helpful for kiting and when to hit certain abilities for most dps)
+
+Dungeons/Raids:
+DBM (all sorts of alerts and useful info on bosses for 5mans and raids)
+Threat Plates (shows your threat on the nameplate for every mob!!!)
