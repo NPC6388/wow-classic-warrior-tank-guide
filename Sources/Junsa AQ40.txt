@@ -1,0 +1,61 @@
+AQ40
+
+_ _
+__**The Prophet Skeram**__
+- Everyone: Take a Greater Arcane Protection Potion before pull
+- DPS: Do not cleave or AOE. Random players will get mind controlled.
+- Mages: Be ready to sheep mind-controlled players.
+- Warriors, Rogues: Focus on interrupt
+- At 75%, 50%, and 25% the boss splits into three. On first and second split, focus on the unmarked copy. On the third, split all DPS focus the copy that is marked. Pop all cooldowns.
+
+_ _
+__**Bug Trio**__
+- Tank: One tank will need to have a LIP/AOE shout ready when Yauj goes down for the Yauj Brood
+- Shamans: Place Poison cleansing Totem every time Kri casts Poison Bolt Volley.
+- Make sure to run out of melee range before Kri goes down, and if Kri goes down last, do not check loot.
+
+_ _
+__**Battleguard Sartura**__
+- Everyone: Have LIPs ready incase the boss gets too close to you.
+- Tanks: Rotate on taunt, call out before you taunt.
+- Spread the adds apart and keep the boss out of the DPS.
+
+_ _
+**__Gauntlet__**
+- Everyone: Don't fall behind. We will stop when we get two big bugs to AoE them down.
+- Shamans: Don't drop any totems
+
+_ _
+**__Fankriss__**
+- Tank moves in first, do not pass tank
+- Everyone DPS from behind the boss
+- AOE adds down at spawn
+
+_ _
+__**Viscidus**__
+- Everyone: Use a GNPP before the fight.
+- Warriors, Rogues, Hunters - must have two frost weapons. Apply Frost oil to weapons.
+- Warlocks, Shadow Priests - must equip frost wand. (the faster speed the better)
+- Mages: Use Rank 1 Frostbolt
+- Shamans in each group will be marked. Make sure to stay with your shaman to get poison cleansed.
+- Shaman: Place poison cleansing totem every time Poison Bolt Volley goes out and keep your group cleansed
+- Once Viscidus is frozen, everyone will use regular melee weapons to hit Viscidus.
+- During shattered faze DPS/AOE down the individual slimes as fast as possible. Utilize Goblin Sapper charges, dynamite, etc.
+
+_ _
+__**Huhuran**__
+- Melee: Use a GNPP. Stack directly underneath the boss during fight.
+- Ranged: Spread out around Huhuran and away from each other.
+- Warriors: Deathwish at 70%, Recklessness at 35%
+- Everyone: Pop all cooldowns at 35%
+- Shamans, Druids: Only poison cleanse the main tank. Do not remove poison from others.
+- Healers: Once boss is down make sure to continue healing the tank for a few more seconds.
+
+**__Anubisath Defender__**
+- Thunderclap + Plague: Keep two stacks. Rogues stay in caster group. Warriors Battle Stance. Melee move out of Thunderclap range when Plagued.
+- Thunderclap + Meteor: Keep two stacks. Rogues stay in caster group. Warriors Battle Stance.
+- Shadow Bolt + Plague: Casters move to {star}. Don't go too far when Plagued.
+- Shadow Bolt + Meteor: Casters move to {star}.  
+- When it explodes, everyone run.
+
+https://www.youtube.com/watch?v=_oYel9x9OKg&ab_channel=PlatinumWoW

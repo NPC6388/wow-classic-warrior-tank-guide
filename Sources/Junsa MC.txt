@@ -1,0 +1,104 @@
+MC
+
+__**Trash**__
+
+**Lava Surger**
+- Everyone - stack. Melee having to chase down the Surger will slow us down
+
+**Lava Annihilator**
+- It cleaves. Stay behind.
+- Warrior - It periodically drops threat, but doesn't hit hard. Taunt when it's not on one of Warriors.
+
+**Molten Destroyer**
+- Casters/Healers - stay away It casts AoE physical damage.
+- Tanks - tank them separately with other mobs
+
+**Firelord**
+- It keeps spawning adds as long as it's alive. Kill the adds first
+
+**Anctient Core Hound**
+- Tanks - keep them facing away from the raid
+- Priests - Dispel tanks > healers > casters
+- Everyone - **Loot the Dog**!!
+
+**Core Hound x5**
+- DPS - We have to kill them at the same time. Focus DPS on the ones with the most health
+
+**Pain Pack**
+- Everyone
+  - wear a bit of fire resist gear or high HP gear.
+  - Pop Living Action Potion when you get stunned and you feel like you or someone else will die if don't pop it.
+  - Flameguard spawns fire on the ground. Don't stand on it.
+- Mages - Keep Fire Ward up.
+- Tanks - tank the fire elementals to the right, rock elementals to the left. Make sure rock elementals are faced away from the raid.
+- 4 mobs kill order - Firewalker > Flameguard > Lava Elemental
+- 3 mobs kill order - Firewalker > Lava Reaver > Flameguard
+
+__**Lucifron**__
+DPS - Adds cast Mind Control. Do not cleave until all of the adds are down. Make sure you're targeting the mob and not one of us.
+Mages - Decurse when boss's health is 50%+, focus on DPS when it's less than 50%.
+
+__**Magmadar**__
+Everyone - Don't stand in fire
+Shamans - Keep Tremor up
+Hunters - Rotate Tranq shot
+MT - Don't tank Magmadar on top of the Rune. (We won't be able to douse it till the corpse despawns)
+
+**__Gehennas__**
+Everyone - Don't stay in Rain of Fire
+DPS - Cleave
+Tanks - Stack everything
+Mages - Decurse the tanks
+
+__**Baron Geddon**__
+Everyone - When you get Living Bomb, move to the left side away from raid, explode, then come back
+Priests - Bubble the person who gets Living Bomb. Bubble the MT before the last tick of Inferno. Dispel healers > casters.
+Melee - Run out as soon as you see Inferno and run back after it's over. Run out when the MT gets Living Bomb.
+Deep frost Mages - You can Ice Block the Living Bomb and keep DPS.
+MT - Wear 200 fire resist buffed. Last Stand or LGG before the last tick of Inferno if you're not topped off.
+
+_ _
+__**Shazzrah**__
+Everyone - Prepop Greater Arcane Protection Potion
+DPS - Pop all cooldowns from the opener
+Tanks - Boss is tauntable
+Casters/Healers - Stay at max range. Move away when it teleports near you
+Shamans - Purge the boss
+Mages - Don't worry about DPS at all. **Decurse everyone melee > ranged**
+
+_ _
+__**Garr**__
+Everyone - Stay behind the add tank on the opener
+MT - Taunt the boss off of the add tank ASAP.
+Add tank - Wear full mitigation gear with Force Reactive Disk. Use Oil of Immolation when running in. Sapper on Opener. Spam Shield Block to proc Force Reactive Disk more often. Ready to Last Stand/LGG before the adds die.
+Kill order - Boss > Adds
+Melee - Stay away when any of the adds are in low health
+
+_ _
+__**Sulfuron Harbinger**__
+Kill Order - Skull > Cross > Square > Moon > Boss
+Rogues/Shamans - Interrupt your assigned target
+MT - Tank the boss away from the adds
+OTs - Stack the adds
+
+_ _
+__**Golemagg**__
+DPS - Focus DPS on Boss. Don't attack the adds.
+Tanks - Stack everything
+
+_ _
+__**Majordomo Executus**__
+Kill Order - Two Elites(Skull > Cross) > Four Healers(tank will pick one) > Two Elites(Square > Moon)
+Mages - Sheep your assigned target
+Casters - Wand when adds get magic reflect or you will hurt only yourself. (looks like Ice Barrier)
+MT - Tank boss away from the raid across the pit. Taunt the boss after getting teleported
+OTs - Stack the adds
+
+_ _
+__**Ragnaros**__
+Everyone - Prepop Greater Fire Protection Potion
+Mana users - Stay 10 yards away from each other. If you cannot find a good spot, stack with one partner. **Don't go anywhere near the Warriors/Rogues!**
+Warriors/Rogues - Run out 2sec before Wrath. Run back in after Wrath is casted. Wrath is a 100% threat wipe, so watch your threat especially on Execute Phase.
+MTs - Taunt right after Wrath. Build enough threat first, then save rage. Dump all rage after the next Wrath. On Execute Phase, stay in Battle Stance to Execute.
+
+https://www.youtube.com/watch?v=_AOcpcHxW3E&ab_channel=Punkrat

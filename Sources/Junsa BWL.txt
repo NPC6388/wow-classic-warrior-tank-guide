@@ -1,0 +1,51 @@
+BWL
+
+**__Razorgore__**
+**1st phase**
+- Kill order - Orc Mage > Orc Warrior > Dragonkin. When 5 eggs left, focus DPS on Dragonkins because the Orcs will despawn
+- Melee - Odd group - North, Even group - South
+- Healers/Casters - Stay on top of the platform. Don't stand too close to the center of the edge.
+- Mages - Put Amplify Magic on the boss.
+- Orb controller - Click the orb from below the platform. Destroy eggs from near to far. Call out if Orb control drops.
+
+**2nd phase**
+- DPS - Target the boss and cleave the left-over Dragonkins off of the boss.
+- Melee - Pop Free Action Potion
+- Tanks - Face the boss away from the raid
+- Casters/Healers - Don't stand near the boss and get stunned.
+
+**__Vaelastrasz__**
+- Everyone - Take a Greater Fire Protection Potion
+- Warriors/Rogues - North. Watch your threat (especially on the opener and on Execute phase)
+- Mana class - South. Move to the West pillar when you get Burning Adrenaline. All your spells will be instant cast, so keep casting as you move. If you're not interested in the loot Vael drops, take the port.
+- One Mage - Start opening a port on the West pillar 30s before the fight starts.
+- Healers - Pump heal on the main tank especially on the opener as they will take the most damage for 15s when Recklessness is up.
+- Main tank - East. Start the dialogue from the tail and move to East (it will guarantee that your first attack will not parry). Stay in Berserker stance before combat. Pop Recklessness 1s before the combat starts, and switch to Defensive stance. Pop Mighty Rage Potion, Deathwish and convert all your hits to HS. Switch to Battle stance on Execute Phase and spam Execute while keep queueing HS. Don't hesitate to pop Last Stand/LGG.
+
+**__Death Talon Captain pack x6__**
+- Kill order: Seether > Flamescale > Wyrmkin > Captain
+- Captain - A Hunter will be kiting
+- Wyrmkin (x1-2) - Druids - keep them sleeped. Tanks - tank them faced away from raid to avoid raid getting hit by Fireball Volley
+- Flamescale/Seether - Stack and cleave them.
+- Everyone - Flamescale will charge and knock you back. Don't get charged into the room.
+- Tanks - Seether will put Flame Buffet on you which amplifies damage from Captain's Aura of Flames. It's normally 150 every time you hit the Captain, but it's amplified to 2k when you have Flame Buffet. Watch your health closely when tanking the Captain.
+
+__**Suppression Room**__
+- Rogues - Stay stealthed and disarm traps around the right wall. Don't go near the Talon Hatchers. They will break your stealth from aura damage.
+- Pulling Hunter - Pull all Talon Hatchers and Taskmasters one group by one. Do not pull Talon Hatchers when they are on the right side. It will break Rogues' stealth
+- Shamans - Don't drop totems when we're moving. On the first pit(middle level), drop totems near the right wall.
+
+__**Broodlord**__
+- MT - Keep Greater Stoneshield on at all times. Wear a shield on the opener. Swap to dual-wield once you're in position. Be ready to pop Last Stand or LGG when your health is below 65%. 
+- OT - Try to stay second on threat. Swap to shield and pop Greater Stoneshield as soon as boss targets you. Be ready to pop Last Stand or LGG when your health is below 65%. 
+- DPS - Kill Whelps first. Watch your threat carefully and be ready to pop Limited Invulnerability Potion if the boss targets you. Pop Healthstone/Whipper Root Tuber/bandage when you're low on health.
+- Healers - Everyone use target of target heal and only heal the active MT. They can go from 100% to 0% within 1.5s. Melee will get bounced chain heal.
+
+__**Lab packs**__
+- Mages & Warlocks - AoE the techies with Blizzard & Rain of Fire. Wait until tanking Mage casts first Arcane Explosion.
+- Hunters - Pull the Warlocks out of the techies
+- Melee - Kill order is Warlocks > Spellbinder > Overseer
+- Everyone - Move out of Rain of Fire ASAP
+
+
+https://www.youtube.com/watch?v=JOElHScjmzo&t=1s&ab_channel=Punkrat

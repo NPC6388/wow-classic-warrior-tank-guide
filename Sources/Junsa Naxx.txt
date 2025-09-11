@@ -1,0 +1,289 @@
+Naxx
+
+**SPIDER WING**
+__Anub'Rhekan__
+Melee - DPS from the edge of the room.
+Range - Stay spread out
+Tanks - Tank the adds on top of the boss. Tank the adds that spawn on Locust Swarm
+Warlocks - Life tap outside Impale range, bandage and come back in
+Everyone - Avoid Locust Swarm by staying on the East side 
+
+__Faerlina__
+Follower Tank - Tank them on top of Faerlina
+Worshipper Tank - Tank them on the left side
+MC Priest - Use one Worshipper at a time and use "Sacrifice" on top of Faerlina everytime she enrages.
+Shamans/Druids - Remove poison after each Poison Bolt Volley
+Everyone - Avoid Rain of Fire
+Kill order - Followers > Faerlina
+
+__Maexxna__
+Melee - Spiderlings > Boss
+Range - Spiderlings > Cocoon > Boss
+Healers - Top off MT before every Web Spray. Apply HOTs, shields, Abolish Poison, Poison Cleansing Totem for MT
+Tanks - AoE taunt rotation for spiderlings
+DPS - Hold off DPS at 35%. Wait for Web Spray then burn her.
+
+**PLAGUE WING**
+__Noth__
+Mage, Druid - Decurse!!
+Priest - Dispel tanks, dps
+DPS - Stop DPS for 2 seconds after Noth blinks
+Rogue - Stun the guardians
+Everyone - stack in the middle of the room
+Tanks - Tank Warrior and Champion in the middle. Tank Guardian where they spawn.
+
+__Heigan__
+Eye Stalk Tunnel - Wait until you have 6 people teleported. Hug the right side. Kill the eyes only. Ignore maggots. Rejoin the main group after the poison eruption.
+Priest, Shaman - Cure disease (MT priority), disease cleansing totems
+Range/Healer - Stay on platform for phase 1, Come down on phase 2
+Everyone - Watch the Heigan dance VOD. (Phase 1 - slow dance, Phase 2 - fast dance) https://youtu.be/wlXXmIcj_MY
+
+__Loatheb__
+Healers
+- Put full HoTs on the MT before the pull-timer hits 0.
+- No heal after the pull-timer unless you're the next healer in line - wait for your name to be called.
+- Shamans: totem twist poison cleansing and healing totems. No individual poison cleansing.
+- Stand on the North West grate(bottom-left side from the picture). Turn left right after coming in.
+- When you're next in-line, pre-cast your biggest heal, land it if you see the MT's health dropping, otherwise cancel and precast again.
+
+DPS
+- When it's your turn to get the Spore, GET THERE BEFORE THEY SPAWN. Don't make your group wait.
+- Spore will be spawning from the South East grate(top-right side from the picture)
+- Kill the Spore when you see everyone in your group.
+- Come back and DPS the boss as hard as you can. You will generate zero threat after getting the Spore debuff.
+- INSTALL THIS WA(Loatheb Spore): https://wago.io/Mc84ZvSjj
+
+Everyone
+- Pre-pop GSPP
+- 1st Doom(02:10) - GSPP
+- 2nd Doom(02:40) - Ignore
+- 3rd Doom(03:10) - Bandage
+- 4th Doom(03:40) - Healthstone or Whipper Tuber
+- 5th Doom(04:10) - Bandage & GSPP
+
+.
+.
+**MILITARY WING**
+__Razuvious__
+Healers - LoS Razuvious at all times at the stairs. Heal the OTs and Understudy
+Tanks - Tank Understudy near the MC Priests. Stay near the Understudy when they are MC'ed and taunt when MC falls off. Don't use Fairy Fire or Sunder Armor. You can use TC and Demo Shout.
+MC Priests - Taunt as close as possible (0.1 sec) to current Taunt falling off. Use Shield Wall immediately.
+Range - LoS before every Disrupting Shout and come back out to DPS
+
+__Gothik__
+
+Live Side
+- Everyone - Pop GSPP
+- 3 Tanks - Stay on 3 bays. Keep DKs and Riders at bay. Try to keep Trainees at bay, but don't chase them.
+- Priests - Shackle assigned DKs on right side. If assigned spam shackle on left side, keep casting shackle as DK is killed to help reduce charges
+- Casters/Healers - Max range
+- Hunters - Put frost trap down, so casters can run from loose Trainees
+- 1 Warrior - stay with the range and tank the loose Trainee
+- Rogue - apply one combo point kidney shot to DKs on left side. kick rider's shadow bolt volley
+- Kill order - Rider > Left DK > Right DK > Trainee
+- From wave 11 - keep 4 DKs Shackled until the end of the fight
+
+Dead Side
+- Everyone - Pop GAPP
+- 2 Tanks - Tank Deathknights, Rider, and Horse
+- DPS - Don't go meet the adds. Wait for them to come. Don't let them go near the healers.
+- Warriors/Rogues - Interrupt Rider's Life Drain
+- Healers - Stay back
+- Kill order - Trainee > Rider > DK > Horse
+
+__Four Horsemen - Tanks__
+
+Front Tanks
+- {Skull} Thane(tank) -> Safe zone -> Mograine
+- {Cross} Thane(dps) -> move out after kill -> Safe zone -> move in after 6th mark -> Mograine
+- {Square} Mograine -> Safe zone -> Mograine -> Safe zone
+- {Moon} Thane(dps) -> move out after 2nd mark -> Safe zone -> move in after 3rd mark -> Mograine
+- {Skull} < {Cross} < {Square} < {Moon}
+
+Back Tanks
+- {Triangle} Blaumeux -> Safe zone -> Zeliek -> Safe zone
+- {Diamond} Safe zone -> Blaumeux -> Safe zone -> Zeliek
+- {Circle} Zeliek -> Safe zone -> Blaumeux -> Safe zone
+- {Star}  Safe zone -> Zeliek -> Safe zone -> Blaumex
+- {Triangle} < {Diamond} < {Circle} < {Star}
+
+Tanking Note
+- Thane - Everyone stacked for meteors
+- Mograine - Big fire damage. Pop Frozen Rune. Wear Shield. Shield Block on CD
+- Zeliek - Approach Zeliek hugging the wall. Don't get close to the ranges. Put him all the way into the corner, then rotate.
+- Blaumeux - Move when you see Void Zone on the ground.
+
+How to tank swap
+1. Move to the back of the boss
+2. Disarm
+3. Move to the front
+4. Use Reel
+5. Taunt - if it fails, wait till next cooldown
+6. Call out when Taunt is successful
+
+.
+.
+__Four Horsemen - Healers__
+- You will be assigned a starting position and whether to move on the 1st, 2nd, or 3rd mark
+- After your initial move, rotate every 3 marks
+- Rotate counter-clockwise
+- Group A - Move on Mark #1, #4, #7, #10, #13, etc.
+- Group B - Move on Mark #2, #5, #8, #11, #14, etc.
+- Group C - Move on Mark #3, #6, #9, #12, #15, etc.
+- After a boss is dead, rotate to safe zone instead of that boss's corner. If more than one boss is dead, make sure to stay in the safe zone for 3 marks for each dead boss.
+
+Healing Note
+- Thane - Stack on top of Thane
+- Mograine - Tanks take big damage
+- Zeliek - Stay at max healing range
+- Blaumeux - Move when you see Void Zone on the ground
+
+.
+.
+__Four Horsemen - Melee__
+- Burn all CD on Thane.
+- Kill Thane -> Safe Zone -> Mograine -> Safe Zone -> Blaumeux -> Safe Zone -> Mograine(repeat)
+- Wait in Safe Zone until you don't have mark on the next boss. (e.g. If you have 3x Blaumeux Mark and 0xMograine Mark, you're okay to go to DPS Mograine)
+- Come back to the Safe Zone when you have 3 Marks.
+
+Melee DPS Note
+- Thane - Stack on top of Thane
+- Mograine - Use CD on Mograine when they come back.
+- Zeliek - After Mograine and Blaumeux are dead at most 2 melee can dps Zeliek. They must follow the wall to move in and out safely. Prioritize highest dps.
+- Blaumeux - Move when you see Void Zone on the ground.
+
+.
+.
+__Four Horsemen - Range DPS__
+- Burn all CD on Thane.
+- Kill Thane -> Safe Zone -> Mograine -> Safe Zone -> Zeliek -> Safe Zone -> Blaumeux -> Safe Zone -> Mograine(repeat)
+- Wait in Safe Zone until you don't have mark on the next boss. (e.g. If you have 3x Blaumeux Mark and 0xMograine Mark, you're okay to go to DPS Mograine)
+- Come back to the Safe Zone when you have 3 Marks.
+
+Range DPS Note
+- Thane - Stack for meteors
+- Mograine - Use CD on Mograine when they come back
+- Zeliek - Stay at max casting range
+- Blaumeux - Move when you see Void Zone on the ground
+
+.
+.
+**ABOMINATION WING**
+__Patchwerk__
+OTs - Wear full mitigation gear(+Health is the most important stat). Keep Greater Stoneshield up(You will need 2 per attempt). DO NOT use Shield Block. Spam Blood Thirst, Heroic Strike and Battle Shout. Stack on MT to help chain heal bounce between tanks.
+
+Melee - Remove Fortitude, dip in the poison water. Make sure you don't get healed. Stand at back right flank of Patchwerk at max melee range. Do not go over the 4 tanks in threat.
+
+Healers - Never stop casting heal from the beginning till the end. Patchwerk will be hitting one of the OTs(with the most health) with 7k Hateful Strike every 1.5 seconds. Pop Major Mana Potion and Demonic(Dark) Rune on cooldown. DO NOT HEAL ANYONE EXCEPT FOR THE TANKS
+
+Shaman - Rank 1 or 2 Chain Heal(depending on gear status) on your designated Tank from beginning till the end.
+
+Range - Stay below MT's threat.
+
+.
+__Grobbulus__
+OT - Tank the Slime on top of the boss, but stay behind the boss.
+Melee - Always stand behind the boss. Cleave down the slimes.
+Healers & Range DPS - Stay loosely apart from each other. If you see poison cloud spreading near you, move out.
+Everyone - If you get disease, move back to the spot we already passed, find an empty spot, stay until your disease gets cleansed, then come back.
+Disease cleansing Priest - Cure disease once the person is at the safe spot
+
+.
+__Gluth__
+- Everyone - Do not take Nature Protection Potion. Wait in the tunnel until your health is down by at least 2k.
+- OTs - Build as much threat as possible. Start dodging the fear from 5th one.
+- Melee - LoS the fear using the left pillar.
+- Casters/Healers - Stay away from the boss to avoid fear.
+- Healers - Heal only the active MT. There will be MT swap. DO NOT HEAL THE RAID
+- 3 Shamans - Put Earthbind Totem on every CD. Use rank 1 Frost Shock on every CD on the zombie that's the closest to the kiting Druid.
+- 1 Warrior - Follow the kiting Druid and keep the zombies slowed using Piercing Howl and Hamstring. Get rage by hitting the zombies. Rotate target on Zombies to stay lower on threat than the kiter.
+- Mages - Set up Frost Nova rotation. When it's your turn, keep an eye on where the kiting Druid is. Cast Frost Nova on the zombies upon being called.
+- 1 Kiting Druid - Keep spamming Rejuvenation on everyone from the beginning till the end. Move around in circle. Use everything to run away from the zombies -- Cat Form > Dash, Nifty Stopwatch, Swift Boots, Swiftness Potion. Call out for Frost Nova when you're in danger. (Don't hesitate to call it out)
+
+
+Decimate
+- DPS - Focus on killing as many zombies as possible. AoE works. Don't use Sapper(it's suicide. You can pop Healing Pot then Sapper if you'd like)
+- Heal all tanks to 100% ASAP. Do not Chain Heal. DO NOT HEAL THE RAID
+
+.
+__Gluth__
+- Everyone - Do not take Nature Protection Potion. Wait in the tunnel until your health is down by at least 2k.
+- OTs - Build as much threat as possible. Start dodging the fear from 5th one.
+- Melee - LoS the fear using the left pillar.
+- Casters/Healers - Stay away from the boss to avoid fear.
+- Healers - Heal only the active MT. There will be MT swap. DO NOT HEAL THE RAID
+- 3 Shamans - Put Earthbind Totem on every CD. Use rank 1 Frost Shock on every CD on the zombie that's the closest to the kiting Druid.
+- 1 Warrior - Follow the kiting Druid and keep the zombies slowed using Piercing Howl and Hamstring. Get rage by hitting the zombies. Rotate target on Zombies to stay lower on threat than the kiter.
+- Mages - Set up Frost Nova rotation. When it's your turn, keep an eye on where the kiting Druid is. Cast Frost Nova on the zombies upon being called.
+- 1 Kiting Druid - Keep spamming Rejuvenation on everyone from the beginning till the end. Move around in circle. Use everything to run away from the zombies -- Cat Form > Dash, Nifty Stopwatch, Swift Boots, Swiftness Potion. Call out for Frost Nova when you're in danger. (Don't hesitate to call it out)
+
+
+Decimate
+- DPS - Focus on killing as many zombies as possible. AoE works. Don't use Sapper(it's suicide. You can pop Healing Pot then Sapper if you'd like)
+- Heal all tanks to 100% ASAP. Do not Chain Heal. DO NOT HEAL THE RAID
+
+.
+__Thaddius__
+
+Mini Boss
+- Group 1-4(Melee) - Right platform. Healers stay away from the mob.
+- Group 5-8(Casters) - Left platform. Casters/Healers Stay away from the mob.
+- Tanks - Full mitigation gear. Don't tank them at the edge. (They have small knock back). Taunt whenever someone's flying over.
+- Healers - They hit like a truck. On the right platform, stay at max range to avoid mana burn.
+
+Jump Boss
+- After killing the adds, JUMP to the main platform. DO NOT MISS THE JUMP. If you fail the jump go to the entrance, climb the left/right platform and do the jump again. Wait until you have a debuff to join the correct group (no debuff is the same as the wrong debuff)
+
+Main Boss
+- Negative Left, Positive Right
+- Everyone - Stack as tight as you can at max Melee range. Pop Greater Nature Protection Potion.
+- Hunters - Stay at minimum range where you can shoot the bow
+- Healers - Raid will take massive Nature damage.
+
+Left-over Charge Boss
+After killing the main boss:
+- Positive - Take the portal which is on the right side of the boss. Stay away from each other.
+- Negative - Stay in the room and stay away from each other. Jump down if you can't find room.
+- Everyone - DO NOT PEAK AT THE LOOT
+
+.
+**Sapph/KT**
+
+__Sapphiron__
+
+Ground Phase
+- Melee - Stay between front and rear legs
+- Caster/Healer - Stay loosely spread out near the Shaman
+- Mage/Druid - DECURSE!!
+- Everyone - Move when you're in Blizzard
+
+Air Phase
+- Move to your group's position
+- Stay in the entrance half of the room - ice blocks will be too spread out if people move to the "tail" side of the room
+- Stay loosely spread out
+- Start moving behind Ice cube after the 3rd one
+
+.
+.
+__Kel'Thuzad__
+
+Phase 1
+- Tanks - Pickup the Aboms
+- Melee - Kill Aboms. DO NOT PULL THREAT
+- Range DPS - Kill Skellies and Soul Weavers ASAP
+- Shamans - Put down Earthbind on the edge. Frost Shock Skellies
+- Warriors - Burn your Fear before Phase2 begins
+- Healers - Help kill skellies
+
+Phase 2
+- Tanks - Stack tight. Save Rage when not actively tanking. Dump all Rage after MC goes out.
+- Melee DPS - Stack tight in your group's position at max melee range
+- All DPS - Stop DPS for 3s after MC goes out.
+- Mage - Sheep tanks ASAP
+- Shamans/Druids - NS heal when Frost Blast hit Melee. They die if they don't get healed in 5s.
+- Range DPS/Healers - Stay away from each other, follow posted layout diagram each week
+
+Phase 3 (guardians)
+- 2 OTs - Pickup two Guardians
+- Priests - Shackle three Guardians. Keep them Shackled until the end. Only 3 priests assigned to shackle will shackle guardians. If a 4th guardian is shackled, all of the shackles will break.
+
