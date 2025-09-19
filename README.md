@@ -1,6 +1,6 @@
 **WORK IN PROGRESS**
 
-# WoW Classic Warrior Tanking Guide
+# Tankenheimer's Incomplete Attempt at a Complete Classic Warrior Tank (and DPS) Guide
 
 A comprehensive guide for Warrior tanking in World of Warcraft Classic, covering mechanics, strategies, gear optimization, and encounter-specific advice.
 
