@@ -200,10 +200,259 @@
         .footnote a {
             color: #007bff;
         }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: 2px solid #8B4513;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            background: #8B4513;
+            transform: scale(1.1);
+        }
+
+        .container {
+            position: relative;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .container {
+            background: #2d2d2d;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode h1 {
+            color: #ff9500;
+            border-bottom-color: #ff9500;
+        }
+
+        body.dark-mode h2 {
+            color: #4ade80;
+            border-left-color: #4ade80;
+        }
+
+        body.dark-mode h3 {
+            background: #4a5568;
+            color: #ffffff;
+            border-left-color: #63b3ed;
+        }
+
+        body.dark-mode .combat-table th {
+            background-color: #2d5a2d;
+        }
+
+        body.dark-mode .combat-table tr:nth-child(even) {
+            background-color: #3a3a3a;
+        }
+
+        body.dark-mode .combat-table {
+            border-color: #555;
+        }
+
+        body.dark-mode .combat-table th,
+        body.dark-mode .combat-table td {
+            border-color: #555;
+        }
+
+        body.dark-mode .warning {
+            background: #4a4a3a;
+            border-color: #666;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .tip {
+            background: #2a4a4a;
+            border-color: #4a7a7a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .theme-toggle {
+            border-color: #ff9500;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background: #ff9500;
+            color: #1a1a1a;
+        }
+
+        /* TOC Dark Mode */
+        body.dark-mode .toc {
+            background: #383838;
+            border: 1px solid #555;
+        }
+
+        body.dark-mode .toc a {
+            color: #63b3ed;
+        }
+
+        body.dark-mode .toc a:hover {
+            color: #90cdf4;
+        }
+
+        /* Inline text colors for dark mode */
+        body.dark-mode p[style*="color: #888"] {
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-mode p[style*="color: #666"] {
+            color: #a0a0a0 !important;
+        }
+
+        /* Footer dark mode */
+        body.dark-mode footer {
+            border-top-color: #555 !important;
+            color: #a0a0a0 !important;
+        }
+
+        /* Gradient sections dark mode adjustments */
+        body.dark-mode .stat-priority {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+            border: 1px solid #555;
+        }
+
+        /* Ensure white text in gradients remains visible */
+        body.dark-mode .threat-build {
+            background: linear-gradient(135deg, #744d47 0%, #8b5a3c 100%);
+        }
+
+        body.dark-mode .survival-build {
+            background: linear-gradient(135deg, #2d5a5a 0%, #1a365d 100%);
+        }
+
+        /* Formula sections - already dark but ensure proper contrast */
+        body.dark-mode .formula {
+            background: #1e2937;
+            border-color: #374151;
+            color: #f3f4f6;
+        }
+
+        /* Colored text spans for dark mode */
+        body.dark-mode span[style*="color: #28a745"] {
+            color: #68d391 !important;
+        }
+
+        body.dark-mode span[style*="color: #fd7e14"] {
+            color: #ff9f40 !important;
+        }
+
+        body.dark-mode span[style*="color: #dc3545"] {
+            color: #fc8181 !important;
+        }
+
+        /* Footer inline styles */
+        body.dark-mode [style*="color: white"] {
+            color: #f7fafc !important;
+        }
+
+        body.dark-mode [style*="color: #f0f0f0"] {
+            color: #e2e8f0 !important;
+        }
+
+        body.dark-mode [style*="color: #d0d0d0"] {
+            color: #cbd5e0 !important;
+        }
+
+        body.dark-mode [style*="color: #90cdf4"] {
+            color: #90cdf4 !important;
+        }
+
+        /* Border colors in footer */
+        body.dark-mode [style*="border-top: 1px solid #ddd"] {
+            border-top: 1px solid #555 !important;
+        }
+
+        /* Additional bright background fixes */
+        body.dark-mode .info {
+            background: #1e3a8a !important;
+            color: #dbeafe !important;
+        }
+
+        body.dark-mode .success {
+            background: #166534 !important;
+            color: #dcfce7 !important;
+        }
+
+        body.dark-mode .danger {
+            background: #991b1b !important;
+            color: #fecaca !important;
+        }
+
+        /* Any remaining light backgrounds */
+        body.dark-mode [style*="background: #f8f9fa"] {
+            background: #374151 !important;
+        }
+
+        body.dark-mode [style*="background-color: #f8f9fa"] {
+            background-color: #374151 !important;
+        }
+
+        body.dark-mode [style*="background: #ffeb3b"] {
+            background: #92400e !important;
+            color: #fef3c7 !important;
+        }
+
+        /* Links in dark mode */
+        body.dark-mode a {
+            color: #60a5fa;
+        }
+
+        body.dark-mode a:hover {
+            color: #93c5fd;
+        }
+
+        /* Simulator sections dark mode */
+        body.dark-mode .simulator-list {
+            background: transparent;
+        }
+
+        body.dark-mode .simulator-card {
+            background: #2d3748;
+            border: 1px solid #4a5568;
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .simulator-card h4 {
+            color: #63b3ed;
+        }
+
+        body.dark-mode .simulator-card p {
+            color: #cbd5e0;
+        }
+
+        /* Highlight text dark mode */
+        body.dark-mode .highlight {
+            background: #2d3748;
+            color: #fbbf24;
+            border: 1px solid #4a5568;
+            padding: 3px 6px;
+        }
     </style>
 </head>
-<body>
+<body class="dark-mode">
     <div class="container">
+        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
+            <span id="theme-icon">🌙</span>
+        </button>
         <h1>Tankenheimer's Incomplete Attempt at a Complete Classic Warrior Tank (and DPS) Guide</h1>
         <p style="text-align: center; font-style: italic; color: #888; font-size: 0.9em; margin-top: 5px;">Note: Engineering section is currently a placeholder</p>
         <p style="text-align: center; font-style: italic; color: #666;">An *Attempted* Complete Mechanics and Optimization Guide for Tanks and DPS</p>
@@ -2132,5 +2381,40 @@
             <strong>📋 Upcoming Release:</strong> A comprehensive raid tanking guide "Tankenheimer's Classic WoW Raid Tanking Guide" covering all boss encounters, strategies, and encounter-specific requirements will be released separately. This main guide focuses on gear optimization fundamentals that apply across all content.
         </div>
     </div>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+
+            body.classList.toggle('dark-mode');
+
+            // Update icon based on current theme
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const savedTheme = localStorage.getItem('theme');
+
+            // Default to dark mode if no preference is saved
+            if (savedTheme === 'light') {
+                body.classList.remove('dark-mode');
+                themeIcon.textContent = '☀️';
+            } else {
+                body.classList.add('dark-mode');
+                themeIcon.textContent = '🌙';
+            }
+        });
+    </script>
 </body>
 </html>
