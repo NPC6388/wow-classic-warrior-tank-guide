@@ -1,5 +1,140 @@
 # Session Log - WoW Classic Warrior Tank Guide Updates
 
+## Session Date: 2025-01-26
+
+### Major Changes Summary
+- Reorganized guide structure and navigation
+- Corrected ability mechanics and enchantment details
+- Updated Power Infusion calculations
+- Cleaned up and reorganized references section
+- Enhanced navigation with TOC links on all headers
+- Multiple quality-of-life improvements and corrections
+
+---
+
+### Detailed Changes
+
+#### 1. Engineering Section Updates
+- **Added:** Note that Battle Squawk can stack if multiple chickens are in the same group
+- **Removed:** Engineering placeholder note from header (section is now complete)
+
+#### 2. Flask Set Analysis Corrections
+- **Removed:** "BiS" reference from flask set analysis title
+- **Corrected:** Power Infusion effect description
+  - Changed from incorrect "20% faster casting speed, 20% reduced mana cost" (WotLK version)
+  - To correct Classic WoW effect: "+20% spell damage and healing for 15 seconds"
+- **Added:** Detailed Power Infusion calculation in flask set example
+  - Shows general effect: +20% spell damage and healing
+  - Shows specific calculation: 1,301 × 1.20 = 1,561 healing power
+  - Final healing: 9 + 1,561 = 1,570 HP/5sec for 60 seconds
+  - Total healing over 60 seconds: ~18,840 HP
+
+#### 3. Off-Tank (OT) Considerations
+- **Removed:** Defense for crit immunity from Off-Tank gear strategy
+- **Reasoning:** OTs typically operate in berserker stance and focus on threat/DPS when not actively tanking
+
+#### 4. Macros Section Updates
+- **Added:** Fury-Prot execute phase note
+  - Use Last Stand (and possibly Lifegiving Gem) during execute phase for survivability
+  - Be prepared to re-boon or hearth to Kargath (Horde) when Vael dies to preserve world buffs if you get Burning Adrenaline
+- **Removed:** Additional Utility macros section (duplicate content)
+
+#### 5. Combat Mechanics Corrections
+- **Corrected:** Retaliation ability description
+  - Changed from "unlimited counters" to "maximum of 30 counters"
+  - Added note: "Melee attacks made from behind cannot be counterattacked"
+- **Removed:** Shield Block Priority note box
+
+#### 6. Enchantments Section Updates
+**Location Changed:** Moved from between Stat Priorities and Consumables to after Gear Optimization (before Macros)
+
+**Corrections Made:**
+- **Arcanum of Protection:** Updated to show it comes from "Libram of Protection" (not just "from ZG")
+- **Tank Legs:** Added Arcanum of Protection (+1% dodge) as an option
+- **Shield Enchant:** Added note that Lesser Block (+2% block chance) is best for Force Reactive Disk
+
+#### 7. Guide Structure and Navigation
+- **Reorganized Sections:** Moved Enchantments to after Gear Optimization and before Macros (more logical flow)
+- **Updated TOC:** Reflects new section order
+- **Added TOC Links:** All h2 section headers now link back to Table of Contents
+  - Format: Clickable header text that returns to top
+  - Applied to all 14 major sections including References & Citations
+- **Added:** References & Citations link to Table of Contents
+
+#### 8. Introduction Updates
+- **Added:** Sentence emphasizing no single BiS list for tanks
+  - "For this reason, there is no single BiS list for a tank that applies across all content."
+
+#### 9. References Section (MAJOR REORGANIZATION)
+**Merged two redundant sections into one clean, professional section:**
+
+**Before:**
+- Two separate sections: "References & Citations" (footnotes) and "Sources and References" (full list)
+- ~240 lines with significant duplication
+- Difficult to navigate
+
+**After:**
+- Single unified "References & Citations" section with id="references"
+- Clear subsections:
+  - **Inline Citations:** All 17 numbered footnotes (1-13, 2H, DW, FP, FP-NS) that are referenced throughout the document
+  - **Bibliography:** Additional sources organized by category:
+    * Simulators & Tools (4 sources)
+    * Combat Mechanics & Theory (14 sources)
+    * Comprehensive Warrior Guides (7 sources)
+    * Community Resources & Forums (3 sources)
+- Added introductory paragraph explaining the structure
+- Eliminated all duplicate sources
+- ~188 lines (52 lines shorter while maintaining all content)
+- All inline citation links remain functional
+
+---
+
+### Files Modified
+- `index.html` - Main guide file
+- `Future Work/SESSION_LOG.md` - This file
+
+### Total Commits This Session
+20 commits pushed to GitHub
+
+### Git Commit Summary
+1. Add note that Battle Squawk can stack with multiple chickens
+2. Remove BiS reference from flask set analysis box
+3. Correct Power Infusion effect description
+4. Fix Power Infusion to show correct Classic WoW effect
+5. Show Power Infusion effect and calculation in flask set example
+6. Remove defense for crit immunity from Off-Tank gear strategy
+7. Add fury-prot execute phase survival and world buff preservation note
+8. Add hearth to Kargath option for world buff preservation
+9. Remove Additional Utility macros section
+10. Remove engineering placeholder note from header
+11. Reorganize sections: move Enchantments after Gear Optimization
+12. Correct Retaliation ability description
+13. Remove Shield Block Priority note
+14. Correct Arcanum of Protection to show it comes from Libram
+15. Add Arcanum of Protection to tank legs enchant options
+16. Add note that Lesser Block enchant is best for Force Reactive Disk
+17. Add note that no single BiS list applies to all tank content
+18. Add References & Citations link to Table of Contents
+19. Make References & Citations title link back to TOC
+20. Reorganize references into single clean, well-structured section
+
+### Status
+- ✅ All changes completed and pushed to GitHub
+- ✅ Guide structure optimized for better navigation
+- ✅ All ability mechanics corrected
+- ✅ References section fully reorganized and cleaned
+- ✅ Enchantments section relocated to better position
+- ✅ All inline citations verified working
+
+### Notes
+- Session focused on polish, accuracy, and user experience improvements
+- Major emphasis on navigation improvements (TOC links on all headers)
+- References section now professional and easy to navigate
+- All Classic WoW ability mechanics verified against official sources
+- Enhanced guide consistency and removed redundant content
+
+---
+
 ## Session Date: 2025-01-25
 
 ### Major Changes Summary
