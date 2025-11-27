@@ -1,5 +1,61 @@
 # Session Log - WoW Classic Warrior Tank Guide Updates
 
+## Session Date: 2025-11-26
+
+### Major Changes Summary
+- Updated Fury-Prot tank build spec from (0/33/18) to (2/33/16)
+- Updated talent calculator links for new build
+- Refined build description to emphasize defense rating and improved Heroic Strike
+
+---
+
+### Detailed Changes
+
+#### 1. Fury-Prot Tank Build Update (Future Work)
+- **Changed:** Build spec from (0/33/18) to (2/33/16)
+- **Updated:** Talent calculator link from `#LZVxzVxxoVoxwzox` to `#LbZVxzVxxoVoVfz0x`
+- **Updated:** Build description
+  - Added emphasis on "defense rating and improved Heroic Strike for improved threat and survivability without a shield"
+- **Updated:** Footnote reference to match new build link
+- **Updated:** Sources section talent build link
+
+#### 2. Fury-Prot NO SB Tank Build Update (Live Site - index.html)
+- **Changed:** Build spec from (0/33/18) to (2/33/16)
+- **Updated:** Talent calculator link from `#LZVxzVxxoVoVfz0xM` to `#LbZVxzVxxoVoVfz0x`
+- **Updated:** Build description
+  - Changed from "Defense Rating and reduced Taunt cooldown for improved survivability without a shield and threat management"
+  - To "defense rating and improved Heroic Strike for improved threat and survivability without a shield"
+- **Updated:** Footnote reference to match new build link
+
+---
+
+### Files Modified
+- `Future Work/wow_classic_tanking_guide.html` - Development version
+- `index.html` - Live site version
+- `Future Work/SESSION_LOG.md` - This file
+
+### Total Commits This Session
+2 commits pushed to GitHub
+
+### Git Commit Summary
+1. Update Fury-Prot tank build spec to (2/33/16)
+2. Update Fury-Prot NO SB tank build spec to (2/33/16) in live site
+
+### Status
+- ✅ All changes completed and pushed to GitHub
+- ✅ Build spec corrected to (2/33/16)
+- ✅ Talent calculator links updated
+- ✅ Build descriptions refined for accuracy
+- ✅ Both development and live files synchronized
+
+### Notes
+- Corrected talent point allocation to reflect actual build (2 in Arms, 33 in Protection, 16 in Fury)
+- New build emphasizes improved Heroic Strike from Arms tree instead of Shield Bash talents
+- Build focuses on defense rating for survivability while maintaining threat without shield dependency
+- Unified description between development and live versions for consistency
+
+---
+
 ## Session Date: 2025-01-26
 
 ### Major Changes Summary
