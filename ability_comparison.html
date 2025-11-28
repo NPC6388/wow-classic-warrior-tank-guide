@@ -148,15 +148,20 @@
                 <input type="range" id="autoAttackRage" min="10" max="25" step="1" value="17">
                 <div class="value-display"><span id="autoAttackRageValue">17</span> rage</div>
             </div>
+            <div class="control-group">
+                <label for="attackPower">Attack Power</label>
+                <input type="range" id="attackPower" min="500" max="3500" step="50" value="2000">
+                <div class="value-display"><span id="attackPowerValue">2000</span> AP</div>
+            </div>
         </div>
 
         <div class="stats-grid">
             <div class="stat-card hs">
-                <div class="stat-label">Heroic Strike Damage @ 2000 AP</div>
+                <div class="stat-label">Heroic Strike Damage @ <span id="hsAPLabel">2000</span> AP</div>
                 <div class="stat-value" id="hsDamage">-</div>
             </div>
             <div class="stat-card ww">
-                <div class="stat-label">Whirlwind Damage @ 2000 AP</div>
+                <div class="stat-label">Whirlwind Damage @ <span id="wwAPLabel">2000</span> AP</div>
                 <div class="stat-value" id="wwDamage">-</div>
             </div>
             <div class="stat-card hs">
@@ -183,14 +188,18 @@
         const weaponDmgMinInput = document.getElementById('weaponDmgMin');
         const weaponDmgMaxInput = document.getElementById('weaponDmgMax');
         const autoAttackRageInput = document.getElementById('autoAttackRage');
+        const attackPowerInput = document.getElementById('attackPower');
 
         const weaponSpeedValue = document.getElementById('weaponSpeedValue');
         const autoAttackRageValue = document.getElementById('autoAttackRageValue');
+        const attackPowerValue = document.getElementById('attackPowerValue');
 
         const hsDamageDisplay = document.getElementById('hsDamage');
         const wwDamageDisplay = document.getElementById('wwDamage');
         const hsDPRDisplay = document.getElementById('hsDPR');
         const wwDPRDisplay = document.getElementById('wwDPR');
+        const hsAPLabel = document.getElementById('hsAPLabel');
+        const wwAPLabel = document.getElementById('wwAPLabel');
 
         weaponSpeedInput.addEventListener('input', (e) => {
             weaponSpeedValue.textContent = e.target.value;
@@ -199,6 +208,13 @@
 
         autoAttackRageInput.addEventListener('input', (e) => {
             autoAttackRageValue.textContent = e.target.value;
+            updateCharts();
+        });
+
+        attackPowerInput.addEventListener('input', (e) => {
+            attackPowerValue.textContent = e.target.value;
+            hsAPLabel.textContent = e.target.value;
+            wwAPLabel.textContent = e.target.value;
             updateCharts();
         });
 
@@ -347,13 +363,22 @@
                 wwDPRValues.push((wwDamage / wwCost).toFixed(2));
             }
 
-            // Update stat cards at 2000 AP
-            const apIndex = apValues.indexOf(2000);
+            // Update stat cards at selected AP
+            const selectedAP = parseFloat(attackPowerInput.value);
+            const apIndex = apValues.indexOf(selectedAP);
             if (apIndex !== -1) {
                 hsDamageDisplay.textContent = hsDamageValues[apIndex];
                 wwDamageDisplay.textContent = wwDamageValues[apIndex];
                 hsDPRDisplay.textContent = hsDPRValues[apIndex];
                 wwDPRDisplay.textContent = wwDPRValues[apIndex];
+            } else {
+                // If selected AP is not in the chart range, calculate directly
+                const hsDamage = calculateHSDamage(weaponDmgAvg);
+                const wwDamage = calculateWWDamage(weaponDmgAvg, selectedAP, weaponSpeed);
+                hsDamageDisplay.textContent = hsDamage.toFixed(0);
+                wwDamageDisplay.textContent = wwDamage.toFixed(0);
+                hsDPRDisplay.textContent = (hsDamage / effectiveHSCost).toFixed(2);
+                wwDPRDisplay.textContent = (wwDamage / wwCost).toFixed(2);
             }
 
             damageChart.data.labels = apValues;
