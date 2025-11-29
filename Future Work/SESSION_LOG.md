@@ -1,5 +1,118 @@
 # Session Log - WoW Classic Warrior Tank Guide Updates
 
+## Session Date: 2025-11-28
+
+### Major Changes Summary
+- Clarified that Heroic Strike and Cleave cannot glance (yellow abilities)
+- Added notes in all attack tables about HS/Cleave glancing mechanics
+- Created interactive Heroic Strike vs Whirlwind damage comparison tool
+- Added Attack Power slider to comparison tool for dynamic analysis
+
+---
+
+### Detailed Changes
+
+#### 1. Heroic Strike & Cleave Clarifications
+**Added notes in three strategic locations:**
+
+1. **Crit Cap Reality Section (line 1228)**
+   - Expanded yellow abilities note to list specific examples
+   - "Yellow abilities: No practical crit cap since they cannot glancing blow (includes Heroic Strike, Cleave, Sunder Armor, Bloodthirst, Execute)"
+
+2. **Fury DPS Rotation - Opening Priority (line 1442)**
+   - Added inline clarification
+   - "Heroic Strike/Cleave (queued) - HS if single-target, Cleave if 2+ mobs (cannot glance)"
+
+3. **Sunder Priority Section (lines 1469-1471)**
+   - Expanded to include HS/Cleave
+   - "Cannot Glance: Sunder, Heroic Strike, and Cleave are 'yellow' abilities that cannot glance*"
+   - Updated footnote: "Yellow abilities can still be parried/dodged by boss, but cannot glancing blow"
+
+#### 2. Attack Table Mechanics Updates
+**Updated all four attack table sections with glancing blow clarifications:**
+
+1. **At 300 Weapon Skill (line 573)**
+   - "40% are glancing blows dealing 65% damage (white attacks only - Heroic Strike/Cleave cannot glance)"
+
+2. **At 300 Weapon Skill + 9% Hit Rating (line 583)**
+   - "40% are glancing blows dealing 65% damage (white attacks only - Heroic Strike/Cleave cannot glance)"
+
+3. **At 305 Weapon Skill (line 594)**
+   - "30% are glancing blows dealing ~75% damage (white attacks only - Heroic Strike/Cleave cannot glance)"
+
+4. **At 305 Weapon Skill + 6% Hit Rating (line 604)**
+   - "30% are glancing blows dealing ~75% damage (white attacks only - Heroic Strike/Cleave cannot glance)"
+
+#### 3. Interactive Ability Comparison Tool (NEW)
+**Created:** `ability_comparison.html`
+
+**Features:**
+- **Damage vs Attack Power Graph** - Visual comparison of HS and WW damage scaling
+- **Damage per Rage Graph** - Efficiency analysis across AP ranges
+- **Interactive Controls:**
+  - Weapon speed slider (1.5 - 3.8 seconds)
+  - MH weapon min/max damage inputs
+  - Auto-attack rage generation slider (10-25 rage)
+  - Attack Power slider (500-3500 AP)
+- **Real-time Stat Cards:**
+  - Displays damage for both abilities at selected AP
+  - Shows damage per rage efficiency
+  - Updates dynamically as sliders change
+
+**Formulas Implemented:**
+- Heroic Strike: Weapon Damage + 157, Effective Cost ≈ 30-35 rage (15 base + auto attack rage)
+- Whirlwind: Weapon Damage + (AP × Weapon Speed / 14), Cost = 25 rage
+
+**Key Insights:**
+- WW damage scales linearly with AP, HS remains relatively flat
+- WW becomes more rage-efficient at higher AP values
+- Slower weapons benefit WW more due to AP × speed scaling
+- HS effective cost includes lost rage from replaced auto-attack
+
+#### 4. Added Tool to Simulators Section
+**Updated:** `index.html` (lines 2283-2288)
+
+Added new simulator card:
+- **Title:** "Ability Damage Comparison Tool"
+- **Link:** ability_comparison.html
+- **Features:** Interactive visualization comparing Heroic Strike vs Whirlwind damage and efficiency
+- **Specialties:** Damage per rage analysis, weapon speed impact, effective rage cost calculations
+
+---
+
+### Files Modified
+- `index.html` - Main guide file
+- `ability_comparison.html` - New interactive tool (380 lines)
+- `Future Work/SESSION_LOG.md` - This file
+
+### Total Commits This Session
+4 commits pushed to GitHub
+
+### Git Commit Summary
+1. Clarify that Heroic Strike and Cleave cannot glance
+2. Add notes in attack tables that Heroic Strike/Cleave cannot glance
+3. Add interactive Heroic Strike vs Whirlwind comparison tool
+4. Add Attack Power slider to ability comparison tool
+
+### Status
+- ✅ All changes completed and pushed to GitHub
+- ✅ HS/Cleave glancing mechanics clarified throughout guide
+- ✅ Attack tables updated with accurate yellow ability notes
+- ✅ Interactive comparison tool created and integrated
+- ✅ Tool accessible from simulators section
+- ✅ GitHub Pages deployment successful
+
+### Notes
+- Session focused on clarifying yellow ability mechanics (HS/Cleave cannot glance)
+- Created first interactive visualization tool for the guide
+- Tool uses Chart.js for professional data visualization
+- Attack Power slider enables dynamic analysis at any gear level
+- Weapon speed slider demonstrates importance of weapon choice
+- Effective rage cost calculation accounts for lost auto-attack rage
+- Tool provides valuable insights for rotation optimization
+
+---
+
 ## Session Date: 2025-11-26
 
 ### Major Changes Summary
