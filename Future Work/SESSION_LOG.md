@@ -1,5 +1,49 @@
 # Session Log - WoW Classic Warrior Tank Guide Updates
 
+## Session Date: 2025-12-23
+
+### Major Changes Summary
+- Updated Dual-Wield Fury (Tank/DPS) talent calculator link to include 5 points in Battle Shout
+
+---
+
+### Detailed Changes
+
+#### 1. Talent Build Correction - Dual-Wield Fury (Tank/DPS)
+**Updated:** `index.html` (line 1529)
+
+**Changed:**
+- Old link: `https://classicdb.ch/?talent=#LhhxzhbZVxzmgxoVo` (missing Battle Shout points)
+- New link: `https://classicdb.ch/?talent=#LhhxzhbZVxzVtxoVo` (includes 5 points in Battle Shout)
+
+**Reasoning:**
+- 5 points in Battle Shout is necessary for tanking effectiveness
+- Provides significant raid utility with improved Battle Shout buff
+- Essential for threat generation in tank/dps hybrid role
+
+---
+
+### Files Modified
+- `index.html` - Main guide file
+- `Future Work/SESSION_LOG.md` - This file
+
+### Total Commits This Session
+1 commit pushed to GitHub
+
+### Git Commit Summary
+1. Update DW Fury tank build to include 5pts Battle Shout
+
+### Status
+- ✅ Talent calculator link corrected
+- ✅ Changes pushed to GitHub
+- ✅ Site updated and live
+
+### Notes
+- Quick fix to ensure tanking build has correct talent allocation
+- Battle Shout is a core tanking talent for threat and raid utility
+
+---
+
 ## Session Date: 2025-11-28
 
 ### Major Changes Summary
