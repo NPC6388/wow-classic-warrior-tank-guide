@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WoW Classic Warrior Tanking Guide - Complete Mechanics & Optimization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -222,6 +223,7 @@
                 </li>
                 <li><a href="#stat-priorities">Stat Priorities</a>
                     <ul>
+                        <li><a href="#dw-fury-analysis">DW Fury Stat Priority Analysis</a></li>
                         <li><a href="#threat-build">Threat Build</a></li>
                         <li><a href="#survival-build">Survival Build</a></li>
                     </ul>
@@ -1046,6 +1048,196 @@
             • <strong>World Buffs Impact:</strong> +10% crit from buffs stacks on top of attack table limitations, making crit stacking extremely valuable in raids<br>
             • <strong>Result:</strong> Hit chance and weapon skill dramatically increase available crit space for white attacks
         </div>
+
+        <details id="dw-fury-analysis" style="margin: 30px 0; border: 2px solid #4682B4; border-radius: 8px; padding: 10px; background: #f8f9fa;">
+            <summary style="cursor: pointer; font-size: 1.3em; font-weight: bold; color: #2E8B57; padding: 10px; user-select: none;">
+                📊 DW Fury Stat Priority Analysis - With/Without World Buffs
+            </summary>
+            <div style="padding: 20px; background: white; margin-top: 15px; border-radius: 5px;">
+                <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 10px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 10px; font-weight: bold;">
+                        <div style="width: 30px; height: 20px; background: linear-gradient(135deg, #ff6b6b, #ee5a6f); border-radius: 4px;"></div>
+                        <span>Without World Buffs</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-weight: bold;">
+                        <div style="width: 30px; height: 20px; background: linear-gradient(135deg, #4ecdc4, #44a08d); border-radius: 4px;"></div>
+                        <span>With World Buffs</span>
+                    </div>
+                </div>
+
+                <div style="position: relative; height: 500px; margin: 30px 0;">
+                    <canvas id="dwFuryStatChart"></canvas>
+                </div>
+
+                <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 20px; margin: 20px 0; border-radius: 5px;">
+                    <h4 style="margin-top: 0; color: #1976D2;">Key Insights</h4>
+                    <p><strong>World Buffs Fundamentally Change Stat Priorities:</strong> The most significant change is that <strong>Critical Strike</strong> becomes substantially more valuable with world buffs due to exponential Flurry uptime scaling. With +10% base crit from buffs, you enter the high-crit range (35-40%+) where Flurry uptime reaches 85-87%, providing 26-30% DPS increase.</p>
+                    <p><strong>Attack Power</strong> becomes relatively less valuable because world buffs already provide +340 AP (Rallying Cry +140, Fengus +200), leading to diminishing returns on additional AP.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">305 Weapon Skill</h4>
+                        <p><strong>Absolute Priority:</strong> Reduces glancing blows from 40% to 30%, improves glancing damage, removes hit suppression.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">~15-25% DPS increase (same with/without buffs)</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">6% Hit Rating</h4>
+                        <p><strong>Must Cap:</strong> With 305 weapon skill, 6% hit eliminates all special attack misses against level 63 bosses.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">~15-20% DPS increase (same with/without buffs)</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Critical Strike</h4>
+                        <p><strong>Scales Exponentially:</strong> Without buffs (20% crit) = 59% Flurry uptime. With buffs (40% crit) = 87% Flurry uptime.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~15-20% DPS<br>With Buffs: ~26-30% DPS</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Attack Power</h4>
+                        <p><strong>Linear Scaling:</strong> 8.62 AP = 1 DPS for dual-wield. Less valuable with buffs due to already having +340 AP baseline.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~10-15% DPS<br>With Buffs: ~7-10% DPS</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Strength</h4>
+                        <p><strong>AP Conversion:</strong> 1 Str = 2 AP. Scales with Zandalar (+15% stats), but still converts to AP at standard rate.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~5-8% DPS<br>With Buffs: ~6-9% DPS</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Agility</h4>
+                        <p><strong>Multi-stat:</strong> Provides AP, crit, and dodge. Gains value from Zandalar scaling and increased crit value with buffs.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~3-5% DPS<br>With Buffs: ~5-7% DPS</p>
+                    </div>
+                </div>
+
+                <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                    <h4 style="margin-top: 0; color: #856404;">Assumptions & Methodology</h4>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>305 Weapon Skill</strong> and <strong>6% Hit</strong> are mandatory caps - shown at consistent high priority</li>
+                        <li>DPS increase percentages derived from Tankenheimer's guide formulas and combat mechanics</li>
+                        <li><strong>World Buffs Include:</strong> Rallying Cry (+5% crit, +140 AP), Onyxia (+140 AP), Spirit of Zandalar (+15% stats), Dire Maul Tribute (+200 AP)</li>
+                        <li>Flurry uptime formula: F_up = 1 - (1 - c)^4</li>
+                        <li>20% crit = 59% Flurry uptime; 40% crit = 87% Flurry uptime</li>
+                    </ul>
+                </div>
+
+                <script>
+                    // Only initialize if Chart.js is loaded and chart hasn't been created yet
+                    if (typeof Chart !== 'undefined' && !document.getElementById('dwFuryStatChart').chart) {
+                        const ctx = document.getElementById('dwFuryStatChart').getContext('2d');
+
+                        const stats = [
+                            '305 Weapon Skill',
+                            '6% Hit Cap',
+                            'Critical Strike',
+                            'Attack Power',
+                            'Strength',
+                            'Agility'
+                        ];
+
+                        const withoutBuffs = [20, 17.5, 17.5, 12.5, 6.5, 4];
+                        const withBuffs = [20, 17.5, 28, 8.5, 7.5, 6];
+
+                        const chart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: stats,
+                                datasets: [
+                                    {
+                                        label: 'Without World Buffs',
+                                        data: withoutBuffs,
+                                        borderColor: '#ff6b6b',
+                                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                                        borderWidth: 4,
+                                        pointRadius: 8,
+                                        pointHoverRadius: 12,
+                                        pointBackgroundColor: '#ff6b6b',
+                                        pointBorderColor: '#fff',
+                                        pointBorderWidth: 2,
+                                        tension: 0.4
+                                    },
+                                    {
+                                        label: 'With World Buffs',
+                                        data: withBuffs,
+                                        borderColor: '#4ecdc4',
+                                        backgroundColor: 'rgba(78, 205, 196, 0.1)',
+                                        borderWidth: 4,
+                                        pointRadius: 8,
+                                        pointHoverRadius: 12,
+                                        pointBackgroundColor: '#4ecdc4',
+                                        pointBorderColor: '#fff',
+                                        pointBorderWidth: 2,
+                                        tension: 0.4
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Relative DPS Impact by Stat (%)',
+                                        font: { size: 18, weight: 'bold' },
+                                        padding: 15
+                                    },
+                                    legend: {
+                                        display: false
+                                    },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                        titleFont: { size: 14 },
+                                        bodyFont: { size: 13 },
+                                        padding: 10,
+                                        callbacks: {
+                                            label: function(context) {
+                                                return context.dataset.label + ': ~' + context.parsed.y + '% DPS increase';
+                                            }
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        max: 30,
+                                        title: {
+                                            display: true,
+                                            text: 'DPS Increase (%)',
+                                            font: { size: 14, weight: 'bold' }
+                                        },
+                                        ticks: {
+                                            font: { size: 12 },
+                                            callback: function(value) { return value + '%'; }
+                                        },
+                                        grid: { color: 'rgba(0, 0, 0, 0.05)' }
+                                    },
+                                    x: {
+                                        title: {
+                                            display: true,
+                                            text: 'Stat Priority (Left = Highest, Right = Lowest)',
+                                            font: { size: 14, weight: 'bold' }
+                                        },
+                                        ticks: {
+                                            font: { size: 11, weight: 'bold' }
+                                        },
+                                        grid: { display: false }
+                                    }
+                                },
+                                interaction: {
+                                    intersect: false,
+                                    mode: 'index'
+                                }
+                            }
+                        });
+
+                        document.getElementById('dwFuryStatChart').chart = chart;
+                    }
+                </script>
+            </div>
+        </details>
 
         <div class="stat-priority threat-build">
             <h3 id="threat-build">Threat-Focused Build<a href="#footnote-5" class="footnote-ref">5</a></h3>
