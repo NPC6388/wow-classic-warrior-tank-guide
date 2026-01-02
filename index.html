@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tankenheimer's Incomplete Attempt at a Complete Classic Warrior Tank (and DPS) Guide</title>
+    <title>WoW Classic Warrior Tanking Guide - Complete Mechanics & Optimization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -200,260 +201,11 @@
         .footnote a {
             color: #007bff;
         }
-
-        /* Theme Toggle Button */
-        .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: 2px solid #8B4513;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .theme-toggle:hover {
-            background: #8B4513;
-            transform: scale(1.1);
-        }
-
-        .container {
-            position: relative;
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .container {
-            background: #2d2d2d;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-
-        body.dark-mode h1 {
-            color: #ff9500;
-            border-bottom-color: #ff9500;
-        }
-
-        body.dark-mode h2 {
-            color: #4ade80;
-            border-left-color: #4ade80;
-        }
-
-        body.dark-mode h3 {
-            background: #4a5568;
-            color: #ffffff;
-            border-left-color: #63b3ed;
-        }
-
-        body.dark-mode .combat-table th {
-            background-color: #2d5a2d;
-        }
-
-        body.dark-mode .combat-table tr:nth-child(even) {
-            background-color: #3a3a3a;
-        }
-
-        body.dark-mode .combat-table {
-            border-color: #555;
-        }
-
-        body.dark-mode .combat-table th,
-        body.dark-mode .combat-table td {
-            border-color: #555;
-        }
-
-        body.dark-mode .warning {
-            background: #4a4a3a;
-            border-color: #666;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .tip {
-            background: #2a4a4a;
-            border-color: #4a7a7a;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .theme-toggle {
-            border-color: #ff9500;
-            color: #e0e0e0;
-        }
-
-        body.dark-mode .theme-toggle:hover {
-            background: #ff9500;
-            color: #1a1a1a;
-        }
-
-        /* TOC Dark Mode */
-        body.dark-mode .toc {
-            background: #383838;
-            border: 1px solid #555;
-        }
-
-        body.dark-mode .toc a {
-            color: #63b3ed;
-        }
-
-        body.dark-mode .toc a:hover {
-            color: #90cdf4;
-        }
-
-        /* Inline text colors for dark mode */
-        body.dark-mode p[style*="color: #888"] {
-            color: #b0b0b0 !important;
-        }
-
-        body.dark-mode p[style*="color: #666"] {
-            color: #a0a0a0 !important;
-        }
-
-        /* Footer dark mode */
-        body.dark-mode footer {
-            border-top-color: #555 !important;
-            color: #a0a0a0 !important;
-        }
-
-        /* Gradient sections dark mode adjustments */
-        body.dark-mode .stat-priority {
-            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
-            border: 1px solid #555;
-        }
-
-        /* Ensure white text in gradients remains visible */
-        body.dark-mode .threat-build {
-            background: linear-gradient(135deg, #744d47 0%, #8b5a3c 100%);
-        }
-
-        body.dark-mode .survival-build {
-            background: linear-gradient(135deg, #2d5a5a 0%, #1a365d 100%);
-        }
-
-        /* Formula sections - already dark but ensure proper contrast */
-        body.dark-mode .formula {
-            background: #1e2937;
-            border-color: #374151;
-            color: #f3f4f6;
-        }
-
-        /* Colored text spans for dark mode */
-        body.dark-mode span[style*="color: #28a745"] {
-            color: #68d391 !important;
-        }
-
-        body.dark-mode span[style*="color: #fd7e14"] {
-            color: #ff9f40 !important;
-        }
-
-        body.dark-mode span[style*="color: #dc3545"] {
-            color: #fc8181 !important;
-        }
-
-        /* Footer inline styles */
-        body.dark-mode [style*="color: white"] {
-            color: #f7fafc !important;
-        }
-
-        body.dark-mode [style*="color: #f0f0f0"] {
-            color: #e2e8f0 !important;
-        }
-
-        body.dark-mode [style*="color: #d0d0d0"] {
-            color: #cbd5e0 !important;
-        }
-
-        body.dark-mode [style*="color: #90cdf4"] {
-            color: #90cdf4 !important;
-        }
-
-        /* Border colors in footer */
-        body.dark-mode [style*="border-top: 1px solid #ddd"] {
-            border-top: 1px solid #555 !important;
-        }
-
-        /* Additional bright background fixes */
-        body.dark-mode .info {
-            background: #1e3a8a !important;
-            color: #dbeafe !important;
-        }
-
-        body.dark-mode .success {
-            background: #166534 !important;
-            color: #dcfce7 !important;
-        }
-
-        body.dark-mode .danger {
-            background: #991b1b !important;
-            color: #fecaca !important;
-        }
-
-        /* Any remaining light backgrounds */
-        body.dark-mode [style*="background: #f8f9fa"] {
-            background: #374151 !important;
-        }
-
-        body.dark-mode [style*="background-color: #f8f9fa"] {
-            background-color: #374151 !important;
-        }
-
-        body.dark-mode [style*="background: #ffeb3b"] {
-            background: #92400e !important;
-            color: #fef3c7 !important;
-        }
-
-        /* Links in dark mode */
-        body.dark-mode a {
-            color: #60a5fa;
-        }
-
-        body.dark-mode a:hover {
-            color: #93c5fd;
-        }
-
-        /* Simulator sections dark mode */
-        body.dark-mode .simulator-list {
-            background: transparent;
-        }
-
-        body.dark-mode .simulator-card {
-            background: #2d3748;
-            border: 1px solid #4a5568;
-            color: #e2e8f0;
-        }
-
-        body.dark-mode .simulator-card h4 {
-            color: #63b3ed;
-        }
-
-        body.dark-mode .simulator-card p {
-            color: #cbd5e0;
-        }
-
-        /* Highlight text dark mode */
-        body.dark-mode .highlight {
-            background: #2d3748;
-            color: #fbbf24;
-            border: 1px solid #4a5568;
-            padding: 3px 6px;
-        }
     </style>
 </head>
-<body class="dark-mode">
+<body>
     <div class="container">
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
-            <span id="theme-icon">🌙</span>
-        </button>
-        <h1>Tankenheimer's Incomplete Attempt at a Complete Classic Warrior Tank (and DPS) Guide</h1>
+        <h1>Tankenheimer's WoW Classic Warrior Tanking Guide</h1>
         <p style="text-align: center; font-style: italic; color: #666;">An *Attempted* Complete Mechanics and Optimization Guide for Tanks and DPS</p>
 
         <div class="toc">
@@ -463,6 +215,7 @@
                 <li><a href="#combat-mechanics">Combat Mechanics</a>
                     <ul>
                         <li><a href="#threat-system">Threat System</a></li>
+                        <li><a href="#debuff-cap">Debuff Cap & Raid Coordination</a></li>
                         <li><a href="#combat-table">Combat Table</a></li>
                         <li><a href="#world-buffs">World Buffs Impact</a></li>
                         <li><a href="#weapon-mechanics">Weapon Mechanics</a></li>
@@ -470,32 +223,32 @@
                 </li>
                 <li><a href="#stat-priorities">Stat Priorities</a>
                     <ul>
+                        <li><a href="#dw-fury-analysis">DW Fury Stat Priority Analysis</a></li>
                         <li><a href="#threat-build">Threat Build</a></li>
                         <li><a href="#survival-build">Survival Build</a></li>
                     </ul>
                 </li>
-                <li><a href="#consumables">Consumables</a></li>
                 <li><a href="#rotations">Combat Rotations</a></li>
                 <li><a href="#builds">Warrior Builds</a></li>
+                <li><a href="#consumables">Consumables</a></li>
                 <li><a href="#engineering">Engineering</a></li>
                 <li><a href="#gear-optimization">Gear Optimization</a></li>
-                <li><a href="#enchantments">Enchantments</a></li>
+                <li><a href="#enchants">Enchants for Tanking and DPS</a></li>
                 <li><a href="#macros">Essential Tanking Macros</a></li>
                 <li><a href="#weakauras">Essential WeakAuras for Warriors</a></li>
                 <li><a href="#addons">Essential Addons for Warriors</a></li>
                 <li><a href="#simulators">Available Simulators</a></li>
-                <li><a href="#references">References & Citations</a></li>
             </ul>
         </div>
 
-        <h2 id="introduction"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Introduction</a></h2>
+        <h2 id="introduction">Introduction</h2>
         <p>This guide attempts to cover all aspects of warrior tanking in WoW Classic, incorporating research from multiple simulators and theorycrafting tools. Modern tanking has evolved beyond pure survivability to focus heavily on <span class="highlight">threat generation optimization</span>.</p>
 
         <div class="warning">
-            <strong>Important:</strong> Gearing as a tanking Warrior is one of the most situational aspects in Classic WoW. Mastery of gear swapping and recognizing different situations is vital. For this reason, there is no single BiS list for a tank that applies across all content.
+            <strong>Important:</strong> Gearing as a tanking Warrior is one of the most situational aspects in Classic WoW. Mastery of gear swapping and recognizing different situations is vital.
         </div>
 
-        <h2 id="combat-mechanics"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Combat Mechanics</a></h2>
+        <h2 id="combat-mechanics">Combat Mechanics</h2>
 
         <h3 id="threat-system">Threat System & Formulas</h3>
         
@@ -561,6 +314,69 @@
             </tr>
         </table>
 
+        <h3 id="debuff-cap">Debuff Cap & Raid Coordination</h3>
+
+        <div class="warning">
+            <strong>16 Debuff Limit:</strong> Classic WoW has a hard limit of 16 debuffs on any target. Once this limit is reached, new debuffs will push off the oldest ones. Raid coordination is essential to maintain critical debuffs.
+        </div>
+
+        <h4>Priority Debuff List</h4>
+        <table class="combat-table">
+            <tr>
+                <th>Priority</th>
+                <th>Debuff</th>
+                <th>Source</th>
+                <th>Effect</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sunder Armor (5 stacks)</td>
+                <td>Warriors</td>
+                <td>-2250 armor</td>
+                <td>Essential for raid DPS</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Curse of Elements</td>
+                <td>Warlocks</td>
+                <td>+10% fire/frost damage</td>
+                <td>Mandatory for caster DPS</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Curse of Shadow</td>
+                <td>Warlocks</td>
+                <td>+10% shadow/arcane damage</td>
+                <td>Warlock/Priest damage</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Faerie Fire</td>
+                <td>Druids</td>
+                <td>-175 armor</td>
+                <td>Additional armor reduction</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Hunter's Mark</td>
+                <td>Hunters</td>
+                <td>+110 ranged AP</td>
+                <td>Hunter DPS increase</td>
+            </tr>
+            <tr>
+                <td>6-16</td>
+                <td>DoTs & Others</td>
+                <td>Various</td>
+                <td>Variable</td>
+                <td>Corruption, Rend, etc.</td>
+            </tr>
+        </table>
+
+        <div class="tip">
+            <strong>Debuff Management:</strong> Tanks should coordinate with raid leaders to ensure Sunder Armor stacks are maintained. Warriors may need to reapply Sunder if it gets pushed off by other debuffs. Consider using threat meters and debuff tracking addons to monitor debuff status.
+        </div>
+
         <h3 id="combat-table">Combat Table Mechanics</h3>
         
         <h4>Here's What Actually Happens When You Attack a Level 63 Boss</h4>
@@ -568,9 +384,9 @@
         <div class="tip">
             <strong>At 300 Weapon Skill (Most Players):</strong><br>
             • 28% of attacks miss (9% base + 19% off-hand penalty)<br>
-            • 6.5% of attacks get dodged<br>
+            • 6.5% of attacks get dodged<br>  
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing 65% damage (white attacks only - Heroic Strike/Cleave cannot glance)<br>
+            • 40% are glancing blows dealing 65% damage<br>
             • You need 9% hit rating to cap abilities (due to 1% hit suppression)<br>
             • <strong>Result:</strong> Most of your attacks don't do full damage!
         </div>
@@ -580,7 +396,7 @@
             • 19% of attacks miss (off-hand penalty only)*<br>
             • 6.5% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 40% are glancing blows dealing 65% damage (white attacks only - Heroic Strike/Cleave cannot glance)<br>
+            • 40% are glancing blows dealing 65% damage<br>
             • All abilities hit consistently<br>
             • <span style="color: #28a745; font-size: 1.2em; font-weight: bold;">📈 +15-20% DAMAGE/THREAT</span><br>
             • <strong>*Note:</strong> Dual-wield miss penalty is removed while Heroic Strike/Cleave is queued
@@ -591,7 +407,7 @@
             • 25% of attacks miss (6% base + 19% off-hand penalty)<br>
             • 6.0% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 30% are glancing blows dealing ~75% damage (white attacks only - Heroic Strike/Cleave cannot glance)<br>
+            • 30% are glancing blows dealing ~75% damage<br>
             • You only need 6% hit rating to cap abilities (no suppression)<br>
             • <span style="color: #fd7e14; font-size: 1.3em; font-weight: bold;">🚀 +25-30% DAMAGE/THREAT</span>
         </div>
@@ -601,7 +417,7 @@
             • 19% of attacks miss (off-hand penalty only)*<br>
             • 6.0% of attacks get dodged<br>
             • 14% get parried (if attacking from front)<br>
-            • 30% are glancing blows dealing ~75% damage (white attacks only - Heroic Strike/Cleave cannot glance)<br>
+            • 30% are glancing blows dealing ~75% damage<br>
             • All abilities hit consistently<br>
             • <span style="color: #dc3545; font-size: 1.4em; font-weight: bold;">💥 +35-40% DAMAGE/THREAT</span><br>
             • <strong>*Note:</strong> Dual-wield miss penalty is removed while Heroic Strike/Cleave is queued
@@ -776,13 +592,16 @@
             • Health returns to original percentage when expires<br><br>
             
             <strong>Retaliation:</strong><br>
-            • Counterattacks melee attacks against you for 15 seconds (maximum of 30 counters)<br>
+            • Counterattacks melee attacks against you for 15 seconds (unlimited counters)<br>
             • 30-minute cooldown<br>
             • <strong>SHARES COOLDOWN with Shield Wall and Recklessness</strong><br>
             • Each counterattack generates threat and deals weapon damage<br>
-            • Melee attacks made from behind cannot be counterattacked<br>
             • Most effective against multiple melee attackers<br>
             • Limited raid use due to shared cooldown with crucial defensive abilities
+        </div>
+
+        <div class="tip">
+            <strong>Shield Block Priority:</strong> This ability is more important than any gear piece. Improved Shield Block talent enables 100% uptime against slow-hitting bosses, making you functionally immune to both critical hits and crushing blows.
         </div>
 
         <h4>Your Attacks vs Boss - Offensive Tables<a href="#footnote-3" class="footnote-ref">3</a><a href="#footnote-9" class="footnote-ref">9</a></h4>
@@ -961,12 +780,12 @@
         
         <div class="stat-priority threat-build">
             <strong>Death Wish:</strong><br>
-            • +20% damage dealt, reduces armor and all resistances by 20% for 30 seconds<br>
+            • +20% damage dealt, +20% damage taken for 30 seconds<br>
             • 3-minute cooldown<br>
             • <strong>~18-20% DPS increase</strong> (direct damage multiplier)<br>
             • Primary DPS cooldown for both DPS and tanks<br>
             • Essential for burst phases and threat establishment<br>
-            • Coordinate with healers when tanking due to reduced armor/resistances<br><br>
+            • Coordinate with healers when tanking due to increased damage taken<br><br>
             
             <strong>Blood Fury (Orc Racial):</strong><br>
             • +25% base melee Attack Power for 15 seconds<br>
@@ -1003,12 +822,12 @@
             • <strong>Recklessness:</strong> Extremely situational - desperate threat situations or farm content only<br>
             • <strong>CRITICAL:</strong> Recklessness shares 30-minute cooldown with Shield Wall and Retaliation - blocks defensive cooldowns entirely<br><br>
             
-            <strong>Strategy:</strong> Build massive threat lead early → switch to shield → maintain lead through defensive tanking. Communicate with healers about survivability penalties (Death Wish reduces armor/resistances by 20%, Recklessness +20% damage taken) before using. Never use Recklessness if you might need Shield Wall or Retaliation in the next 30 minutes.
+            <strong>Strategy:</strong> Build massive threat lead early → switch to shield → maintain lead through defensive tanking. Communicate with healers about damage taken increases (Death Wish +20%, Recklessness +20%) before using. Never use Recklessness if you might need Shield Wall or Retaliation in the next 30 minutes.
         </div>
 
         <div class="warning">
             <strong>Tank Cooldown Reality Check:</strong><br>
-            • <strong>Death Wish:</strong> Common usage - manageable armor/resistance reduction with healer coordination<br>
+            • <strong>Death Wish:</strong> Common usage - manageable +20% damage taken with healer coordination<br>
             • <strong>Blood Fury:</strong> Almost never used by tanks - 50% healing reduction is too dangerous<br>
             • <strong>Recklessness:</strong> Extremely situational - only for desperate threat situations or farm content, shares CD with Shield Wall and Retaliation<br>
             • <strong>Berserking:</strong> Very useful for tanks - powerful threat when health drops, no defensive penalty
@@ -1054,14 +873,14 @@
         <div class="warning">
             <strong>Cooldown Stacking Risks:</strong><br>
             • <strong>Shared Cooldown Limitation:</strong> Recklessness, Shield Wall, and Retaliation share the same 30-minute cooldown timer<br>
-            • <strong>Death Wish + Recklessness:</strong> -20% armor/resistances + 20% damage taken - extreme risk<br>
+            • <strong>Death Wish + Recklessness:</strong> +40% damage taken - extreme risk<br>
             • <strong>Blood Fury:</strong> -50% healing received can be fatal during high damage phases<br>
             • <strong>Always coordinate</strong> with healers before stacking multiple survival penalties<br>
             • Consider fight-specific damage patterns (Vaelastrasz breath, C'Thun tentacles, etc.)
         </div>
 
 
-        <h2 id="stat-priorities"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Stat Priorities</a></h2>
+        <h2 id="stat-priorities">Stat Priorities</h2>
 
         <h3>Critical Stat Conversions & Thresholds</h3>
         <table class="combat-table">
@@ -1225,10 +1044,200 @@
             • <strong>With 6% hit + 305 skill:</strong> Better attack table but world buffs typically used instead<br>
             • <strong>With world buffs (+10% crit):</strong> ~40%+ total achievable crit (baseline + world buffs + gear optimization)<br>
             • <strong>*Note:</strong> Dual-wield miss penalty removed when Heroic Strike/Cleave queued<br>
-            • <strong>Yellow abilities:</strong> No practical crit cap since they cannot glancing blow (includes Heroic Strike, Cleave, Sunder Armor, Bloodthirst, Execute)<br>
+            • <strong>Yellow abilities:</strong> No practical crit cap since they cannot glancing blow<br>
             • <strong>World Buffs Impact:</strong> +10% crit from buffs stacks on top of attack table limitations, making crit stacking extremely valuable in raids<br>
             • <strong>Result:</strong> Hit chance and weapon skill dramatically increase available crit space for white attacks
         </div>
+
+        <details id="dw-fury-analysis" style="margin: 30px 0; border: 2px solid #4682B4; border-radius: 8px; padding: 10px; background: #f8f9fa;">
+            <summary style="cursor: pointer; font-size: 1.3em; font-weight: bold; color: #2E8B57; padding: 10px; user-select: none;">
+                📊 DW Fury Stat Priority Analysis - With/Without World Buffs
+            </summary>
+            <div style="padding: 20px; background: white; margin-top: 15px; border-radius: 5px;">
+                <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 10px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 10px; font-weight: bold;">
+                        <div style="width: 30px; height: 20px; background: linear-gradient(135deg, #ff6b6b, #ee5a6f); border-radius: 4px;"></div>
+                        <span>Without World Buffs</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; font-weight: bold;">
+                        <div style="width: 30px; height: 20px; background: linear-gradient(135deg, #4ecdc4, #44a08d); border-radius: 4px;"></div>
+                        <span>With World Buffs</span>
+                    </div>
+                </div>
+
+                <div style="position: relative; height: 500px; margin: 30px 0;">
+                    <canvas id="dwFuryStatChart"></canvas>
+                </div>
+
+                <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 20px; margin: 20px 0; border-radius: 5px;">
+                    <h4 style="margin-top: 0; color: #1976D2;">Key Insights</h4>
+                    <p><strong>World Buffs Fundamentally Change Stat Priorities:</strong> The most significant change is that <strong>Critical Strike</strong> becomes substantially more valuable with world buffs due to exponential Flurry uptime scaling. With +10% base crit from buffs, you enter the high-crit range (35-40%+) where Flurry uptime reaches 85-87%, providing 26-30% DPS increase.</p>
+                    <p><strong>Attack Power</strong> becomes relatively less valuable because world buffs already provide +340 AP (Rallying Cry +140, Fengus +200), leading to diminishing returns on additional AP.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">305 Weapon Skill</h4>
+                        <p><strong>Absolute Priority:</strong> Reduces glancing blows from 40% to 30%, improves glancing damage, removes hit suppression.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">~15-25% DPS increase (same with/without buffs)</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">6% Hit Rating</h4>
+                        <p><strong>Must Cap:</strong> With 305 weapon skill, 6% hit eliminates all special attack misses against level 63 bosses.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">~15-20% DPS increase (same with/without buffs)</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Critical Strike</h4>
+                        <p><strong>Scales Exponentially:</strong> Without buffs (20% crit) = 59% Flurry uptime. With buffs (40% crit) = 87% Flurry uptime.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~15-20% DPS<br>With Buffs: ~26-30% DPS</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Attack Power</h4>
+                        <p><strong>Linear Scaling:</strong> 8.62 AP = 1 DPS for dual-wield. Less valuable with buffs due to already having +340 AP baseline.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~10-15% DPS<br>With Buffs: ~7-10% DPS</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Strength</h4>
+                        <p><strong>AP Conversion:</strong> 1 Str = 2 AP. Scales with Zandalar (+15% stats), but still converts to AP at standard rate.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~5-8% DPS<br>With Buffs: ~6-9% DPS</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-top: 0; color: #333;">Agility</h4>
+                        <p><strong>Multi-stat:</strong> Provides AP, crit, and dodge. Gains value from Zandalar scaling and increased crit value with buffs.</p>
+                        <p style="font-weight: bold; color: #4ecdc4; margin: 0;">Without Buffs: ~3-5% DPS<br>With Buffs: ~5-7% DPS</p>
+                    </div>
+                </div>
+
+                <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                    <h4 style="margin-top: 0; color: #856404;">Assumptions & Methodology</h4>
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>305 Weapon Skill</strong> and <strong>6% Hit</strong> are mandatory caps - shown at consistent high priority</li>
+                        <li>DPS increase percentages derived from Tankenheimer's guide formulas and combat mechanics</li>
+                        <li><strong>World Buffs Include:</strong> Rallying Cry (+5% crit, +140 AP), Onyxia (+140 AP), Spirit of Zandalar (+15% stats), Dire Maul Tribute (+200 AP)</li>
+                        <li>Flurry uptime formula: F_up = 1 - (1 - c)^4</li>
+                        <li>20% crit = 59% Flurry uptime; 40% crit = 87% Flurry uptime</li>
+                    </ul>
+                </div>
+
+                <script>
+                    // Only initialize if Chart.js is loaded and chart hasn't been created yet
+                    if (typeof Chart !== 'undefined' && !document.getElementById('dwFuryStatChart').chart) {
+                        const ctx = document.getElementById('dwFuryStatChart').getContext('2d');
+
+                        const stats = [
+                            '305 Weapon Skill',
+                            '6% Hit Cap',
+                            'Critical Strike',
+                            'Attack Power',
+                            'Strength',
+                            'Agility'
+                        ];
+
+                        const withoutBuffs = [20, 17.5, 17.5, 12.5, 6.5, 4];
+                        const withBuffs = [20, 17.5, 28, 8.5, 7.5, 6];
+
+                        const chart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: stats,
+                                datasets: [
+                                    {
+                                        label: 'Without World Buffs',
+                                        data: withoutBuffs,
+                                        borderColor: '#ff6b6b',
+                                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                                        borderWidth: 4,
+                                        pointRadius: 8,
+                                        pointHoverRadius: 12,
+                                        pointBackgroundColor: '#ff6b6b',
+                                        pointBorderColor: '#fff',
+                                        pointBorderWidth: 2,
+                                        tension: 0.4
+                                    },
+                                    {
+                                        label: 'With World Buffs',
+                                        data: withBuffs,
+                                        borderColor: '#4ecdc4',
+                                        backgroundColor: 'rgba(78, 205, 196, 0.1)',
+                                        borderWidth: 4,
+                                        pointRadius: 8,
+                                        pointHoverRadius: 12,
+                                        pointBackgroundColor: '#4ecdc4',
+                                        pointBorderColor: '#fff',
+                                        pointBorderWidth: 2,
+                                        tension: 0.4
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Relative DPS Impact by Stat (%)',
+                                        font: { size: 18, weight: 'bold' },
+                                        padding: 15
+                                    },
+                                    legend: {
+                                        display: false
+                                    },
+                                    tooltip: {
+                                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                        titleFont: { size: 14 },
+                                        bodyFont: { size: 13 },
+                                        padding: 10,
+                                        callbacks: {
+                                            label: function(context) {
+                                                return context.dataset.label + ': ~' + context.parsed.y + '% DPS increase';
+                                            }
+                                        }
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        max: 30,
+                                        title: {
+                                            display: true,
+                                            text: 'DPS Increase (%)',
+                                            font: { size: 14, weight: 'bold' }
+                                        },
+                                        ticks: {
+                                            font: { size: 12 },
+                                            callback: function(value) { return value + '%'; }
+                                        },
+                                        grid: { color: 'rgba(0, 0, 0, 0.05)' }
+                                    },
+                                    x: {
+                                        title: {
+                                            display: true,
+                                            text: 'Stat Priority (Left = Highest, Right = Lowest)',
+                                            font: { size: 14, weight: 'bold' }
+                                        },
+                                        ticks: {
+                                            font: { size: 11, weight: 'bold' }
+                                        },
+                                        grid: { display: false }
+                                    }
+                                },
+                                interaction: {
+                                    intersect: false,
+                                    mode: 'index'
+                                }
+                            }
+                        });
+
+                        document.getElementById('dwFuryStatChart').chart = chart;
+                    }
+                </script>
+            </div>
+        </details>
 
         <div class="stat-priority threat-build">
             <h3 id="threat-build">Threat-Focused Build<a href="#footnote-5" class="footnote-ref">5</a></h3>
@@ -1279,13 +1288,13 @@
                 </tr>
                 <tr>
                     <td><strong>Rallying Cry of the Dragonslayer</strong></td>
-                    <td>+10% spell crit, +5% melee/ranged crit, +140 Attack Power</td>
+                    <td>+5% Crit, +140 Attack Power</td>
                     <td>~15-20% DPS increase</td>
                     <td>Threat boost</td>
                 </tr>
                 <tr>
                     <td><strong>Warchief's Blessing</strong></td>
-                    <td>+300 Health, +15% melee haste, +10 mp5</td>
+                    <td>+300 Health, +10 all stats</td>
                     <td>~8-12% DPS increase</td>
                     <td>Health + threat</td>
                 </tr>
@@ -1313,7 +1322,7 @@
             <strong>World Buff Reality:</strong> Fully world-buffed warriors can achieve 50-70% higher DPS than unbuffed. This fundamentally changes stat priorities - crit becomes much more valuable when you have +10% base crit from buffs.
         </div>
 
-        <h2 id="consumables"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Consumables</a></h2>
+        <h2 id="consumables">Consumables</h2>
 
         <h3>DPS Warrior Consumables<a href="#footnote-13" class="footnote-ref">13</a></h3>
         <div class="stat-priority threat-build">
@@ -1370,12 +1379,6 @@
                 <li><strong>Major Healthstone:</strong> Emergency healing, 2min cooldown (separate from potions)</li>
                 <li><strong>Whipper Root Tuber:</strong> Emergency healing, 2min cooldown (shared with healthstones)</li>
             </ul>
-
-            <h5>Drinks</h5>
-            <ul>
-                <li><strong>Rumsey Rum Black Label:</strong> +15 Stamina, 15min</li>
-                <li><strong>Gordok Green Grog:</strong> +10 Stamina, 15min</li>
-            </ul>
         </div>
 
         <h3>Tank Consumables<a href="#footnote-13" class="footnote-ref">13</a></h3>
@@ -1392,7 +1395,6 @@
             <ul>
                 <li><strong>Elixir of the Mongoose:</strong> +25 Agility, +2% Critical Hit, 1hr</li>
                 <li><strong>Elixir of Superior Defense:</strong> +450 Armor, 1hr</li>
-                <li><strong>Spirit of Zanza:</strong> +50 Spirit, +50 Stamina, 2hr (does not stack with ROIDS/Blasted Lands consumables)</li>
             </ul>
             
             <h5>Food</h5>
@@ -1425,12 +1427,59 @@
             
             <h5>Drinks</h5>
             <ul>
-                <li><strong>Rumsey Rum Black Label:</strong> +15 Stamina, 15min</li>
-                <li><strong>Gordok Green Grog:</strong> +10 Stamina, 15min</li>
+                <li><strong>Rumsey Rum Black Label:</strong> +15 Stamina, 4min</li>
             </ul>
         </div>
 
-        <h2 id="rotations"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Combat Rotations</a></h2>
+        <h2 id="engineering">Engineering</h2>
+
+        <h3>Tank Engineering</h3>
+        <div class="stat-priority survival-build">
+            <h4>Essential Tank Engineering Items</h4>
+            <ul>
+                <li><strong>Goblin Sapper Charge:</strong> AoE damage and threat, excellent for multi-mob pulls</li>
+                <li><strong>Dense Dynamite:</strong> Ranged pulling tool and AoE threat generation</li>
+                <li><strong>Iron Grenade:</strong> Stun effect for emergency crowd control</li>
+                <li><strong>Arcane Bomb:</strong> Silences casters, useful for specific encounters</li>
+                <li><strong>Thorium Grenade:</strong> High damage explosive for threat bursts</li>
+            </ul>
+
+            <h4>Defensive Engineering Items</h4>
+            <ul>
+                <li><strong>Gnomish Harm Prevention Belt:</strong> Absorb shield on low health</li>
+                <li><strong>Goblin Rocket Helmet:</strong> Charge ability for gap closing</li>
+                <li><strong>Force Reactive Disk:</strong> Reflects damage back to attackers</li>
+                <li><strong>Gyrofreeze Ice Reflector:</strong> Frost damage immunity</li>
+                <li><strong>Hyper-Radiant Flame Reflector:</strong> Fire damage immunity</li>
+            </ul>
+        </div>
+
+        <h3>DPS Engineering</h3>
+        <div class="stat-priority threat-build">
+            <h4>DPS Enhancement Items</h4>
+            <ul>
+                <li><strong>Goblin Sapper Charge:</strong> Massive AoE damage, essential for cleave situations</li>
+                <li><strong>Dense Dynamite:</strong> High single-target damage and AoE potential</li>
+                <li><strong>Thorium Grenade:</strong> Burst damage for execute phases</li>
+                <li><strong>Goblin Dragon Gun:</strong> Consistent fire damage over time</li>
+                <li><strong>Discombobulator Ray:</strong> Reduces enemy damage and pacifies</li>
+            </ul>
+
+            <h4>Utility Engineering Items</h4>
+            <ul>
+                <li><strong>Gnomish Battle Chicken:</strong> Summons a pet that provides attack speed buff</li>
+                <li><strong>Arcanite Dragonling:</strong> Fire damage dealing pet for additional DPS</li>
+                <li><strong>Mechanical Dragonling:</strong> Early game pet option</li>
+                <li><strong>Goblin Mortar:</strong> Long-range AoE damage</li>
+                <li><strong>Net-o-Matic Projector:</strong> Roots enemies in place</li>
+            </ul>
+
+            <div class="tip">
+                <strong>Engineering Cooldown Management:</strong> Most engineering items share cooldowns with similar items. Plan your usage carefully and coordinate with consumable cooldowns for maximum effectiveness.
+            </div>
+        </div>
+
+        <h2 id="rotations">Combat Rotations</h2>
 
         <h3>Fury DPS Rotation</h3>
         <div class="stat-priority threat-build">
@@ -1439,7 +1488,7 @@
                 <li><strong>Sunder Armor</strong> - Essential raid debuff, highest priority<a href="#sunder-priority" class="footnote-ref">*</a></li>
                 <li><strong>Bloodthirst</strong> - High damage, cannot glance, cannot be parried (attacking from behind)</li>
                 <li><strong>Whirlwind</strong> - AoE damage, good damage per rage</li>
-                <li><strong>Heroic Strike/Cleave (queued)</strong> - HS if single-target, Cleave if 2+ mobs (cannot glance)</li>
+                <li><strong>Heroic Strike/Cleave (queued)</strong> - HS if single-target, Cleave if 2+ mobs</li>
                 <li><strong>Continue priority system based on rage availability</strong></li>
             </ol>
             
@@ -1451,6 +1500,7 @@
                 <li><strong>Whirlwind</strong> - On cooldown (10 seconds)</li>
                 <li><strong>Heroic Strike (queued)</strong> - Single target, only when it won't delay BT/WW</li>
                 <li><strong>Cleave (queued)</strong> - Replace HS when 2+ mobs, higher damage per rage</li>
+                <li><strong>Hamstring Fishing</strong> - When you have excess rage after maintaining BT/WW/HS priority</li>
             </ol>
             
             <strong>Execute Phase (<20% HP):</strong>
@@ -1459,6 +1509,10 @@
                 <li><strong>Heroic Strike (queued)</strong> - As rage allows without delaying Execute</li>
                 <li><strong>Bloodthirst</strong> - On cooldown if you have >2,000 Attack Power</li>
             </ol>
+
+            <div class="tip">
+                <strong>Hamstring Fishing:</strong> Use Hamstring (6 rage) whenever you have excess rage beyond your core rotation abilities. This low-cost ability triggers weapon procs, sword specialization, and Flurry while being rage-efficient.
+            </div>
         </div>
 
         <div id="sunder-priority" class="warning">
@@ -1466,12 +1520,12 @@
             • <strong>Tank Focus:</strong> Allows tank to start with highest threat abilities (BT/HS) instead of sunder stacks<br>
             • <strong>Threat Safety:</strong> DPS warriors delayed 1 second to ensure tank establishes initial aggro control<br>
             • <strong>Raid Benefit:</strong> -20% armor = ~25% more physical DPS for entire raid, near instant 5 stacks<br>
-            • <strong>Cannot Glance:</strong> Sunder, Heroic Strike, and Cleave are "yellow" abilities that cannot glance*<br>
+            • <strong>Cannot Glance:</strong> Sunder is a "yellow" ability that bypasses off-hand penalty*<br>
             • <strong>Priority Target:</strong> Gets sunder stacks on target before personal DPS rotation<br>
-            • <strong>*Note:</strong> Yellow abilities can still be parried/dodged by boss, but cannot glancing blow
+            • <strong>*Note:</strong> Can still be parried/dodged by boss
         </div>
 
-        <h3>Tank Rotation</h3>
+        <h3>Fury-Prot Tank Rotation</h3>
         <div class="stat-priority survival-build">
             <h4>Ideal Pre-Pull Setup</h4>
             <ol>
@@ -1484,22 +1538,22 @@
             
             <h4>Max Threat Pre-Pull Setup (Very Risky)</h4>
             <ol>
-                <li><strong>Power Infusion</strong> - Get priest buff (+20% spell damage and healing, 15 seconds)</li>
+                <li><strong>Power Infusion</strong> - Get priest buff for increased healing received</li>
                 <li><strong><a href="#gear-optimization">Flask set</a></strong> - Equip +healing gear in all slots</li>
                 <li><strong>Diamond Flask</strong> - Activate for enhanced HoT (keep equipped to maintain effect)</li>
                 <li><strong>Tank gear</strong> - Switch to tanking gear while keeping Diamond Flask equipped</li>
+                <li><strong>Bloodrage</strong> - Generate initial rage</li>
+                <li><strong>Death Wish</strong> - +20% damage/threat, +20% damage taken</li>
                 <li><strong>Berserker Rage</strong> - Generate extra rage when taking damage and become immune to fear, charm, and incapacitate effects</li>
                 <li><strong>Recklessness</strong> - +100% crit chance, +20% damage taken</li>
                 <li><strong>Defensive Stance</strong> - Switch to defensive for +130% threat modifier</li>
-                <li><strong>Bloodrage</strong> - Generate initial rage</li>
-                <li><strong>Death Wish</strong> - +20% damage/threat, -20% armor/resistances</li>
                 <li><strong>Mighty Rage Potion</strong> - 45-75 rage + 60 Strength for 20sec</li>
                 <li><strong>Heroic Strike</strong> - Queue before Bloodthirst for guaranteed crit on next white hit</li>
                 <li><strong>Bloodthirst</strong> - First GCD with massive crit chance and enhanced healing</li>
             </ol>
             
             <div class="warning">
-                <strong>Max Threat Setup Warning:</strong> This combination results in severe survivability penalties (Death Wish -20% armor/resistances, Recklessness +20% damage taken). Requires perfect healer coordination and should only be used by experienced tanks with excellent healers. One mistake or unlucky string of hits can result in instant death.
+                <strong>Max Threat Setup Warning:</strong> This combination results in +40% damage taken from Death Wish + Recklessness. Requires perfect healer coordination and should only be used by experienced tanks with excellent healers. One mistake or unlucky string of hits can result in instant death.
             </div>
             
             <h4>Threat Priority (Defensive Stance)</h4>
@@ -1512,9 +1566,9 @@
             </ol>
         </div>
 
-        <h2 id="builds"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Warrior Builds</a></h2>
+        <h2 id="builds">Warrior Builds</h2>
 
-        <h3>2-Handed DPS Fury Build (20/31/0)<a href="#footnote-2h-fury" class="footnote-ref">2H</a></h3>
+        <h3>2-Handed Fury Build (20/31/0)<a href="#footnote-2h-fury" class="footnote-ref">2H</a></h3>
         <div class="code-block">
             <strong>Talent Calculator:</strong> <a href="https://classicdb.ch/?talent=#LhhxzIbZVxzVMxkVo" target="_blank">https://classicdb.ch/?talent=#LhhxzIbZVxzVMxkVo</a><br>
             <strong>Key Talents:</strong> Flurry, Two-Handed Weapon Specialization, Bloodthirst, Tactical Mastery
@@ -1524,9 +1578,9 @@
             <strong>Note:</strong> Avoids Booming Voice (interferes with tank threat shouts) and Unbridled Wrath (poor value for talent points).
         </div>
 
-        <h3>Dual-Wield Fury (Tank/DPS) (17/34/0)<a href="#footnote-dw-fury" class="footnote-ref">DW</a></h3>
+        <h3>Dual-Wield Fury Build (17/34/0)<a href="#footnote-dw-fury" class="footnote-ref">DW</a></h3>
         <div class="code-block">
-            <strong>Talent Calculator:</strong> <a href="https://classicdb.ch/?talent=#LhhxzhbZVxzVtxoVo" target="_blank">https://classicdb.ch/?talent=#LhhxzhbZVxzVtxoVo</a><br>
+            <strong>Talent Calculator:</strong> <a href="https://classicdb.ch/?talent=#LhhxzhbZVxzmgxoVo" target="_blank">https://classicdb.ch/?talent=#LhhxzhbZVxzmgxoVo</a><br>
             <strong>Key Talents:</strong> Bloodthirst, Flurry, Dual Wield Specialization, Impale, Deep Wounds
         </div>
         <div class="tip">
@@ -1534,81 +1588,16 @@
             <strong>Note:</strong> Avoids Booming Voice (interferes with tank threat shouts) and Unbridled Wrath (poor value for talent points).
         </div>
 
-        <h3>Fury-Prot Tank Build (0/33/18)<a href="#footnote-fury-prot" class="footnote-ref">FP</a></h3>
+        <h3>Fury-Prot Tank Build (2/33/16)<a href="#footnote-fury-prot" class="footnote-ref">FP</a></h3>
         <div class="code-block">
-            <strong>Talent Calculator:</strong> <a href="https://classicdb.ch/?talent=#LZVxzVxxoVoxwzox" target="_blank">https://classicdb.ch/?talent=#LZVxzVxxoVoxwzox</a><br>
+            <strong>Talent Calculator:</strong> <a href="https://classicdb.ch/?talent=#LbZVxzVxxoVoVfz0x" target="_blank">https://classicdb.ch/?talent=#LbZVxzVxxoVoVfz0x</a><br>
             <strong>Key Talents:</strong> Bloodthirst, Defiance, Last Stand, Improved Revenge, Shield Specialization
         </div>
         <div class="tip">
-            <strong>Best For:</strong> Single-target tanking and threat-focused encounters in organized raids. Combines fury DPS abilities with core tanking talents. Requires more skill but generates much higher threat and DPS than pure protection. Can also be used for progression guild main-tanking in the earlier raids (Ony/MC/ZG/AQ20).
+            <strong>Best For:</strong> Single-target tanking and threat-focused encounters in organized raids. Combines fury DPS abilities with core tanking talents and defense rating and improved Heroic Strike for improved threat and survivability without a shield. Requires more skill but generates much higher threat and DPS than pure protection. Can also be used for progression guild main-tanking in the earlier raids (Ony/MC/ZG/AQ20).
         </div>
 
-        <h3>Fury-Prot NO SB Tank Build (2/33/16)<a href="#footnote-fury-prot-nosb" class="footnote-ref">FP-NS</a></h3>
-        <div class="code-block">
-            <strong>Talent Calculator:</strong> <a href="https://classicdb.ch/?talent=#LbZVxzVxxoVoVfz0x" target="_blank">https://classicdb.ch/?talent=#LbZVxzVxxoVoVfz0x</a><br>
-            <strong>Key Talents:</strong> Bloodthirst, Defiance, Last Stand, Improved Revenge, 1H Weapon Specialization
-        </div>
-        <div class="tip">
-            <strong>Best For:</strong> Well-geared raids where the tank rarely needs to activate Shield Block. Drops Shield Block talents in favor of defense rating and improved Heroic Strike for improved threat and survivability without a shield.
-        </div>
-
-        <h2 id="engineering"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Engineering</a></h2>
-
-        <div class="tip">
-            <strong>Engineering Priority:</strong> Engineering is essential for warriors, providing massive DPS increases and utility tools. The key items below are game-changing for both tanks and DPS.
-        </div>
-
-        <h3>Essential Engineering Items</h3>
-
-        <div class="stat-priority">
-            <h4>Gnomish Battle Chicken</h4>
-            <ul>
-                <li><strong>Effect:</strong> Summons a battle chicken that attacks enemies and has a chance to cast "Battle Squawk" - increases all nearby party members' attack speed by 5% for 4 minutes</li>
-                <li><strong>Cooldown:</strong> 30 minutes</li>
-                <li><strong>Duration:</strong> Chicken lasts 1.5 minutes</li>
-                <li><strong>Usage:</strong> Summon the chicken pre-pull, then immediately switch to your normal trinket before pulling the boss. The Battle Squawk buff persists after switching trinkets. One of the best DPS increases from engineering</li>
-                <li><strong>Required to Craft:</strong> 205 Engineering (Gnomish)</li>
-                <li><strong>Required to Use:</strong> No engineering requirement (can use after switching specs)</li>
-                <li><strong>Note:</strong> Battle Squawk can stack if multiple chickens are in the same group</li>
-            </ul>
-
-            <h4>Goblin Sapper Charge</h4>
-            <ul>
-                <li><strong>Effect:</strong> Deals 450-750 fire damage in a 10 yard radius around the user</li>
-                <li><strong>Cooldown:</strong> 5 minutes (shares cooldown with other bombs)</li>
-                <li><strong>Usage (DPS):</strong> Massive AoE damage for trash packs and cleave situations. Essential for speed clearing and parse runs</li>
-                <li><strong>Usage (Tank):</strong> Generates enormous threat on multiple targets. Use on trash pulls or add-heavy encounters</li>
-                <li><strong>Required to Craft:</strong> 205 Engineering (Goblin)</li>
-                <li><strong>Required to Use:</strong> 205 Engineering (no specialization required to use)</li>
-                <li><strong>Note:</strong> Damages the user, coordinate with healers</li>
-            </ul>
-
-            <h4>Dense Dynamite</h4>
-            <ul>
-                <li><strong>Effect:</strong> Deals 340-460 fire damage in a 5 yard radius</li>
-                <li><strong>Cooldown:</strong> 1 minute (shares cooldown with other dynamite)</li>
-                <li><strong>Usage (DPS):</strong> Single-target and AoE damage option with shorter cooldown than sappers</li>
-                <li><strong>Usage (Tank):</strong> Ranged pulling tool and threat generation, excellent for multi-mob pulls</li>
-                <li><strong>Required Skill:</strong> 185 Engineering</li>
-            </ul>
-
-            <h4>Force Reactive Disk</h4>
-            <ul>
-                <li><strong>Effect:</strong> When you block, releases electrical damage to all nearby enemies (30-40 damage in 10 yard radius)</li>
-                <li><strong>Durability:</strong> 120 durability total, 50% chance to lose 1 durability per block</li>
-                <li><strong>Usage (Tank):</strong> Equip as your shield for AoE threat generation on multi-mob pulls. Best for add-heavy encounters like Garr or trash packs</li>
-                <li><strong>Required to Craft:</strong> 215 Engineering (Gnomish)</li>
-                <li><strong>Required to Equip:</strong> 300 Engineering (can have someone else craft it for you)</li>
-                <li><strong>Note:</strong> Degrades much faster than normal shields due to 50% durability loss per block. Expensive to maintain but powerful for AoE threat</li>
-            </ul>
-        </div>
-
-        <div class="warning">
-            <strong>Engineering Specialization:</strong> Gnomish Engineering provides Battle Chicken and Force Reactive Disk. Goblin Engineering provides Sapper Charges. You can only choose one specialization at a time, but you can switch specializations.<br><br>
-            <strong>Pro Tip:</strong> You can learn Gnomish Engineering, craft the Battle Chicken, then switch to Goblin Engineering for Sapper Charges. Force Reactive Disk only requires 300 Engineering to equip, so someone else can craft it for you even if you switch to Goblin.
-        </div>
-
-        <h2 id="gear-optimization"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Gear Optimization Strategy</a><a href="#footnote-5" class="footnote-ref">5</a></h2>
+        <h2 id="gear-optimization">Gear Optimization Strategy<a href="#footnote-5" class="footnote-ref">5</a></h2>
 
         <p>Modern warrior tanking requires multiple gear sets optimized for different situations:</p>
 
@@ -1656,7 +1645,7 @@
         <ul>
             <li>+Healing items in all possible slots to maximize Diamond Flask effect</li>
             <li>Used exclusively out of combat</li>
-            <li>Pre-pull sequence: Power Infusion (+20% spell damage and healing, 15 seconds) → Equip Flask Set → Activate Diamond Flask → Switch to tank gear</li>
+            <li>Pre-pull sequence: Power Infusion (+20% spell damage/healing) → Equip Flask Set → Activate Diamond Flask → Switch to tank gear</li>
             <li>Diamond Flask must remain equipped to maintain the HoT effect</li>
             <li>Diamond Flask heals for flat amount (9 HP/5sec base + 100% of +healing gear)</li>
             <li>Used for both enhanced healing and threat generation (healing generates flat threat on all enemies)</li>
@@ -1667,39 +1656,104 @@
             <summary><strong>Click for Flask Set Example and Threat Analysis</strong></summary>
             <div style="margin-top: 15px;">
                 <div class="formula">
-                    <strong>Flask Set Analysis: +1,301 Healing Flask Set → Tank Set</strong><br><br>
-
+                    <strong>Flask Set Analysis: BiS +1,301 Healing Flask Set → Tank Set</strong><br><br>
+                    
                     <strong>Setup:</strong><br>
-                    • Flask Set: +1,301 healing power<br>
+                    • BiS Flask Set: +1,301 healing power<br>
                     • Tank Set: Chosen for the specific fight<br>
                     • Diamond Flask: 9 HP/5sec base, scales 100% with +healing at activation<br><br>
                     
                     <strong>Flask Set Activation:</strong><br>
-                    • Base: 1,310 HP every 5 seconds for 60 seconds (9 + 1,301)<br>
-                    • Power Infusion: +20% spell damage and healing for 15 seconds<br>
-                    • With Power Infusion: 1,301 × 1.20 = 1,561 healing power<br>
-                    • Final healing: 9 + 1,561 = 1,570 HP/5sec for 60 seconds<br>
+                    • 1,310 HP every 5 seconds for 60 seconds (9 + 1,301)<br>
+                    • With Power Infusion: 1,572 HP/5sec for 60 seconds<br>
                     • Snapshots the enhanced healing bonus<br><br>
                     
                     <strong>Tank Set Performance:</strong><br>
-                    • Same 1,570 HP/5sec healing from snapshotted effect<br>
-                    • Total healing: ~18,840 HP over 60 seconds<br>
+                    • Same 1,572 HP/5sec healing from snapshotted effect<br>
+                    • Total healing: ~18,864 HP over 60 seconds<br>
                     • Applied to warrior in full tanking gear<br><br>
-
+                    
                     <strong>🔥 THE KEY MECHANIC - Flat Healing & Threat:</strong><br>
-                    • Diamond Flask provides flat healing (1,570 HP/5sec with Power Infusion)<br>
+                    • Diamond Flask provides flat healing (1,572 HP/5sec with Power Infusion)<br>
                     • Healing generates flat threat based on healing amount<br>
-                    • Healing-to-threat ratio: ~1,570 healing = ~314 TPS<br>
+                    • Healing-to-threat ratio: ~1,572 healing = ~314 TPS<br>
                     • Threat applies to ALL enemies simultaneously<br>
                     • No resource cost, no GCDs, continuous for 60 seconds<br><br>
                     
                     <strong>Why This Is Overpowered:</strong><br>
                     • <strong>Multi-Target:</strong> 314 TPS to ALL enemies simultaneously<br>
                     • <strong>Zero Cost:</strong> No rage, no GCDs, works during resists/misses<br>
-                    • <strong>Total Impact:</strong> ~18,840 HP healing = dozens of Sunder Armors worth of passive threat
+                    • <strong>Total Impact:</strong> ~18,864 HP healing = dozens of Sunder Armors worth of passive threat
                 </div>
             </div>
         </details>
+
+        <h3>Gear Enchants</h3>
+
+        <p>Enchants are crucial for maximizing your tanking performance. Choose enchants based on your current gearing phase and encounter requirements. Prioritize survivability enchants for progression content and threat enchants once survival is comfortable.</p>
+
+        <h4>Head & Legs</h4>
+        <ul>
+            <li><strong>Lesser Arcanum of Constitution (Phase 2):</strong> +100 HP - Obtained from Libram of Constitution quest in Burning Steppes</li>
+            <li><strong>Presence of Might (Phase 4+):</strong> Provides multiple mitigation-oriented stats - Best-in-slot enchant for tanking</li>
+        </ul>
+
+        <h4>Shoulders</h4>
+        <ul>
+            <li><strong>Chromatic Mantle of the Dawn (Launch):</strong> Resistance enchant requiring Argent Dawn Exalted - Useful for resistance fights</li>
+            <li><strong>Zandalar Signet of Might (Phase 4+):</strong> +30 Attack Power - Threat-focused option</li>
+            <li><strong>Might of the Scourge (Phase 6):</strong> Upgrades Zandalar version with +1% Crit Chance</li>
+            <li><strong>Fortitude of the Scourge (Phase 6):</strong> +16 Stamina, +100 Armor - Best survivability option</li>
+        </ul>
+
+        <h4>Chest</h4>
+        <ul>
+            <li><strong>Enchant Chest - Greater Stats:</strong> +4 to all stats - Recommended for long-term gear pieces</li>
+            <li><strong>Enchant Chest - Major Health:</strong> +100 Health - Budget alternative or for pure HP stacking encounters</li>
+        </ul>
+
+        <h4>Wrists</h4>
+        <ul>
+            <li><strong>Enchant Bracer - Superior Stamina:</strong> +9 Stamina (90 HP total) - Default tanking choice</li>
+            <li><strong>Enchant Bracer - Superior Strength:</strong> +9 Strength - Alternative for threat-focused builds</li>
+        </ul>
+
+        <h4>Hands</h4>
+        <ul>
+            <li><strong>Enchant Gloves - Greater Agility (Phases 1-4):</strong> Provides crit, dodge, and armor</li>
+            <li><strong>Enchant Gloves - Superior Agility (Phase 5+):</strong> +15 Agility - Significant upgrade when available</li>
+        </ul>
+
+        <h4>Feet</h4>
+        <ul>
+            <li><strong>Enchant Boots - Minor Speed (Launch-Phase 4):</strong> Movement speed increase - Helpful for positioning and mobility-intensive fights</li>
+            <li><strong>Enchant Boots - Greater Agility (Phase 4+):</strong> +7 Agility - Better survivability option once positioning is comfortable</li>
+        </ul>
+
+        <h4>Back</h4>
+        <ul>
+            <li><strong>Enchant Cloak - Superior Defense (Launch-Phase 4):</strong> +70 Armor - Solid survivability boost</li>
+            <li><strong>Enchant Cloak - Dodge (Phase 5+):</strong> +1% dodge chance - Best-in-slot for avoidance</li>
+        </ul>
+
+        <h4>Weapon</h4>
+        <ul>
+            <li><strong>Enchant Weapon - Crusader:</strong> Procs 75-125 healing and +100 Strength buff for 15 seconds - Best overall weapon enchant for both threat and survivability</li>
+        </ul>
+
+        <h4>Shield</h4>
+        <ul>
+            <li><strong>Enchant Shield - Greater Stamina:</strong> +7 Stamina - Survivability option</li>
+            <li><strong>Thorium Shield Spike:</strong> Increases threat generation on block - Excellent for threat generation, especially on multi-target encounters</li>
+        </ul>
+
+        <div class="tip">
+            <strong>Enchant Priority Strategy:</strong> For progression content, prioritize survivability enchants (Stamina, Armor, Dodge). Once encounters are on farm and your gear improves, consider switching to threat-focused enchants (Attack Power, Strength, Agility) to help DPS push harder. Always maintain proper defense cap for crit immunity regardless of enchant choices.
+        </div>
+
+        <div class="warning">
+            <strong>Phase-Dependent Availability:</strong> Some enchants become available in later phases. Plan your enchanting strategy based on current content phase and save expensive enchants for items you'll use long-term. For resistance fight gear, use cheaper alternatives since that gear is typically situational.
+        </div>
 
         <h3>Off-Tank (OT) Considerations</h3>
         
@@ -1715,6 +1769,7 @@
             • <strong>Shield Usage:</strong> Often equip shield when tanking adds/non-priority targets - more time taking damage and more time to build threat than skull/X targets<br>
             • <strong>Fast Weapons:</strong> Prioritize rage generation for instant threat when needed<br>
             • <strong>Hit Cap Priority:</strong> Essential for reliable threat pickup on adds<br>
+            • <strong>Defense for Crit Immunity:</strong> 440+ defense goal or Shield Block active prevents crits if needed<br>
             • <strong>Stamina Buffer:</strong> Enough HP to survive initial burst when taking over
         </div>
 
@@ -1779,118 +1834,96 @@
             <strong>Weapon Hand Placement:</strong> For dual wield setups, weapon skill bonuses affect both hands equally. However, prioritize your <strong>highest DPS weapon in main hand</strong> since it deals full damage and is used for all instant abilities. For tanking, consider <strong>faster main hand weapons</strong> for better rage generation and more frequent Heroic Strike opportunities. For sword and shield configurations, the weapon skill weapon goes in your <strong>main hand</strong> with the shield in the off-hand.
         </div>
 
-        <h2 id="enchantments"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Enchantments</a></h2>
+        <h2 id="enchants">Enchants for Tanking and DPS</h2>
 
-        <h3>DPS Warrior Enchantments</h3>
-        <div class="stat-priority threat-build">
-            <h4>Head</h4>
-            • <strong>Arcanum of Rapidity:</strong> +1% haste (from Libram of Rapidity)<br>
-            • <strong>Arcanum of Voracity:</strong> +8 Strength (from Libram of Voracity)<br><br>
-
-            <h4>Shoulder</h4>
-            • <strong>Zandalar Signet of Might:</strong> +30 Attack Power (ZG exalted)<br>
-            • <strong>Might of the Scourge:</strong> +26 Attack Power, +1% crit (Sapphiron drop)<br><br>
-
-            <h4>Back</h4>
-            • <strong>Enchant Cloak - Lesser Agility:</strong> +3 Agility<br>
-            • <strong>Enchant Cloak - Greater Resistance:</strong> +5 all resistances (for resistance fights)<br><br>
-
-            <h4>Chest</h4>
-            • <strong>Enchant Chest - Greater Stats:</strong> +4 all stats (best overall)<br>
-            • <strong>Enchant Chest - Stats:</strong> +3 all stats (budget option)<br><br>
-
-            <h4>Wrist</h4>
-            • <strong>Enchant Bracer - Superior Strength:</strong> +9 Strength<br>
-            • <strong>Enchant Bracer - Greater Strength:</strong> +7 Strength (budget option)<br><br>
-
-            <h4>Hands</h4>
-            • <strong>Enchant Gloves - Greater Strength:</strong> +7 Strength<br>
-            • <strong>Enchant Gloves - Superior Agility:</strong> +15 Agility<br>
-            • <strong>Enchant Gloves - Minor Haste:</strong> +1% attack speed<br><br>
-
-            <h4>Legs</h4>
-            • <strong>Arcanum of Voracity:</strong> +8 Strength (from Libram of Voracity)<br>
-            • <strong>Arcanum of Rapidity:</strong> +1% haste (from Libram of Rapidity)<br><br>
-
-            <h4>Feet</h4>
-            • <strong>Enchant Boots - Minor Speed:</strong> Movement speed increase<br><br>
-
-            <h4>Main Hand Weapon</h4>
-            • <strong>Enchant Weapon - Crusader:</strong> Proc for +100 Strength<br><br>
-
-            <h4>Off-Hand Weapon</h4>
-            • <strong>Enchant Weapon - Crusader:</strong> Proc for +100 Strength<br><br>
-
-            <h4>2-Handed Weapon</h4>
-            • <strong>Enchant Weapon - Crusader:</strong> Proc for +100 Strength<br>
-        </div>
-
-        <h3>Tank Warrior Enchantments</h3>
-
-        <div class="tip">
-            <strong>Tank Enchantment Strategy:</strong> Choose enchants based on your guild's gearing and progression level. Early progression requires more mitigation/survival enchants (Stamina, Dodge, Defense), while well-geared farm content benefits from threat enchants (Strength, Attack Power, Agility). Adjust your enchant choices as your guild progresses through content.
-        </div>
-
+        <h3>Weapon Enchants</h3>
         <div class="stat-priority survival-build">
-            <h4>Head</h4>
-            • <strong>Presence of Might:</strong> +10 Stamina, +7 Defense, +15 Shield Block (Zandalar Tribe - Warrior only)<br>
-            • <strong>Arcanum of Protection:</strong> +1% dodge (from Libram of Protection)<br>
-            • <strong>Arcanum of Rapidity:</strong> +1% haste (from Libram of Rapidity)<br>
-            • <strong>Arcanum of Voracity:</strong> +8 Strength (from Libram of Voracity)<br>
-            • <strong>Lesser Arcanum of Resilience:</strong> +20 Fire Resistance (for Geddon, Ragnaros, Firemaw, Mograine)<br><br>
-
-            <h4>Shoulder</h4>
-            • <strong>Zandalar Signet of Mojo:</strong> +30 Stamina (ZG exalted - survival)<br>
-            • <strong>Zandalar Signet of Might:</strong> +30 Attack Power (ZG exalted - threat)<br>
-            • <strong>Might of the Scourge:</strong> +26 Attack Power, +1% crit (Sapphiron drop - threat)<br>
-            • <strong>Fortitude of the Scourge:</strong> +16 Defense, +17 Stamina (Sapphiron drop - survival)<br><br>
-
-            <h4>Back</h4>
-            • <strong>Enchant Cloak - Dodge:</strong> +1% dodge<br>
-            • <strong>Enchant Cloak - Greater Resistance:</strong> +5 all resistances<br>
-            • <strong>Enchant Cloak - Lesser Agility:</strong> +3 Agility (threat/avoidance)<br><br>
-
-            <h4>Chest</h4>
-            • <strong>Enchant Chest - Greater Stats:</strong> +4 all stats (best overall)<br>
-            • <strong>Enchant Chest - Major Health:</strong> +100 HP (pure survival)<br><br>
-
-            <h4>Wrist</h4>
-            • <strong>Enchant Bracer - Superior Stamina:</strong> +9 Stamina (survival)<br>
-            • <strong>Enchant Bracer - Superior Strength:</strong> +9 Strength (threat)<br><br>
-
-            <h4>Hands</h4>
-            • <strong>Enchant Gloves - Superior Agility:</strong> +15 Agility (threat + avoidance)<br>
-            • <strong>Enchant Gloves - Greater Strength:</strong> +7 Strength (threat focus)<br>
-            • <strong>Enchant Gloves - Threat:</strong> +2% threat (threat focus)<br><br>
-
-            <h4>Legs</h4>
-            • <strong>Presence of Might:</strong> +10 Stamina, +7 Defense, +15 Shield Block (Zandalar Tribe - Warrior only)<br>
-            • <strong>Arcanum of Protection:</strong> +1% dodge (from Libram of Protection)<br>
-            • <strong>Arcanum of Voracity:</strong> +8 Strength (from Libram of Voracity)<br>
-            • <strong>Arcanum of Rapidity:</strong> +1% haste (from Libram of Rapidity)<br>
-            • <strong>Lesser Arcanum of Resilience:</strong> +20 Fire Resistance (for Geddon, Ragnaros, Firemaw, Mograine)<br><br>
-
-            <h4>Feet</h4>
-            • <strong>Enchant Boots - Minor Speed:</strong> Movement speed increase<br><br>
-
-            <h4>Main Hand Weapon</h4>
-            • <strong>Enchant Weapon - Crusader:</strong> Proc for +100 Strength<br><br>
-
-            <h4>Off-Hand Weapon</h4>
-            • <strong>Enchant Weapon - Crusader:</strong> Proc for +100 Strength<br><br>
-
-            <h4>Shield</h4>
-            • <strong>Thorium Shield Spike:</strong> 20-30 damage on block (threat)<br>
-            • <strong>Enchant Shield - Lesser Block:</strong> +2% block chance (best for Force Reactive Disk)<br>
-            • <strong>Enchant Shield - Greater Stamina:</strong> +7 Stamina (survival)<br>
-            • <strong>Enchant Shield - Frost Resistance:</strong> +8 Frost Resistance (Sapphiron/KT)<br>
+            <strong>Tanking Priority:</strong>
+            <ol>
+                <li><strong>Crusader:</strong> +100 STR proc (2 PPM), best for threat generation</li>
+                <li><strong>15 Agility:</strong> Consistent dodge/crit boost, excellent all-around choice</li>
+                <li><strong>Fiery Weapon:</strong> 40 fire damage proc (6 PPM), good threat and cheap</li>
+                <li><strong>Superior Striking (+5 Damage):</strong> Budget option, consistent damage boost</li>
+            </ol>
         </div>
+
+        <div class="stat-priority threat-build">
+            <strong>DPS Priority:</strong>
+            <ol>
+                <li><strong>Crusader:</strong> +100 STR proc, massive DPS increase</li>
+                <li><strong>15 Agility:</strong> Crit and dodge, scales with gear</li>
+                <li><strong>Elemental Force/Fiery:</strong> Flat damage procs for fast weapons</li>
+                <li><strong>Superior Striking:</strong> Consistent damage, budget friendly</li>
+            </ol>
+        </div>
+
+        <h3>Armor Enchants</h3>
+        <table class="combat-table">
+            <tr>
+                <th>Slot</th>
+                <th>Tanking Enchant</th>
+                <th>DPS Enchant</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Head</td>
+                <td>Arcanum of Focus (+8 INT)</td>
+                <td>Arcanum of Rapidity (+1% Haste)</td>
+                <td>Libram turn-ins in Dire Maul</td>
+            </tr>
+            <tr>
+                <td>Legs</td>
+                <td>Arcanum of Protection (+5 DEF)</td>
+                <td>Arcanum of Rapidity (+1% Haste)</td>
+                <td>Libram turn-ins in Dire Maul</td>
+            </tr>
+            <tr>
+                <td>Shoulders</td>
+                <td>Zandalar Signet of Might (+30 AP, +14 Crit)</td>
+                <td>Zandalar Signet of Might (+30 AP, +14 Crit)</td>
+                <td>ZG reputation reward</td>
+            </tr>
+            <tr>
+                <td>Chest</td>
+                <td>+4 Stats or +100 HP</td>
+                <td>+4 Stats</td>
+                <td>+4 Stats generally preferred</td>
+            </tr>
+            <tr>
+                <td>Bracers</td>
+                <td>+5 Spirit or +7 Stamina</td>
+                <td>+5 Strength</td>
+                <td>Spirit helps with rage regen</td>
+            </tr>
+            <tr>
+                <td>Gloves</td>
+                <td>+5 Stamina or +5 Agility</td>
+                <td>+7 Agility or +5 Strength</td>
+                <td>Agility provides crit and dodge</td>
+            </tr>
+            <tr>
+                <td>Boots</td>
+                <td>+5 Agility or +7 Stamina</td>
+                <td>+7 Agility</td>
+                <td>Minor speed often used for mobility</td>
+            </tr>
+            <tr>
+                <td>Cloak</td>
+                <td>+5 Resistance (all) or +3 Agility</td>
+                <td>+3 Agility</td>
+                <td>Resistance cloaks for specific encounters</td>
+            </tr>
+        </table>
 
         <div class="tip">
-            <strong>Enchantment Priority:</strong> Weapon enchants (especially Crusader) provide the biggest DPS/threat increase. Focus on getting weapon enchants first, then head/legs enchants, then everything else. For tanks, prioritize based on current needs - survival enchants for progression, threat enchants for farm content.
+            <strong>Enchant Strategy:</strong> For progression tanking, prioritize survivability enchants early, then transition to threat-focused enchants as gear and raid DPS improve. DPS warriors should prioritize damage-increasing enchants throughout all phases.
         </div>
 
-        <h2 id="macros"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Essential Tanking Macros</a></h2>
+        <div class="warning">
+            <strong>Enchant Costs:</strong> Crusader and Libram enchants are expensive. Plan your enchanting budget around your most important gear pieces first. Consider cheaper alternatives like Fiery Weapon and +5 Agility for secondary weapons and gear that may be replaced soon.
+        </div>
+
+        <h2 id="macros">Essential Tanking Macros</h2>
 
         <div class="stat-priority survival-build">
             <h3>General Macros</h3>
@@ -1961,11 +1994,7 @@
                 /cast Execute<br>
                 /cast Heroic Strike
             </div>
-
-            <div class="tip">
-                <strong>Fury-Prot Execute Phase Note:</strong> If you're fury-prot tanking, use Last Stand (and possibly Lifegiving Gem) during execute phase to maintain survivability. Be prepared to re-boon or hearth to Kargath (Horde) the instant Vael dies to preserve your world buffs in the event you get Burning Adrenaline.
-            </div>
-
+            
             <div class="formula">
                 <strong>Mocking Blow:</strong><br>
                 #showtooltip mocking blow<br>
@@ -2008,32 +2037,6 @@
                 /cast defensive stance<br>
                 /cast last stand<br>
                 /ra Last Stand activated
-            </div>
-
-            <div class="formula">
-                <strong>DW to Shield swap toggle:</strong><br>
-                /equipslot 16 &lt;MH weapon name&gt;<br>
-                /equipslot 17 &lt;OH weapon name&gt;<br>
-                /stopcasting<br>
-                /equipslot 16 &lt;MH weapon name&gt;<br>
-                /equipslot 17 &lt;shield name&gt;
-            </div>
-
-            <div class="formula">
-                <strong>DW pull to DW with slow OH (once you have a threat lead):</strong><br>
-                /equipslot 17 &lt;fast OH weapon name&gt;<br>
-                /stopcasting<br>
-                /equipslot 17 &lt;slow OH weapon name&gt;
-            </div>
-
-            <div class="formula">
-                <strong>Nef p3 adds (spam it):</strong><br>
-                #showtooltip Challenging Shout<br>
-                /p AOE TAUNT<br>
-                /RAID AOE TAUNT<br>
-                 /use Limited Invulnerability Potion<br>
-                 /cast Challenging Shout<br>
-                 /use Goblin Sapper Charge
             </div>
 
             <h3>DPS Macros</h3>
@@ -2111,6 +2114,18 @@
                 #showtooltip<br>
                 /cast [worn:Bows] Shoot Bow; [worn:Crossbows] Shoot Crossbow; [worn:Guns] Shoot Gun; [worn:Thrown] Throw
             </div>
+
+            <h3>Additional Utility</h3>
+            
+            <div class="formula">
+                <strong>Remove Power Word: Shield (add to any macro):</strong><br>
+                /cancelaura power word: shield
+            </div>
+            
+            <div class="formula">
+                <strong>Add Bloodrage (add to any macro):</strong><br>
+                /cast bloodrage
+            </div>
         </div>
 
         <div class="tip">
@@ -2121,7 +2136,7 @@
             <strong>Classic Limitations:</strong> Many modern WoW macro features are not available in Classic. Conditional statements, advanced targeting options, and some macro commands have limited functionality compared to retail WoW. Always test macros in a safe environment first.
         </div>
 
-        <h2 id="weakauras"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Essential WeakAuras for Warriors</a></h2>
+        <h2 id="weakauras">Essential WeakAuras for Warriors</h2>
 
         <div class="stat-priority survival-build">
             <h3>Recommended WeakAuras Collection</h3>
@@ -2131,6 +2146,7 @@
                 
                 <strong>General Warrior Tools:</strong><br>
                 • <a href="https://wago.io/XeHixW2kx" target="_blank">!ZulgAuras! Dynamic Attack Power Helper</a><br>
+                • <a href="https://wago.io/GGP94rvmo" target="_blank">BLIZZARD - SAPP</a><br>
                 • <a href="https://wago.io/BMyo1S-y8" target="_blank">Bloodthirst or Execute</a><br>
                 • <a href="https://wago.io/BRpr9pj6O" target="_blank">Deathwish Hivemind</a><br>
                 • <a href="https://wago.io/ZgXtNBqS7" target="_blank">Heroic Strike - Cleave Queued</a><br>
@@ -2143,18 +2159,17 @@
                 • <a href="https://wago.io/Z_Nd-Iz4z" target="_blank">Sunder Applications with Announcements and Time</a><br><br>
                 
                 <strong>Raid Encounter Specific:</strong><br>
-                • <a href="https://wago.io/GGP94rvmo" target="_blank">BLIZZARD - SAPP</a><br>
                 • <a href="https://wago.io/amLxHdF6g" target="_blank">Four Horsemen Markcounter & Move Reminder</a><br>
                 • <a href="https://wago.io/iYc3jvRdj" target="_blank">C'thun/Cthun Stomach Sync</a><br>
                 • <a href="https://wago.io/S5TDxzIq2" target="_blank">Kel'Thuzad Frostbolt Interrupts</a><br>
                 • <a href="https://wago.io/Mc84ZvSjj" target="_blank">Loatheb Spore Tracker</a><br>
                 • <a href="https://wago.io/G8BvfAwNY" target="_blank">Sapphiron Icebolt Counter</a><br>
-                • <a href="https://wago.io/xwkIgvbp7" target="_blank">Shadow Fissure/Void Zone Warner</a><br>
                 • <a href="https://wago.io/nf9jVLczR" target="_blank">Thaddius Polarity Shift</a><br>
                 • <a href="https://wago.io/ebaylbBUl" target="_blank">Tems' Blackwing Lair WA Pack</a><br><br>
                 
                 <strong>Utility & Alerts:</strong><br>
                 • <a href="https://wago.io/OKYq6KX-7" target="_blank">Raid Consumes</a><br>
+                • <a href="https://wago.io/xwkIgvbp7" target="_blank">Shadow Fissure/Void Zone Warner</a><br>
                 • <a href="https://wago.io/RWkVnIw1S" target="_blank">Windfury Missing!</a>
             </div>
         </div>
@@ -2164,7 +2179,7 @@
             <strong>Performance Note:</strong> Too many WeakAuras can impact performance in raids. Start with essential tracking auras and disable any that provide redundant information. Use WeakAuras groups to organize by role (tank/DPS) and enable/disable sets as needed.
         </div>
 
-        <h2 id="addons"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Essential Addons for Warriors</a></h2>
+        <h2 id="addons">Essential Addons for Warriors</h2>
         <p><em>Recommended by Tankenheimer</em></p>
 
         <div class="stat-priority survival-build">
@@ -2245,7 +2260,7 @@
             </div>
         </div>
 
-        <h2 id="simulators"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Available Simulators & Tools</a><a href="#footnote-7" class="footnote-ref">7</a></h2>
+        <h2 id="simulators">Available Simulators & Tools<a href="#footnote-7" class="footnote-ref">7</a></h2>
 
         <div class="warning">
             <strong>Important:</strong> All simulator results should be taken with a grain of salt. Simulators make assumptions about perfect play, optimal conditions, and may not account for all variables in real raid encounters. Additionally, sims can over-value hit and weapon skill in certain scenarios. Use them as guides, not absolute truth.
@@ -2280,37 +2295,25 @@
                 <p><strong>Specialties:</strong> Stat weights, BiS list generation, detailed damage breakdowns, consumable optimization</p>
             </div>
 
-            <div class="simulator-card">
-                <h4>Ability Damage Comparison Tool</h4>
-                <p><strong>URL:</strong> <a href="ability_comparison.html" target="_blank">ability_comparison.html</a></p>
-                <p><strong>Features:</strong> Interactive visualization comparing Heroic Strike vs Whirlwind damage and efficiency</p>
-                <p><strong>Specialties:</strong> Damage per rage analysis, weapon speed impact, effective rage cost calculations</p>
-            </div>
-
         </div>
 
         <div class="footnotes">
-            <h3 id="references"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">References & Citations</a></h3>
-
-            <p style="margin-bottom: 20px;"><em>This guide draws from extensive research across combat mechanics theory, simulator development, and community testing. All sources have been archived locally in the Sources/ folder for long-term reference.</em></p>
-
-            <h4>Inline Citations</h4>
-            <p style="margin-bottom: 15px; font-size: 0.95em; color: #666;"><em>These numbered references are cited throughout the document using superscript links.</em></p>
-
+            <h3>References & Citations</h3>
+            
             <div class="footnote" id="footnote-1">
                 <span class="footnote-number">1.</span>
-                Threat generation formulas and stance multipliers:
+                Threat generation formulas and stance multipliers: 
                 <a href="https://www.wowhead.com/classic/guide/threat-overview-classic-wow" target="_blank">Wowhead Classic Threat Overview</a>
                 | <a href="Sources/wowhead_threat_overview.html">Archived Version</a>
             </div>
-
+            
             <div class="footnote" id="footnote-2">
                 <span class="footnote-number">2.</span>
                 Defensive combat table mechanics and boss attack probabilities:
                 <a href="https://web.archive.org/web/20070105001918/http://evilempireguild.org/guides/crushblock.php" target="_blank">Evil Empire Guild - Crushing Blow Guide</a>
                 | <a href="https://web.archive.org/web/20061109034808/http://evilempireguild.org/guides/block.php" target="_blank">Evil Empire - Block Mechanics</a>
             </div>
-
+            
             <div class="footnote" id="footnote-3">
                 <span class="footnote-number">3.</span>
                 Offensive attack table, miss chances, and glancing blow mechanics:
@@ -2319,7 +2322,7 @@
                 | <a href="Sources/marrows_compendium_mechanics.html">Archived Version</a>
                 | <a href="https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-guides/2206-warrior-damage-mechanics.html" target="_blank">OwnedCore - Warrior Damage Mechanics</a>
             </div>
-
+            
             <div class="footnote" id="footnote-4">
                 <span class="footnote-number">4.</span>
                 Weapon skill breakpoints and combat benefits:
@@ -2327,7 +2330,7 @@
                 | <a href="Sources/wowpedia_weapon_skill.html">Archived Version</a>
                 | <a href="https://forums.askmrrobot.com/t/hit-rating-and-hit-caps-in-wow-classic/8614" target="_blank">AskMrRobot - Hit Rating Analysis</a>
             </div>
-
+            
             <div class="footnote" id="footnote-5">
                 <span class="footnote-number">5.</span>
                 Stat priorities and scaling formulas:
@@ -2335,7 +2338,7 @@
                 | <a href="Sources/icy_veins_warrior_dps.html">Archived Version</a>
                 | <a href="https://rankedboost.com/world-of-warcraft/classic-stats/" target="_blank">RankedBoost - Classic Stats Guide</a>
             </div>
-
+            
             <div class="footnote" id="footnote-6">
                 <span class="footnote-number">6.</span>
                 Attack power conversions and scaling:
@@ -2343,7 +2346,7 @@
                 | <a href="Sources/vanilla_wow_attack_power.html">Archived Version</a>
                 | <a href="https://rankedboost.com/world-of-warcraft/classic-stats/" target="_blank">RankedBoost - Classic Stats</a>
             </div>
-
+            
             <div class="footnote" id="footnote-7">
                 <span class="footnote-number">7.</span>
                 Simulator tools and calculators:
@@ -2352,7 +2355,7 @@
                 | <a href="https://guybrushgit.github.io/WarriorSim/classic.html" target="_blank">Guybrush Warrior Simulator</a>
                 | <a href="Sources/guybrush_warrior_sim.html">Archived Version</a>
             </div>
-
+            
             <div class="footnote" id="footnote-8">
                 <span class="footnote-number">8.</span>
                 Implementation techniques and addon development:
@@ -2360,7 +2363,7 @@
                 | <a href="Sources/marrows_compendium_references.html">Archived Version</a>
                 | <a href="https://github.com/magey/classic-warrior/wiki" target="_blank">Classic Warrior GitHub Wiki</a>
             </div>
-
+            
             <div class="footnote" id="footnote-9">
                 <span class="footnote-number">9.</span>
                 Defense mechanics and avoidance calculations:
@@ -2369,7 +2372,7 @@
                 | <a href="https://wowpedia.fandom.com/wiki/Attack_table" target="_blank">Wowpedia - Attack Table</a>
                 | <a href="Sources/wowpedia_attack_table.html">Archived Version</a>
             </div>
-
+            
             <div class="footnote" id="footnote-10">
                 <span class="footnote-number">10.</span>
                 Community analysis and mathematical breakdowns:
@@ -2378,7 +2381,7 @@
                 | <a href="https://www.reddit.com/r/classicwow/comments/djdquy/melee_damage_and_you_a_comprehensive_overview_of/" target="_blank">Reddit - Comprehensive Melee Damage Guide</a>
                 | <a href="Sources/reddit_melee_damage_overview.html">Archived Discussion</a>
             </div>
-
+            
             <div class="footnote" id="footnote-11">
                 <span class="footnote-number">11.</span>
                 Additional Evil Empire Guild combat mechanics:
@@ -2387,7 +2390,7 @@
                 | <a href="https://web.archive.org/web/20070105001816/http://evilempireguild.org/guides/glancing.php" target="_blank">Evil Empire - Glancing Blow Mechanics</a>
                 | <a href="Sources/evil_empire_glancing.html">Archived Version</a>
             </div>
-
+            
             <div class="footnote" id="footnote-12">
                 <span class="footnote-number">12.</span>
                 Armor mechanics and damage reduction formulas:
@@ -2398,59 +2401,86 @@
                 | <a href="https://us.forums.blizzard.com/en/wow/t/the-armor-cap/318067/2" target="_blank">Blizzard Forum - Verified Armor Formula</a>
                 | <a href="Sources/blizzard_forum_armor_cap.html">Archived Version</a>
             </div>
-
+            
             <div class="footnote" id="footnote-13">
                 <span class="footnote-number">13.</span>
                 Consumables, buffs, and raid optimization:
                 <a href="https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-consumables-raid-buffs-pve" target="_blank">Wowhead - Warrior Consumables Guide</a>
                 | <a href="Sources/wowhead_warrior_consumables.html">Archived Version</a>
             </div>
-
+            
             <div class="footnote" id="footnote-2h-fury">
                 <span class="footnote-number">2H.</span>
-                2-Handed DPS Fury Build:
+                2-Handed Fury Build:
                 <a href="https://classicdb.ch/?talent=#LhhxzIbZVxzVMxkVo" target="_blank">ClassicDB Talent Calculator</a>
             </div>
-
+            
             <div class="footnote" id="footnote-dw-fury">
                 <span class="footnote-number">DW.</span>
-                Dual-Wield Fury (Tank/DPS):
+                Dual-Wield Fury Build:
                 <a href="https://classicdb.ch/?talent=#LhhxzhbZVxzmgxoVo" target="_blank">ClassicDB Talent Calculator</a>
             </div>
-
+            
             <div class="footnote" id="footnote-fury-prot">
                 <span class="footnote-number">FP.</span>
                 Fury-Prot Tank Build:
-                <a href="https://classicdb.ch/?talent=#LZVxzVxxoVoxwzox" target="_blank">ClassicDB Talent Calculator</a>
-            </div>
-
-            <div class="footnote" id="footnote-fury-prot-nosb">
-                <span class="footnote-number">FP-NS.</span>
-                Fury-Prot NO SB Tank Build:
                 <a href="https://classicdb.ch/?talent=#LbZVxzVxxoVoVfz0x" target="_blank">ClassicDB Talent Calculator</a>
             </div>
+        </div>
 
-            <h4 style="margin-top: 30px;">Bibliography</h4>
-            <p style="margin-bottom: 15px; font-size: 0.95em; color: #666;"><em>Additional sources organized by category for further research and reference.</em></p>
-
-            <h5 style="margin-top: 20px; margin-bottom: 10px; font-size: 1.1em;">Simulators & Tools</h5>
-            <ul style="margin-left: 20px; line-height: 1.8;">
+        <h2>Sources and References</h2>
+        
+        <div class="toc">
+            <h3>Complete Research Sources (50 Total)</h3>
+            <p><em>All sources archived locally in Sources/ folder for reference</em></p>
+            
+            <h4>Simulators & Tools</h4>
+            <ul>
+                <li><a href="https://github.com/magey/classic-warrior/wiki/Attack-table" target="_blank">Magey's Classic Warrior - Attack Table (Authoritative)</a></li>
                 <li><a href="https://wago.io/MhTYK9fAn/1" target="_blank">Time To Kill WeakAura - DPS Cooldown Optimization</a></li>
                 <li><a href="https://wowsims.github.io/classic/tank_warrior/" target="_blank">WoWSims Classic Tank Warrior Simulator</a></li>
+                <li><a href="https://wowsims.github.io/classic/warrior/" target="_blank">WoWSims Classic Warrior DPS Simulator</a></li>
+                <li><a href="https://guybrushgit.github.io/WarriorSim/classic.html" target="_blank">Guybrush Warrior Simulator</a></li>
                 <li><a href="https://furysim.github.io/" target="_blank">FurySim - Fury Warrior DPS Simulator</a></li>
                 <li><a href="https://royalgiraffe.github.io/" target="_blank">Royal Giraffe Theorycrafting Tools</a></li>
             </ul>
 
-            <h5 style="margin-top: 20px; margin-bottom: 10px; font-size: 1.1em;">Combat Mechanics & Theory</h5>
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li><a href="https://vanilla-wow-archive.fandom.com/wiki/Attack_table" target="_blank">Vanilla WoW Archive - Attack Table</a></li>
-                <li><a href="https://us.forums.blizzard.com/en/wow/t/rage-generation/320080/11" target="_blank">Blizzard Forums - Rage Generation</a></li>
-                <li><a href="https://web.archive.org/web/20061109035416/http://evilempireguild.org/guides/crushing.php" target="_blank">Evil Empire - Crushing Blows</a></li>
-                <li><a href="https://web.archive.org/web/20070105001726/http://evilempireguild.org/guides/acstamina.php" target="_blank">Evil Empire - AC/Stamina Guide</a></li>
-                <li><a href="https://web.archive.org/web/20070103090457/http://evilempireguild.org/guides/defense.php" target="_blank">Evil Empire - Defense Guide</a></li>
-                <li><a href="https://web.archive.org/web/20070105001835/http://evilempireguild.org/guides/attacks.php" target="_blank">Evil Empire - Attack Mechanics</a></li>
-                <li><a href="https://web.archive.org/web/20070105001622/http://evilempireguild.org/guides/formulas.php" target="_blank">Evil Empire - Combat Formulas</a></li>
-                <li><a href="https://web.archive.org/web/20070105001532/http://evilempireguild.org/guides/diminishing.php" target="_blank">Evil Empire - Diminishing Returns</a></li>
+            <h4>Talent Builds</h4>
+            <ul>
+                <li><a href="https://classicdb.ch/?talent=#LhhxzIbZVxzVMxkVo" target="_blank">2-Handed Fury Build (ClassicDB)</a></li>
+                <li><a href="https://classicdb.ch/?talent=#LhhxzhbZVxzmgxoVo" target="_blank">Dual-Wield Fury Build (ClassicDB)</a></li>
+                <li><a href="https://classicdb.ch/?talent=#LbZVxzVxxoVoVfz0x" target="_blank">Fury-Prot Tank Build (ClassicDB)</a></li>
+            </ul>
+
+            <h4>Comprehensive Guides</h4>
+            <ul>
+                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/" target="_blank">Marrow's Compendium of Dragonslaying</a></li>
+                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/intro.html" target="_blank">Marrow's Compendium - Introduction</a></li>
+                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/mechanics.html" target="_blank">Marrow's Compendium - Combat Mechanics</a></li>
+                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/abilities.html" target="_blank">Marrow's Compendium - Warrior Abilities</a></li>
+                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/cds.html" target="_blank">Marrow's Compendium - Cooldowns</a></li>
+                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/parsing.html" target="_blank">Marrow's Compendium - Combat Log Parsing</a></li>
+                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/references.html" target="_blank">Marrow's Compendium - References</a></li>
+            </ul>
+
+            <h4>Wowhead Guides</h4>
+            <ul>
+                <li><a href="https://www.wowhead.com/classic/guide/threat-overview-classic-wow#threat-modifier-abilities-and-values-warrior" target="_blank">Wowhead Classic Threat Overview</a></li>
+                <li><a href="https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-stat-priority-attributes-pve" target="_blank">Wowhead Fury Warrior DPS Guide</a></li>
+                <li><a href="https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-consumables-raid-buffs-pve" target="_blank">Wowhead Warrior Consumables Guide</a></li>
+            </ul>
+
+            <h4>Community Resources</h4>
+            <ul>
+                <li><a href="https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-guides/2206-warrior-damage-mechanics.html" target="_blank">OwnedCore - Warrior Damage Mechanics</a></li>
+                <li><a href="https://www.icy-veins.com/wow-classic/warrior-dps-pve-stat-priority" target="_blank">Icy Veins - Warrior DPS Stat Priority</a></li>
+                <li><a href="https://rankedboost.com/world-of-warcraft/classic-stats/" target="_blank">RankedBoost - Classic WoW Stats Guide</a></li>
+                <li><a href="https://forums.askmrrobot.com/t/hit-rating-and-hit-caps-in-wow-classic/8614" target="_blank">AskMrRobot - Hit Rating and Hit Caps</a></li>
+            </ul>
+
+            <h4>GitHub Wiki Resources</h4>
+            <ul>
+                <li><a href="https://github.com/magey/classic-warrior/wiki/Attack-table" target="_blank">Classic Warrior Wiki - Attack Table</a></li>
                 <li><a href="https://github.com/magey/classic-warrior/wiki/Crit-aura-suppression" target="_blank">Classic Warrior Wiki - Crit Aura Suppression</a></li>
                 <li><a href="https://github.com/magey/classic-warrior/wiki/Parry-haste" target="_blank">Classic Warrior Wiki - Parry Haste</a></li>
                 <li><a href="https://github.com/magey/classic-warrior/wiki/Spell-batching" target="_blank">Classic Warrior Wiki - Spell Batching</a></li>
@@ -2459,22 +2489,45 @@
                 <li><a href="https://github.com/magey/classic-warrior/wiki/Windfury-Totem" target="_blank">Classic Warrior Wiki - Windfury Totem</a></li>
             </ul>
 
-            <h5 style="margin-top: 20px; margin-bottom: 10px; font-size: 1.1em;">Comprehensive Warrior Guides</h5>
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/" target="_blank">Marrow's Compendium of Dragonslaying</a></li>
-                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/intro.html" target="_blank">Marrow's Compendium - Introduction</a></li>
-                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/abilities.html" target="_blank">Marrow's Compendium - Warrior Abilities</a></li>
-                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/cds.html" target="_blank">Marrow's Compendium - Cooldowns</a></li>
-                <li><a href="https://bookdown.org/marrowwar/marrow_compendium/parsing.html" target="_blank">Marrow's Compendium - Combat Log Parsing</a></li>
-                <li><a href="https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-stat-priority-attributes-pve" target="_blank">Wowhead Fury Warrior DPS Guide</a></li>
-                <li><a href="https://legend-law-cc0.notion.site/Classic-Era-Warrior-Tanking-Guide-8e022e4a021b42eb8436a853a4fa7aa8" target="_blank">Notion - Classic Era Warrior Tanking Guide</a></li>
+            <h4>Wiki & Archive Sources</h4>
+            <ul>
+                <li><a href="https://vanilla-wow-archive.fandom.com/wiki/Attack_power" target="_blank">Vanilla WoW Archive - Attack Power</a></li>
+                <li><a href="https://vanilla-wow-archive.fandom.com/wiki/Attack_table" target="_blank">Vanilla WoW Archive - Attack Table</a></li>
+                <li><a href="https://vanilla-wow-archive.fandom.com/wiki/Armor" target="_blank">Vanilla WoW Archive - Armor</a></li>
+                <li><a href="https://wowpedia.fandom.com/wiki/Weapon_skill?diff=prev&oldid=349241" target="_blank">Wowpedia - Weapon Skill Mechanics</a></li>
+                <li><a href="https://wowpedia.fandom.com/wiki/Defense" target="_blank">Wowpedia - Defense Skill Mechanics</a></li>
+                <li><a href="https://wowpedia.fandom.com/wiki/Attack_table" target="_blank">Wowpedia - Attack Table</a></li>
+                <li><a href="https://wowpedia.fandom.com/wiki/Damage_reduction" target="_blank">Wowpedia - Damage Reduction</a></li>
+                <li><a href="https://us.forums.blizzard.com/en/wow/t/rage-generation/320080/11" target="_blank">Blizzard Forums - Rage Generation</a></li>
+                <li><a href="https://us.forums.blizzard.com/en/wow/t/the-armor-cap/318067/2" target="_blank">Blizzard Forums - Verified Armor Formula</a></li>
             </ul>
 
-            <h5 style="margin-top: 20px; margin-bottom: 10px; font-size: 1.1em;">Community Resources & Forums</h5>
-            <ul style="margin-left: 20px; line-height: 1.8;">
+            <h4>Evil Empire Guild Guides (Archived)</h4>
+            <ul>
+                <li><a href="https://web.archive.org/web/20061109035416/http://evilempireguild.org/guides/crushing.php" target="_blank">Evil Empire - Crushing Blows</a></li>
+                <li><a href="https://web.archive.org/web/20061109034808/http://evilempireguild.org/guides/block.php" target="_blank">Evil Empire - Block Mechanics</a></li>
+                <li><a href="https://web.archive.org/web/20070105001918/http://evilempireguild.org/guides/crushblock.php" target="_blank">Evil Empire - Crush/Block Guide</a></li>
+                <li><a href="https://web.archive.org/web/20070105001726/http://evilempireguild.org/guides/acstamina.php" target="_blank">Evil Empire - AC/Stamina Guide</a></li>
+                <li><a href="https://web.archive.org/web/20070103090457/http://evilempireguild.org/guides/defense.php" target="_blank">Evil Empire - Defense Guide</a></li>
+                <li><a href="https://web.archive.org/web/20070105001835/http://evilempireguild.org/guides/attacks.php" target="_blank">Evil Empire - Attack Mechanics</a></li>
+                <li><a href="https://web.archive.org/web/20070105001622/http://evilempireguild.org/guides/formulas.php" target="_blank">Evil Empire - Combat Formulas</a></li>
+                <li><a href="https://web.archive.org/web/20070105001716/http://evilempireguild.org/guides/crittable.php" target="_blank">Evil Empire - Critical Hit Tables</a></li>
+                <li><a href="https://web.archive.org/web/20070105001532/http://evilempireguild.org/guides/diminishing.php" target="_blank">Evil Empire - Diminishing Returns</a></li>
+                <li><a href="https://web.archive.org/web/20070105001816/http://evilempireguild.org/guides/glancing.php" target="_blank">Evil Empire - Glancing Blow Mechanics</a></li>
+            </ul>
+
+            <h4>Reddit Community Discussions</h4>
+            <ul>
+                <li><a href="https://www.reddit.com/r/classicwow/comments/abt0kk/dual_wield_vs_2h_while_leveling_with_math/" target="_blank">Reddit - Dual Wield vs 2H Analysis</a></li>
                 <li><a href="https://old.reddit.com/r/classicwow/comments/abquok/warrior_dual_wielding/ed2oog9/" target="_blank">Reddit - Warrior Dual Wielding Discussion</a></li>
                 <li><a href="https://www.reddit.com/r/classicwow/comments/inr1a6/explain_crit_cap_for_warrior_on_a_boss_please/" target="_blank">Reddit - Crit Cap Explanation</a></li>
                 <li><a href="https://www.reddit.com/r/classicwow/comments/1j9w9lh/can_someone_please_explain_attack_power_to_me_and/" target="_blank">Reddit - Attack Power Explanation</a></li>
+                <li><a href="https://www.reddit.com/r/classicwow/comments/djdquy/melee_damage_and_you_a_comprehensive_overview_of/" target="_blank">Reddit - Comprehensive Melee Damage Overview</a></li>
+            </ul>
+
+            <h4>Community Tanking Guides</h4>
+            <ul>
+                <li><a href="https://legend-law-cc0.notion.site/Classic-Era-Warrior-Tanking-Guide-8e022e4a021b42eb8436a853a4fa7aa8" target="_blank">Notion - Classic Era Warrior Tanking Guide</a></li>
             </ul>
         </div>
 
@@ -2496,40 +2549,5 @@
             <strong>📋 Upcoming Release:</strong> A comprehensive raid tanking guide "Tankenheimer's Classic WoW Raid Tanking Guide" covering all boss encounters, strategies, and encounter-specific requirements will be released separately. This main guide focuses on gear optimization fundamentals that apply across all content.
         </div>
     </div>
-
-    <script>
-        // Theme toggle functionality
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-
-            body.classList.toggle('dark-mode');
-
-            // Update icon based on current theme
-            if (body.classList.contains('dark-mode')) {
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Initialize theme on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            const savedTheme = localStorage.getItem('theme');
-
-            // Default to dark mode if no preference is saved
-            if (savedTheme === 'light') {
-                body.classList.remove('dark-mode');
-                themeIcon.textContent = '☀️';
-            } else {
-                body.classList.add('dark-mode');
-                themeIcon.textContent = '🌙';
-            }
-        });
-    </script>
 </body>
 </html>
