@@ -1,5 +1,135 @@
 # Session Log - WoW Classic Warrior Tank Guide Updates
 
+## Session Date: 2026-01-02
+
+### Major Changes Summary
+- Created DW Fury Stat Priority Analysis with interactive Chart.js visualization
+- Added collapsible section to tanking guide comparing stat priorities with/without world buffs
+- Fixed dark mode compatibility issues
+- Improved dark mode contrast for new section to match guide's color scheme
+
+---
+
+### Detailed Changes
+
+#### 1. DW Fury Stat Priority Analysis Tool (NEW)
+**Created:** `dw_fury_stat_priority.html`
+
+**Features:**
+- **Interactive Line Graph** - Dual-line chart comparing stat priority values with/without world buffs
+- **Chart.js Integration** - Professional data visualization library
+- **Stat Cards** - Six detailed cards explaining each stat priority:
+  - 305 Weapon Skill (~15-25% DPS increase)
+  - 6% Hit Cap (~15-20% DPS increase)
+  - Critical Strike (~15-20% without buffs, ~26-30% with buffs)
+  - Attack Power (~10-15% without buffs, ~7-10% with buffs)
+  - Strength (~5-8% without buffs, ~6-9% with buffs)
+  - Agility (~3-5% without buffs, ~5-7% with buffs)
+- **Key Insights Box** - Explains how world buffs fundamentally change stat priorities
+- **Assumptions Section** - Lists world buff composition and calculation methodology
+
+**Mathematical Basis:**
+- Derived from Tankenheimer's guide formulas and combat mechanics
+- Flurry uptime formula: F_up = 1 - (1 - c)^4
+- 20% crit = 59% Flurry uptime
+- 40% crit (with buffs) = 87% Flurry uptime
+- World buffs: Rallying Cry (+5% crit, +140 AP), Onyxia (+140 AP), Spirit of Zandalar (+15% stats), Dire Maul Tribute (+200 AP)
+
+**Key Finding:**
+Critical Strike becomes significantly more valuable with world buffs (~28% DPS vs ~17.5% without) due to exponential Flurry uptime scaling, while Attack Power becomes less valuable (~8.5% vs ~12.5%) due to diminishing returns from +340 AP baseline from buffs.
+
+#### 2. Integrated Analysis into Tanking Guide
+**Files Modified:**
+- `Future Work/wow_classic_tanking_guide.html`
+- `index.html`
+
+**Changes:**
+- Added Chart.js CDN library to <head>
+- Added TOC entry: "DW Fury Stat Priority Analysis" under Stat Priorities section
+- Added collapsible `<details>` section immediately after "Crit Cap Reality" warning box
+- Section ID: `#dw-fury-analysis` (linked from TOC)
+- Section includes full interactive visualization with all content from standalone tool
+
+**Location:** Line ~1235 in both files (after Crit Cap Reality, before Threat-Focused Build)
+
+#### 3. Dark Mode Compatibility Issues Fixed
+**Problem:** Initial implementation accidentally overwrote `index.html` with version from `Future Work/` that lacked dark mode toggle and CSS
+
+**Resolution:**
+- Restored original `index.html` with dark mode functionality
+- Re-applied DW Fury analysis section correctly
+- Preserved all dark mode CSS and toggle button functionality
+
+**Commits:**
+- Commit ce0870e: Fixed by restoring dark mode while adding new section
+- Required complete restoration of ~200 lines of dark mode CSS
+
+#### 4. Dark Mode Styling for New Section
+**Added:** Comprehensive dark mode CSS specifically for `#dw-fury-analysis`
+
+**Styling Applied:**
+- **Outer container:** Dark gray (#2d3748) with blue border (#63b3ed)
+- **Summary text:** Green (#4ade80) matching h2 headings
+- **Inner backgrounds:** Dark slate (#1e293b) replacing white
+- **Stat cards:** Dark gray (#2d3748) replacing light gray (#f8f9fa)
+- **Key insights box:** Dark blue (#1e3a8a) matching other info boxes
+- **Assumptions box:** Dark yellow-brown (#4a4a3a) matching warning boxes
+- **Text colors:** Light colors for contrast (#cbd5e0, #e2e8f0)
+- **Headings:** Blue (#63b3ed) consistent with guide
+- **Strong text:** Light gray (#e2e8f0)
+
+**CSS Selectors:**
+```css
+body.dark-mode #dw-fury-analysis { ... }
+body.dark-mode #dw-fury-analysis summary { ... }
+body.dark-mode #dw-fury-analysis [style*="background: white"] { ... }
+body.dark-mode #dw-fury-analysis [style*="color: #333"] { ... }
+```
+
+Total: ~64 lines of dark mode CSS added
+
+#### 5. Minor Corrections
+- Fixed typo: "Ongxia" → "Onyxia" in world buffs list (both files)
+
+---
+
+### Files Modified
+- `dw_fury_stat_priority.html` - New standalone stat priority visualization tool (150 lines)
+- `Future Work/wow_classic_tanking_guide.html` - Added DW Fury analysis section, Chart.js library
+- `index.html` - Added DW Fury analysis section with dark mode support, restored dark mode functionality
+- `Future Work/SESSION_LOG.md` - This file
+
+### Total Commits This Session
+5 commits pushed to GitHub
+
+### Git Commit Summary
+1. Add DW Fury stat priority analysis with interactive graph
+2. Update live site with DW Fury stat priority analysis (mistakenly removed dark mode)
+3. Add DW Fury stat priority analysis (keeping dark mode)
+4. Improve dark mode contrast for DW Fury stat priority section
+5. Update session log for 2026-01-02 session
+
+### Status
+- ✅ DW Fury stat priority analysis tool created
+- ✅ Interactive Chart.js visualization implemented
+- ✅ Section integrated into tanking guide with collapsible UI
+- ✅ TOC entry added
+- ✅ Dark mode compatibility restored and enhanced
+- ✅ All changes pushed to GitHub
+- ✅ GitHub Pages deployment successful
+
+### Notes
+- First major data visualization added to the guide comparing stat priorities
+- Mathematical analysis based on Tankenheimer's combat formulas
+- Demonstrates how world buffs fundamentally shift optimal gearing strategy
+- Critical Strike value increases ~60% with world buffs due to Flurry scaling
+- Attack Power value decreases ~30% with world buffs due to diminishing returns
+- Dark mode enhancement ensures consistent visual experience across entire guide
+- Section uses collapsible `<details>` element for progressive disclosure
+- Chart remains responsive and interactive on mobile devices
+
+---
+
 ## Session Date: 2025-12-23
 
 ### Major Changes Summary
