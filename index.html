@@ -2501,6 +2501,11 @@
             </div>
         </div>
 
+        <h3>Raid Log Effective Sunders Count</h3>
+        <div class="code-block">
+            type = "cast" AND ability.id = "11597" AND NOT IN RANGE FROM type = "applydebuffstack" AND ability.id = "11597" AND stack = 5 TO type= "removedebuff" AND ability.id = "11597" GROUP BY target ON target END
+        </div>
+
         <h2 id="simulators"><a href="#" class="toc-link" style="text-decoration: none; color: inherit;">Available Simulators & Tools</a><a href="#footnote-7" class="footnote-ref">7</a></h2>
 
         <div class="warning">
