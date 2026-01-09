@@ -1,5 +1,145 @@
 # Session Log - WoW Classic Warrior Tank Guide Updates
 
+## IMPORTANT: Workflow for Future Sessions
+
+**Live Site:** https://npc6388.github.io/wow-classic-warrior-tank-guide/
+
+**Before starting any work on this guide:**
+1. The live site is served from `index.html` at the repo root (`C:\Users\matth\Desktop\AI\BiS\index.html`)
+2. Development work is done in `Future Work/wow_classic_tanking_guide.html`
+3. After making changes to the Future Work file, copy it to `index.html` before pushing
+4. Always verify changes appear on the live site after pushing
+
+**File Structure:**
+- `C:\Users\matth\Desktop\AI\BiS\index.html` - **LIVE SITE** (GitHub Pages serves this)
+- `C:\Users\matth\Desktop\AI\BiS\Future Work\wow_classic_tanking_guide.html` - Development version
+- Both files should be kept in sync
+
+---
+
+## Session Date: 2026-01-08
+
+### Major Changes Summary
+- Restructured Enchantments section into separate DPS and Tank Warrior Enchantments
+- Consolidated consumables sections (removed "Expensive" and "Essential" subsections)
+- Added Subtlety cloak enchant to DPS section
+- Added +7 Agility boot enchant with world buff notes
+- Added Spirit of Zanza to Tank consumables
+- Added back-to-TOC links on all section headings
+- Added Dragon Breath Chili food buff warning
+- Updated R.O.I.D.S. and Scorpok with Zanza stacking notes
+
+---
+
+### Detailed Changes
+
+#### 1. Enchantments Section Restructure
+**Completely restructured from table format to list format matching live site:**
+
+**DPS Warrior Enchantments (NEW FORMAT):**
+- Head: Arcanum of Rapidity (+1% haste), Arcanum of Voracity (+8 STR)
+- Shoulder: Zandalar Signet of Might (+30 AP), Might of the Scourge (+26 AP, +1% crit)
+- Back: Lesser Agility (+3 Agi), **Subtlety (-2% threat)** - NEW
+- Chest: Greater Stats (+4 all stats)
+- Wrist: Superior Strength (+9 STR)
+- Hands: Greater Strength (+7 STR), Superior Agility (+15 Agi)
+- Legs: Voracity (+8 STR), Rapidity (+1% haste)
+- Feet: Minor Speed, **Greater Agility (+7 Agi)** - with WB note
+- Weapons: Crusader (MH, OH, 2H)
+
+**Tank Warrior Enchantments (NEW FORMAT):**
+- Head: Presence of Might (+10 Sta, +7 Def, +15 Block), Voracity, Rapidity
+- Shoulder: Might of the Scourge, Fortitude of the Scourge, Zandalar Signet of Might
+- Back: Dodge (+1% dodge), Lesser Agility
+- Chest: Greater Stats, Major Health (+100 HP)
+- Wrist: Superior Stamina (+9 Sta), Superior Strength (+9 STR)
+- Hands: Superior Agility (+15 Agi), Greater Strength (+7 STR)
+- Legs: Presence of Might, Voracity, Rapidity
+- Feet: Minor Speed, **Greater Agility (+7 Agi)** - with WB note
+- Weapons: Crusader (MH, OH)
+- Shield: Thorium Shield Spike, Lesser Block (+2%), Greater Stamina (+7 Sta)
+
+**Boot Enchant Note:** "+7 Agility (use on 2nd pair for WB raids - speed doesn't stack with WBs)"
+
+#### 2. Consumables Section Updates
+
+**DPS Consumables:**
+- Consolidated Potions/Elixirs (removed "Expensive" subsection)
+- Moved Mighty Rage Potion and Winterfall Firewater into main list
+- Added Zanza stacking notes to R.O.I.D.S. and Scorpok
+
+**Tank Consumables:**
+- Removed "Essential (Every Pull)" heading
+- Added Spirit of Zanza (+50 Sta, +50 Spirit, 2hr) to Potions/Elixirs
+- Consolidated R.O.I.D.S. and Scorpok into main Potions/Elixirs section
+- Removed separate "Threat Buffs (if Zanza not needed)" subsection
+
+**R.O.I.D.S. vs Scorpok Intro:**
+- Added: "Neither stacks with Spirit of Zanza."
+
+**Dragon Breath Chili:**
+- Added: "Note: Eating any other food while Dragon Breath Chili is active will remove the buff."
+
+#### 3. Navigation Improvements
+**Added back-to-TOC links on all h2 section headings:**
+- Introduction
+- Combat Mechanics
+- Stat Priorities
+- Consumables
+- Engineering
+- Combat Rotations
+- Warrior Builds
+- Gear Optimization Strategy
+- Enchantments
+- Essential Tanking Macros
+- Essential WeakAuras for Warriors
+- Essential Addons for Warriors
+- Available Simulators & Tools
+- (Race Selection and Changelog already had links)
+
+#### 4. Removed Duplicate Enchant Section
+- Removed old "Gear Enchants" h3 section from within Gear Optimization
+- Kept only the main "Enchantments" h2 section
+
+---
+
+### Files Modified
+- `Future Work/wow_classic_tanking_guide.html` - Development version
+- `index.html` - Live site version (copied from Future Work)
+- `Future Work/SESSION_LOG.md` - This file
+
+### Total Commits This Session
+6 commits pushed to GitHub
+
+### Git Commit Summary
+1. Update consumables and enchant recommendations
+2. Add Zanza buff slot notes to R.O.I.D.S. and Scorpok consumables
+3. Restructure enchants section and consolidate consumables
+4. Update live site with enchants restructure and consumables updates
+5. Add TOC links to section headings, consolidate tank consumables
+6. Remove Essential (Every Pull) headings from consumables
+
+### Status
+- ✅ Enchantments section restructured to match live site format
+- ✅ Subtlety cloak enchant added for DPS
+- ✅ Boot enchant WB notes added
+- ✅ Consumables consolidated and cleaned up
+- ✅ Spirit of Zanza added to Tank consumables
+- ✅ All section headings link back to TOC
+- ✅ Dragon Breath Chili warning added
+- ✅ R.O.I.D.S./Scorpok Zanza notes added
+- ✅ All changes pushed to GitHub
+- ✅ Live site updated
+
+### Notes
+- Discovered that `index.html` at repo root is the live site, not the Future Work file
+- Future sessions should always copy changes to index.html before pushing
+- Enchantments section now uses clean list format instead of table
+- Consumables section is now more streamlined without redundant headings
+- All navigation improved with back-to-TOC links on every section
+
+---
+
 ## Session Date: 2026-01-02
 
 ### Major Changes Summary
