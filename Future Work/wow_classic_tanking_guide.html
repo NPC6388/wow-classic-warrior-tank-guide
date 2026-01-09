@@ -9,36 +9,36 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #e0e0e0;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #0d1117;
         }
         .container {
-            background: white;
+            background: #161b22;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         h1 {
-            color: #8B4513;
+            color: #f0a500;
             text-align: center;
-            border-bottom: 3px solid #8B4513;
+            border-bottom: 3px solid #f0a500;
             padding-bottom: 10px;
         }
         h2 {
-            color: #2E8B57;
-            border-left: 4px solid #2E8B57;
+            color: #58a6ff;
+            border-left: 4px solid #58a6ff;
             padding-left: 15px;
             margin-top: 30px;
         }
         h3 {
             color: #ffffff;
-            background: #2d3748;
+            background: #21262d;
             margin-top: 20px;
             padding: 8px 12px;
-            border-left: 4px solid #4682B4;
+            border-left: 4px solid #58a6ff;
             border-radius: 4px;
             font-weight: bold;
         }
@@ -78,29 +78,32 @@
             margin: 15px 0;
         }
         .combat-table th, .combat-table td {
-            border: 1px solid #ddd;
+            border: 1px solid #30363d;
             padding: 12px;
             text-align: left;
         }
         .combat-table th {
-            background-color: #4CAF50;
+            background-color: #238636;
             color: white;
         }
         .combat-table tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #21262d;
+        }
+        .combat-table tr:nth-child(odd) {
+            background-color: #161b22;
         }
         .warning {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
+            background: #3d2e00;
+            border: 1px solid #5c4a00;
+            color: #f0c000;
             padding: 15px;
             border-radius: 5px;
             margin: 15px 0;
         }
         .tip {
-            background: #d1ecf1;
-            border: 1px solid #bee5eb;
-            color: #0c5460;
+            background: #0d3330;
+            border: 1px solid #1a5550;
+            color: #58d6c8;
             padding: 15px;
             border-radius: 5px;
             margin: 15px 0;
@@ -114,7 +117,8 @@
             overflow-x: auto;
         }
         .highlight {
-            background: #ffeb3b;
+            background: #5c4a00;
+            color: #f0c000;
             padding: 2px 4px;
             border-radius: 3px;
         }
@@ -125,8 +129,8 @@
             margin: 20px 0;
         }
         .simulator-card {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
+            background: #21262d;
+            border: 1px solid #30363d;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
@@ -134,7 +138,7 @@
             overflow-wrap: break-word;
         }
         .simulator-card h4 {
-            color: #495057;
+            color: #c9d1d9;
             margin-top: 0;
         }
         .simulator-card p {
@@ -142,10 +146,120 @@
             overflow-wrap: break-word;
         }
         .toc {
-            background: #e9ecef;
+            background: #21262d;
             padding: 20px;
             border-radius: 5px;
             margin: 20px 0;
+            border: 1px solid #30363d;
+        }
+        /* Race comparison charts */
+        .race-chart {
+            margin: 1.5rem 0;
+        }
+        .race-chart h4 {
+            margin-bottom: 1rem;
+            color: #c9d1d9;
+            background: none;
+            padding: 0;
+            border: none;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+        .chart-label {
+            width: 80px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #c9d1d9;
+        }
+        .chart-bar-container {
+            flex: 1;
+            background-color: #30363d;
+            border-radius: 4px;
+            height: 24px;
+            position: relative;
+            margin-right: 10px;
+        }
+        .chart-bar {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+            min-width: 40px;
+        }
+        .chart-bar.threat {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+        .chart-bar.survival {
+            background: linear-gradient(90deg, #27ae60, #1e8449);
+        }
+        .chart-value {
+            width: 45px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+        .chart-note {
+            font-size: 0.8rem;
+            color: #8b949e;
+            margin-left: 80px;
+            margin-top: -0.3rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        .weapon-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .weapon-table th {
+            background-color: #238636;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .weapon-table td {
+            padding: 0.6rem 0.75rem;
+            border-bottom: 1px solid #30363d;
+            vertical-align: top;
+        }
+        .weapon-table tr:nth-child(even) {
+            background-color: #21262d;
+        }
+        .weapon-table tr:nth-child(odd) {
+            background-color: #161b22;
+        }
+        .weapon-table tr:hover {
+            background-color: #30363d;
+        }
+        .weapon-name {
+            font-weight: 600;
+            color: #c9d1d9;
+        }
+        .weapon-type {
+            font-size: 0.8rem;
+            color: #8b949e;
+        }
+        .race-section {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+        .race-section h3 {
+            margin-top: 0;
         }
         .toc ul {
             list-style-type: none;
@@ -154,13 +268,17 @@
         .toc ul ul {
             padding-left: 20px;
             list-style-type: disc;
+            color: #8b949e;
         }
         .toc a {
-            color: #007bff;
+            color: #58a6ff;
             text-decoration: none;
         }
         .toc a:hover {
             text-decoration: underline;
+        }
+        a {
+            color: #58a6ff;
         }
         .footnote-ref {
             color: #66b3ff;
@@ -208,10 +326,11 @@
         <h1>Tankenheimer's WoW Classic Warrior Tanking Guide</h1>
         <p style="text-align: center; font-style: italic; color: #666;">An *Attempted* Complete Mechanics and Optimization Guide for Tanks and DPS</p>
 
-        <div class="toc">
+        <div class="toc" id="toc">
             <h3>Table of Contents</h3>
             <ul>
                 <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#race-selection">Race Selection (Horde)</a></li>
                 <li><a href="#combat-mechanics">Combat Mechanics</a>
                     <ul>
                         <li><a href="#threat-system">Threat System</a></li>
@@ -238,6 +357,7 @@
                 <li><a href="#weakauras">Essential WeakAuras for Warriors</a></li>
                 <li><a href="#addons">Essential Addons for Warriors</a></li>
                 <li><a href="#simulators">Available Simulators</a></li>
+                <li><a href="#changelog">Changelog</a></li>
             </ul>
         </div>
 
@@ -246,6 +366,159 @@
 
         <div class="warning">
             <strong>Important:</strong> Gearing as a tanking Warrior is one of the most situational aspects in Classic WoW. Mastery of gear swapping and recognizing different situations is vital.
+        </div>
+
+        <h2 id="race-selection"><a href="#top">Race Selection (Horde)</a></h2>
+
+        <p>Horde warriors can choose from four races for tanking: Tauren, Orc, Troll, and Undead. With Edgemaster's Handguards available to all races (+7 weapon skill to swords, axes, and daggers), weapon skill differences are largely neutralized in Phase 6, shifting the comparison to other racial abilities.</p>
+
+        <div class="race-section">
+            <h3>Racial Comparison Charts</h3>
+
+            <div class="race-chart">
+                <h4>Threat/DPS Contribution (Phase 6 with Edgemaster's)</h4>
+                <div class="chart-row">
+                    <span class="chart-label">Troll</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 75%;">Berserking</div>
+                    </div>
+                    <span class="chart-value">75</span>
+                </div>
+                <div class="chart-note">10-30% attack speed for 10s, scales with missing HP, no drawback</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Orc</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 5%;">—</div>
+                    </div>
+                    <span class="chart-value">5</span>
+                </div>
+                <div class="chart-note">Blood Fury's 50% healing reduction makes it impractical for tanks</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Tauren</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 15%;">War Stomp</div>
+                    </div>
+                    <span class="chart-value">15</span>
+                </div>
+                <div class="chart-note">2s AoE stun, 0.5s cast time, frequently useful on trash</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Undead</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 5%;">—</div>
+                    </div>
+                    <span class="chart-value">5</span>
+                </div>
+                <div class="chart-note">No offensive racial abilities</div>
+            </div>
+
+            <div class="race-chart">
+                <h4>Survivability Contribution</h4>
+                <div class="chart-row">
+                    <span class="chart-label">Tauren</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar survival" style="width: 95%;">+5% Base HP</div>
+                    </div>
+                    <span class="chart-value">95</span>
+                </div>
+                <div class="chart-note">+400-500 HP in Naxx BiS, scales with stamina buffs and consumables</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Undead</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar survival" style="width: 25%;">Shadow Resist + WotF</div>
+                    </div>
+                    <span class="chart-value">25</span>
+                </div>
+                <div class="chart-note">+10 Shadow Resistance, Will of the Forsaken (limited raid use)</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Orc</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar survival" style="width: 15%;">Hardiness</div>
+                    </div>
+                    <span class="chart-value">15</span>
+                </div>
+                <div class="chart-note">25% stun resist, FAP used on stun fights anyway</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Troll</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar survival" style="width: 5%;">Regeneration</div>
+                    </div>
+                    <span class="chart-value">5</span>
+                </div>
+                <div class="chart-note">10% health regen continues in combat, negligible impact</div>
+            </div>
+        </div>
+
+        <div class="tip">
+            <strong>Edgemaster's Handguards:</strong> Drop from trash in Blackrock Spire and provide +7 sword, axe, and dagger skill. With these equipped, all races achieve 307 weapon skill, exceeding the 305 threshold needed to eliminate most glancing blow penalties against boss-level targets. This makes race choice independent of weapon availability and renders Orc's Axe Specialization redundant.
+        </div>
+
+        <h3 id="race-tauren">Tauren</h3>
+        <div class="race-section">
+            <strong>Endurance (+5% Base Health):</strong> Increases base HP by 5%, which scales multiplicatively with stamina from gear, buffs, and consumables. In Naxx BiS with world buffs, this translates to approximately 400-500 additional HP. Relevant for Patchwerk Hateful Strikes (require high HP threshold) and Four Horsemen mark stacking.<br><br>
+            <strong>War Stomp:</strong> 2-second AoE stun with 0.5s cast time, 2-minute cooldown. Frequently useful on trash for add control and interrupt.<br><br>
+            <strong>Nature Resistance (+10):</strong> Passive resistance, not significant for Naxx content.
+        </div>
+
+        <h3 id="race-orc">Orc</h3>
+        <div class="race-section">
+            <strong>Axe Specialization (+5 Weapon Skill):</strong> Provides 305 axe skill baseline. Redundant when using Edgemaster's Handguards (307 skill). Only relevant if not using Edgemaster's, which limits weapon options to Hatchet of Sundered Bone in Naxx.<br><br>
+            <strong>Blood Fury:</strong> +282 Attack Power for 15 seconds, applies 50% healing reduction debuff to self, 2-minute cooldown. The healing reduction makes this impractical for tanks; primarily a DPS cooldown.<br><br>
+            <strong>Hardiness (25% Stun Resist):</strong> Passive stun resistance, minimal PvE raid relevance. For fights with stuns, a Free Action Potion is typically consumed on the pull.
+        </div>
+
+        <h3 id="race-troll">Troll</h3>
+        <div class="race-section">
+            <strong>Berserking:</strong> 10-30% attack speed increase for 10 seconds based on missing HP, 3-minute cooldown. Strongest racial threat cooldown in Phase 6 when Edgemaster's equalizes weapon skill. No negative effects.
+
+            <div class="race-chart" style="margin-top: 15px;">
+                <h4>Berserking DPS Increase by HP Threshold</h4>
+                <div class="chart-row">
+                    <span class="chart-label">100% HP</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 33%;">+10% attack speed</div>
+                    </div>
+                    <span class="chart-value">~3-4%</span>
+                </div>
+                <div class="chart-note">Minimum bonus at full health</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">~60% HP</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 66%;">+20% attack speed</div>
+                    </div>
+                    <span class="chart-value">~6-7%</span>
+                </div>
+                <div class="chart-note">Mid-range bonus</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">≤30% HP</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 100%;">+30% attack speed</div>
+                    </div>
+                    <span class="chart-value">~9-10%</span>
+                </div>
+                <div class="chart-note">Maximum bonus at 30% HP or below</div>
+            </div>
+
+            <strong>Regeneration:</strong> 10% of health regeneration continues during combat. Negligible impact with healer throughput in raids.<br><br>
+            <strong>Beast Slaying (+5% damage vs Beasts):</strong> Applies to Maexxna and spider trash in Arachnid Quarter.
+        </div>
+
+        <h3 id="race-undead">Undead</h3>
+        <div class="race-section">
+            <strong>Will of the Forsaken:</strong> Removes fear, sleep, and charm effects, 2-minute cooldown. Limited raid application as most boss fears have better solutions (Berserker Rage, Tremor Totem) or are not breakable.<br><br>
+            <strong>Cannibalize:</strong> Regenerate health from humanoid/undead corpses. Useful for recovering between pulls without healer mana.<br><br>
+            <strong>Shadow Resistance (+10):</strong> Passive resistance, minor benefit on Loatheb and shadow damage trash.
+        </div>
+
+        <div class="tip">
+            <strong>Summary:</strong> Tauren has the highest survivability (+5% HP). Troll has the highest threat (Berserking). Orc and Undead provide no significant PvE tanking advantages with Edgemaster's equipped.
         </div>
 
         <h2 id="combat-mechanics">Combat Mechanics</h2>
@@ -1324,6 +1597,62 @@
 
         <h2 id="consumables">Consumables</h2>
 
+        <div class="race-section">
+            <h3>R.O.I.D.S. vs Ground Scorpok Assay</h3>
+            <p>Both share the same buff slot. R.O.I.D.S. provides raw strength while Scorpok provides agility.</p>
+
+            <div class="formula">
+                <strong>R.O.I.D.S.:</strong> +25 Strength = +50 Attack Power (~3.6 DPS at 14 AP per 1 DPS)<br>
+                <strong>Ground Scorpok Assay:</strong> +25 Agility = +1.25% Crit (multiplicative with Flurry)
+            </div>
+
+            <div class="race-chart" style="margin-top: 15px;">
+                <h4>Estimated DPS Increase: Without World Buffs (~1800 AP, 25% crit)</h4>
+                <div class="chart-row">
+                    <span class="chart-label">R.O.I.D.S.</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 70%;">+50 AP</div>
+                    </div>
+                    <span class="chart-value">~2.0%</span>
+                </div>
+                <div class="chart-note">50 AP = ~3.6 DPS, linear scaling</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Scorpok</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar survival" style="width: 60%;">+1.25% crit</div>
+                    </div>
+                    <span class="chart-value">~1.7%</span>
+                </div>
+                <div class="chart-note">1.25% crit with Flurry (~25% base crit = 66% Flurry uptime)</div>
+            </div>
+
+            <div class="race-chart" style="margin-top: 15px;">
+                <h4>Estimated DPS Increase: With World Buffs (~2800 AP, 40% crit)</h4>
+                <div class="chart-row">
+                    <span class="chart-label">R.O.I.D.S.</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 50%;">+50 AP</div>
+                    </div>
+                    <span class="chart-value">~1.3%</span>
+                </div>
+                <div class="chart-note">50 AP = ~3.6 DPS, diminishing % of higher base</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Scorpok</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar survival" style="width: 65%;">+1.25% crit</div>
+                    </div>
+                    <span class="chart-value">~1.8%</span>
+                </div>
+                <div class="chart-note">Crit scales better with higher base damage + Flurry value</div>
+            </div>
+
+            <div class="tip">
+                <strong>Recommendation:</strong> Without world buffs, R.O.I.D.S. has a slight edge. With world buffs, Scorpok pulls ahead due to crit's multiplicative scaling with Flurry and higher base damage. Bring both - use R.O.I.D.S. first, Scorpok as backup.
+            </div>
+        </div>
+
         <h3>DPS Warrior Consumables<a href="#footnote-13" class="footnote-ref">13</a></h3>
         <div class="stat-priority threat-build">
             <h4>Essential (Every Pull)</h4>
@@ -1342,8 +1671,10 @@
             <h5>Potions/Elixirs</h5>
             <ul>
                 <li><strong>Elixir of the Mongoose:</strong> +25 Agility, +2% Critical Hit, 1hr</li>
+                <li><strong>R.O.I.D.S.:</strong> +25 Strength, 60min (best without world buffs)</li>
+                <li><strong>Ground Scorpok Assay:</strong> +25 Agility, 60min (best with world buffs, or backup when R.O.I.D.S. expires)</li>
             </ul>
-            
+
             <h5>Food</h5>
             <ul>
                 <li><strong>Smoked Desert Dumplings:</strong> +20 Strength, 15min</li>
@@ -1361,7 +1692,6 @@
             <ul>
                 <li><strong>Mighty Rage Potion:</strong> Instant 45-75 rage + 60 Strength for 20sec, 2min cooldown</li>
                 <li><strong>Winterfall Firewater:</strong> +35 Attack Power, 20min</li>
-                <li><strong>R.O.I.D.S.:</strong> +25 Strength, 60min duration</li>
             </ul>
             
             <h4>Situational</h4>
@@ -1379,6 +1709,10 @@
                 <li><strong>Major Healthstone:</strong> Emergency healing, 2min cooldown (separate from potions)</li>
                 <li><strong>Whipper Root Tuber:</strong> Emergency healing, 2min cooldown (shared with healthstones)</li>
             </ul>
+
+            <div class="tip">
+                <strong>Dragon Breath Chili + Greater Arcane Elixir:</strong> For trash packs, Dragon Breath Chili procs scale with spell damage. Pairing with Greater Arcane Elixir (+35 arcane damage) significantly increases proc damage. Best used on non-world buffed runs to avoid accidentally overwriting valuable buffs.
+            </div>
         </div>
 
         <h3>Tank Consumables<a href="#footnote-13" class="footnote-ref">13</a></h3>
@@ -1405,12 +1739,18 @@
             </ul>
             
             <h4>Situational</h4>
-            
+
             <h5>Flasks</h5>
             <ul>
                 <li><strong>Flask of the Titans:</strong> +1200 Health, 2hr (persists through death)</li>
             </ul>
-            
+
+            <h5>Threat Buffs (if Zanza not needed)</h5>
+            <ul>
+                <li><strong>R.O.I.D.S.:</strong> +25 Strength, 60min duration (best without world buffs; shares buff slot with Zanza)</li>
+                <li><strong>Ground Scorpok Assay:</strong> +25 Agility, 60min duration (best with world buffs, or backup if R.O.I.D.S. runs out)</li>
+            </ul>
+
             <h5>Protection Potions</h5>
             <ul>
                 <li><strong>Greater Fire/Nature/Arcane/Frost/Shadow Protection:</strong> Absorb 1950-3250 damage, 1hr duration, 2min cooldown</li>
@@ -1726,14 +2066,15 @@
 
         <h4>Feet</h4>
         <ul>
-            <li><strong>Enchant Boots - Minor Speed (Launch-Phase 4):</strong> Movement speed increase - Helpful for positioning and mobility-intensive fights</li>
-            <li><strong>Enchant Boots - Greater Agility (Phase 4+):</strong> +7 Agility - Better survivability option once positioning is comfortable</li>
+            <li><strong>Enchant Boots - Minor Speed:</strong> Movement speed increase - Preferred for both tanks and DPS (use without world buffs)</li>
+            <li><strong>Enchant Boots - Greater Agility:</strong> +7 Agility - Use on a second pair of boots for raids with world buffs (speed doesn't stack with WBs)</li>
         </ul>
 
         <h4>Back</h4>
         <ul>
             <li><strong>Enchant Cloak - Superior Defense (Launch-Phase 4):</strong> +70 Armor - Solid survivability boost</li>
             <li><strong>Enchant Cloak - Dodge (Phase 5+):</strong> +1% dodge chance - Best-in-slot for avoidance</li>
+            <li><strong>Enchant Cloak - Subtlety:</strong> -2% threat - For DPS to stay below tank threat</li>
         </ul>
 
         <h4>Weapon</h4>
@@ -1903,15 +2244,15 @@
             </tr>
             <tr>
                 <td>Boots</td>
-                <td>+5 Agility or +7 Stamina</td>
-                <td>+7 Agility</td>
-                <td>Minor speed often used for mobility</td>
+                <td>Minor Speed or +7 Agility</td>
+                <td>Minor Speed or +7 Agility</td>
+                <td>Minor Speed without WBs; +7 Agi on 2nd pair for WB raids (speed doesn't stack)</td>
             </tr>
             <tr>
                 <td>Cloak</td>
-                <td>+5 Resistance (all) or +3 Agility</td>
-                <td>+3 Agility</td>
-                <td>Resistance cloaks for specific encounters</td>
+                <td>+1% Dodge or +70 Armor</td>
+                <td>+3 Agility or Subtlety (-2% threat)</td>
+                <td>Dodge BiS for tanks; Subtlety for DPS</td>
             </tr>
         </table>
 
@@ -2547,6 +2888,16 @@
 
         <div class="tip">
             <strong>📋 Upcoming Release:</strong> A comprehensive raid tanking guide "Tankenheimer's Classic WoW Raid Tanking Guide" covering all boss encounters, strategies, and encounter-specific requirements will be released separately. This main guide focuses on gear optimization fundamentals that apply across all content.
+        </div>
+
+        <h2 id="changelog"><a href="#top">Changelog</a></h2>
+        <div class="toc">
+            <h3>2026-01-08</h3>
+            <ul>
+                <li>Updated R.O.I.D.S. and Ground Scorpok Assay notes in DPS and Tank consumables sections with world buff recommendations (R.O.I.D.S. best without WBs, Scorpok best with WBs)</li>
+                <li>Updated boot enchant recommendations: Minor Speed without world buffs, +7 Agility on second pair for WB raids (speed doesn't stack with WBs)</li>
+                <li>Updated cloak enchants: Dodge BiS for tanks, Subtlety for DPS</li>
+            </ul>
         </div>
     </div>
 </body>
