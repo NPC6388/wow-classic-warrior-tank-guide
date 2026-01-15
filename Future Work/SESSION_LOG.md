@@ -17,6 +17,68 @@
 
 ---
 
+## Session Date: 2026-01-15
+
+### Major Changes Summary
+- Reorganized Race Selection section (reordered by tanking relevance, made collapsible)
+- Simplified Debuff Cap section (removed priority table)
+- Corrected Death Wish and Recklessness spell mechanics from Wowhead
+- Reordered World Buffs table by DPS impact descending
+- Increased contrast in survival-build boxes
+- Updated Flask Set Analysis (removed BiS references, added Diamond Flask +75 Str)
+- Various cleanup and accuracy fixes
+
+---
+
+### Detailed Changes
+
+#### 1. Race Selection Reorganization
+- Reordered races by tanking relevance: Troll → Tauren → Orc → Undead
+- Added summary tip at top with key takeaway
+- Made racial details collapsible using `<details>` element
+- Fixed Edgemaster's drop location: "World drop from level 45-52 mobs" (was incorrectly BRS)
+- Added note to Orc section: no competitive tanking axes in Classic
+
+#### 2. Debuff Cap Simplification
+- Removed entire Priority Debuff List table
+- Simplified to note directing players to consult raid leader for guild-specific rules
+
+#### 3. Death Wish & Recklessness Corrections (from Wowhead)
+**Death Wish:** +20% physical damage, -20% armor/resistances, immune to Fear, 30 sec
+**Recklessness:** +100% crit, +20% damage taken, immune to Fear, 15 sec
+- Fixed all instances throughout guide with accurate mechanics
+- Updated warning boxes and rotation descriptions
+
+#### 4. Other Changes
+- Removed Shield Block Priority note
+- Removed incorrect "DW + Recklessness = +40% damage taken" claims
+- Reordered World Buffs table by DPS impact (Rallying Cry first)
+- Increased contrast in survival-build gradient (#2a9d7c → #123d6b)
+- Removed "BiS" from Flask Set Analysis section
+- Added Diamond Flask +75 Strength (150 AP) to Flask Set Activation bullets
+- Removed Execute from threat table
+
+---
+
+### Git Commits This Session
+1. Reorganize Race Selection and simplify Debuff Cap section
+2. Remove Shield Block Priority note
+3. Remove incorrect DW + Recklessness damage taken claim
+4. Reorder world buffs table by DPS impact descending
+5. Increase contrast in survival-build boxes (darker gradient)
+6. Fix Death Wish and Recklessness descriptions
+7. Correct Death Wish and Recklessness mechanics from Wowhead
+8. Remove BiS from Flask Set Analysis section
+9. Add Diamond Flask +75 Strength (150 AP) to flask set analysis
+10. Move Diamond Flask +75 Str to Key Mechanic section
+11. Move +75 Str to Flask Set Activation bullet point
+
+### Status
+- ✅ All changes pushed to GitHub
+- ✅ Live site updated: https://npc6388.github.io/wow-classic-warrior-tank-guide/
+
+---
+
 ## Session Date: 2026-01-08
 
 ### Major Changes Summary
