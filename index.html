@@ -370,7 +370,14 @@
 
         <h2 id="race-selection"><a href="#top">Race Selection (Horde)</a></h2>
 
-        <p>Horde warriors can choose from four races for tanking: Tauren, Orc, Troll, and Undead. With Edgemaster's Handguards available to all races (+7 weapon skill to swords, axes, and daggers), weapon skill differences are largely neutralized in Phase 6, shifting the comparison to other racial abilities.</p>
+        <p>Horde warriors can choose from four races for tanking: Troll, Tauren, Orc, and Undead. With Edgemaster's Handguards available to all races (+7 weapon skill to swords, axes, and daggers), weapon skill differences are largely neutralized in Phase 6, shifting the comparison to other racial abilities.</p>
+
+        <div class="tip">
+            <strong>Summary:</strong> Tauren has the highest survivability (+5% HP). Troll has the highest threat (Berserking). Orc and Undead provide no significant PvE tanking advantages with Edgemaster's equipped.
+        </div>
+
+        <details>
+            <summary>Racial Details</summary>
 
         <div class="race-section">
             <h3>Racial Comparison Charts</h3>
@@ -387,15 +394,6 @@
                 <div class="chart-note">10-30% attack speed for 10s, scales with missing HP, no drawback</div>
 
                 <div class="chart-row">
-                    <span class="chart-label">Orc</span>
-                    <div class="chart-bar-container">
-                        <div class="chart-bar threat" style="width: 5%;">—</div>
-                    </div>
-                    <span class="chart-value">5</span>
-                </div>
-                <div class="chart-note">Blood Fury's 50% healing reduction makes it impractical for tanks</div>
-
-                <div class="chart-row">
                     <span class="chart-label">Tauren</span>
                     <div class="chart-bar-container">
                         <div class="chart-bar threat" style="width: 15%;">War Stomp</div>
@@ -403,6 +401,15 @@
                     <span class="chart-value">15</span>
                 </div>
                 <div class="chart-note">2s AoE stun, 0.5s cast time, frequently useful on trash</div>
+
+                <div class="chart-row">
+                    <span class="chart-label">Orc</span>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar threat" style="width: 5%;">—</div>
+                    </div>
+                    <span class="chart-value">5</span>
+                </div>
+                <div class="chart-note">Blood Fury's 50% healing reduction makes it impractical for tanks</div>
 
                 <div class="chart-row">
                     <span class="chart-label">Undead</span>
@@ -455,21 +462,7 @@
         </div>
 
         <div class="tip">
-            <strong>Edgemaster's Handguards:</strong> Drop from trash in Blackrock Spire and provide +7 sword, axe, and dagger skill. With these equipped, all races achieve 307 weapon skill, exceeding the 305 threshold needed to eliminate most glancing blow penalties against boss-level targets. This makes race choice independent of weapon availability and renders Orc's Axe Specialization redundant.
-        </div>
-
-        <h3 id="race-tauren">Tauren</h3>
-        <div class="race-section">
-            <strong>Endurance (+5% Base Health):</strong> Increases base HP by 5%, which scales multiplicatively with stamina from gear, buffs, and consumables. In Naxx BiS with world buffs, this translates to approximately 400-500 additional HP. Relevant for Patchwerk Hateful Strikes (require high HP threshold) and Four Horsemen mark stacking.<br><br>
-            <strong>War Stomp:</strong> 2-second AoE stun with 0.5s cast time, 2-minute cooldown. Frequently useful on trash for add control and interrupt.<br><br>
-            <strong>Nature Resistance (+10):</strong> Passive resistance, not significant for Naxx content.
-        </div>
-
-        <h3 id="race-orc">Orc</h3>
-        <div class="race-section">
-            <strong>Axe Specialization (+5 Weapon Skill):</strong> Provides 305 axe skill baseline. Redundant when using Edgemaster's Handguards (307 skill). Only relevant if not using Edgemaster's, which limits weapon options to Hatchet of Sundered Bone in Naxx.<br><br>
-            <strong>Blood Fury:</strong> +282 Attack Power for 15 seconds, applies 50% healing reduction debuff to self, 2-minute cooldown. The healing reduction makes this impractical for tanks; primarily a DPS cooldown.<br><br>
-            <strong>Hardiness (25% Stun Resist):</strong> Passive stun resistance, minimal PvE raid relevance. For fights with stuns, a Free Action Potion is typically consumed on the pull.
+            <strong>Edgemaster's Handguards:</strong> World drop from level 45-52 mobs. Provides +7 sword, axe, and dagger skill. With these equipped, all races achieve 307 weapon skill, exceeding the 305 threshold needed to eliminate most glancing blow penalties against boss-level targets. This makes race choice independent of weapon availability and renders Orc's Axe Specialization redundant.
         </div>
 
         <h3 id="race-troll">Troll</h3>
@@ -510,6 +503,20 @@
             <strong>Beast Slaying (+5% damage vs Beasts):</strong> Applies to Maexxna and spider trash in Arachnid Quarter.
         </div>
 
+        <h3 id="race-tauren">Tauren</h3>
+        <div class="race-section">
+            <strong>Endurance (+5% Base Health):</strong> Increases base HP by 5%, which scales multiplicatively with stamina from gear, buffs, and consumables. In Naxx BiS with world buffs, this translates to approximately 400-500 additional HP. Relevant for Patchwerk Hateful Strikes (require high HP threshold) and Four Horsemen mark stacking.<br><br>
+            <strong>War Stomp:</strong> 2-second AoE stun with 0.5s cast time, 2-minute cooldown. Frequently useful on trash for add control and interrupt.<br><br>
+            <strong>Nature Resistance (+10):</strong> Passive resistance, not significant for Naxx content.
+        </div>
+
+        <h3 id="race-orc">Orc</h3>
+        <div class="race-section">
+            <strong>Axe Specialization (+5 Weapon Skill):</strong> Provides 305 axe skill baseline. Redundant when using Edgemaster's Handguards (307 skill). <em>Note: There are no competitive tanking axes in Classic—all BiS tank weapons are swords, so an orc tank still needs Edgemaster's. This makes orc primarily a DPS race rather than a tanking race.</em><br><br>
+            <strong>Blood Fury:</strong> +282 Attack Power for 15 seconds, applies 50% healing reduction debuff to self, 2-minute cooldown. The healing reduction makes this impractical for tanks; primarily a DPS cooldown.<br><br>
+            <strong>Hardiness (25% Stun Resist):</strong> Passive stun resistance, minimal PvE raid relevance. For fights with stuns, a Free Action Potion is typically consumed on the pull.
+        </div>
+
         <h3 id="race-undead">Undead</h3>
         <div class="race-section">
             <strong>Will of the Forsaken:</strong> Removes fear, sleep, and charm effects, 2-minute cooldown. Limited raid application as most boss fears have better solutions (Berserker Rage, Tremor Totem) or are not breakable.<br><br>
@@ -517,9 +524,7 @@
             <strong>Shadow Resistance (+10):</strong> Passive resistance, minor benefit on Loatheb and shadow damage trash.
         </div>
 
-        <div class="tip">
-            <strong>Summary:</strong> Tauren has the highest survivability (+5% HP). Troll has the highest threat (Berserking). Orc and Undead provide no significant PvE tanking advantages with Edgemaster's equipped.
-        </div>
+        </details>
 
         <h2 id="combat-mechanics"><a href="#top">Combat Mechanics</a></h2>
 
@@ -574,12 +579,6 @@
                 <td>Rage dump, queues with auto-attacks</td>
             </tr>
             <tr>
-                <td>Execute</td>
-                <td>125% of damage</td>
-                <td>187% of damage</td>
-                <td>Variable rage cost, <20% health only</td>
-            </tr>
-            <tr>
                 <td>Taunt</td>
                 <td>= Highest threat</td>
                 <td>= Highest threat</td>
@@ -590,64 +589,7 @@
         <h3 id="debuff-cap">Debuff Cap & Raid Coordination</h3>
 
         <div class="warning">
-            <strong>16 Debuff Limit:</strong> Classic WoW has a hard limit of 16 debuffs on any target. Once this limit is reached, new debuffs will push off the oldest ones. Raid coordination is essential to maintain critical debuffs.
-        </div>
-
-        <h4>Priority Debuff List</h4>
-        <table class="combat-table">
-            <tr>
-                <th>Priority</th>
-                <th>Debuff</th>
-                <th>Source</th>
-                <th>Effect</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sunder Armor (5 stacks)</td>
-                <td>Warriors</td>
-                <td>-2250 armor</td>
-                <td>Essential for raid DPS</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Curse of Elements</td>
-                <td>Warlocks</td>
-                <td>+10% fire/frost damage</td>
-                <td>Mandatory for caster DPS</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Curse of Shadow</td>
-                <td>Warlocks</td>
-                <td>+10% shadow/arcane damage</td>
-                <td>Warlock/Priest damage</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Faerie Fire</td>
-                <td>Druids</td>
-                <td>-175 armor</td>
-                <td>Additional armor reduction</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Hunter's Mark</td>
-                <td>Hunters</td>
-                <td>+110 ranged AP</td>
-                <td>Hunter DPS increase</td>
-            </tr>
-            <tr>
-                <td>6-16</td>
-                <td>DoTs & Others</td>
-                <td>Various</td>
-                <td>Variable</td>
-                <td>Corruption, Rend, etc.</td>
-            </tr>
-        </table>
-
-        <div class="tip">
-            <strong>Debuff Management:</strong> Tanks should coordinate with raid leaders to ensure Sunder Armor stacks are maintained. Warriors may need to reapply Sunder if it gets pushed off by other debuffs. Consider using threat meters and debuff tracking addons to monitor debuff status.
+            <strong>16 Debuff Limit:</strong> Classic WoW has a hard limit of 16 debuffs on any target. Once this limit is reached, new debuffs will push off the oldest ones. Most hunter, warlock, and shadow priest debuffs cannot be used in raids due to this limit. Consult your raid leader for your guild's specific debuff rules.
         </div>
 
         <h3 id="combat-table">Combat Table Mechanics</h3>
