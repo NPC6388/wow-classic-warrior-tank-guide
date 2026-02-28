@@ -17,6 +17,38 @@
 
 ---
 
+## Session Date: 2026-02-28
+
+### Major Changes Summary
+- Updated Dual-Wield Fury Build (17/34/0) talent calculator link to include 5 points in Battle Shout
+
+---
+
+### Detailed Changes
+
+#### 1. DW Fury Talent Link Update
+- **Changed:** Talent calculator link from `#LhhxzhbZVxzmgxoVo` to `#LhhxzhbZVxzVtxoVo`
+- **Reason:** Previous link was missing 5 points in Battle Shout
+- **Updated in 3 files:**
+  - `index.html` — 3 occurrences (talent calculator, footnote, bibliography)
+  - `Future Work/wow_classic_tanking_guide.html` — 3 occurrences
+  - `Sources/source links.txt` — 1 occurrence
+
+---
+
+### Git Commits This Session
+1. Update DW Fury build talent link to include 5pts Battle Shout
+
+### Status
+- ✅ All changes pushed to GitHub
+- ✅ Live site updated: https://npc6388.github.io/wow-classic-warrior-tank-guide/
+
+### Notes
+- Remote had newer commits; resolved merge conflict in bibliography section of `index.html` during rebase
+- Conflict was due to remote adding Fury-Prot NO SB build entry; resolved by keeping all builds with updated DW Fury link
+
+---
+
 ## Session Date: 2026-01-15
 
 ### Major Changes Summary
