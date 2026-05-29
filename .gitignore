@@ -12,3 +12,7 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Prot Paladin guide lives in its own repo (NPC6388/wow-tbc-prot-paladin-guide),
+# checked out at wow-tbc/. Keep it out of this (warrior guide) repo.
+wow-tbc/
